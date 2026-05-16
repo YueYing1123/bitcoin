@@ -3,6 +3,7 @@ __pycache__/
 *.py[cod]
 .venv/
 .env
+*.baiduyun.uploading.cfg
 
 # GitHub rejects files over 100 MB. Keep this raw full-text file locally
 # and use data/raw/data-texts.json via doc_id when running local analyses.

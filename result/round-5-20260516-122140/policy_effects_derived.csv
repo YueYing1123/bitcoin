@@ -1,0 +1,14 @@
+﻿dimension,group,baseline_group,post2021_effect,baseline_post2021,interaction_coef,interaction_term
+transaction_type,投资/理财,借贷,0.18140575771012962,0.02622346365508025,0.15518229405504938,"post2021:C(transaction_type, Treatment(reference='借贷'))[T.投资/理财]"
+transaction_type,交易/买卖,借贷,0.14548485667798322,0.02622346365508025,0.11926139302290296,"post2021:C(transaction_type, Treatment(reference='借贷'))[T.交易/买卖]"
+transaction_type,ICO/发币,借贷,-0.07473085878025018,0.02622346365508025,-0.10095432243533044,"post2021:C(transaction_type, Treatment(reference='借贷'))[T.ICO/发币]"
+transaction_type,挖矿,借贷,0.4477641482994115,0.02622346365508025,0.42154068464433125,"post2021:C(transaction_type, Treatment(reference='借贷'))[T.挖矿]"
+transaction_type,技术服务,借贷,0.06612257333915302,0.02622346365508025,0.039899109684072766,"post2021:C(transaction_type, Treatment(reference='借贷'))[T.技术服务]"
+transaction_type,其他民商事,借贷,0.003987614522880094,0.02622346365508025,-0.022235849132200156,"post2021:C(transaction_type, Treatment(reference='借贷'))[T.其他民商事]"
+transaction_type,其他/未分类,借贷,0.06646467250136284,0.02622346365508025,0.0402412088462826,"post2021:C(transaction_type, Treatment(reference='借贷'))[T.其他/未分类]"
+transaction_type,未分类,借贷,-0.028710595520149103,0.02622346365508025,-0.05493405917522935,"post2021:C(transaction_type, Treatment(reference='借贷'))[T.未分类]"
+transaction_type,借贷,借贷,0.02622346365508025,0.02622346365508025,0.0,
+amount_q4,Q4最高,Q1-Q3,0.13772598247038356,0.10652894390545602,0.03119703856492754,post2021:q4_amount
+amount_q4,Q1-Q3,Q1-Q3,0.10652894390545602,0.10652894390545602,0.0,
+region_big4,Big4,non-Big4,0.12822905548468586,0.10132083828660439,0.026908217198081466,post2021:region_big4
+region_big4,non-Big4,non-Big4,0.10132083828660439,0.10132083828660439,0.0,

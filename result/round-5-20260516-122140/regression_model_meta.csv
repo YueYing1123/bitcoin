@@ -1,0 +1,13 @@
+﻿model,nobs,rsquared,dep_mean,note,error
+m1_policy_baseline,5150,0.13872939886933133,0.42135922330097086,"Civil main sample; 2021 post indicator, master amount, amount-quality flags, court level and cause controls.",
+m2_transaction_types,5150,0.23010758517908259,0.42135922330097086,Adds compressed transaction types.,
+m3_policy_by_transaction,5150,0.2420728509231871,0.42135922330097086,Policy effect heterogeneity by transaction type.,
+m4_amount_quartiles,5148,0.23112943887147863,0.42152292152292153,Uses amount quartiles instead of linear log amount.,
+m5_policy_by_q4_amount,5150,0.23035643066084133,0.42135922330097086,Policy effect heterogeneity for top amount quartile.,
+m6_llm_amount,5044,0.22935718364355895,0.4173275178429818,Uses LLM top-level case amount.,
+m7_regex_amount,5150,0.22754125470346742,0.42135922330097086,Uses full-text regex maximum amount.,
+m8_region_big4,5150,0.2322820915487227,0.42135922330097086,Adds Big4 region indicator.,
+m9_policy_by_big4,5150,0.2324271429137642,0.42135922330097086,Policy effect heterogeneity by Big4 region.,
+m10_region_macro,5137,0.23141773378447217,0.4216468756083317,Adds macro-region categories.,
+m11_strict_dv,5114,0.23254825479268226,0.41728588189284316,Strict DV robustness.,
+m12_event_study,5119,0.23587848425950053,0.42312951748388355,Event study around 2021; 2020 is omitted reference year.,

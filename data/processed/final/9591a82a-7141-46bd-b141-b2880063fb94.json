@@ -1,0 +1,39 @@
+{
+  "final_fields": {
+    "case_profile.case_type_secondary": "民间借贷纠纷",
+    "case_profile.is_appeal": true,
+    "case_profile.litigant_profile.defendant_types": [],
+    "case_profile.litigant_profile.plaintiff_types": [],
+    "case_profile.procedure_stage": "二审",
+    "judicial_analysis.cited_laws": [
+      "《中华人民共和国民法典》第六百八十条",
+      "《中华人民共和国民法典》第六百七十五条",
+      "《最高人民法院关于审理民间借贷案件适用法律若干问题的规定》第二十八条第二款第一项",
+      "《最高人民法院关于审理民间借贷案件适用法律若干问题的规定》第十六条",
+      "《中华人民共和国民事诉讼法》第一百七十七条第一款第一项"
+    ],
+    "judicial_analysis.cited_policies": [],
+    "judicial_analysis.contract_validity": "有效",
+    "judicial_analysis.judicial_framing": [
+      "民间借贷关系",
+      "委托理财关系"
+    ],
+    "judicial_analysis.legal_characterization": "民间借贷关系",
+    "judicial_analysis.reason_for_invalidity": [],
+    "judicial_analysis.virtual_currency_property_legality": "不具有与法定货币同等的法律地位，不受法律保护",
+    "llm_summary.outcome_summary": "驳回上诉，维持原判",
+    "llm_summary.reasoning_summary": "法院基于微信聊天记录中杜某某承认借款事实并承诺还款方式，认定双方存在民间借贷合意。杜某某提供的证据不足以证明资金用于委托投资虚拟货币，故其抗辩不成立。根据相关法律规定，杜某某需承担还款责任。",
+    "metadata.case_number": "（2024）新01民终8979号",
+    "metadata.court_level": "中级法院",
+    "metadata.court_name": "新疆维吾尔自治区乌鲁木齐市中级人民法院",
+    "metadata.judgment_date": "2025-02-17",
+    "virtual_currency_info.activity_type": [],
+    "virtual_currency_info.currency_types": [],
+    "virtual_currency_info.involved": true,
+    "virtual_currency_info.total_amount_cny": 96400
+  },
+  "metrics": {
+    "agreement_rate": 0.7696969696969695,
+    "final_label_source": "majority_vote"
+  }
+}

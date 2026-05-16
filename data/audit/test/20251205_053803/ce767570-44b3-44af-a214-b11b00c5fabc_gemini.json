@@ -1,0 +1,185 @@
+{
+  "document_id": "ce767570-44b3-44af-a214-b11b00c5fabc",
+  "metadata": {
+    "case_number": {
+      "value": "（2024）浙0703刑初45号"
+    },
+    "court_name": {
+      "value": "金华市金东区人民法院"
+    },
+    "court_level": {
+      "value": "基层法院"
+    },
+    "province": {
+      "value": "浙江省"
+    },
+    "judgment_date": {
+      "value": "2024-01-29"
+    },
+    "judgment_year": {
+      "value": 2024
+    },
+    "first_instance_case_number": {
+      "value": null
+    }
+  },
+  "case_profile": {
+    "case_cause": {
+      "value": "掩饰、隐瞒犯罪所得罪"
+    },
+    "procedure_stage": {
+      "value": "一审"
+    },
+    "is_appeal": {
+      "value": false
+    },
+    "appeal_result": {
+      "value": null
+    },
+    "is_default_judgment": {
+      "value": false
+    },
+    "transaction_time_span": {
+      "start_year": {
+        "value": 2023
+      },
+      "end_year": {
+        "value": 2023
+      },
+      "crosses_2017_94_notice": {
+        "value": false
+      },
+      "crosses_2021_254_notice": {
+        "value": false
+      }
+    }
+  },
+  "litigant_profile": {
+    "plaintiff_type": {
+      "value": "其他"
+    },
+    "defendant_type": {
+      "value": "自然人"
+    },
+    "counsel_representation": {
+      "plaintiff_has_lawyer": {
+        "value": true
+      },
+      "defendant_has_lawyer": {
+        "value": true
+      }
+    }
+  },
+  "procedural_status": {
+    "ruling_type": {
+      "value": "实体判决"
+    },
+    "criminal_civil_intersection": {
+      "value": false
+    },
+    "jurisdiction_challenge": {
+      "value": false
+    }
+  },
+  "virtual_currency_info": {
+    "involved_currencies": {
+      "value": [
+        "USDT"
+      ]
+    },
+    "is_usdt_involved": {
+      "value": true
+    },
+    "activity_type": {
+      "value": "场外交易(OTC)"
+    },
+    "transaction_venue": {
+      "value": "场外OTC/私下转账"
+    },
+    "amounts": {
+      "plaintiff_claimed_cny": {
+        "value": 0.0
+      },
+      "court_recognized_cny": {
+        "value": 0.0
+      }
+    }
+  },
+  "evidence_analysis": {
+    "key_evidence_types": {
+      "value": [
+        "转账记录"
+      ]
+    },
+    "burden_of_proof_ruling": {
+      "value": null
+    },
+    "wallet_ownership_proven": {
+      "value": null
+    }
+  },
+  "judicial_analysis": {
+    "legal_characterization": {
+      "value": null
+    },
+    "currency_property_nature": {
+      "value": null
+    },
+    "contract_validity": {
+      "value": null
+    },
+    "validity_ground": {
+      "value": null
+    },
+    "illegal_debt_determination": {
+      "value": false
+    },
+    "moral_judgment_tags": {
+      "value": [
+        "帮助信息网络犯罪"
+      ]
+    },
+    "remedy_mechanics": {
+      "method": {
+        "value": null
+      },
+      "fiat_conversion_logic": {
+        "value": "无法确定"
+      },
+      "interest_or_fee": {
+        "value": "不予支持"
+      }
+    },
+    "cited_norms": {
+      "laws": {
+        "value": [
+          "《中华人民共和国刑法》第三百一十二条",
+          "《中华人民共和国刑法》第二十五条",
+          "《中华人民共和国刑法》第六十七条",
+          "《中华人民共和国刑法》第七十七条",
+          "《中华人民共和国刑法》第六十九条",
+          "《中华人民共和国刑法》第五十二条",
+          "《中华人民共和国刑法》第五十三条",
+          "《中华人民共和国刑法》第六十四条",
+          "《中华人民共和国刑事诉讼法》第十五条",
+          "《中华人民共和国刑事诉讼法》第二百零一条"
+        ]
+      },
+      "policies": {
+        "value": []
+      },
+      "is_public_order_cited": {
+        "value": false
+      }
+    }
+  },
+  "llm_summary": {
+    "outcome_text": {
+      "value": "被告人季某航犯掩饰、隐瞒犯罪所得罪，被判处有期徒刑三年六个月，并处罚金二万元，与前罪并罚决定执行有期徒刑四年四个月；被告人余某通犯掩饰、隐瞒犯罪所得罪，被判处有期徒刑三年五个月，并处罚金二万元；没收作案工具手机。"
+    },
+    "core_issue": {
+      "value": "被告人明知系网络犯罪所得（电信诈骗资金），通过提供银行卡收款并兑换成USDT虚拟币转移资金，构成掩饰、隐瞒犯罪所得罪。"
+    }
+  },
+  "custom_annotations": {}
+}

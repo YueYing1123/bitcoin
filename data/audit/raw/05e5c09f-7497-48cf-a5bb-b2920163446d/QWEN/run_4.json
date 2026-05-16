@@ -1,0 +1,76 @@
+{
+  "document_id": "05e5c09f-7497-48cf-a5bb-b2920163446d",
+  "metadata": {
+    "case_number": "（2024）沪01民终16260号",
+    "court_name": "上海市第一中级人民法院",
+    "court_level": "中级法院",
+    "region": null,
+    "judgment_date": "2025-02-27",
+    "doc_type": null
+  },
+  "case_profile": {
+    "case_type_primary": null,
+    "case_type_secondary": "民间借贷纠纷",
+    "procedure_stage": "二审",
+    "is_appeal": null,
+    "litigant_profile": {
+      "plaintiff_types": [],
+      "defendant_types": []
+    }
+  },
+  "virtual_currency_info": {
+    "involved": true,
+    "currency_types": [
+      "USDT",
+      "BZZ"
+    ],
+    "activity_type": [
+      "借贷",
+      "质押"
+    ],
+    "total_amount_cny": 274340
+  },
+  "judicial_analysis": {
+    "legal_characterization": "本案系结算型民间借贷法律关系，虽涉及虚拟货币交易背景，但双方通过借条、欠条对前期经济往来进行结算，形成合法有效的借贷合意。",
+    "virtual_currency_property_legality": "法院未直接认定虚拟货币的财产属性合法性，但基于当事人意思自治及结算行为，将相关资金往来纳入民间借贷法律关系予以保护。",
+    "contract_validity": "有效",
+    "reason_for_invalidity": [],
+    "cited_laws": [
+      "《中华人民共和国民法典》第六百六十七条",
+      "《中华人民共和国民法典》第六百七十五条",
+      "《最高人民法院关于审理民间借贷案件适用法律若干问题的规定》第二十六条",
+      "《最高人民法院关于审理民间借贷案件适用法律若干问题的规定》第二十八条",
+      "《最高人民法院关于审理民间借贷案件适用法律若干问题的规定》第三十一条第一款",
+      "《中华人民共和国民事诉讼法》第一百七十七条第一款第(一)项",
+      "《中华人民共和国民事诉讼法》第二百六十四条"
+    ],
+    "cited_policies": [],
+    "economic_substance_factors": {
+      "settlement_agreement": true,
+      "written_instrument": true,
+      "repayment_behavior": true,
+      "consideration_consistency": false
+    },
+    "judicial_framing": [
+      "以书面借据为核心证据认定借贷关系",
+      "将虚拟货币交易背景转化为结算型借贷",
+      "否定胁迫主张因缺乏证据",
+      "强调完全民事行为能力人签署文书的法律后果"
+    ]
+  },
+  "meta_ensemble": {
+    "model_votes": {},
+    "agreement_rate": null,
+    "final_label_source": null,
+    "confidence_mean": null,
+    "validation_status": null
+  },
+  "llm_summary": {
+    "outcome_summary": "二审法院驳回上诉，维持原判，认定许某某应归还赖某某借款本金224,340元、相应逾期利息及律师费15,000元。",
+    "reasoning_summary": "法院认为借条与欠条系双方对前期虚拟货币交易进行结算后形成的借贷合意，许某某作为完全民事行为能力人应承担还款责任；其主张受胁迫出具借条但未提供证据，且已部分还款，故借贷关系成立且有效。",
+    "issues_list": []
+  },
+  "custom_annotations": {
+    "law_firm_names": []
+  }
+}

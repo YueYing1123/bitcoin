@@ -1,0 +1,511 @@
+{
+  "DEEPSEEK": {
+    "metadata.case_number": {
+      "value": "（2024）沪01民终16260号",
+      "support": 1.0,
+      "accepted": true
+    },
+    "metadata.court_name": {
+      "value": "上海市第一中级人民法院",
+      "support": 1.0,
+      "accepted": true
+    },
+    "metadata.court_level": {
+      "value": "中级法院",
+      "support": 1.0,
+      "accepted": true
+    },
+    "metadata.judgment_date": {
+      "value": "2025-02-27",
+      "support": 1.0,
+      "accepted": true
+    },
+    "case_profile.case_type_secondary": {
+      "value": "民间借贷纠纷",
+      "support": 0.9,
+      "accepted": true
+    },
+    "case_profile.procedure_stage": {
+      "value": "二审",
+      "support": 1.0,
+      "accepted": true
+    },
+    "case_profile.litigant_profile.plaintiff_types": {
+      "value": [],
+      "support": 0.9,
+      "accepted": true
+    },
+    "case_profile.litigant_profile.defendant_types": {
+      "value": [],
+      "support": 0.9,
+      "accepted": true
+    },
+    "virtual_currency_info.currency_types": {
+      "value": [],
+      "support": 0.7,
+      "accepted": true
+    },
+    "virtual_currency_info.activity_type": {
+      "value": [],
+      "support": 0.8,
+      "accepted": true
+    },
+    "judicial_analysis.legal_characterization": {
+      "value": "民间借贷纠纷",
+      "support": 0.7,
+      "accepted": true
+    },
+    "judicial_analysis.contract_validity": {
+      "value": "有效",
+      "support": 1.0,
+      "accepted": true
+    },
+    "judicial_analysis.reason_for_invalidity": {
+      "value": [],
+      "support": 1.0,
+      "accepted": true
+    },
+    "judicial_analysis.cited_laws": {
+      "value": [
+        "《中华人民共和国民法典》第六百六十七条",
+        "《中华人民共和国民法典》第六百七十五条",
+        "《最高人民法院关于审理民间借贷案件适用法律若干问题的规定》第二十六条",
+        "《最高人民法院关于审理民间借贷案件适用法律若干问题的规定》第二十八条",
+        "《最高人民法院关于审理民间借贷案件适用法律若干问题的规定》第三十一条第一款",
+        "《中华人民共和国民事诉讼法》第一百七十七条第一款第(一)项"
+      ],
+      "support": 0.5,
+      "accepted": false
+    },
+    "judicial_analysis.cited_policies": {
+      "value": [],
+      "support": 1.0,
+      "accepted": true
+    },
+    "judicial_analysis.judicial_framing": {
+      "value": [
+        "结算型民间借贷法律关系"
+      ],
+      "support": 0.3,
+      "accepted": false
+    },
+    "llm_summary.outcome_summary": {
+      "value": "驳回上诉，维持原判",
+      "support": 0.1,
+      "accepted": false
+    },
+    "llm_summary.reasoning_summary": {
+      "value": "法院认为借条有效，证据充分，许某某主张无证据支持",
+      "support": 0.1,
+      "accepted": false
+    }
+  },
+  "DOUBAO": {
+    "metadata.case_number": {
+      "value": "（2024）沪01民终16260号",
+      "support": 0.7,
+      "accepted": true
+    },
+    "metadata.court_name": {
+      "value": "上海市第一中级人民法院",
+      "support": 1.0,
+      "accepted": true
+    },
+    "metadata.court_level": {
+      "value": "中级法院",
+      "support": 1.0,
+      "accepted": true
+    },
+    "metadata.judgment_date": {
+      "value": "2025-02-27",
+      "support": 1.0,
+      "accepted": true
+    },
+    "case_profile.case_type_secondary": {
+      "value": "民间借贷纠纷",
+      "support": 1.0,
+      "accepted": true
+    },
+    "case_profile.procedure_stage": {
+      "value": "二审",
+      "support": 1.0,
+      "accepted": true
+    },
+    "case_profile.litigant_profile.plaintiff_types": {
+      "value": [],
+      "support": 0.8,
+      "accepted": true
+    },
+    "case_profile.litigant_profile.defendant_types": {
+      "value": [],
+      "support": 0.8,
+      "accepted": true
+    },
+    "virtual_currency_info.currency_types": {
+      "value": [],
+      "support": 0.6,
+      "accepted": false
+    },
+    "virtual_currency_info.activity_type": {
+      "value": [],
+      "support": 0.6,
+      "accepted": false
+    },
+    "judicial_analysis.legal_characterization": {
+      "value": "结算型民间借贷法律关系",
+      "support": 1.0,
+      "accepted": true
+    },
+    "judicial_analysis.contract_validity": {
+      "value": "有效",
+      "support": 1.0,
+      "accepted": true
+    },
+    "judicial_analysis.reason_for_invalidity": {
+      "value": [],
+      "support": 1.0,
+      "accepted": true
+    },
+    "judicial_analysis.cited_laws": {
+      "value": [
+        "《中华人民共和国民法典》第六百六十七条",
+        "《中华人民共和国民法典》第六百七十五条",
+        "《最高人民法院关于审理民间借贷案件适用法律若干问题的规定》第二十六条",
+        "《最高人民法院关于审理民间借贷案件适用法律若干问题的规定》第二十八条",
+        "《最高人民法院关于审理民间借贷案件适用法律若干问题的规定》第三十一条第一款",
+        "《中华人民共和国民事诉讼法》第一百七十七条第一款第（一）项"
+      ],
+      "support": 0.3,
+      "accepted": false
+    },
+    "judicial_analysis.cited_policies": {
+      "value": [],
+      "support": 1.0,
+      "accepted": true
+    },
+    "judicial_analysis.judicial_framing": {
+      "value": [
+        "证据优势原则",
+        "结算型民间借贷认定",
+        "举证责任分配"
+      ],
+      "support": 0.1,
+      "accepted": false
+    },
+    "llm_summary.outcome_summary": {
+      "value": "二审法院驳回上诉,维持原判,认定双方为结算型民间借贷关系,许某某应归还赖某某借款本金224340元及相应逾期利息、律师费",
+      "support": 0.1,
+      "accepted": false
+    },
+    "llm_summary.reasoning_summary": {
+      "value": "法院认为借条、欠条足以证明借贷关系,许某某主张系虚拟货币交易及受胁迫出具凭证但未提供充分证据,故维持原审判决",
+      "support": 0.1,
+      "accepted": false
+    }
+  },
+  "GLM": {
+    "metadata.case_number": {
+      "value": "（2024）沪01民终16260号",
+      "support": 1.0,
+      "accepted": true
+    },
+    "metadata.court_name": {
+      "value": "上海市第一中级人民法院",
+      "support": 1.0,
+      "accepted": true
+    },
+    "metadata.court_level": {
+      "value": "中级法院",
+      "support": 1.0,
+      "accepted": true
+    },
+    "metadata.judgment_date": {
+      "value": "2025-02-27",
+      "support": 1.0,
+      "accepted": true
+    },
+    "case_profile.case_type_secondary": {
+      "value": "民间借贷纠纷",
+      "support": 1.0,
+      "accepted": true
+    },
+    "case_profile.procedure_stage": {
+      "value": "二审",
+      "support": 1.0,
+      "accepted": true
+    },
+    "case_profile.litigant_profile.plaintiff_types": {
+      "value": [],
+      "support": 0.9,
+      "accepted": true
+    },
+    "case_profile.litigant_profile.defendant_types": {
+      "value": [],
+      "support": 0.9,
+      "accepted": true
+    },
+    "virtual_currency_info.currency_types": {
+      "value": [],
+      "support": 0.8,
+      "accepted": true
+    },
+    "virtual_currency_info.activity_type": {
+      "value": [],
+      "support": 0.8,
+      "accepted": true
+    },
+    "judicial_analysis.legal_characterization": {
+      "value": "结算型民间借贷法律关系",
+      "support": 0.5,
+      "accepted": false
+    },
+    "judicial_analysis.contract_validity": {
+      "value": "有效",
+      "support": 1.0,
+      "accepted": true
+    },
+    "judicial_analysis.reason_for_invalidity": {
+      "value": [],
+      "support": 1.0,
+      "accepted": true
+    },
+    "judicial_analysis.cited_laws": {
+      "value": [
+        "《中华人民共和国民法典》第六百六十七条",
+        "《中华人民共和国民法典》第六百七十五条",
+        "《最高人民法院关于审理民间借贷案件适用法律若干问题的规定》第二十六条",
+        "《最高人民法院关于审理民间借贷案件适用法律若干问题的规定》第二十八条",
+        "《最高人民法院关于审理民间借贷案件适用法律若干问题的规定》第三十一条第一款",
+        "《中华人民共和国民事诉讼法》第一百七十七条第一款第(一)项"
+      ],
+      "support": 0.5,
+      "accepted": false
+    },
+    "judicial_analysis.cited_policies": {
+      "value": [],
+      "support": 1.0,
+      "accepted": true
+    },
+    "judicial_analysis.judicial_framing": {
+      "value": [
+        "结算型借贷",
+        "证据规则"
+      ],
+      "support": 0.1,
+      "accepted": false
+    },
+    "llm_summary.outcome_summary": {
+      "value": "二审法院驳回上诉人许某某的上诉请求，维持原判。即许某某需归还赖某某借款本金224,340元及相应逾期利息，并支付律师费15,000元。",
+      "support": 0.2,
+      "accepted": false
+    },
+    "llm_summary.reasoning_summary": {
+      "value": "法院认为，借条、欠条等证据足以证明双方存在民间借贷关系，系对此前法律关系的结算。许某某关于虚拟货币交易及受胁迫出具借条的主张，因未能提供证据而不予采信。",
+      "support": 0.1,
+      "accepted": false
+    }
+  },
+  "KIMI": {
+    "metadata.case_number": {
+      "value": "（2024）沪01民终16260号",
+      "support": 1.0,
+      "accepted": true
+    },
+    "metadata.court_name": {
+      "value": "上海市第一中级人民法院",
+      "support": 1.0,
+      "accepted": true
+    },
+    "metadata.court_level": {
+      "value": "中级法院",
+      "support": 1.0,
+      "accepted": true
+    },
+    "metadata.judgment_date": {
+      "value": "2025-02-27",
+      "support": 1.0,
+      "accepted": true
+    },
+    "case_profile.case_type_secondary": {
+      "value": "民间借贷纠纷",
+      "support": 0.9,
+      "accepted": true
+    },
+    "case_profile.procedure_stage": {
+      "value": "二审",
+      "support": 1.0,
+      "accepted": true
+    },
+    "case_profile.litigant_profile.plaintiff_types": {
+      "value": [],
+      "support": 0.9,
+      "accepted": true
+    },
+    "case_profile.litigant_profile.defendant_types": {
+      "value": [],
+      "support": 0.9,
+      "accepted": true
+    },
+    "virtual_currency_info.involved": {
+      "value": true,
+      "support": 0.5,
+      "accepted": false
+    },
+    "virtual_currency_info.currency_types": {
+      "value": [
+        "USDT",
+        "BZZ"
+      ],
+      "support": 0.5,
+      "accepted": false
+    },
+    "virtual_currency_info.activity_type": {
+      "value": [],
+      "support": 0.5,
+      "accepted": false
+    },
+    "judicial_analysis.legal_characterization": {
+      "value": "结算型民间借贷法律关系",
+      "support": 0.9,
+      "accepted": true
+    },
+    "judicial_analysis.virtual_currency_property_legality": {
+      "value": "不适用",
+      "support": 0.5,
+      "accepted": false
+    },
+    "judicial_analysis.contract_validity": {
+      "value": "有效",
+      "support": 1.0,
+      "accepted": true
+    },
+    "judicial_analysis.reason_for_invalidity": {
+      "value": [],
+      "support": 0.9,
+      "accepted": true
+    },
+    "judicial_analysis.cited_laws": {
+      "value": [
+        "《中华人民共和国民法典》第六百六十七条",
+        "《中华人民共和国民法典》第六百七十五条",
+        "《最高人民法院关于审理民间借贷案件适用法律若干问题的规定》第二十六条",
+        "《最高人民法院关于审理民间借贷案件适用法律若干问题的规定》第二十八条",
+        "《最高人民法院关于审理民间借贷案件适用法律若干问题的规定》第三十一条第一款",
+        "《中华人民共和国民事诉讼法》第一百七十七条第一款第(一)项"
+      ],
+      "support": 0.5,
+      "accepted": false
+    },
+    "judicial_analysis.cited_policies": {
+      "value": [],
+      "support": 0.9,
+      "accepted": true
+    }
+  },
+  "QWEN": {
+    "metadata.case_number": {
+      "value": "（2024）沪01民终16260号",
+      "support": 1.0,
+      "accepted": true
+    },
+    "metadata.court_name": {
+      "value": "上海市第一中级人民法院",
+      "support": 1.0,
+      "accepted": true
+    },
+    "metadata.court_level": {
+      "value": "中级法院",
+      "support": 1.0,
+      "accepted": true
+    },
+    "metadata.judgment_date": {
+      "value": "2025-02-27",
+      "support": 1.0,
+      "accepted": true
+    },
+    "case_profile.case_type_secondary": {
+      "value": "民间借贷纠纷",
+      "support": 0.9,
+      "accepted": true
+    },
+    "case_profile.procedure_stage": {
+      "value": "二审",
+      "support": 1.0,
+      "accepted": true
+    },
+    "case_profile.litigant_profile.plaintiff_types": {
+      "value": [],
+      "support": 0.9,
+      "accepted": true
+    },
+    "case_profile.litigant_profile.defendant_types": {
+      "value": [],
+      "support": 0.9,
+      "accepted": true
+    },
+    "virtual_currency_info.involved": {
+      "value": true,
+      "support": 0.9,
+      "accepted": true
+    },
+    "virtual_currency_info.currency_types": {
+      "value": [
+        "USDT",
+        "BZZ"
+      ],
+      "support": 0.9,
+      "accepted": true
+    },
+    "virtual_currency_info.activity_type": {
+      "value": [
+        "借贷",
+        "质押"
+      ],
+      "support": 0.9,
+      "accepted": true
+    },
+    "virtual_currency_info.total_amount_cny": {
+      "value": 274340,
+      "support": 0.9,
+      "accepted": true
+    },
+    "judicial_analysis.legal_characterization": {
+      "value": "本案系结算型民间借贷法律关系，虽涉及虚拟货币交易背景，但双方通过借条、欠条对前期经济往来进行结算，形成合法有效的借贷合意。",
+      "support": 0.2,
+      "accepted": false
+    },
+    "judicial_analysis.contract_validity": {
+      "value": "有效",
+      "support": 1.0,
+      "accepted": true
+    },
+    "judicial_analysis.reason_for_invalidity": {
+      "value": [],
+      "support": 0.9,
+      "accepted": true
+    },
+    "judicial_analysis.cited_laws": {
+      "value": [
+        "《中华人民共和国民法典》第六百六十七条",
+        "《中华人民共和国民法典》第六百七十五条",
+        "《最高人民法院关于审理民间借贷案件适用法律若干问题的规定》第二十六条",
+        "《最高人民法院关于审理民间借贷案件适用法律若干问题的规定》第二十八条",
+        "《最高人民法院关于审理民间借贷案件适用法律若干问题的规定》第三十一条第一款",
+        "《中华人民共和国民事诉讼法》第一百七十七条第一款第(一)项",
+        "《中华人民共和国民事诉讼法》第二百六十四条"
+      ],
+      "support": 0.9,
+      "accepted": true
+    },
+    "judicial_analysis.cited_policies": {
+      "value": [],
+      "support": 0.9,
+      "accepted": true
+    },
+    "llm_summary.outcome_summary": {
+      "value": "二审法院驳回上诉，维持原判，认定许某某应归还赖某某借款本金224,340元、相应逾期利息及律师费15,000元。",
+      "support": 0.3,
+      "accepted": false
+    }
+  }
+}

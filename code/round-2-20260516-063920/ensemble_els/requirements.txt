@@ -1,0 +1,26 @@
+# Ensemble ELS 依赖
+# Python >= 3.9
+
+# 核心依赖
+pydantic>=2.9.0
+python-dotenv>=1.0.1
+openai>=1.47.0
+pyyaml>=6.0.2
+jinja2>=3.1.4
+
+# 数据处理
+pandas>=2.2.2
+openpyxl>=3.1.5
+
+# 进度显示
+tqdm>=4.66.5
+
+# 网络请求
+requests>=2.32.3
+
+# 异步速率限制
+aiolimiter>=1.1.0
+
+# 可选：豆包/火山引擎 SDK（仅在使用 DOUBAO 模型时需要）
+# zai-sdk==0.0.4
+

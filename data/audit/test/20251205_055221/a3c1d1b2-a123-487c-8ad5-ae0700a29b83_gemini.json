@@ -1,0 +1,181 @@
+{
+  "document_id": "a3c1d1b2-a123-487c-8ad5-ae0700a29b83",
+  "metadata": {
+    "case_number": {
+      "value": "（2021）闽0821刑初240号"
+    },
+    "court_name": {
+      "value": "长汀县人民法院"
+    },
+    "court_level": {
+      "value": "基层法院"
+    },
+    "province": {
+      "value": "福建"
+    },
+    "judgment_date": {
+      "value": "2021-10-09"
+    },
+    "judgment_year": {
+      "value": 2021
+    },
+    "first_instance_case_number": {
+      "value": null
+    }
+  },
+  "case_profile": {
+    "case_cause": {
+      "value": "诈骗罪"
+    },
+    "procedure_stage": {
+      "value": "一审"
+    },
+    "is_appeal": {
+      "value": false
+    },
+    "appeal_result": {
+      "value": null
+    },
+    "is_default_judgment": {
+      "value": false
+    },
+    "transaction_time_span": {
+      "start_year": {
+        "value": 2020
+      },
+      "end_year": {
+        "value": 2020
+      },
+      "crosses_2017_94_notice": {
+        "value": false
+      },
+      "crosses_2021_254_notice": {
+        "value": false
+      }
+    }
+  },
+  "litigant_profile": {
+    "plaintiff_type": {
+      "value": "其他"
+    },
+    "defendant_type": {
+      "value": "自然人"
+    },
+    "counsel_representation": {
+      "plaintiff_has_lawyer": {
+        "value": true
+      },
+      "defendant_has_lawyer": {
+        "value": true
+      }
+    }
+  },
+  "procedural_status": {
+    "ruling_type": {
+      "value": "实体判决"
+    },
+    "criminal_civil_intersection": {
+      "value": true
+    },
+    "jurisdiction_challenge": {
+      "value": false
+    }
+  },
+  "virtual_currency_info": {
+    "involved_currencies": {
+      "value": [
+        "USDT",
+        "泰达币"
+      ]
+    },
+    "is_usdt_involved": {
+      "value": true
+    },
+    "activity_type": {
+      "value": "交易所炒币"
+    },
+    "transaction_venue": {
+      "value": "中心化交易所"
+    },
+    "amounts": {
+      "plaintiff_claimed_cny": {
+        "value": 6299931.86
+      },
+      "court_recognized_cny": {
+        "value": 6281931.86
+      }
+    }
+  },
+  "evidence_analysis": {
+    "key_evidence_types": {
+      "value": [
+        "微信/聊天记录",
+        "转账记录",
+        "交易所后台数据"
+      ]
+    },
+    "burden_of_proof_ruling": {
+      "value": null
+    },
+    "wallet_ownership_proven": {
+      "value": null
+    }
+  },
+  "judicial_analysis": {
+    "legal_characterization": {
+      "value": "电信网络诈骗"
+    },
+    "currency_property_nature": {
+      "value": "虚拟财产"
+    },
+    "contract_validity": {
+      "value": null
+    },
+    "validity_ground": {
+      "value": null
+    },
+    "illegal_debt_determination": {
+      "value": false
+    },
+    "moral_judgment_tags": {
+      "value": []
+    },
+    "remedy_mechanics": {
+      "method": {
+        "value": "责令退赔"
+      },
+      "fiat_conversion_logic": {
+        "value": "侵权/交易时市价"
+      },
+      "interest_or_fee": {
+        "value": "不予支持"
+      }
+    },
+    "cited_norms": {
+      "laws": {
+        "value": [
+          "中华人民共和国刑法",
+          "中华人民共和国民事诉讼法",
+          "中华人民共和国刑事诉讼法"
+        ]
+      },
+      "policies": {
+        "value": [
+          "关于办理电信网络诈骗等刑事案件适用法律若干问题的意见"
+        ]
+      },
+      "is_public_order_cited": {
+        "value": false
+      }
+    }
+  },
+  "llm_summary": {
+    "outcome_text": {
+      "value": "被告人王某2、王某1、彭某某犯诈骗罪，分别判处有期徒刑十年九个月、七年二个月、六年七个月，并处罚金，且责令共同连带退赔被害人经济损失。"
+    },
+    "core_issue": {
+      "value": "被告人通过电信网络引诱被害人在虚假交易平台投资USDT，法院需认定其诈骗金额及虚拟货币的财产属性。"
+    }
+  },
+  "custom_annotations": {}
+}

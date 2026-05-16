@@ -1,0 +1,12 @@
+﻿metric,value
+both_positive_n,11680.0
+pearson_raw,0.006319994315125767
+spearman_raw,0.7037718615687583
+log_pearson,0.680090280256383
+llm_in_regex_candidate_rate,0.8527649375107003
+llm_regex_conflict_rate,0.14723506248929977
+exact_equal_rate_both_positive,0.339041095890411
+within_10pct_rate,0.417722602739726
+within_50pct_rate,0.6120719178082191
+same_order_of_magnitude_rate,0.8295376712328767
+median_llm_regex_ratio,0.9191295847481379

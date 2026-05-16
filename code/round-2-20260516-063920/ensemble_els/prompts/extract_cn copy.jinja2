@@ -1,0 +1,124 @@
+角色：
+你精通中国法律、虚拟货币监管与证据规则，是法律文本信息抽取助手。
+
+任务：
+仅输出严格的 JSON（UTF-8，无注释、无多余文本、无 Markdown）；字段缺失时填 null 或空结构；若字段带 on_missing=na_or_empty，则遵循规则。temperature=0。
+
+语料：
+- 文书标题: {{ meta.title }}
+- 案由/罪名: {{ meta.case_reason }}
+- 案号: {{ meta.case_number }}
+- 审结时间: {{ meta.judgment_date }}
+- 审理法院: {{ meta.court_name }}
+- 法院级别: {{ meta.court_level }}
+- 审理程序: {{ meta.procedure_stage }}
+
+文书全文：
+{{ document_text }}
+
+需抽取并返回 **Master Schema v4.0** 结构，允许填充 `custom_annotations`。每个字段尽量给出 confidence（0~1）；若无法判定置信度则给 0.5。
+
+抽取字段清单（字段名称 / 类型 / 目标路径）：
+{% for f in fields %}
+- name: {{ f.name }} | type: {{ f.type }} | target: {{ f.target }}{% if f.on_missing %} | on_missing: {{ f.on_missing }}{% endif %}
+{% endfor %}
+
+字段提取要点：
+1. **金额拆分**：`plaintiff_claimed_cny` 取起诉或主张金额；`court_recognized_cny` 仅填判决主文明确支持的金额，若全部驳回则为 0。
+2. **政策引用**：`judicial_analysis.cited_norms.policies` 需特别标记“九四公告(2017)”与“254号文(2021)”等，并在 `is_public_order_cited` 中标识是否援引“公序良俗”。
+3. **时间维度**：尽力从“经审理查明”等段落提取交易起止年份，判断是否跨越 2017/09/04 或 2021/09/24 通知。
+4. **程序状态**：`ruling_type` 取“实体判决/驳回起诉/移送公安/中止/裁定”等；根据文本判断是否存在刑民交叉或管辖异议。
+5. **缺席与代理**：若出现“公告送达”“未到庭”等，则 `is_default_judgment=true`；根据“委托××律师”判定代理情况。
+6. **证据与举证责任**：枚举 `key_evidence_types`（如“微信聊天记录”“区块链浏览器截图”“司法鉴定”）；若法院因举证不足驳回，写入 `burden_of_proof_ruling`，并根据是否确认钱包归属填写 `wallet_ownership_proven`。
+7. **救济方式**：`remedy_mechanics.method` 选“返还虚拟货币”“返还法币折价”“驳回/不予处理”；`fiat_conversion_logic` 说明折价依据（投入本金/裁判时市价/侵权时市价/无法确定）；`interest_or_fee` 区分“利息”“资金占用费”“不予支持”。
+8. **司法逻辑与道德评价**：在 `moral_judgment_tags` 中记录关键词，如“风险自担”“非法债务”“善意取得”“帮助信息网络犯罪”“通谋虚伪”。
+9. **交易场景**：`transaction_venue` 归类为“中心化交易所”“链上/钱包转账”“场外OTC（微信/支付宝）”“未知”。
+10. **USDT 标记**：如涉及 USDT、泰达币、稳定币则设 `is_usdt_involved=true`；其余币种写入 `involved_currencies`。
+
+返回 JSON：
+{
+  "document_id": "{{ document_id }}",
+  "metadata": {
+    "case_number": {{ meta.case_number | tojson }},
+    "court_name": {{ meta.court_name | tojson }},
+    "court_level": {{ meta.court_level | tojson }},
+    "province": null,
+    "judgment_date": {{ meta.judgment_date | tojson }},
+    "judgment_year": null,
+    "case_class": null
+  },
+  "case_profile": {
+    "case_cause": {{ meta.case_reason | tojson }},
+    "procedure_stage": {{ meta.procedure_stage | tojson }},
+    "is_appeal": null,
+    "appeal_result": null,
+    "is_default_judgment": null,
+    "transaction_time_span": {
+      "start_year": null,
+      "end_year": null,
+      "crosses_2017_94_notice": null,
+      "crosses_2021_254_notice": null
+    }
+  },
+  "litigant_profile": {
+    "plaintiff_type": null,
+    "defendant_type": null,
+    "counsel_representation": {
+      "plaintiff_has_lawyer": null,
+      "defendant_has_lawyer": null
+    }
+  },
+  "procedural_status": {
+    "ruling_type": null,
+    "criminal_civil_intersection": null,
+    "jurisdiction_challenge": null
+  },
+  "virtual_currency_info": {
+    "involved_currencies": [],
+    "is_usdt_involved": null,
+    "activity_type": null,
+    "transaction_venue": null,
+    "amounts": {
+      "plaintiff_claimed_cny": null,
+      "court_recognized_cny": null
+    }
+  },
+  "evidence_analysis": {
+    "key_evidence_types": [],
+    "burden_of_proof_ruling": null,
+    "wallet_ownership_proven": null
+  },
+  "judicial_analysis": {
+    "legal_characterization": null,
+    "contract_validity": null,
+    "validity_ground": null,
+    "illegal_debt_determination": null,
+    "moral_judgment_tags": [],
+    "remedy_mechanics": {
+      "method": null,
+      "fiat_conversion_logic": null,
+      "interest_or_fee": null
+    },
+    "cited_norms": {
+      "laws": [],
+      "policies": [],
+      "is_public_order_cited": null
+    }
+  },
+  "meta_ensemble": {
+    "confidence_mean": null,
+    "validation_status": null
+  },
+  "llm_summary": {
+    "outcome_text": null,
+    "core_issue": null
+  },
+  "custom_annotations": {}
+}
+
+要求：
+- 将字段值写入对应路径，可在需要时向 `custom_annotations` 添加拓展键。
+- 每个字段若能判断 confidence，则以 `{ "value": <内容>, "confidence": <0~1> }` 的对象形式返回；若无法评估则设为 0.5。
+- 仅输出 JSON。
+- 对带 on_missing=na_or_empty 的字段：若文书完全未提及，则字符串填入 `"不适用"`、列表/对象填空结构、数字/布尔填 null。
+

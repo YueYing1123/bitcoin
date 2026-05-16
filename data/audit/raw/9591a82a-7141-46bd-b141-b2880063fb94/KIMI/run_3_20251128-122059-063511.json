@@ -1,0 +1,124 @@
+{
+  "document_id": "9591a82a-7141-46bd-b141-b2880063fb94",
+  "metadata": {
+    "case_number": "（2024）新01民终8979号",
+    "court_name": "新疆维吾尔自治区乌鲁木齐市中级人民法院",
+    "court_level": "中级法院",
+    "region": "新疆维吾尔自治区",
+    "judgment_date": "2025-02-17",
+    "doc_type": "民事判决书"
+  },
+  "case_profile": {
+    "case_type_primary": "民事",
+    "case_type_secondary": "民间借贷纠纷",
+    "procedure_stage": "二审",
+    "is_appeal": true,
+    "litigant_profile": {
+      "plaintiff_types": [
+        "自然人"
+      ],
+      "defendant_types": [
+        "自然人"
+      ]
+    }
+  },
+  "virtual_currency_info": {
+    "involved": true,
+    "currency_types": [
+      "XXX数字货币"
+    ],
+    "activity_type": [
+      "投资"
+    ],
+    "total_amount_cny": 96400
+  },
+  "judicial_analysis": {
+    "legal_characterization": {
+      "value": "民间借贷关系",
+      "confidence": 1.0
+    },
+    "virtual_currency_property_legality": {
+      "value": "虚拟货币不具有与法定货币同等的法律地位，投资虚拟货币不受法律保护",
+      "confidence": 0.9
+    },
+    "contract_validity": {
+      "value": "委托理财合同关系不成立，民间借贷关系成立",
+      "confidence": 0.85
+    },
+    "reason_for_invalidity": {
+      "value": [
+        "缺乏委托理财的合意证明",
+        "无证据证明款项实际用于投资虚拟货币",
+        "无证据证明双方共享投资账户",
+        "上诉人未能完成举证责任"
+      ],
+      "confidence": 0.8
+    },
+    "cited_laws": {
+      "value": [
+        "《中华人民共和国民法典》第六百八十条",
+        "《中华人民共和国民法典》第六百七十五条",
+        "《最高人民法院关于审理民间借贷案件适用法律若干问题的规定》第十六条",
+        "《最高人民法院关于审理民间借贷案件适用法律若干问题的规定》第二十八条第二款第一项",
+        "《中华人民共和国民事诉讼法》第一百七十七条第一款第一项"
+      ],
+      "confidence": 1.0
+    },
+    "cited_policies": {
+      "value": [],
+      "confidence": 1.0
+    },
+    "economic_substance_factors": {
+      "value": {
+        "fund_flow_pattern": "贾某某仅出资，未介入资金走向和使用用途",
+        "account_control": "无证据证明双方共享账户投资",
+        "risk_allocation": "投资虚拟货币的风险应由投资者自行承担",
+        "return_characteristics": "杜某某定期向贾某某支付固定金额，符合借贷特征",
+        "evidence_of_intent": "微信聊天记录显示杜某某承认借款并承诺还款"
+      },
+      "confidence": 0.85
+    },
+    "judicial_framing": {
+      "value": [
+        "法律关系定性争议（民间借贷 vs 委托理财）",
+        "举证责任分配",
+        "虚拟货币投资的法律地位",
+        "经济实质重于形式原则",
+        "证据审查与认定"
+      ],
+      "confidence": 0.85
+    }
+  },
+  "meta_ensemble": {
+    "model_votes": {},
+    "agreement_rate": null,
+    "final_label_source": null,
+    "confidence_mean": null,
+    "validation_status": null
+  },
+  "llm_summary": {
+    "outcome_summary": {
+      "value": "二审法院驳回上诉，维持原判。杜某某应偿还贾某某借款本金82,310元、利息427.90元（计算至2024年7月25日）及保全费848.02元，并继续支付后续利息。",
+      "confidence": 1.0
+    },
+    "reasoning_summary": {
+      "value": "法院认为，杜某某未能提供充分证据证明双方存在委托理财合意及实际投资行为，应承担举证不能的不利后果。贾某某提供的微信聊天记录和转账凭证能够证明双方存在借贷合意。根据《最高人民法院关于审理民间借贷案件适用法律若干问题的规定》第十六条，原告提供转账凭证后，被告抗辩为其他债务的，被告应举证证明；被告举证后，原告仍应就借贷关系的成立承担举证责任。杜某某的证据不足以证明委托理财关系，故一审认定民间借贷关系正确。",
+      "confidence": 0.9
+    },
+    "issues_list": {
+      "value": [
+        "法律关系定性：民间借贷还是委托理财",
+        "举证责任分配",
+        "虚拟货币投资的法律性质",
+        "合同效力的认定"
+      ],
+      "confidence": 0.9
+    }
+  },
+  "custom_annotations": {
+    "law_firm_names": {
+      "value": [],
+      "confidence": 1.0
+    }
+  }
+}

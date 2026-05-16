@@ -1,0 +1,101 @@
+{
+  "document_id": "05e5c09f-7497-48cf-a5bb-b2920163446d",
+  "metadata": {
+    "case_number": "（2024）沪01民终16260号",
+    "court_name": "上海市第一中级人民法院",
+    "court_level": "中级法院",
+    "region": null,
+    "judgment_date": "2025-02-27",
+    "doc_type": null
+  },
+  "case_profile": {
+    "case_type_primary": null,
+    "case_type_secondary": "民间借贷纠纷",
+    "procedure_stage": "二审",
+    "is_appeal": null,
+    "litigant_profile": {
+      "plaintiff_types": [],
+      "defendant_types": []
+    }
+  },
+  "virtual_currency_info": {
+    "involved": null,
+    "currency_types": [],
+    "activity_type": [],
+    "total_amount_cny": null
+  },
+  "judicial_analysis": {
+    "legal_characterization": {
+      "value": "结算型民间借贷",
+      "confidence": 0.95
+    },
+    "virtual_currency_property_legality": {
+      "value": "作为借贷关系中的支付和质押物处理，未直接定性其财产属性",
+      "confidence": 0.8
+    },
+    "contract_validity": {
+      "value": "有效",
+      "confidence": 0.99
+    },
+    "reason_for_invalidity": {
+      "value": [],
+      "confidence": 0.95
+    },
+    "cited_laws": {
+      "value": [
+        "《中华人民共和国民法典》第六百六十七条",
+        "《中华人民共和国民法典》第六百七十五条",
+        "《最高人民法院关于审理民间借贷案件适用法律若干问题的规定》第二十六条",
+        "《最高人民法院关于审理民间借贷案件适用法律若干问题的规定》第二十八条",
+        "《最高人民法院关于审理民间借贷案件适用法律若干问题的规定》第三十一条第一款",
+        "《中华人民共和国民事诉讼法》第一百七十七条第一款第(一)项"
+      ],
+      "confidence": 1.0
+    },
+    "cited_policies": {
+      "value": [],
+      "confidence": 0.9
+    },
+    "economic_substance_factors": {
+      "value": {
+        "form_over_substance": "法院以书面借条作为认定借贷关系的主要依据，将其视为双方对先前其他法律关系进行结算后达成的协议",
+        "payment_behavior": "许某某出具借条后的还款行为（5万元）被认定为履行还款义务，加强了借贷关系的认定",
+        "evidence_of_loan": "借条、欠条、USDT提币截图、还款转账截图等证据链完整",
+        "lacked_evidence_for_defense": "许某某未能提供证据支持其关于虚拟货币交易和借条系受迫出具的主张"
+      },
+      "confidence": 0.9
+    },
+    "judicial_framing": {
+      "value": [
+        "保护合法的民间借贷关系",
+        "以书面借条作为结算凭证，认定结算型借贷",
+        "对被告的抗辩主张，以证据不足为由不予采信"
+      ],
+      "confidence": 0.9
+    }
+  },
+  "meta_ensemble": {
+    "model_votes": {},
+    "agreement_rate": null,
+    "final_label_source": null,
+    "confidence_mean": null,
+    "validation_status": null
+  },
+  "llm_summary": {
+    "outcome_summary": {
+      "value": "二审法院驳回上诉人许某某的上诉请求，维持原判。即许某某需向赖某某归还借款本金224,340元及相应逾期利息，并支付律师费15,000元。",
+      "confidence": 1.0
+    },
+    "reasoning_summary": {
+      "value": "法院认为，涉案借条、欠条及转账记录等证据足以证明双方存在民间借贷关系。上诉人许某某主张本案为虚拟货币交易且借条系受迫出具，但未能提供任何证据证明，法院不予采信。因此，原审法院认定事实清楚，适用法律正确，判决应予维持。",
+      "confidence": 0.95
+    },
+    "issues_list": []
+  },
+  "custom_annotations": {
+    "law_firm_names": {
+      "value": [],
+      "confidence": 0.9
+    }
+  }
+}

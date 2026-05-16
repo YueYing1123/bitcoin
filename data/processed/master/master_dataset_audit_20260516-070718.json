@@ -1,0 +1,51 @@
+{
+  "round": "round-3-20260516-070718",
+  "timestamp": "20260516-070718",
+  "inputs": {
+    "flat_csv": "D:\\BaiduSyncdisk\\Doctor\\论文\\数字货币\\研究\\newstudy\\data\\processed\\analysis_data\\final_all_flat.csv",
+    "final_jsonl": "D:\\BaiduSyncdisk\\Doctor\\论文\\数字货币\\研究\\newstudy\\data\\processed\\extraction\\final_all.jsonl",
+    "regex_text": "D:\\BaiduSyncdisk\\Doctor\\论文\\数字货币\\研究\\newstudy\\data\\processed\\extraction\\data-texts_amount_regex.json",
+    "regex_index": "D:\\BaiduSyncdisk\\Doctor\\论文\\数字货币\\研究\\newstudy\\data\\processed\\extraction\\data-index_amount_regex.json",
+    "raw_index": "D:\\BaiduSyncdisk\\Doctor\\论文\\数字货币\\研究\\newstudy\\data\\raw\\data-index.json",
+    "raw_text": "D:\\BaiduSyncdisk\\Doctor\\论文\\数字货币\\研究\\newstudy\\data\\raw\\data-texts.json"
+  },
+  "outputs": {
+    "master_csv": "D:\\BaiduSyncdisk\\Doctor\\论文\\数字货币\\研究\\newstudy\\data\\processed\\master\\master_dataset.csv",
+    "master_jsonl": "D:\\BaiduSyncdisk\\Doctor\\论文\\数字货币\\研究\\newstudy\\data\\processed\\master\\master_dataset.jsonl",
+    "timestamped_master_csv": "D:\\BaiduSyncdisk\\Doctor\\论文\\数字货币\\研究\\newstudy\\data\\processed\\master\\master_dataset_20260516-070718.csv",
+    "timestamped_master_jsonl": "D:\\BaiduSyncdisk\\Doctor\\论文\\数字货币\\研究\\newstudy\\data\\processed\\master\\master_dataset_20260516-070718.jsonl",
+    "dictionary": "D:\\BaiduSyncdisk\\Doctor\\论文\\数字货币\\研究\\newstudy\\data\\processed\\master\\master_dataset_dictionary.csv"
+  },
+  "source_counts": {
+    "flat_csv_rows": 12098,
+    "final_jsonl_rows": 12098,
+    "regex_text_rows": 12134,
+    "regex_index_rows": 12135,
+    "raw_index_rows": 12135,
+    "raw_text_rows": 12134,
+    "master_rows": 12135
+  },
+  "amount_counts": {
+    "llm_top_case_amount_nonmissing": 11684,
+    "llm_total_amount_field_nonmissing": 0,
+    "flat_case_amount_nonmissing": 11684,
+    "regex_text_amount_nonmissing": 12100,
+    "regex_index_amount_nonmissing": 2,
+    "master_amount_nonmissing": 12102,
+    "llm_regex_text_conflicts": 1720
+  },
+  "amount_master_priority": [
+    "llm_top_case_amount",
+    "llm_total_amount_cny",
+    "flat_case_amount",
+    "flat_total_amount_cny",
+    "regex_text_amount_max",
+    "regex_index_amount_max"
+  ],
+  "notes": [
+    "The original full text is not embedded in the master table; use data/raw/data-texts.json as the text source keyed by doc_id.",
+    "virtual_currency_info.total_amount_cny in final_all.jsonl is preserved as llm_total_amount_cny but is currently empty in this dataset.",
+    "Top-level final_all.jsonl case_amount is preserved as llm_top_case_amount_cny and used first for amount_master_cny.",
+    "Regex text amount arrays are preserved in regex_text_amounts_json for audit and alternative amount construction."
+  ]
+}

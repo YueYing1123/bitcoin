@@ -1,0 +1,97 @@
+{
+  "document_id": "9591a82a-7141-46bd-b141-b2880063fb94",
+  "metadata": {
+    "case_number": "（2024）新01民终8979号",
+    "court_name": "新疆维吾尔自治区乌鲁木齐市中级人民法院",
+    "court_level": "中级法院",
+    "region": null,
+    "judgment_date": "2025-02-17",
+    "doc_type": null
+  },
+  "case_profile": {
+    "case_type_primary": null,
+    "case_type_secondary": "民间借贷纠纷",
+    "procedure_stage": "二审",
+    "is_appeal": null,
+    "litigant_profile": {
+      "plaintiff_types": [],
+      "defendant_types": []
+    }
+  },
+  "virtual_currency_info": {
+    "involved": null,
+    "currency_types": [],
+    "activity_type": [],
+    "total_amount_cny": null
+  },
+  "judicial_analysis": {
+    "legal_characterization": {
+      "value": "双方之间系民间借贷法律关系",
+      "confidence": 1.0
+    },
+    "virtual_currency_property_legality": {
+      "value": null,
+      "confidence": 0.5
+    },
+    "contract_validity": {
+      "value": "有效",
+      "confidence": 1.0
+    },
+    "reason_for_invalidity": {
+      "value": [],
+      "confidence": 1.0
+    },
+    "cited_laws": {
+      "value": [
+        "《中华人民共和国民法典》第六百八十条",
+        "《中华人民共和国民法典》第六百七十五条",
+        "《最高人民法院关于审理民间借贷案件适用法律若干问题的规定》第二十八条第二款第一项",
+        "《最高人民法院关于审理民间借贷案件适用法律若干问题的规定》第十六条",
+        "《中华人民共和国民事诉讼法》第一百七十七条第一款第一项"
+      ],
+      "confidence": 1.0
+    },
+    "cited_policies": {
+      "value": [],
+      "confidence": 1.0
+    },
+    "economic_substance_factors": {
+      "value": {
+        "fund_transfer_details": "贾某某分七次向杜某某转款共计96400元，杜某某向贾某某转款14090元（含11笔分红4090元和1笔10000元还款）",
+        "repayment_commitment": "杜某某在微信聊天中承认借款并承诺双月转1万、单月转5000的还款方式"
+      },
+      "confidence": 1.0
+    },
+    "judicial_framing": {
+      "value": [
+        "民间借贷关系认定",
+        "举证责任分配"
+      ],
+      "confidence": 1.0
+    }
+  },
+  "meta_ensemble": {
+    "model_votes": {},
+    "agreement_rate": null,
+    "final_label_source": null,
+    "confidence_mean": null,
+    "validation_status": null
+  },
+  "llm_summary": {
+    "outcome_summary": {
+      "value": "驳回杜某某的上诉请求，维持一审判决：杜某某于判决生效之日起十日内偿还贾某某借款本金82310元、利息427.9元及自2024年7月26日起以未还本金为基数按年利率3.45%计算的逾期利息，支付保全费848.02元；二审案件受理费1913.62元由杜某某负担",
+      "confidence": 1.0
+    },
+    "reasoning_summary": {
+      "value": "贾某某提交微信聊天记录及转账凭证证明借贷合意与款项交付；杜某某主张委托投资但未能提供有效证据证明贾某某有委托理财的意思表示，应承担举证不能的后果；一审法院认定双方系民间借贷关系并计算本金利息正确，故二审维持原判",
+      "confidence": 1.0
+    },
+    "issues_list": []
+  },
+  "custom_annotations": {
+    "law_firm_names": {
+      "value": [],
+      "confidence": 1.0
+    }
+  }
+}

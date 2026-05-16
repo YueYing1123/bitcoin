@@ -1,0 +1,74 @@
+{
+  "document_id": "05e5c09f-7497-48cf-a5bb-b2920163446d",
+  "metadata": {
+    "case_number": "（2024）沪01民终16260号",
+    "court_name": "上海市第一中级人民法院",
+    "court_level": "中级法院",
+    "region": null,
+    "judgment_date": "2025-02-27",
+    "doc_type": null
+  },
+  "case_profile": {
+    "case_type_primary": null,
+    "case_type_secondary": "民间借贷纠纷",
+    "procedure_stage": "二审",
+    "is_appeal": null,
+    "litigant_profile": {
+      "plaintiff_types": [],
+      "defendant_types": []
+    }
+  },
+  "virtual_currency_info": {
+    "involved": null,
+    "currency_types": [],
+    "activity_type": [],
+    "total_amount_cny": null
+  },
+  "judicial_analysis": {
+    "legal_characterization": "合法的民间借贷关系",
+    "virtual_currency_property_legality": null,
+    "contract_validity": "有效",
+    "reason_for_invalidity": [],
+    "cited_laws": [
+      "《中华人民共和国民法典》第六百六十七条",
+      "《中华人民共和国民法典》第六百七十五条",
+      "《最高人民法院关于审理民间借贷案件适用法律若干问题的规定》第二十六条",
+      "《最高人民法院关于审理民间借贷案件适用法律若干问题的规定》第二十八条",
+      "《最高人民法院关于审理民间借贷案件适用法律若干问题的规定》第三十一条第一款",
+      "《中华人民共和国民事诉讼法》第一百七十七条第一款第(一)项"
+    ],
+    "cited_policies": [],
+    "economic_substance_factors": {},
+    "judicial_framing": [
+      "基于书面合同和结算协议认定法律关系"
+    ]
+  },
+  "meta_ensemble": {
+    "model_votes": {},
+    "agreement_rate": null,
+    "final_label_source": null,
+    "confidence_mean": null,
+    "validation_status": null
+  },
+  "llm_summary": {
+    "outcome_summary": "二审法院驳回上诉，维持原判，许某某需归还赖某某借款本金224,340元及利息。",
+    "reasoning_summary": "法院认定借条和欠条有效，证明民间借贷关系成立；许某某声称的虚拟货币交易和胁迫缺乏证据支持。",
+    "issues_list": []
+  },
+  "custom_annotations": {
+    "law_firm_names": [],
+    "confidence": {
+      "legal_characterization": 1.0,
+      "virtual_currency_property_legality": 0.5,
+      "contract_validity": 1.0,
+      "reason_for_invalidity": 1.0,
+      "cited_laws": 1.0,
+      "cited_policies": 1.0,
+      "economic_substance_factors": 0.5,
+      "judicial_framing": 1.0,
+      "outcome_summary": 1.0,
+      "reasoning_summary": 1.0,
+      "law_firm_names": 0.5
+    }
+  }
+}

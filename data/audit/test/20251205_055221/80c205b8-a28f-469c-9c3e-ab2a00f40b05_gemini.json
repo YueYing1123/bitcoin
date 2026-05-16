@@ -1,0 +1,178 @@
+{
+  "document_id": "80c205b8-a28f-469c-9c3e-ab2a00f40b05",
+  "metadata": {
+    "case_number": {
+      "value": "（2018）云01民终9457号"
+    },
+    "court_name": {
+      "value": "云南省昆明市中级人民法院"
+    },
+    "court_level": {
+      "value": "中级法院"
+    },
+    "province": {
+      "value": "云南"
+    },
+    "judgment_date": {
+      "value": "2019-03-12"
+    },
+    "judgment_year": {
+      "value": 2019
+    },
+    "first_instance_case_number": {
+      "value": null
+    }
+  },
+  "case_profile": {
+    "case_cause": {
+      "value": "民间借贷纠纷"
+    },
+    "procedure_stage": {
+      "value": "二审"
+    },
+    "is_appeal": {
+      "value": true
+    },
+    "appeal_result": {
+      "value": "改判"
+    },
+    "is_default_judgment": {
+      "value": false
+    },
+    "transaction_time_span": {
+      "start_year": {
+        "value": 2015
+      },
+      "end_year": {
+        "value": 2016
+      },
+      "crosses_2017_94_notice": {
+        "value": false
+      },
+      "crosses_2021_254_notice": {
+        "value": false
+      }
+    }
+  },
+  "litigant_profile": {
+    "plaintiff_type": {
+      "value": "自然人"
+    },
+    "defendant_type": {
+      "value": "自然人"
+    },
+    "counsel_representation": {
+      "plaintiff_has_lawyer": {
+        "value": false
+      },
+      "defendant_has_lawyer": {
+        "value": false
+      }
+    }
+  },
+  "procedural_status": {
+    "ruling_type": {
+      "value": "实体判决"
+    },
+    "criminal_civil_intersection": {
+      "value": false
+    },
+    "jurisdiction_challenge": {
+      "value": false
+    }
+  },
+  "virtual_currency_info": {
+    "involved_currencies": {
+      "value": [
+        "比特币",
+        "快捷币",
+        "云讯通"
+      ]
+    },
+    "is_usdt_involved": {
+      "value": false
+    },
+    "activity_type": {
+      "value": "委托理财/代投"
+    },
+    "transaction_venue": {
+      "value": "未知"
+    },
+    "amounts": {
+      "plaintiff_claimed_cny": {
+        "value": 250443.51
+      },
+      "court_recognized_cny": {
+        "value": 143000.0
+      }
+    }
+  },
+  "evidence_analysis": {
+    "key_evidence_types": {
+      "value": [
+        "转账记录",
+        "微信/聊天记录"
+      ]
+    },
+    "burden_of_proof_ruling": {
+      "value": "原告/上诉人(指被告方)因证据不足承担不利后果"
+    },
+    "wallet_ownership_proven": {
+      "value": null
+    }
+  },
+  "judicial_analysis": {
+    "legal_characterization": {
+      "value": "民间借贷"
+    },
+    "currency_property_nature": {
+      "value": null
+    },
+    "contract_validity": {
+      "value": "有效"
+    },
+    "validity_ground": {
+      "value": null
+    },
+    "illegal_debt_determination": {
+      "value": false
+    },
+    "moral_judgment_tags": {
+      "value": []
+    },
+    "remedy_mechanics": {
+      "method": {
+        "value": "返还法币"
+      },
+      "fiat_conversion_logic": {
+        "value": "投入本金"
+      },
+      "interest_or_fee": {
+        "value": "利息"
+      }
+    },
+    "cited_norms": {
+      "laws": {
+        "value": [
+          "《中华人民共和国合同法》",
+          "《中华人民共和国民事诉讼法》"
+        ]
+      },
+      "policies": {
+        "value": []
+      },
+      "is_public_order_cited": {
+        "value": false
+      }
+    }
+  },
+  "llm_summary": {
+    "outcome_text": {
+      "value": "二审法院撤销原判部分判决，改判陈某某归还王某某借款本金143000元并支付利息，确认62000元已通过债权债务抵销归还。"
+    },
+    "core_issue": {
+      "value": "案涉款项是民间借贷还是委托投资（虚拟货币/云讯通平台）款项；以及是否存在债权抵销情形。"
+    }
+  },
+  "custom_annotations": {}
+}

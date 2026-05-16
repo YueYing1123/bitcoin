@@ -1,0 +1,80 @@
+﻿column,source,description
+doc_id,merge,Stable document identifier used across all inputs.
+in_flat,merge,Merge key or source-presence flag.
+in_final_jsonl,merge,Merge key or source-presence flag.
+in_raw_index,merge,Merge key or source-presence flag.
+in_raw_text,merge,Merge key or source-presence flag.
+in_regex_text,merge,Merge key or source-presence flag.
+in_regex_index,merge,Merge key or source-presence flag.
+index_title,data/raw/data-index.json,Raw index metadata copied from the original index file.
+index_case_cause,data/raw/data-index.json,Raw index metadata copied from the original index file.
+index_case_number,data/raw/data-index.json,Raw index metadata copied from the original index file.
+index_close_date,data/raw/data-index.json,Raw index metadata copied from the original index file.
+index_court_name,data/raw/data-index.json,Raw index metadata copied from the original index file.
+index_court_level,data/raw/data-index.json,Raw index metadata copied from the original index file.
+index_procedure,data/raw/data-index.json,Raw index metadata copied from the original index file.
+index_row_index,data/raw/data-index.json,Raw index metadata copied from the original index file.
+case_number,data/processed/analysis_data/final_all_flat.csv,Existing flat analysis variable from the old workflow.
+court_name,data/processed/analysis_data/final_all_flat.csv,Existing flat analysis variable from the old workflow.
+court_level,data/processed/analysis_data/final_all_flat.csv,Existing flat analysis variable from the old workflow.
+judgment_date,data/processed/analysis_data/final_all_flat.csv,Existing flat analysis variable from the old workflow.
+first_instance_case_number,data/processed/analysis_data/final_all_flat.csv,Existing flat analysis variable from the old workflow.
+region,data/processed/analysis_data/final_all_flat.csv,Existing flat analysis variable from the old workflow.
+doc_type,data/processed/analysis_data/final_all_flat.csv,Existing flat analysis variable from the old workflow.
+case_type_primary,data/processed/analysis_data/final_all_flat.csv,Existing flat analysis variable from the old workflow.
+case_type_secondary,data/processed/analysis_data/final_all_flat.csv,Existing flat analysis variable from the old workflow.
+procedure_stage,data/processed/analysis_data/final_all_flat.csv,Existing flat analysis variable from the old workflow.
+is_appeal,data/processed/analysis_data/final_all_flat.csv,Existing flat analysis variable from the old workflow.
+plaintiff_types,data/processed/analysis_data/final_all_flat.csv,Existing flat analysis variable from the old workflow.
+defendant_types,data/processed/analysis_data/final_all_flat.csv,Existing flat analysis variable from the old workflow.
+vc_involved,data/processed/analysis_data/final_all_flat.csv,Existing flat analysis variable from the old workflow.
+currency_types,data/processed/analysis_data/final_all_flat.csv,Existing flat analysis variable from the old workflow.
+activity_type,data/processed/analysis_data/final_all_flat.csv,Existing flat analysis variable from the old workflow.
+total_amount_cny,data/processed/analysis_data/final_all_flat.csv,Existing flat analysis variable from the old workflow.
+legal_characterization,data/processed/analysis_data/final_all_flat.csv,Existing flat analysis variable from the old workflow.
+vc_property_legality,data/processed/analysis_data/final_all_flat.csv,Existing flat analysis variable from the old workflow.
+contract_validity,data/processed/analysis_data/final_all_flat.csv,Existing flat analysis variable from the old workflow.
+reason_for_invalidity,data/processed/analysis_data/final_all_flat.csv,Existing flat analysis variable from the old workflow.
+cited_laws,data/processed/analysis_data/final_all_flat.csv,Existing flat analysis variable from the old workflow.
+cited_policies,data/processed/analysis_data/final_all_flat.csv,Existing flat analysis variable from the old workflow.
+judicial_framing,data/processed/analysis_data/final_all_flat.csv,Existing flat analysis variable from the old workflow.
+outcome_summary,data/processed/analysis_data/final_all_flat.csv,Existing flat analysis variable from the old workflow.
+reasoning_summary,data/processed/analysis_data/final_all_flat.csv,Existing flat analysis variable from the old workflow.
+agreement_rate,data/processed/analysis_data/final_all_flat.csv,Existing flat analysis variable from the old workflow.
+final_label_source,data/processed/analysis_data/final_all_flat.csv,Existing flat analysis variable from the old workflow.
+models_used,data/processed/analysis_data/final_all_flat.csv,Existing flat analysis variable from the old workflow.
+amount_mean_regex,data/processed/analysis_data/final_all_flat.csv,Existing flat analysis variable from the old workflow.
+amount_max_regex,data/processed/analysis_data/final_all_flat.csv,Existing flat analysis variable from the old workflow.
+amount_median_regex,data/processed/analysis_data/final_all_flat.csv,Existing flat analysis variable from the old workflow.
+amount_count_regex,data/processed/analysis_data/final_all_flat.csv,Existing flat analysis variable from the old workflow.
+contract_validity_regex,data/processed/analysis_data/final_all_flat.csv,Existing flat analysis variable from the old workflow.
+case_amount,data/processed/analysis_data/final_all_flat.csv,Existing flat analysis variable from the old workflow.
+llm_top_case_amount_raw,data/processed/extraction/final_all.jsonl,Raw top-level case_amount value.
+llm_top_case_amount_cny,data/processed/extraction/final_all.jsonl,Numeric top-level case_amount value.
+llm_total_amount_cny_raw,data/processed/extraction/final_all.jsonl,Raw final_fields virtual_currency_info.total_amount_cny value.
+llm_total_amount_cny,data/processed/extraction/final_all.jsonl,Numeric final_fields virtual_currency_info.total_amount_cny value.
+llm_agreement_rate,data/processed/extraction/final_all.jsonl,LLM ensemble agreement rate.
+llm_final_label_source,data/processed/extraction/final_all.jsonl,"LLM final label source, e.g. majority vote."
+llm_models_used,data/processed/extraction/final_all.jsonl,Models used for the final extraction.
+regex_text_amounts_json,data/processed/extraction/data-texts_amount_regex.json,"All regex amount candidates extracted from full text, serialized as JSON."
+regex_text_amount_count,data/processed/extraction/data-texts_amount_regex.json,Count of full-text regex amount candidates.
+regex_text_amount_mean_cny,data/processed/extraction/data-texts_amount_regex.json,Mean of full-text regex amount candidates.
+regex_text_amount_max_cny,data/processed/extraction/data-texts_amount_regex.json,Maximum full-text regex amount candidate.
+regex_text_amount_median_cny,data/processed/extraction/data-texts_amount_regex.json,Median of full-text regex amount candidates.
+regex_text_contract_validity,data/processed/extraction/data-texts_amount_regex.json,Regex contract validity flag from full text.
+regex_index_amounts_json,data/processed/extraction/data-index_amount_regex.json,"All regex amount candidates extracted from index metadata, serialized as JSON."
+regex_index_amount_count,data/processed/extraction/data-index_amount_regex.json,Count of index regex amount candidates.
+regex_index_amount_mean_cny,data/processed/extraction/data-index_amount_regex.json,Mean of index regex amount candidates.
+regex_index_amount_max_cny,data/processed/extraction/data-index_amount_regex.json,Maximum index regex amount candidate.
+regex_index_amount_median_cny,data/processed/extraction/data-index_amount_regex.json,Median of index regex amount candidates.
+raw_text_length,data/raw/data-texts.json,Length of the original text in characters.
+raw_text_sha256,data/raw/data-texts.json,SHA-256 hash of the original text.
+raw_text_excerpt,data/raw/data-texts.json,First 300 characters of original text for quick inspection.
+amount_flat_total_cny,derived,Numeric version of flat total_amount_cny.
+amount_flat_case_cny,derived,Numeric version of flat case_amount.
+amount_master_cny,derived,Preferred amount variable for downstream research.
+amount_master_source,derived,Source selected for amount_master_cny.
+amount_master_is_regex_fallback,derived,1 if amount_master_cny came from regex fallback.
+amount_llm_case_in_regex_text_amounts,derived,1 if LLM top-level case amount is close to any full-text regex candidate.
+amount_llm_regex_text_conflict,derived,1 if LLM top-level case amount is not close to any full-text regex candidate.
+amount_flat_llm_abs_diff,derived,Absolute difference between flat case_amount and LLM top-level case_amount.

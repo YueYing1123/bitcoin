@@ -1,0 +1,177 @@
+{
+  "document_id": "3b5780ed-62cf-4edc-b90b-b2360186eb27",
+  "metadata": {
+    "case_number": {
+      "value": "（2024）陕0902行审71号"
+    },
+    "court_name": {
+      "value": "安康市汉滨区人民法院"
+    },
+    "court_level": {
+      "value": "基层法院"
+    },
+    "province": {
+      "value": "陕西省"
+    },
+    "judgment_date": {
+      "value": "2024-09-20"
+    },
+    "judgment_year": {
+      "value": 2024
+    },
+    "first_instance_case_number": {
+      "value": null
+    }
+  },
+  "case_profile": {
+    "case_cause": {
+      "value": "行政非诉执行"
+    },
+    "procedure_stage": {
+      "value": "非诉执行审查"
+    },
+    "is_appeal": {
+      "value": false
+    },
+    "appeal_result": {
+      "value": null
+    },
+    "is_default_judgment": {
+      "value": false
+    },
+    "transaction_time_span": {
+      "start_year": {
+        "value": 2023
+      },
+      "end_year": {
+        "value": 2023
+      },
+      "crosses_2017_94_notice": {
+        "value": false
+      },
+      "crosses_2021_254_notice": {
+        "value": false
+      }
+    }
+  },
+  "litigant_profile": {
+    "plaintiff_type": {
+      "value": "其他"
+    },
+    "defendant_type": {
+      "value": "自然人"
+    },
+    "counsel_representation": {
+      "plaintiff_has_lawyer": {
+        "value": false
+      },
+      "defendant_has_lawyer": {
+        "value": false
+      }
+    }
+  },
+  "procedural_status": {
+    "ruling_type": {
+      "value": "实体判决"
+    },
+    "criminal_civil_intersection": {
+      "value": false
+    },
+    "jurisdiction_challenge": {
+      "value": false
+    }
+  },
+  "virtual_currency_info": {
+    "involved_currencies": {
+      "value": []
+    },
+    "is_usdt_involved": {
+      "value": false
+    },
+    "activity_type": {
+      "value": null
+    },
+    "transaction_venue": {
+      "value": "未知"
+    },
+    "amounts": {
+      "plaintiff_claimed_cny": {
+        "value": 10000
+      },
+      "court_recognized_cny": {
+        "value": 10000
+      }
+    }
+  },
+  "evidence_analysis": {
+    "key_evidence_types": {
+      "value": [
+        "通话记录单"
+      ]
+    },
+    "burden_of_proof_ruling": {
+      "value": null
+    },
+    "wallet_ownership_proven": {
+      "value": null
+    }
+  },
+  "judicial_analysis": {
+    "legal_characterization": {
+      "value": null
+    },
+    "currency_property_nature": {
+      "value": null
+    },
+    "contract_validity": {
+      "value": null
+    },
+    "validity_ground": {
+      "value": null
+    },
+    "illegal_debt_determination": {
+      "value": false
+    },
+    "moral_judgment_tags": {
+      "value": [
+        "帮助信息网络犯罪"
+      ]
+    },
+    "remedy_mechanics": {
+      "method": {
+        "value": null
+      },
+      "fiat_conversion_logic": {
+        "value": "无法确定"
+      },
+      "interest_or_fee": {
+        "value": "不予支持"
+      }
+    },
+    "cited_norms": {
+      "laws": {
+        "value": [
+          "《中华人民共和国反电信网络诈骗法》第二十五条",
+          "《中华人民共和国反电信网络诈骗法》第四十二条",
+          "《中华人民共和国行政强制法》第五十三条",
+          "《中华人民共和国行政强制法》第五十七条"
+        ]
+      },
+      "policies": {
+        "value": []
+      },
+      "is_public_order_cited": {
+        "value": false
+      }
+    }
+  },
+  "llm_summary": {
+    "outcome_text": {
+      "value": "准予强制执行申请执行人某政府作出的汉公(刑)行罚决字〔2023〕XXX号行政处罚决定，对被执行人余某某罚款10000元。"
+    },
+    "core_issue": {
+      "value": "某政府申请强制执行对余某某因帮助电信诈骗（提供电话卡）作出的行政处罚罚款是否合法有效。"
+    }
+  },
+  "custom_annotations": {}
+}

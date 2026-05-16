@@ -1,0 +1,73 @@
+{
+  "document_id": "9591a82a-7141-46bd-b141-b2880063fb94",
+  "metadata": {
+    "case_number": "（2024）新01民终8979号",
+    "court_name": "新疆维吾尔自治区乌鲁木齐市中级人民法院",
+    "court_level": "中级法院",
+    "region": null,
+    "judgment_date": "2025-02-17",
+    "doc_type": null
+  },
+  "case_profile": {
+    "case_type_primary": null,
+    "case_type_secondary": "民间借贷纠纷",
+    "procedure_stage": "二审",
+    "is_appeal": null,
+    "litigant_profile": {
+      "plaintiff_types": [],
+      "defendant_types": []
+    }
+  },
+  "virtual_currency_info": {
+    "involved": null,
+    "currency_types": [],
+    "activity_type": [],
+    "total_amount_cny": null
+  },
+  "judicial_analysis": {
+    "legal_characterization": "民间借贷关系",
+    "virtual_currency_property_legality": null,
+    "contract_validity": "有效",
+    "reason_for_invalidity": [],
+    "cited_laws": [
+      "《中华人民共和国民法典》第六百八十条",
+      "《中华人民共和国民法典》第六百七十五条",
+      "《最高人民法院关于审理民间借贷案件适用法律若干问题的规定》第二十八条第二款第一项",
+      "《最高人民法院关于审理民间借贷案件适用法律若干问题的规定》第十六条",
+      "《中华人民共和国民事诉讼法》第一百七十七条第一款第一项"
+    ],
+    "cited_policies": [],
+    "economic_substance_factors": {},
+    "judicial_framing": [
+      "当事人双方之间系民间借贷关系或委托理财关系"
+    ]
+  },
+  "meta_ensemble": {
+    "model_votes": {},
+    "agreement_rate": null,
+    "final_label_source": null,
+    "confidence_mean": null,
+    "validation_status": null
+  },
+  "llm_summary": {
+    "outcome_summary": "二审法院驳回杜某某的上诉，维持原判，杜某某需偿还贾某某借款本金82,310元及利息427.90元，并支付保全费848.02元。",
+    "reasoning_summary": "法院认为杜某某未能提供充分证据证明委托投资关系，举证不能，故认定双方为民间借贷关系成立，并依据相关法律计算还款金额和利息。",
+    "issues_list": []
+  },
+  "custom_annotations": {
+    "law_firm_names": [],
+    "field_confidences": {
+      "judicial_analysis.legal_characterization": 1.0,
+      "judicial_analysis.virtual_currency_property_legality": 0.5,
+      "judicial_analysis.contract_validity": 1.0,
+      "judicial_analysis.reason_for_invalidity": 1.0,
+      "judicial_analysis.cited_laws": 1.0,
+      "judicial_analysis.cited_policies": 1.0,
+      "judicial_analysis.economic_substance_factors": 0.5,
+      "judicial_analysis.judicial_framing": 1.0,
+      "llm_summary.outcome_summary": 1.0,
+      "llm_summary.reasoning_summary": 1.0,
+      "custom_annotations.law_firm_names": 1.0
+    }
+  }
+}

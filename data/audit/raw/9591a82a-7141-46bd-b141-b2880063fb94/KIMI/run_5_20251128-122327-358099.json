@@ -1,0 +1,84 @@
+{
+  "document_id": "9591a82a-7141-46bd-b141-b2880063fb94",
+  "metadata": {
+    "case_number": "（2024）新01民终8979号",
+    "court_name": "新疆维吾尔自治区乌鲁木齐市中级人民法院",
+    "court_level": "中级法院",
+    "region": null,
+    "judgment_date": "2025-02-17",
+    "doc_type": null
+  },
+  "case_profile": {
+    "case_type_primary": null,
+    "case_type_secondary": "民间借贷纠纷",
+    "procedure_stage": "二审",
+    "is_appeal": true,
+    "litigant_profile": {
+      "plaintiff_types": [],
+      "defendant_types": []
+    }
+  },
+  "virtual_currency_info": {
+    "involved": true,
+    "currency_types": [
+      "XXX数字货币"
+    ],
+    "activity_type": [
+      "投资"
+    ],
+    "total_amount_cny": 96400
+  },
+  "judicial_analysis": {
+    "legal_characterization": "民间借贷法律关系",
+    "virtual_currency_property_legality": "虚拟货币不具有与法定货币同等的法律地位，不受法律保护",
+    "contract_validity": "有效",
+    "reason_for_invalidity": [],
+    "cited_laws": [
+      "《中华人民共和国民法典》第六百八十条",
+      "《中华人民共和国民法典》第六百七十五条",
+      "《最高人民法院关于审理民间借贷案件适用法律若干问题的规定》第二十八条第二款第一项",
+      "《最高人民法院关于审理民间借贷案件适用法律若干问题的规定》第十六条",
+      "《中华人民共和国民事诉讼法》第一百七十七条第一款第一项"
+    ],
+    "cited_policies": [],
+    "economic_substance_factors": {
+      "actual_fund_flow": "贾某某向杜某某转账96,400元，杜某某向贾某某转账14,090元",
+      "repayment_acknowledgment": "杜某某在微信中承认借款并承诺还款计划",
+      "repayment_marking": "杜某某转账备注'还高利贷'",
+      "investment_control": "贾某某未参与投资操作，未共享投资账户",
+      "evidence_sufficiency": "杜某某未能提供充分证据证明委托投资关系"
+    },
+    "judicial_framing": [
+      "民间借贷法律关系认定",
+      "委托理财关系抗辩审查",
+      "借贷合意与款项交付要件分析",
+      "举证责任分配与证据充分性判断",
+      "经济实质重于形式原则"
+    ]
+  },
+  "meta_ensemble": {
+    "model_votes": {},
+    "agreement_rate": null,
+    "final_label_source": null,
+    "confidence_mean": 0.9,
+    "validation_status": null
+  },
+  "llm_summary": {
+    "outcome_summary": "二审法院驳回上诉，维持原判。杜某某需偿还贾某某借款本金82,310元、利息427.90元（计算至2024年7月25日，之后按年利率3.45%计算）及保全费848.02元。",
+    "reasoning_summary": "法院认为，杜某某未能提供充分证据证明双方存在委托投资关系，而贾某某提供的微信聊天记录显示杜某某承认借款并承诺还款，且杜某某转账备注'还高利贷'，因此认定双方成立民间借贷法律关系。根据转账凭证扣除还款后，确认应偿还本金82,310元及相应逾期利息。",
+    "issues_list": []
+  },
+  "custom_annotations": {
+    "law_firm_names": [],
+    "extraction_confidences": {
+      "judicial_analysis.legal_characterization": 0.95,
+      "judicial_analysis.virtual_currency_property_legality": 0.85,
+      "judicial_analysis.contract_validity": 0.8,
+      "judicial_analysis.cited_laws": 0.95,
+      "judicial_analysis.economic_substance_factors": 0.9,
+      "judicial_analysis.judicial_framing": 0.9,
+      "llm_summary.outcome_summary": 0.95,
+      "llm_summary.reasoning_summary": 0.9
+    }
+  }
+}

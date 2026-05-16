@@ -1,0 +1,182 @@
+{
+  "document_id": "0676dce1-c2e3-4b4f-9fe6-ab4900249e1f",
+  "metadata": {
+    "case_number": {
+      "value": "（2019）辽7401刑初59号"
+    },
+    "court_name": {
+      "value": "辽河人民法院"
+    },
+    "court_level": {
+      "value": "基层法院"
+    },
+    "province": {
+      "value": "辽宁省"
+    },
+    "judgment_date": {
+      "value": "2019-12-19"
+    },
+    "judgment_year": {
+      "value": 2019
+    },
+    "first_instance_case_number": {
+      "value": null
+    }
+  },
+  "case_profile": {
+    "case_cause": {
+      "value": "盗窃罪"
+    },
+    "procedure_stage": {
+      "value": "一审"
+    },
+    "is_appeal": {
+      "value": false
+    },
+    "appeal_result": {
+      "value": null
+    },
+    "is_default_judgment": {
+      "value": false
+    },
+    "transaction_time_span": {
+      "start_year": {
+        "value": 2018
+      },
+      "end_year": {
+        "value": 2019
+      },
+      "crosses_2017_94_notice": {
+        "value": false
+      },
+      "crosses_2021_254_notice": {
+        "value": false
+      }
+    }
+  },
+  "litigant_profile": {
+    "plaintiff_type": {
+      "value": "其他"
+    },
+    "defendant_type": {
+      "value": "自然人"
+    },
+    "counsel_representation": {
+      "plaintiff_has_lawyer": {
+        "value": false
+      },
+      "defendant_has_lawyer": {
+        "value": true
+      }
+    }
+  },
+  "procedural_status": {
+    "ruling_type": {
+      "value": "实体判决"
+    },
+    "criminal_civil_intersection": {
+      "value": false
+    },
+    "jurisdiction_challenge": {
+      "value": false
+    }
+  },
+  "virtual_currency_info": {
+    "involved_currencies": {
+      "value": [
+        "比特币"
+      ]
+    },
+    "is_usdt_involved": {
+      "value": false
+    },
+    "activity_type": {
+      "value": "挖矿"
+    },
+    "transaction_venue": {
+      "value": "未知"
+    },
+    "amounts": {
+      "plaintiff_claimed_cny": {
+        "value": 40183.9
+      },
+      "court_recognized_cny": {
+        "value": 0
+      }
+    }
+  },
+  "evidence_analysis": {
+    "key_evidence_types": {
+      "value": [
+        "微信/聊天记录",
+        "转账记录"
+      ]
+    },
+    "burden_of_proof_ruling": {
+      "value": null
+    },
+    "wallet_ownership_proven": {
+      "value": true
+    }
+  },
+  "judicial_analysis": {
+    "legal_characterization": {
+      "value": null
+    },
+    "currency_property_nature": {
+      "value": null
+    },
+    "contract_validity": {
+      "value": null
+    },
+    "validity_ground": {
+      "value": null
+    },
+    "illegal_debt_determination": {
+      "value": false
+    },
+    "moral_judgment_tags": {
+      "value": []
+    },
+    "remedy_mechanics": {
+      "method": {
+        "value": "刑事处罚"
+      },
+      "fiat_conversion_logic": {
+        "value": "不适用"
+      },
+      "interest_or_fee": {
+        "value": "不适用"
+      }
+    },
+    "cited_norms": {
+      "laws": {
+        "value": [
+          "《中华人民共和国刑法》第二百六十四条",
+          "第二十五条",
+          "第二十六条",
+          "第二十七条",
+          "第六十七条",
+          "第五十二条",
+          "第五十三条",
+          "第六十四条"
+        ]
+      },
+      "policies": {
+        "value": []
+      },
+      "is_public_order_cited": {
+        "value": false
+      }
+    }
+  },
+  "llm_summary": {
+    "outcome_text": {
+      "value": "被告人姜某某、李某1、石某某、张某1犯盗窃罪，分别被判处有期徒刑九个月至拘役五个月不等，并处罚金；作案工具矿机及网络设备被依法没收。"
+    },
+    "core_issue": {
+      "value": "被告人私接油田电力用于运行矿机挖掘虚拟货币，构成盗窃罪。"
+    }
+  },
+  "custom_annotations": {}
+}

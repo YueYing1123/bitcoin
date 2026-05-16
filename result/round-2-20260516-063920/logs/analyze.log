@@ -1,0 +1,2734 @@
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+      name:  <unnamed>
+       log:  D:\BaiduSyncdisk\Doctor\论文\数字货币\数据构建/analyze/logs/analyze.log
+  log type:  text
+ opened on:  27 Jan 2026, 11:13:11
+
+. 
+. di as txt "============================================================"
+============================================================
+
+. di as txt "Stata 全流程分析启动"
+Stata 全流程分析启动
+
+. di as txt "工作目录: `ROOT'"
+工作目录: D:\BaiduSyncdisk\Doctor\论文\数字货币\数据构建
+
+. di as txt "输出目录: `OUTDIR'"
+输出目录: D:\BaiduSyncdisk\Doctor\论文\数字货币\数据构建/analyze
+
+. di as txt "============================================================"
+============================================================
+
+. 
+. // -----------------------------
+. // 1) JSONL -> 扁平 CSV（若尚未生成）
+. // -----------------------------
+. local JSONL "`ROOT'/final_all.jsonl"
+
+. local FIELDS "`ROOT'/docs/fields.yaml"
+
+. local FLATCSV "`DATADIR'/final_all_flat.csv"
+
+. 
+. cap confirm file "`JSONL'"
+
+. if _rc {
+.         di as err "找不到输入文件: `JSONL'"
+.         error 601
+. }
+
+. cap confirm file "`FIELDS'"
+
+. if _rc {
+.         di as err "找不到字段定义: `FIELDS'"
+.         error 601
+. }
+
+. 
+. cap confirm file "`FLATCSV'"
+
+. if _rc {
+.         di as txt "未检测到扁平化 CSV，开始生成: `FLATCSV'"
+. 
+.         // --- 优先：使用 Stata 19 的 Python 集成（无需系统安装额外包）
+.         capture noisily python:
+. import json, csv, os
+. 
+. jsonl_path = r"""`JSONL'"""
+. fields_path = r"""`FIELDS'"""
+. out_csv = r"""`FLATCSV'"""
+. 
+. def parse_fields_yaml(path: str):
+.     fields = []
+.     cur = {}
+.     with open(path, "r", encoding="utf-8") as f:
+.         for raw in f:
+.             line = raw.strip()
+.             if not line or line.startswith("#"):
+.                 continue
+.             if line.startswith("- name:"):
+.                 if cur:
+.                     fields.append(cur)
+.                     cur = {}
+.                 cur["name"] = line.split(":", 1)[1].strip()
+.             elif line.startswith("type:"):
+.                 cur["type"] = line.split(":", 1)[1].strip()
+.             elif line.startswith("target:"):
+.                 cur["target"] = line.split(":", 1)[1].strip()
+.         if cur:
+.             fields.append(cur)
+.     # 保底：仅保留 name/target
+Unknown #command
+.     return [x for x in fields if x.get("name") and x.get("target")]
+. 
+. def normalize_value(v):
+.     # 兼容 {"value": ...}
+Unknown #command
+.     if isinstance(v, dict) and "value" in v:
+.         v = v.get("value")
+.     # 把字符串 "null" 视为缺失
+Unknown #command
+.     if isinstance(v, str) and v.strip().lower() == "null":
+.         return None
+.     if v is None:
+.         return None
+.     if isinstance(v, bool):
+.         return int(v)
+.     if isinstance(v, list):
+.         items = []
+.         for x in v:
+.             if x is None:
+.                 continue
+.             if isinstance(x, dict) and "value" in x:
+.                 x = x.get("value")
+.             if x is None:
+.                 continue
+.             items.append(str(x))
+.         return ";".join(items) if items else None
+.     return v
+. 
+. fields = parse_fields_yaml(fields_path)
+. colnames = ["doc_id"] + [f["name"] for f in fields] + [
+.     "agreement_rate", "final_label_source", "models_used"
+. ]
+. 
+. os.makedirs(os.path.dirname(out_csv), exist_ok=True)
+. with open(out_csv, "w", encoding="utf-8", newline="") as fo:
+.     w = csv.DictWriter(fo, fieldnames=colnames, extrasaction="ignore")
+.     w.writeheader()
+.     with open(jsonl_path, "r", encoding="utf-8") as fi:
+.         for line in fi:
+.             line = line.strip()
+.             if not line:
+.                 continue
+.             obj = json.loads(line)
+.             ff = obj.get("final_fields", {}) or {}
+.             row = {"doc_id": obj.get("doc_id")}
+.             for f in fields:
+.                 target = f["target"]
+.                 key = target  # final_fields 的 key 形如 "metadata.case_number"
+.                 row[f["name"]] = normalize_value(ff.get(key))
+.             metrics = obj.get("metrics", {}) or {}
+.             row["agreement_rate"] = metrics.get("agreement_rate")
+.             row["final_label_source"] = metrics.get("final_label_source")
+.             row["models_used"] = ";".join([str(x) for x in (obj.get("models_used") or [])])
+.             w.writerow(row)
+. 
+. print(f"[python] wrote: {out_csv}")
+. end
+. 
+.         if _rc {
+.                 di as err "Stata 内置 Python 执行失败，尝试调用系统 python 作为降级路径..."
+. 
+.                 // --- 降级：写出一个临时 python 脚本并 shell 调用
+.                 local PYFILE "`TMPDIR'/flatten_final_all.py"
+.                 cap erase "`PYFILE'"
+.                 tempname fh
+.                 file open `fh' using "`PYFILE'", write text replace
+.                 file write `fh' "import json, csv, os" _n
+.                 file write `fh' "" _n
+.                 file write `fh' "JSONL = r'''`JSONL''''" _n
+.                 file write `fh' "FIELDS = r'''`FIELDS''''" _n
+.                 file write `fh' "OUTCSV = r'''`FLATCSV''''" _n
+.                 file write `fh' "" _n
+.                 file write `fh' "def parse_fields_yaml(path):" _n
+.                 file write `fh' "    fields=[]" _n
+.                 file write `fh' "    cur={}" _n
+.                 file write `fh' "    with open(path,'r',encoding='utf-8') as f:" _n
+.                 file write `fh' "        for raw in f:" _n
+.                 file write `fh' "            line=raw.strip()" _n
+.                 file write `fh' "            if not line or line.startswith('#'): continue" _n
+.                 file write `fh' "            if line.startswith('- name:'):" _n
+.                 file write `fh' "                if cur: fields.append(cur); cur={}" _n
+.                 file write `fh' "                cur['name']=line.split(':',1)[1].strip()" _n
+.                 file write `fh' "            elif line.startswith('type:'):" _n
+.                 file write `fh' "                cur['type']=line.split(':',1)[1].strip()" _n
+.                 file write `fh' "            elif line.startswith('target:'):" _n
+.                 file write `fh' "                cur['target']=line.split(':',1)[1].strip()" _n
+.                 file write `fh' "    if cur: fields.append(cur)" _n
+.                 file write `fh' "    return [x for x in fields if x.get('name') and x.get('target')]" _n
+.                 file write `fh' "" _n
+.                 file write `fh' "def normalize_value(v):" _n
+.                 file write `fh' "    if isinstance(v,dict) and 'value' in v: v=v.get('value')" _n
+.                 file write `fh' "    if isinstance(v,str) and v.strip().lower()=='null': return None" _n
+.                 file write `fh' "    if v is None: return None" _n
+.                 file write `fh' "    if isinstance(v,bool): return int(v)" _n
+.                 file write `fh' "    if isinstance(v,list):" _n
+.                 file write `fh' "        items=[]" _n
+.                 file write `fh' "        for x in v:" _n
+.                 file write `fh' "            if x is None: continue" _n
+.                 file write `fh' "            if isinstance(x,dict) and 'value' in x: x=x.get('value')" _n
+.                 file write `fh' "            if x is None: continue" _n
+.                 file write `fh' "            items.append(str(x))" _n
+.                 file write `fh' "        return ';'.join(items) if items else None" _n
+.                 file write `fh' "    return v" _n
+.                 file write `fh' "" _n
+.                 file write `fh' "fields=parse_fields_yaml(FIELDS)" _n
+.                 file write `fh' "cols=['doc_id']+[f['name'] for f in fields]+['agreement_rate','final_label_source','models_used']" _n
+.                 file write `fh' "os.makedirs(os.path.dirname(OUTCSV), exist_ok=True)" _n
+.                 file write `fh' "with open(OUTCSV,'w',encoding='utf-8',newline='') as fo:" _n
+.                 file write `fh' "    w=csv.DictWriter(fo, fieldnames=cols, extrasaction='ignore')" _n
+.                 file write `fh' "    w.writeheader()" _n
+.                 file write `fh' "    with open(JSONL,'r',encoding='utf-8') as fi:" _n
+.                 file write `fh' "        for line in fi:" _n
+.                 file write `fh' "            line=line.strip()" _n
+.                 file write `fh' "            if not line: continue" _n
+.                 file write `fh' "            obj=json.loads(line)" _n
+.                 file write `fh' "            ff=obj.get('final_fields') or {}" _n
+.                 file write `fh' "            row={'doc_id': obj.get('doc_id')}" _n
+.                 file write `fh' "            for f in fields:" _n
+.                 file write `fh' "                row[f['name']] = normalize_value(ff.get(f['target']))" _n
+.                 file write `fh' "            metrics=obj.get('metrics') or {}" _n
+.                 file write `fh' "            row['agreement_rate']=metrics.get('agreement_rate')" _n
+.                 file write `fh' "            row['final_label_source']=metrics.get('final_label_source')" _n
+.                 file write `fh' "            row['models_used']=';'.join([str(x) for x in (obj.get('models_used') or [])])" _n
+.                 file write `fh' "            w.writerow(row)" _n
+.                 file write `fh' "print('wrote', OUTCSV)" _n
+.                 file close `fh'
+. 
+.                 capture noisily shell python "`PYFILE'"
+.                 if _rc {
+.                         di as err "系统 python 也执行失败。请确认："
+.                         di as err "1) Stata 已配置 python（推荐），或 2) 系统 PATH 中可直接运行 python"
+.                         error 9
+.                 }
+.                 // 清理临时脚本（保留 .temp 目录本身）
+.                 cap erase "`PYFILE'"
+.         }
+. }
+
+. else {
+.         di as txt "检测到已有扁平化数据: `FLATCSV'（跳过生成）"
+检测到已有扁平化数据: D:\BaiduSyncdisk\Doctor\论文\数字货币\数据构建/analyze/data/final_all_flat.csv（跳过生成）
+. }
+
+. 
+. // -----------------------------
+. // 2) 导入与基础清洗
+. // -----------------------------
+. import delimited using "`FLATCSV'", clear varnames(1) encoding(UTF-8) stringcols(_all)
+(30 vars, 12,098 obs)
+
+. compress
+  legal_characterization is strL now coalesced
+  (852,303 bytes saved)
+
+. 
+. // 统一缺失值："" 与 "null" 视为缺失
+. foreach v of varlist _all {
+  2.         capture confirm string variable `v'
+  3.         if !_rc {
+  4.                 replace `v' = "" if lower(trim(`v')) == "null"
+  5.         }
+  6. }
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+
+. 
+. // 数值列：金额、agreement_rate（其余保持字符串更稳）
+. capture destring total_amount_cny, replace ignore(" ,")
+
+. capture destring agreement_rate, replace ignore(" ,")
+
+. 
+. // 日期 -> 年份
+. gen double judgment_date_d = daily(judgment_date, "YMD")
+(1 missing value generated)
+
+. format judgment_date_d %td
+
+. gen int judgment_year = year(judgment_date_d)
+(1 missing value generated)
+
+. 
+. // bool 字段（可能来自 True/False 或 0/1）
+. gen byte is_appeal_b = .
+(12,098 missing values generated)
+
+. replace is_appeal_b = 1 if inlist(lower(trim(is_appeal)), "true","1","yes")
+(2,147 real changes made)
+
+. replace is_appeal_b = 0 if inlist(lower(trim(is_appeal)), "false","0","no")
+(9,951 real changes made)
+
+. 
+. gen byte vc_involved_b = .
+(12,098 missing values generated)
+
+. replace vc_involved_b = 1 if inlist(lower(trim(vc_involved)), "true","1","yes")
+(0 real changes made)
+
+. replace vc_involved_b = 0 if inlist(lower(trim(vc_involved)), "false","0","no")
+(0 real changes made)
+
+. 
+. // 合同效力：构造更易建模的分类/二元变量
+. // 注意：数据里常见“未成立”、以及更长的文本表述；因此这里用正则匹配保证不漏样本。
+. gen byte contract_validity_cat = .
+(12,098 missing values generated)
+
+. replace contract_validity_cat = 1 if regexm(trim(contract_validity), "有效")
+(3,035 real changes made)
+
+. replace contract_validity_cat = 2 if regexm(trim(contract_validity), "无效")
+(2,078 real changes made)
+
+. replace contract_validity_cat = 3 if regexm(trim(contract_validity), "部分无效")
+(48 real changes made)
+
+. replace contract_validity_cat = 4 if regexm(trim(contract_validity), "未成立")
+(581 real changes made)
+
+. replace contract_validity_cat = 5 if contract_validity_cat==. & trim(contract_validity)!=""
+(22 real changes made)
+
+. label define contract_validity_cat 1 "有效" 2 "无效" 3 "部分无效" 4 "未成立" 5 "其他"
+
+. label values contract_validity_cat contract_validity_cat
+
+. 
+. // 二元因变量：无效/部分无效/未成立 = 1；有效 = 0；其余缺失
+. gen byte contract_invalid = .
+(12,098 missing values generated)
+
+. replace contract_invalid = 1 if regexm(trim(contract_validity), "无效|未成立")
+(2,659 real changes made)
+
+. replace contract_invalid = 0 if contract_invalid==. & regexm(trim(contract_validity), "有效")
+(3,033 real changes made)
+
+. 
+. // 金额对数（用于回归）
+. gen double ln_amount = ln(total_amount_cny + 1) if !missing(total_amount_cny)
+(12,098 missing values generated)
+
+. 
+. // 编码分类变量（方便回归与聚类）——做成“尽量生成，不阻塞流程”
+. // activity_type_id
+. capture confirm variable activity_type
+
+. if !_rc {
+.         capture confirm string variable activity_type
+.         if !_rc {
+.                 capture encode activity_type, gen(activity_type_id)
+.                 if _rc {
+.                         gen long activity_type_id = .
+.                 }
+.         }
+.         else {
+.                 // 若已是数值，直接复制
+.                 gen long activity_type_id = activity_type
+.         }
+. }
+
+. else {
+.         gen long activity_type_id = .
+. }
+
+. 
+. // court_level_id
+. capture confirm variable court_level
+
+. if !_rc {
+.         capture confirm string variable court_level
+.         if !_rc {
+.                 capture encode court_level, gen(court_level_id)
+.                 if _rc {
+.                         gen long court_level_id = .
+.                 }
+.         }
+.         else {
+.                 gen long court_level_id = court_level
+.         }
+. }
+
+. else {
+.         gen long court_level_id = .
+. }
+
+. 
+. // region_id
+. capture confirm variable region
+
+. if !_rc {
+.         capture confirm string variable region
+.         if !_rc {
+.                 capture encode region, gen(region_id)
+.                 if _rc {
+.                         gen long region_id = .
+.                 }
+.         }
+.         else {
+.                 gen long region_id = region
+.         }
+. }
+
+. else {
+.         gen long region_id = .
+. }
+
+. 
+. // court_name_id
+. capture confirm variable court_name
+
+. if !_rc {
+.         capture confirm string variable court_name
+.         if !_rc {
+.                 capture encode court_name, gen(court_name_id)
+.                 if _rc {
+.                         gen long court_name_id = .
+.                 }
+.         }
+.         else {
+.                 gen long court_name_id = court_name
+.         }
+. }
+
+. else {
+.         gen long court_name_id = .
+. }
+
+. 
+. // procedure_stage_id（用于 DID/回归控制）
+. capture confirm variable procedure_stage
+
+. if !_rc {
+.         capture confirm string variable procedure_stage
+.         if !_rc {
+.                 capture encode procedure_stage, gen(procedure_stage_id)
+.                 if _rc gen long procedure_stage_id = .
+.         }
+.         else gen long procedure_stage_id = procedure_stage
+. }
+
+. else gen long procedure_stage_id = .
+
+. 
+. // doc_type_id（可选控制）
+. capture confirm variable doc_type
+
+. if !_rc {
+.         capture confirm string variable doc_type
+.         if !_rc {
+.                 capture encode doc_type, gen(doc_type_id)
+.                 if _rc gen long doc_type_id = .
+.         }
+.         else gen long doc_type_id = doc_type
+. }
+
+. else gen long doc_type_id = .
+
+. 
+. // case_type_primary_id / case_type_secondary_id（可选控制）
+. capture confirm variable case_type_primary
+
+. if !_rc {
+.         capture confirm string variable case_type_primary
+.         if !_rc {
+.                 capture encode case_type_primary, gen(case_type_primary_id)
+.                 if _rc gen long case_type_primary_id = .
+.         }
+.         else gen long case_type_primary_id = case_type_primary
+. }
+
+. else gen long case_type_primary_id = .
+
+. 
+. capture confirm variable case_type_secondary
+
+. if !_rc {
+.         capture confirm string variable case_type_secondary
+.         if !_rc {
+.                 capture encode case_type_secondary, gen(case_type_secondary_id)
+.                 if _rc gen long case_type_secondary_id = .
+.         }
+.         else gen long case_type_secondary_id = case_type_secondary
+. }
+
+. else gen long case_type_secondary_id = .
+
+. 
+. // 保存一份 dta 供后续直接使用
+. save "`DATADIR'/final_all_flat.dta", replace
+file D:\BaiduSyncdisk\Doctor\论文\数字货币\数据构建/analyze/data/final_all_flat.dta saved
+
+. 
+. // -----------------------------
+. // 3) 描述统计 & 建表（导出到 Excel）
+. // -----------------------------
+. di as txt "开始描述统计与建表..."
+开始描述统计与建表...
+
+. 
+. // 表1：按年份案件量
+. preserve
+
+. keep if !missing(judgment_year)
+(1 observation deleted)
+
+. gen byte one = 1
+
+. collapse (sum) N=one, by(judgment_year)
+
+. sort judgment_year
+
+. export excel using "`TABLEDIR'/tab_cases_by_year.xlsx", firstrow(variables) replace
+file D:\BaiduSyncdisk\Doctor\论文\数字货币\数据构建/analyze/tables/tab_cases_by_year.xlsx saved
+
+. restore
+
+. 
+. // 表2：合同效力分布
+. preserve
+
+. gen byte one = 1
+
+. collapse (sum) N=one, by(contract_validity_cat)
+
+. export excel using "`TABLEDIR'/tab_contract_validity_dist.xlsx", firstrow(variables) replace
+file D:\BaiduSyncdisk\Doctor\论文\数字货币\数据构建/analyze/tables/tab_contract_validity_dist.xlsx saved
+
+. restore
+
+. 
+. // 表3：活动类型 Top20
+. preserve
+
+. keep if trim(activity_type)!=""
+(4,074 observations deleted)
+
+. gen byte one = 1
+
+. collapse (sum) N=one, by(activity_type)
+
+. gsort -N
+
+. keep in 1/20
+(181 observations deleted)
+
+. export excel using "`TABLEDIR'/tab_activity_type_top20.xlsx", firstrow(variables) replace
+file D:\BaiduSyncdisk\Doctor\论文\数字货币\数据构建/analyze/tables/tab_activity_type_top20.xlsx saved
+
+. restore
+
+. 
+. // -----------------------------
+. // 4) 回归分析（logit）& 输出系数表
+. // -----------------------------
+. di as txt "开始回归分析（logit）..."
+开始回归分析（logit）...
+
+. local REG_STATUS "not_run"
+
+. local REG_NOTE ""
+
+. 
+. // 预备：esttab（estout）用于导出 RTF 表格
+. local HAVE_ESTTAB = 0
+
+. cap which esttab
+
+. if _rc {
+.         capture noisily ssc install estout, replace
+.         cap which esttab
+. }
+
+. if !_rc local HAVE_ESTTAB = 1
+
+. 
+. // 聚类变量：优先 region（如果 region_id 有足够非缺失），否则 court_name
+. local CLUSTER_ID "court_name_id"
+
+. quietly count if !missing(region_id)
+
+. if r(N) > 0 {
+.         local CLUSTER_ID "region_id"
+. }
+
+. 
+. // 仅使用因变量非缺失的样本；若样本不足则跳过回归（避免 r(2000)）
+. quietly count if !missing(contract_invalid)
+
+. if r(N) < 30 {
+.         di as err "回归被跳过：contract_invalid 非缺失样本量不足（N=" r(N) "）。请检查 contract_validity 字段质量。"
+.         local REG_STATUS "skipped"
+.         local REG_NOTE "insufficient non-missing contract_invalid"
+.         preserve
+.         clear
+.         set obs 1
+.         gen note = "Regression skipped: insufficient non-missing contract_invalid (N=" + string(r(N)) + ")"
+.         export excel using "`TABLEDIR'/reg_logit_contract_invalid.xlsx", firstrow(variables) replace
+.         restore
+. }
+
+. else {
+.         preserve
+.         keep if !missing(contract_invalid)
+(6,406 observations deleted)
+. 
+.         // 为回归构造“缺失可用”的自变量，避免因缺失导致全部样本被剔除
+.         // 1) 分类变量缺失 -> 归入 0 类
+.         capture confirm variable activity_type_id
+.         if !_rc {
+.                 replace activity_type_id = 0 if missing(activity_type_id)
+(1,220 real changes made)
+.                 capture label define activity_type_id 0 "缺失", add
+.                 capture label values activity_type_id activity_type_id
+.         }
+.         capture confirm variable court_level_id
+.         if !_rc {
+.                 replace court_level_id = 0 if missing(court_level_id)
+(0 real changes made)
+.                 capture label define court_level_id 0 "缺失", add
+.                 capture label values court_level_id court_level_id
+.         }
+.         replace judgment_year = 0 if missing(judgment_year)
+(0 real changes made)
+. 
+.         // 额外控制变量：procedure_stage / doc_type / case_type_primary / case_type_secondary（缺失归入 0）
+.         foreach vv in procedure_stage_id doc_type_id case_type_primary_id case_type_secondary_id {
+  2.                 capture confirm variable `vv'
+  3.                 if !_rc replace `vv' = 0 if missing(`vv')
+  4.         }
+(0 real changes made)
+(5,692 real changes made)
+(5,692 real changes made)
+(5,692 real changes made)
+. 
+.         // 2) 数值变量缺失 -> 置 0 并加缺失指示
+.         gen byte ln_amount_miss = missing(ln_amount)
+.         replace ln_amount = 0 if missing(ln_amount)
+(5,692 real changes made)
+. 
+.         gen byte is_appeal_miss = missing(is_appeal_b)
+.         replace is_appeal_b = 0 if missing(is_appeal_b)
+(0 real changes made)
+. 
+.         // 3) 聚类变量缺失 -> 归入 0 类（否则 vce(cluster) 会丢观测）
+.         capture confirm variable `CLUSTER_ID'
+.         if !_rc {
+.                 replace `CLUSTER_ID' = 0 if missing(`CLUSTER_ID')
+(0 real changes made)
+.         }
+. 
+.         // 若仍无可用样本，直接跳过
+.         quietly count
+.         if r(N) < 30 {
+.                 di as err "回归被跳过：清洗后可用样本量不足（N=" r(N) "）。"
+.                 local REG_STATUS "skipped"
+.                 local REG_NOTE "insufficient usable sample after handling missings"
+.                 clear
+.                 set obs 1
+.                 gen note = "Regression skipped: insufficient usable sample after handling missings (N=" + string(r(N)) + ")"
+.                 export excel using "`TABLEDIR'/reg_logit_contract_invalid.xlsx", firstrow(variables) replace
+.                 restore
+.         }
+.         else {
+.         // 回归：合同“无效/部分无效/未成立”概率 ~ 活动类型 + 法院层级 + 年份 + 金额 + 是否二审
+.                 capture noisily logit contract_invalid ///
+>                         i.activity_type_id i.court_level_id i.judgment_year ///
+>                         i.procedure_stage_id i.doc_type_id i.case_type_primary_id i.case_type_secondary_id ///
+>                         c.ln_amount i.ln_amount_miss ///
+>                         i.is_appeal_b i.is_appeal_miss, ///
+>                         vce(cluster `CLUSTER_ID')
+
+note: 1.activity_type_id != 0 predicts success perfectly;
+      1.activity_type_id omitted and 1 obs not used.
+
+note: 4.activity_type_id != 0 predicts failure perfectly;
+      4.activity_type_id omitted and 1 obs not used.
+
+note: 7.activity_type_id != 0 predicts success perfectly;
+      7.activity_type_id omitted and 1 obs not used.
+
+note: 9.activity_type_id != 0 predicts success perfectly;
+      9.activity_type_id omitted and 4 obs not used.
+
+note: 10.activity_type_id != 0 predicts failure perfectly;
+      10.activity_type_id omitted and 1 obs not used.
+
+note: 18.activity_type_id != 0 predicts success perfectly;
+      18.activity_type_id omitted and 1 obs not used.
+
+note: 19.activity_type_id != 0 predicts success perfectly;
+      19.activity_type_id omitted and 1 obs not used.
+
+note: 22.activity_type_id != 0 predicts success perfectly;
+      22.activity_type_id omitted and 1 obs not used.
+
+note: 24.activity_type_id != 0 predicts failure perfectly;
+      24.activity_type_id omitted and 2 obs not used.
+
+note: 30.activity_type_id != 0 predicts failure perfectly;
+      30.activity_type_id omitted and 1 obs not used.
+
+note: 36.activity_type_id != 0 predicts success perfectly;
+      36.activity_type_id omitted and 1 obs not used.
+
+note: 43.activity_type_id != 0 predicts success perfectly;
+      43.activity_type_id omitted and 1 obs not used.
+
+note: 44.activity_type_id != 0 predicts success perfectly;
+      44.activity_type_id omitted and 1 obs not used.
+
+note: 45.activity_type_id != 0 predicts success perfectly;
+      45.activity_type_id omitted and 1 obs not used.
+
+note: 46.activity_type_id != 0 predicts failure perfectly;
+      46.activity_type_id omitted and 1 obs not used.
+
+note: 47.activity_type_id != 0 predicts failure perfectly;
+      47.activity_type_id omitted and 2 obs not used.
+
+note: 48.activity_type_id != 0 predicts failure perfectly;
+      48.activity_type_id omitted and 4 obs not used.
+
+note: 49.activity_type_id != 0 predicts success perfectly;
+      49.activity_type_id omitted and 1 obs not used.
+
+note: 51.activity_type_id != 0 predicts failure perfectly;
+      51.activity_type_id omitted and 1 obs not used.
+
+note: 52.activity_type_id != 0 predicts success perfectly;
+      52.activity_type_id omitted and 1 obs not used.
+
+note: 53.activity_type_id != 0 predicts failure perfectly;
+      53.activity_type_id omitted and 3 obs not used.
+
+note: 54.activity_type_id != 0 predicts failure perfectly;
+      54.activity_type_id omitted and 2 obs not used.
+
+note: 55.activity_type_id != 0 predicts failure perfectly;
+      55.activity_type_id omitted and 1 obs not used.
+
+note: 59.activity_type_id != 0 predicts success perfectly;
+      59.activity_type_id omitted and 1 obs not used.
+
+note: 60.activity_type_id != 0 predicts failure perfectly;
+      60.activity_type_id omitted and 2 obs not used.
+
+note: 61.activity_type_id != 0 predicts failure perfectly;
+      61.activity_type_id omitted and 1 obs not used.
+
+note: 62.activity_type_id != 0 predicts success perfectly;
+      62.activity_type_id omitted and 1 obs not used.
+
+note: 64.activity_type_id != 0 predicts failure perfectly;
+      64.activity_type_id omitted and 1 obs not used.
+
+note: 65.activity_type_id != 0 predicts failure perfectly;
+      65.activity_type_id omitted and 1 obs not used.
+
+note: 66.activity_type_id != 0 predicts success perfectly;
+      66.activity_type_id omitted and 1 obs not used.
+
+note: 80.activity_type_id != 0 predicts success perfectly;
+      80.activity_type_id omitted and 2 obs not used.
+
+note: 83.activity_type_id != 0 predicts failure perfectly;
+      83.activity_type_id omitted and 3 obs not used.
+
+note: 84.activity_type_id != 0 predicts success perfectly;
+      84.activity_type_id omitted and 1 obs not used.
+
+note: 89.activity_type_id != 0 predicts failure perfectly;
+      89.activity_type_id omitted and 1 obs not used.
+
+note: 90.activity_type_id != 0 predicts failure perfectly;
+      90.activity_type_id omitted and 1 obs not used.
+
+note: 91.activity_type_id != 0 predicts failure perfectly;
+      91.activity_type_id omitted and 12 obs not used.
+
+note: 92.activity_type_id != 0 predicts failure perfectly;
+      92.activity_type_id omitted and 1 obs not used.
+
+note: 97.activity_type_id != 0 predicts success perfectly;
+      97.activity_type_id omitted and 1 obs not used.
+
+note: 98.activity_type_id != 0 predicts success perfectly;
+      98.activity_type_id omitted and 1 obs not used.
+
+note: 111.activity_type_id != 0 predicts failure perfectly;
+      111.activity_type_id omitted and 1 obs not used.
+
+note: 113.activity_type_id != 0 predicts success perfectly;
+      113.activity_type_id omitted and 1 obs not used.
+
+note: 115.activity_type_id != 0 predicts failure perfectly;
+      115.activity_type_id omitted and 1 obs not used.
+
+note: 117.activity_type_id != 0 predicts success perfectly;
+      117.activity_type_id omitted and 1 obs not used.
+
+note: 119.activity_type_id != 0 predicts success perfectly;
+      119.activity_type_id omitted and 2 obs not used.
+
+note: 121.activity_type_id != 0 predicts failure perfectly;
+      121.activity_type_id omitted and 1 obs not used.
+
+note: 124.activity_type_id != 0 predicts success perfectly;
+      124.activity_type_id omitted and 3 obs not used.
+
+note: 125.activity_type_id != 0 predicts success perfectly;
+      125.activity_type_id omitted and 1 obs not used.
+
+note: 126.activity_type_id != 0 predicts failure perfectly;
+      126.activity_type_id omitted and 1 obs not used.
+
+note: 127.activity_type_id != 0 predicts failure perfectly;
+      127.activity_type_id omitted and 1 obs not used.
+
+note: 128.activity_type_id != 0 predicts failure perfectly;
+      128.activity_type_id omitted and 1 obs not used.
+
+note: 133.activity_type_id != 0 predicts failure perfectly;
+      133.activity_type_id omitted and 1 obs not used.
+
+note: 135.activity_type_id != 0 predicts failure perfectly;
+      135.activity_type_id omitted and 1 obs not used.
+
+note: 137.activity_type_id != 0 predicts failure perfectly;
+      137.activity_type_id omitted and 2 obs not used.
+
+note: 138.activity_type_id != 0 predicts failure perfectly;
+      138.activity_type_id omitted and 1 obs not used.
+
+note: 139.activity_type_id != 0 predicts success perfectly;
+      139.activity_type_id omitted and 1 obs not used.
+
+note: 140.activity_type_id != 0 predicts failure perfectly;
+      140.activity_type_id omitted and 1 obs not used.
+
+note: 142.activity_type_id != 0 predicts success perfectly;
+      142.activity_type_id omitted and 1 obs not used.
+
+note: 145.activity_type_id != 0 predicts success perfectly;
+      145.activity_type_id omitted and 1 obs not used.
+
+note: 148.activity_type_id != 0 predicts success perfectly;
+      148.activity_type_id omitted and 1 obs not used.
+
+note: 150.activity_type_id != 0 predicts failure perfectly;
+      150.activity_type_id omitted and 1 obs not used.
+
+note: 154.activity_type_id != 0 predicts failure perfectly;
+      154.activity_type_id omitted and 1 obs not used.
+
+note: 157.activity_type_id != 0 predicts success perfectly;
+      157.activity_type_id omitted and 1 obs not used.
+
+note: 160.activity_type_id != 0 predicts failure perfectly;
+      160.activity_type_id omitted and 1 obs not used.
+
+note: 161.activity_type_id != 0 predicts success perfectly;
+      161.activity_type_id omitted and 1 obs not used.
+
+note: 162.activity_type_id != 0 predicts success perfectly;
+      162.activity_type_id omitted and 1 obs not used.
+
+note: 167.activity_type_id != 0 predicts success perfectly;
+      167.activity_type_id omitted and 3 obs not used.
+
+note: 168.activity_type_id != 0 predicts failure perfectly;
+      168.activity_type_id omitted and 1 obs not used.
+
+note: 170.activity_type_id != 0 predicts failure perfectly;
+      170.activity_type_id omitted and 1 obs not used.
+
+note: 172.activity_type_id != 0 predicts failure perfectly;
+      172.activity_type_id omitted and 1 obs not used.
+
+note: 174.activity_type_id != 0 predicts failure perfectly;
+      174.activity_type_id omitted and 1 obs not used.
+
+note: 175.activity_type_id != 0 predicts failure perfectly;
+      175.activity_type_id omitted and 1 obs not used.
+
+note: 176.activity_type_id != 0 predicts failure perfectly;
+      176.activity_type_id omitted and 4 obs not used.
+
+note: 179.activity_type_id != 0 predicts failure perfectly;
+      179.activity_type_id omitted and 1 obs not used.
+
+note: 181.activity_type_id != 0 predicts success perfectly;
+      181.activity_type_id omitted and 8 obs not used.
+
+note: 185.activity_type_id != 0 predicts failure perfectly;
+      185.activity_type_id omitted and 1 obs not used.
+
+note: 194.activity_type_id != 0 predicts success perfectly;
+      194.activity_type_id omitted and 4 obs not used.
+
+note: 197.activity_type_id != 0 predicts success perfectly;
+      197.activity_type_id omitted and 1 obs not used.
+
+note: 201.activity_type_id != 0 predicts success perfectly;
+      201.activity_type_id omitted and 1 obs not used.
+
+note: 2011.judgment_year != 0 predicts success perfectly;
+      2011.judgment_year omitted and 1 obs not used.
+
+note: 2012.judgment_year != 0 predicts failure perfectly;
+      2012.judgment_year omitted and 1 obs not used.
+
+note: 6.procedure_stage_id != 0 predicts success perfectly;
+      6.procedure_stage_id omitted and 1 obs not used.
+
+note: 2025.judgment_year omitted because of collinearity.
+note: 0.doc_type_id omitted because of collinearity.
+note: 0.case_type_primary_id omitted because of collinearity.
+note: 0.case_type_secondary_id omitted because of collinearity.
+note: ln_amount omitted because of collinearity.
+note: 1.ln_amount_miss omitted because of collinearity.
+note: 0.is_appeal_miss omitted because of collinearity.
+Iteration 0:  Log pseudolikelihood = -3846.2771  
+Iteration 1:  Log pseudolikelihood = -3221.7819  
+Iteration 2:  Log pseudolikelihood = -3215.9862  
+Iteration 3:  Log pseudolikelihood = -3215.9504  
+Iteration 4:  Log pseudolikelihood = -3215.9503  
+
+Logistic regression                                     Number of obs =  5,566
+                                                        Wald chi2(48) =      .
+                                                        Prob > chi2   =      .
+Log pseudolikelihood = -3215.9503                       Pseudo R2     = 0.1639
+
+                                     (Std. err. adjusted for 1,725 clusters in court_name_id)
+---------------------------------------------------------------------------------------------
+                            |               Robust
+           contract_invalid | Coefficient  std. err.      z    P>|z|     [95% conf. interval]
+----------------------------+----------------------------------------------------------------
+           activity_type_id |
+                  不当得利  |          0  (empty)
+                    不适用  |  -.5305127   .7398265    -0.72   0.473    -1.980546    .9195206
+                  买卖关系  |          0  (empty)
+                  买卖合同  |   1.492319   .2456148     6.08   0.000     1.010923    1.973715
+              买卖虚拟货币  |          0  (empty)
+                交易所炒币  |   2.007975   .2734903     7.34   0.000     1.471944    2.544007
+                  传销活动  |          0  (empty)
+      信息网络买卖合同纠纷  |          0  (empty)
+                      其他  |   .5530918   .3062769     1.81   0.071    -.0471999    1.153383
+                  发币/ICO  |   3.624616   .2427013    14.93   0.000      3.14893    4.100302
+          场外OTC/私下转账  |   2.819428   1.036184     2.72   0.007     .7885447    4.850311
+             场外交易(OTC)  |      2.455   .2049563    11.98   0.000     2.053293    2.856707
+             委托理财/代投  |   1.623297   .1239687    13.09   0.000     1.380323    1.866272
+                  广告推广  |          0  (empty)
+                  开设赌场  |          0  (empty)
+                  技术服务  |   1.135673   .2552536     4.45   0.000     .6353851    1.635961
+                      投资  |    2.01146   1.316106     1.53   0.126    -.5680596     4.59098
+             投资/委托理财  |          0  (empty)
+                  投资合同  |          0  (empty)
+              投资虚拟货币  |   1.814703   .7766393     2.34   0.019     .2925176    3.336888
+                      挖矿  |    1.22133   .1511641     8.08   0.000     .9250534    1.517606
+              教育培训合同  |          0  (empty)
+                      未知  |   .3412343   .4950261     0.69   0.491     -.628999    1.311468
+                  民间借贷  |   .6126679   .6196985     0.99   0.323    -.6019189    1.827255
+                      炒币  |          0  (empty)
+        组织、领导传销活动  |          0  (empty)
+      组织、领导传销活动罪  |          0  (empty)
+          组织领导传销活动  |          0  (empty)
+                  网络借贷  |          0  (empty)
+              网络服务合同  |          0  (empty)
+          网络服务合同纠纷  |          0  (empty)
+                  网络消费  |          0  (empty)
+                  网络直播  |          0  (empty)
+              网络直播打赏  |          0  (empty)
+              网络虚拟财产  |          0  (empty)
+              网络购物合同  |          0  (empty)
+          网络购物合同纠纷  |          0  (empty)
+                虚拟币投资  |          0  (empty)
+              虚拟物品交易  |          0  (empty)
+              虚拟礼物打赏  |          0  (empty)
+         虚拟股票/虚拟理财  |          0  (empty)
+                  虚拟财产  |   1.378222   1.594184     0.86   0.387    -1.746321    4.502766
+              虚拟财产交易  |          0  (empty)
+              虚拟财产被盗  |          0  (empty)
+                  虚拟货币  |          0  (empty)
+              虚拟货币买卖  |   2.389182   .3187875     7.49   0.000      1.76437    3.013994
+              虚拟货币交易  |   2.297043   .2725544     8.43   0.000     1.762846     2.83124
+              虚拟货币传销  |          0  (empty)
+              虚拟货币使用  |          0  (empty)
+              虚拟货币保管  |          0  (empty)
+              虚拟货币借贷  |   .7336795   .1535118     4.78   0.000      .432802    1.034557
+              虚拟货币充值  |   1.592801   1.447358     1.10   0.271    -1.243968    4.429571
+      虚拟货币充值代理服务  |          0  (empty)
+          虚拟货币充值服务  |          0  (empty)
+              虚拟货币兑换  |          0  (empty)
+         虚拟货币兑换/调整  |          0  (empty)
+          虚拟货币发币/ICO  |          0  (empty)
+              虚拟货币发行  |          0  (empty)
+              虚拟货币打赏  |   1.378689   1.072523     1.29   0.199    -.7234172    3.480796
+              虚拟货币投资  |   1.474307   .1866588     7.90   0.000     1.108463    1.840152
+     虚拟货币投资/委托购买  |          0  (empty)
+         虚拟货币投资/炒币  |          0  (empty)
+         虚拟货币投资/理财  |    2.37958   .9390393     2.53   0.011     .5390973    4.220064
+     虚拟货币投资/股份转让  |          0  (empty)
+ 虚拟货币投资/虚拟货币交易  |          0  (empty)
+          虚拟货币投资诈骗  |          0  (empty)
+              虚拟货币抵扣  |          0  (empty)
+              虚拟货币支付  |   .7192246     .84487     0.85   0.395    -.9366901    2.375139
+          虚拟货币支付工资  |          0  (empty)
+      虚拟货币支付非法获利  |          0  (empty)
+          虚拟货币收益分成  |          0  (empty)
+          虚拟货币收益分配  |          0  (empty)
+              虚拟货币服务  |          0  (empty)
+              虚拟货币消费  |   1.698545   1.004068     1.69   0.091    -.2693926    3.666482
+         虚拟货币消费/打赏  |          0  (empty)
+        虚拟货币游戏内使用  |          0  (empty)
+          虚拟货币游戏服务  |          0  (empty)
+          虚拟货币游戏消费  |          0  (empty)
+          虚拟货币游戏道具  |          0  (empty)
+          虚拟货币游戏金币  |          0  (empty)
+      虚拟货币炒作虚拟股票  |          0  (empty)
+              虚拟货币炒币  |   3.047665   1.134198     2.69   0.007     .8246781    5.270652
+              虚拟货币理财  |   .3305484   1.367052     0.24   0.809    -2.348824    3.009921
+         虚拟货币理财/代投  |          0  (empty)
+        虚拟货币的非法获取  |          0  (empty)
+          虚拟货币直播打赏  |          0  (empty)
+              虚拟货币经营  |          0  (empty)
+              虚拟货币结算  |   1.866068   .1265134    14.75   0.000     1.618107     2.11403
+        虚拟货币结算劳务费  |          0  (empty)
+         虚拟货币补偿/兑换  |          0  (empty)
+              虚拟货币诈骗  |          0  (empty)
+          虚拟货币账户转让  |          0  (empty)
+              虚拟货币购买  |   1.419871   .8568238     1.66   0.097    -.2594724    3.099215
+              虚拟货币赌博  |          0  (empty)
+              虚拟货币转换  |          0  (empty)
+              虚拟货币转让  |          0  (empty)
+              虚拟货币返利  |          0  (empty)
+         虚拟货币返现/积分  |          0  (empty)
+              虚拟货币返还  |          0  (empty)
+              虚拟货币销售  |          0  (empty)
+          虚拟货币项目投资  |          0  (empty)
+                      诈骗  |          0  (empty)
+                  质押借款  |          0  (empty)
+          非法吸收公众存款  |          0  (empty)
+非法获取公民个人信息并出售  |          0  (empty)
+              非法金融活动  |   4.459344   1.033448     4.32   0.000     2.433824    6.484864
+                  非法集资  |          0  (empty)
+                            |
+             court_level_id |
+                      中院  |  -.3243834   .2032579    -1.60   0.111    -.7227615    .0739948
+                  基层法院  |  -.7416343   .5331317    -1.39   0.164    -1.786553    .3032846
+                    最高法  |  -.7744312   .2926173    -2.65   0.008    -1.347951   -.2009119
+                  高级法院  |  -.0628041   .7057157    -0.09   0.929    -1.445981    1.320373
+                      高院  |  -.8708516   .8758053    -0.99   0.320    -2.587398    .8456952
+                            |
+              judgment_year |
+                      2011  |          0  (empty)
+                      2012  |          0  (empty)
+                      2013  |   .7789136   1.090362     0.71   0.475    -1.358158    2.915985
+                      2014  |  -.0476848   .9450168    -0.05   0.960    -1.899884    1.804514
+                      2015  |  -.2012285   .9503371    -0.21   0.832    -2.063855    1.661398
+                      2016  |   .0913928    .862798     0.11   0.916     -1.59966    1.782446
+                      2017  |   .2322231   .8154505     0.28   0.776     -1.36603    1.830477
+                      2018  |   .4686109   .7791224     0.60   0.548    -1.058441    1.995663
+                      2019  |   .7211348   .7767738     0.93   0.353    -.8013139    2.243583
+                      2020  |   .7593946   .7683068     0.99   0.323     -.746459    2.265248
+                      2021  |     .79687    .763475     1.04   0.297    -.6995135    2.293253
+                      2022  |   1.068879   .7673943     1.39   0.164    -.4351858    2.572944
+                      2023  |   1.187768   .7677857     1.55   0.122    -.3170642    2.692601
+                      2024  |   1.432137   .7693238     1.86   0.063    -.0757097    2.939984
+                      2025  |          0  (omitted)
+                            |
+         procedure_stage_id |
+                      二审  |  -.5975257   .6709724    -0.89   0.373    -1.912608    .7175561
+                 二审/终审  |  -.4266708   .7095841    -0.60   0.548     -1.81743    .9640885
+                      再审  |   .4893024   .5985881     0.82   0.414    -.6839087    1.662513
+          发回重审后的一审  |          0  (empty)
+                            |
+                doc_type_id |
+                         0  |          0  (omitted)
+                            |
+       case_type_primary_id |
+                         0  |          0  (omitted)
+                            |
+     case_type_secondary_id |
+                         0  |          0  (omitted)
+                  ln_amount |          0  (omitted)
+           1.ln_amount_miss |          0  (omitted)
+              1.is_appeal_b |  -.0742545   .4938061    -0.15   0.880    -1.042097    .8935877
+           0.is_appeal_miss |          0  (omitted)
+                      _cons |   -1.61017   .9081161    -1.77   0.076    -3.390044    .1697052
+---------------------------------------------------------------------------------------------
+.                 if _rc {
+.                         di as err "回归失败（已捕获，不影响后续画图/出表），rc=" _rc
+.                         local REG_STATUS "failed"
+.                         local REG_NOTE "logit failed"
+.                         clear
+.                         set obs 1
+.                         gen note = "Regression failed (captured). rc=" + string(_rc)
+.                         export excel using "`TABLEDIR'/reg_logit_contract_invalid.xlsx", firstrow(variables) replace
+.                         restore
+.                 }
+.                 else {
+.                         estimates store m1
+.                         local REG_STATUS "ok"
+.                         local REG_NOTE ""
+. 
+.                         // 系数表导出（自实现，不依赖外部包）
+.                         tempfile coef
+.                         postfile __p str80 term double b se z p using "`coef'", replace
+(file C:\Users\12427\AppData\Local\Temp\ST_c1d0_000005.tmp not found)
+.                         matrix b = e(b)
+.                         matrix V = e(V)
+.                         local cn : colnames b
+.                         local k : word count `cn'
+.                         forvalues i=1/`k' {
+  2.                                 local term : word `i' of `cn'
+  3.                                 scalar bi = b[1,`i']
+  4.                                 scalar sei = sqrt(V[`i',`i'])
+  5.                                 scalar zi = bi / sei
+  6.                                 scalar pi = 2*normal(-abs(zi))
+  7.                                 post __p ("`term'") (bi) (sei) (zi) (pi)
+  8.                         }
+.                         postclose __p
+.                         use "`coef'", clear
+.                         export excel using "`TABLEDIR'/reg_logit_contract_invalid.xlsx", firstrow(variables) replace
+file D:\BaiduSyncdisk\Doctor\论文\数字货币\数据构建/analyze/tables/reg_logit_contract_invalid.xlsx saved
+.                         // 另存 CSV 供 RTF 报告读取（避免解析 xlsx/dta 的依赖）
+.                         export delimited using "`DATADIR'/reg_logit_contract_invalid.csv", replace
+file D:\BaiduSyncdisk\Doctor\论文\数字货币\数据构建/analyze/data/reg_logit_contract_invalid.csv saved
+.                         // 同步保存一份 dta，供 RTF 报告读取
+.                         save "`DATADIR'/reg_logit_contract_invalid.dta", replace
+file D:\BaiduSyncdisk\Doctor\论文\数字货币\数据构建/analyze/data/reg_logit_contract_invalid.dta saved
+.                         restore
+.                 }
+.         }
+. }
+
+. 
+. // -----------------------------
+. // 4B) DID：2017/2021 两次政策冲击对合同效力的影响
+. //     处理组：交易类案件（基于 activity_type 文本匹配）
+. //     时间：判决日期（judgment_date）断点：2017-09-04（94公告）/ 2021-09-24（254通知）
+. // -----------------------------
+. di as txt "开始 DID（2017/2021 政策冲击）..."
+开始 DID（2017/2021 政策冲击）...
+
+. 
+. // 交易类标记：尽量捕捉 OTC/交易/买卖/发币/ICO/兑换 等
+. gen byte trade_group = .
+(12,098 missing values generated)
+
+. replace trade_group = 1 if regexm(trim(activity_type), "场外交易|交易|买卖|发币|ICO|兑换")
+(2,867 real changes made)
+
+. replace trade_group = 0 if trade_group==. & trim(activity_type)!=""
+(5,157 real changes made)
+
+. label define trade_group 0 "非交易类" 1 "交易类"
+
+. label values trade_group trade_group
+
+. 
+. // 样本限定：民事/商事且确实讨论合同效力
+. // - “讨论合同效力”：contract_invalid 非缺失（等价于 contract_validity 能映射到有效/无效/未成立）
+. // - “民事/商事”：优先用 case_type_primary / doc_type；若缺失则回退到案号 case_number 的“民”字识别
+. gen byte sample_civil_commercial = 0
+
+. capture confirm string variable case_type_primary
+
+. if !_rc {
+.         replace sample_civil_commercial = 1 if regexm(trim(case_type_primary), "民|商|合同|买卖|委托|借贷|不当得利|侵权") ///
+>                 & !regexm(trim(case_type_primary), "刑|行政")
+(0 real changes made)
+. }
+
+. capture confirm string variable doc_type
+
+. if !_rc {
+.         replace sample_civil_commercial = 1 if sample_civil_commercial==0 ///
+>                 & regexm(trim(doc_type), "民|商") ///
+>                 & !regexm(trim(doc_type), "刑|行政")
+(0 real changes made)
+. }
+
+. capture confirm string variable case_number
+
+. if !_rc {
+.         replace sample_civil_commercial = 1 if sample_civil_commercial==0 ///
+>                 & regexm(trim(case_number), "民") ///
+>                 & !regexm(trim(case_number), "刑|行")
+(6,037 real changes made)
+. }
+
+. 
+. // 政策时间点（按判决日期近似，若你未来补充交易发生时间，可替换为 transaction_time_span）
+. local P2017 = td(04sep2017)
+
+. local P2021 = td(24sep2021)
+
+. gen byte post2017 = (judgment_date_d >= `P2017') if !missing(judgment_date_d)
+(1 missing value generated)
+
+. gen byte post2021 = (judgment_date_d >= `P2021') if !missing(judgment_date_d)
+(1 missing value generated)
+
+. 
+. // 月度时间固定效应（更细粒度）
+. gen int ym = mofd(judgment_date_d)
+(1 missing value generated)
+
+. format ym %tm
+
+. 
+. // DID 样本：民事/商事 + 讨论合同效力 + trade_group 非缺失 + ym 非缺失
+. preserve
+
+. keep if sample_civil_commercial==1 & !missing(contract_invalid) & !missing(trade_group) & !missing(ym)
+(8,114 observations deleted)
+
+. 
+. // 控制变量（缺失归入 0 / 缺失指示）
+. replace activity_type_id = 0 if missing(activity_type_id)
+(0 real changes made)
+
+. replace court_level_id = 0 if missing(court_level_id)
+(0 real changes made)
+
+. replace procedure_stage_id = 0 if missing(procedure_stage_id)
+(0 real changes made)
+
+. replace doc_type_id = 0 if missing(doc_type_id)
+(3,984 real changes made)
+
+. replace case_type_primary_id = 0 if missing(case_type_primary_id)
+(3,984 real changes made)
+
+. replace case_type_secondary_id = 0 if missing(case_type_secondary_id)
+(3,984 real changes made)
+
+. replace judgment_year = 0 if missing(judgment_year)
+(0 real changes made)
+
+. gen byte ln_amount_miss_did = missing(ln_amount)
+
+. replace ln_amount = 0 if missing(ln_amount)
+(3,984 real changes made)
+
+. gen byte is_appeal_miss_did = missing(is_appeal_b)
+
+. replace is_appeal_b = 0 if missing(is_appeal_b)
+(0 real changes made)
+
+. replace `CLUSTER_ID' = 0 if missing(`CLUSTER_ID')
+(0 real changes made)
+
+. 
+. // DID 2017（LPM）：TWFE + 交互项 trade_group#post2017
+. capture noisily regress contract_invalid ///
+>         i.trade_group##i.post2017 ///
+>         i.ym ///
+>         i.court_level_id i.procedure_stage_id i.doc_type_id ///
+>         i.case_type_primary_id i.case_type_secondary_id ///
+>         c.ln_amount i.ln_amount_miss_did ///
+>         i.is_appeal_b i.is_appeal_miss_did, ///
+>         vce(cluster `CLUSTER_ID')
+note: 781.ym omitted because of collinearity.
+note: 0.doc_type_id omitted because of collinearity.
+note: 0.case_type_primary_id omitted because of collinearity.
+note: 0.case_type_secondary_id omitted because of collinearity.
+note: ln_amount omitted because of collinearity.
+note: 1.ln_amount_miss_did omitted because of collinearity.
+note: 0.is_appeal_miss_did omitted because of collinearity.
+
+Linear regression                               Number of obs     =      3,984
+                                                F(122, 1404)      =          .
+                                                Prob > F          =          .
+                                                R-squared         =     0.1272
+                                                Root MSE          =     .47542
+
+                                (Std. err. adjusted for 1,405 clusters in court_name_id)
+----------------------------------------------------------------------------------------
+                       |               Robust
+      contract_invalid | Coefficient  std. err.      t    P>|t|     [95% conf. interval]
+-----------------------+----------------------------------------------------------------
+           trade_group |
+               交易类  |    .115841   .1041678     1.11   0.266    -.0885003    .3201823
+            1.post2017 |  -.9084585   .1138498    -7.98   0.000    -1.131792   -.6851245
+                       |
+  trade_group#post2017 |
+             交易类#1  |     .13437   .1070669     1.26   0.210    -.0756583    .3443983
+                       |
+                    ym |
+                  643  |  -.8750932   .1059749    -8.26   0.000    -1.082979    -.667207
+                  647  |   -.884159   .1041678    -8.49   0.000      -1.0885   -.6798177
+                  650  |  -.8750932   .1059749    -8.26   0.000    -1.082979    -.667207
+                  651  |   -.884159   .1041678    -8.49   0.000      -1.0885   -.6798177
+                  652  |         -1   4.72e-07 -2.1e+06   0.000    -1.000001   -.9999991
+                  653  |  -.8750932   .1059749    -8.26   0.000    -1.082979    -.667207
+                  654  |   .1249068   .1059749     1.18   0.239    -.0829794     .332793
+                  656  |  -.9375466   .0723812   -12.95   0.000    -1.079533   -.7955597
+                  657  |  -1.22e-13          .        .       .            .           .
+                  659  |  -.7018877    .207167    -3.39   0.001    -1.108278   -.2954976
+                  663  |  -.9420795   .0667181   -14.12   0.000    -1.072957   -.8112016
+                  664  |  -.9954671   .0113416   -87.77   0.000    -1.017715   -.9732187
+                  666  |   -.884159   .1041678    -8.49   0.000      -1.0885   -.6798177
+                  668  |  -.9215405   .1288286    -7.15   0.000    -1.174258   -.6688233
+                  669  |         -1          .        .       .            .           .
+                  670  |  -.8750932   .1059749    -8.26   0.000    -1.082979    -.667207
+                  671  |   -.884159   .1041678    -8.49   0.000      -1.0885   -.6798177
+                  672  |  -.3796261    .377615    -1.01   0.315    -1.120377    .3611244
+                  673  |   -.884159   .1041678    -8.49   0.000      -1.0885   -.6798177
+                  674  |  -.4330137    .320615    -1.35   0.177     -1.06195    .1959223
+                  675  |   -.384159   .3747894    -1.02   0.306    -1.119366    .3510485
+                  676  |  -.6137563   .2261662    -2.71   0.007    -1.057416   -.1700963
+                  677  |  -.8773597    .105117    -8.35   0.000    -1.083563   -.6711563
+                  678  |  -.4881714   .2922539    -1.67   0.095    -1.061473      .08513
+                  679  |   -.256106    .264611    -0.97   0.333    -.7751814    .2629695
+                  680  |  -.6608528    .238281    -2.77   0.006    -1.128278   -.1934277
+                  681  |  -.9197507   .0719109   -12.79   0.000    -1.060815   -.7786863
+                  682  |  -.8805327   .1043775    -8.44   0.000    -1.085285     -.67578
+                  683  |  -.8811371   .1042515    -8.45   0.000    -1.085643   -.6766315
+                  684  |   -.628053   .2683894    -2.34   0.019     -1.15454   -.1015656
+                  685  |   -.884159   .1041678    -8.49   0.000      -1.0885   -.6798177
+                  686  |  -.7307553   .1840442    -3.97   0.000    -1.091786   -.3697241
+                  687  |  -.3796261   .3715083    -1.02   0.307    -1.108397     .349145
+                  688  |  -.3277757   .1719418    -1.91   0.057    -.6650662    .0095149
+                  689  |  -.7426752   .1366622    -5.43   0.000    -1.010759    -.474591
+                  690  |  -.6259625   .1611659    -3.88   0.000    -.9421145   -.3098106
+                  691  |   -.474299   .1848489    -2.57   0.010    -.8369088   -.1116891
+                  692  |   .0255083   .0443188     0.58   0.565      -.06143    .1124466
+                  693  |   .6279258   .2262836     2.77   0.006     .1840355    1.071816
+                  694  |     .37137   .2579857     1.44   0.150    -.1347089     .877449
+                  695  |   .2469678   .1204295     2.05   0.040     .0107268    .4832089
+                  696  |   .2360998   .1125474     2.10   0.036     .0153206     .456879
+                  697  |   .3636767   .2830308     1.28   0.199    -.1915322    .9188856
+                  698  |   .5854027   .1211966     4.83   0.000     .3476569    .8231486
+                  699  |    .567442   .1699859     3.34   0.001     .2339883    .9008956
+                  700  |    .171915   .1142052     1.51   0.132    -.0521162    .3959463
+                  701  |   .1167778   .1137327     1.03   0.305    -.1063265     .339882
+                  702  |   .2424103   .1076089     2.25   0.024     .0313187    .4535018
+                  703  |   .4493041   .1589948     2.83   0.005     .1374112     .761197
+                  704  |   .3514874   .1293001     2.72   0.007     .0978453    .6051295
+                  705  |   .3133066   .1137234     2.75   0.006     .0902205    .5363927
+                  706  |   .2081787   .0937925     2.22   0.027     .0241902    .3921672
+                  707  |   .2460612   .1106618     2.22   0.026      .028981    .4631415
+                  708  |   .3111365     .16724     1.86   0.063    -.0169307    .6392037
+                  709  |   .5302965   .2365683     2.24   0.025      .066231    .9943619
+                  710  |   .4935244   .1044939     4.72   0.000     .2885435    .6985054
+                  711  |   .4990795   .0988566     5.05   0.000      .305157     .693002
+                  712  |   .5309256   .1223778     4.34   0.000     .2908625    .7709886
+                  713  |   .6207759   .1205991     5.15   0.000     .3842021    .8573498
+                  714  |   .3844108   .1055507     3.64   0.000     .1773567     .591465
+                  715  |   .3150851    .119065     2.65   0.008     .0815206    .5486496
+                  716  |   .2762639   .0852877     3.24   0.001     .1089589    .4435689
+                  717  |   .4062975    .085761     4.74   0.000      .238064     .574531
+                  718  |   .3454021   .0804931     4.29   0.000     .1875024    .5033018
+                  719  |   .3899733     .07737     5.04   0.000        .2382    .5417465
+                  720  |    .248075   .1099939     2.26   0.024     .0323049    .4638451
+                  721  |   .4410856   .1286528     3.43   0.001     .1887131    .6934581
+                  722  |   .4570626   .0931007     4.91   0.000     .2744312    .6396941
+                  723  |   .3050745   .0805013     3.79   0.000     .1471587    .4629903
+                  724  |   .3938428   .0850907     4.63   0.000     .2269242    .5607613
+                  725  |   .2792505   .0684737     4.08   0.000     .1449287    .4135724
+                  726  |   .4231783    .074988     5.64   0.000     .2760777    .5702789
+                  727  |   .3006205   .0733947     4.10   0.000     .1566454    .4445955
+                  728  |   .3407995    .078191     4.36   0.000     .1874158    .4941833
+                  729  |   .4600869   .0800183     5.75   0.000     .3031185    .6170553
+                  730  |   .4049151   .0719552     5.63   0.000     .2637638    .5460663
+                  731  |   .4732273   .0656033     7.21   0.000     .3445363    .6019183
+                  732  |   .2398582   .0864692     2.77   0.006     .0702355     .409481
+                  733  |   .4145103   .0910502     4.55   0.000     .2359012    .5931193
+                  734  |   .3337121   .0763082     4.37   0.000     .1840216    .4834025
+                  735  |   .3807094   .0682791     5.58   0.000     .2467693    .5146496
+                  736  |   .4814344   .0827086     5.82   0.000     .3191885    .6436802
+                  737  |   .4383262   .0783774     5.59   0.000     .2845767    .5920756
+                  738  |   .5237775   .0822776     6.37   0.000     .3623773    .6851778
+                  739  |    .443443   .0755063     5.87   0.000     .2953256    .5915604
+                  740  |   .3964896   .0707939     5.60   0.000     .2576163    .5353629
+                  741  |   .4478244   .0865022     5.18   0.000      .278137    .6175118
+                  742  |   .4752997   .0775417     6.13   0.000     .3231896    .6274099
+                  743  |   .4703797   .0679159     6.93   0.000     .3371521    .6036072
+                  744  |   .5167252   .0986274     5.24   0.000     .3232523     .710198
+                  745  |   .5262697   .1007862     5.22   0.000      .328562    .7239774
+                  746  |   .6452423   .0804418     8.02   0.000     .4874431    .8030414
+                  747  |    .599458   .0825808     7.26   0.000      .437463     .761453
+                  748  |   .6507085   .0790238     8.23   0.000      .495691     .805726
+                  749  |   .3636946   .0872083     4.17   0.000      .192622    .5347672
+                  750  |   .5166067   .0850418     6.07   0.000     .3497841    .6834293
+                  751  |   .4751566   .0811595     5.85   0.000     .3159497    .6343635
+                  752  |   .4135175   .0861385     4.80   0.000     .2445435    .5824914
+                  753  |   .4086925   .0774388     5.28   0.000     .2567843    .5606007
+                  754  |   .4836883   .0842786     5.74   0.000     .3183628    .6490139
+                  755  |   .5149439   .0870162     5.92   0.000     .3442481    .6856396
+                  756  |   .4337617   .1191807     3.64   0.000     .1999703    .6675531
+                  757  |   .4721412   .0905901     5.21   0.000     .2944347    .6498476
+                  758  |   .4320031   .0799517     5.40   0.000     .2751654    .5888407
+                  759  |   .7093651   .0834768     8.50   0.000     .5456123    .8731178
+                  760  |   .3882253   .0851325     4.56   0.000     .2212247     .555226
+                  761  |   .4815234   .0880716     5.47   0.000     .3087573    .6542895
+                  762  |   .6366592    .100601     6.33   0.000     .4393148    .8340037
+                  763  |   .5166351   .1053281     4.91   0.000     .3100178    .7232525
+                  764  |   .6259745   .0810915     7.72   0.000      .466901     .785048
+                  765  |   .6587483   .0902803     7.30   0.000     .4816495    .8358471
+                  766  |   .5850155   .0889262     6.58   0.000     .4105729    .7594581
+                  767  |   .6407409   .0905012     7.08   0.000     .4632087    .8182731
+                  768  |   .4666822   .0920425     5.07   0.000     .2861265    .6472379
+                  769  |    .724622   .0871653     8.31   0.000     .5536338    .8956101
+                  770  |   .6410493   .0776015     8.26   0.000     .4888219    .7932766
+                  771  |   .5662378   .0899347     6.30   0.000     .3898169    .7426588
+                  772  |   .6833295   .0724708     9.43   0.000     .5411669    .8254922
+                  773  |   .6829535   .0804753     8.49   0.000     .5250886    .8408183
+                  774  |   .6699802   .0880162     7.61   0.000     .4973227    .8426377
+                  775  |   .5963306   .0904681     6.59   0.000     .4188633    .7737979
+                  776  |     .54711   .1026159     5.33   0.000      .345813    .7484071
+                  777  |    .610366   .1151776     5.30   0.000     .3844272    .8363048
+                  778  |   .5553306   .1300627     4.27   0.000     .3001925    .8104687
+                  779  |   .6339995   .1476624     4.29   0.000     .3443368    .9236621
+                  780  |   .3606548    .278869     1.29   0.196      -.18639    .9076995
+                  781  |          0  (omitted)
+                       |
+        court_level_id |
+                 中院  |  -.0464473   .0714201    -0.65   0.516    -.1865489    .0936543
+             基层法院  |  -.1719302   .1660625    -1.04   0.301    -.4976874    .1538271
+               最高法  |  -.1602529    .074702    -2.15   0.032    -.3067924   -.0137134
+             高级法院  |    .063868   .1495657     0.43   0.669    -.2295283    .3572642
+                 高院  |  -.3416084   .2014922    -1.70   0.090    -.7368666    .0536497
+                       |
+    procedure_stage_id |
+                 二审  |  -.0696947   .1957179    -0.36   0.722    -.4536257    .3142363
+            二审/终审  |  -.0029642   .2081782    -0.01   0.989     -.411338    .4054097
+                 再审  |    .062774   .1330543     0.47   0.637    -.1982327    .3237807
+     发回重审后的一审  |   .3239986   .1642536     1.97   0.049     .0017896    .6462075
+                       |
+           doc_type_id |
+                    0  |          0  (omitted)
+                       |
+  case_type_primary_id |
+                    0  |          0  (omitted)
+                       |
+case_type_secondary_id |
+                    0  |          0  (omitted)
+             ln_amount |          0  (omitted)
+  1.ln_amount_miss_did |          0  (omitted)
+         1.is_appeal_b |  -.0648539   .1429685    -0.45   0.650    -.3453088     .215601
+  0.is_appeal_miss_did |          0  (omitted)
+                 _cons |   1.056089   .1968881     5.36   0.000     .6698627    1.442316
+----------------------------------------------------------------------------------------
+
+. if !_rc estimates store did2017
+
+. 
+. // DID 2021（LPM）
+. capture noisily regress contract_invalid ///
+>         i.trade_group##i.post2021 ///
+>         i.ym ///
+>         i.court_level_id i.procedure_stage_id i.doc_type_id ///
+>         i.case_type_primary_id i.case_type_secondary_id ///
+>         c.ln_amount i.ln_amount_miss_did ///
+>         i.is_appeal_b i.is_appeal_miss_did, ///
+>         vce(cluster `CLUSTER_ID')
+note: 0.doc_type_id omitted because of collinearity.
+note: 0.case_type_primary_id omitted because of collinearity.
+note: 0.case_type_secondary_id omitted because of collinearity.
+note: ln_amount omitted because of collinearity.
+note: 1.ln_amount_miss_did omitted because of collinearity.
+note: 0.is_appeal_miss_did omitted because of collinearity.
+
+Linear regression                               Number of obs     =      3,984
+                                                F(123, 1404)      =          .
+                                                Prob > F          =          .
+                                                R-squared         =     0.1305
+                                                Root MSE          =     .47458
+
+                                (Std. err. adjusted for 1,405 clusters in court_name_id)
+----------------------------------------------------------------------------------------
+                       |               Robust
+      contract_invalid | Coefficient  std. err.      t    P>|t|     [95% conf. interval]
+-----------------------+----------------------------------------------------------------
+           trade_group |
+               交易类  |   .3147898   .0299918    10.50   0.000     .2559563    .3736233
+            1.post2021 |   .0578113   .1105878     0.52   0.601    -.1591237    .2747464
+                       |
+  trade_group#post2021 |
+             交易类#1  |  -.1529503   .0421935    -3.62   0.000    -.2357194   -.0701811
+                       |
+                    ym |
+                  643  |  -.6787919   .0360105   -18.85   0.000    -.7494321   -.6081518
+                  647  |  -.6852102   .0299918   -22.85   0.000    -.7440437   -.6263767
+                  650  |  -.6787919   .0360105   -18.85   0.000    -.7494321   -.6081518
+                  651  |  -.6852102   .0299918   -22.85   0.000    -.7440437   -.6263767
+                  652  |         -1   5.86e-07 -1.7e+06   0.000    -1.000001   -.9999989
+                  653  |  -.6787919   .0360105   -18.85   0.000    -.7494321   -.6081518
+                  654  |   .3212081   .0360105     8.92   0.000     .2505679    .3918482
+                  656  |   -.839396   .1136818    -7.38   0.000      -1.0624   -.6163915
+                  657  |  -1.85e-13   6.02e-07    -0.00   1.000    -1.18e-06    1.18e-06
+                  659  |  -.5443172   .2099396    -2.59   0.010    -.9561462   -.1324882
+                  663  |  -.8426051   .1143797    -7.37   0.000    -1.066979   -.6182315
+                  664  |  -.9967909   .0110877   -89.90   0.000    -1.018541   -.9750407
+                  666  |  -.6852102   .0299918   -22.85   0.000    -.7440437   -.6263767
+                  668  |  -.7236032   .0740802    -9.77   0.000     -.868923   -.5782835
+                  669  |         -1   6.87e-07 -1.5e+06   0.000    -1.000001   -.9999987
+                  670  |  -.6787919   .0360105   -18.85   0.000    -.7494321   -.6081518
+                  671  |  -.6852102   .0299918   -22.85   0.000    -.7440437   -.6263767
+                  672  |  -.1820011    .363339    -0.50   0.617    -.8947468    .5307447
+                  673  |  -.6852102   .0299918   -22.85   0.000    -.7440437   -.6263767
+                  674  |  -.3361868    .244621    -1.37   0.170    -.8160489    .1436752
+                  675  |  -.1852102   .3614699    -0.51   0.608    -.8942895    .5238691
+                  676  |   -.531053   .2013451    -2.64   0.008    -.9260227   -.1360834
+                  677  |  -.6803965   .0335892   -20.26   0.000     -.746287    -.614506
+                  678  |  -.3708656   .2315912    -1.60   0.110    -.8251675    .0834364
+                  679  |  -.1234734   .2458489    -0.50   0.616    -.6057442    .3587973
+                  680  |  -.5123031   .2528279    -2.03   0.043    -1.008264   -.0163419
+                  681  |  -.7880007   .0920731    -8.56   0.000    -.9686163   -.6073851
+                  682  |  -.6826429   .0307482   -22.20   0.000    -.7429602   -.6223256
+                  683  |  -.6830708    .030736   -22.22   0.000    -.7433643   -.6227773
+                  684  |  -.5617367   .2460756    -2.28   0.023    -1.044452   -.0790213
+                  685  |  -.6852102   .0299918   -22.85   0.000    -.7440437   -.6263767
+                  686  |  -.5667296   .1790958    -3.16   0.002    -.9180539   -.2154054
+                  687  |  -.1820011    .358306    -0.51   0.612    -.8848738    .5208717
+                  688  |  -.2092006   .1576861    -1.33   0.185    -.5185264    .1001252
+                  689  |  -.5945667   .1088399    -5.46   0.000     -.808073   -.3810604
+                  690  |   -.507917   .1606497    -3.16   0.002    -.8230562   -.1927777
+                  691  |  -.3428431   .1847211    -1.86   0.064    -.7052021    .0195159
+                  692  |  -.6843544   .0302037   -22.66   0.000    -.7436036   -.6251052
+                  693  |  -.0826429   .2210873    -0.37   0.709    -.5163398    .3510541
+                  694  |  -.3633495   .2753312    -1.32   0.187    -.9034544    .1767554
+                  695  |  -.4772226   .1224357    -3.90   0.000    -.7173993    -.237046
+                  696  |   -.492378   .1119446    -4.40   0.000    -.7119747   -.2727813
+                  697  |   -.347598   .2739812    -1.27   0.205    -.8850546    .1898586
+                  698  |  -.1558329   .1055256    -1.48   0.140    -.3628378     .051172
+                  699  |  -.1532721   .1686231    -0.91   0.364    -.4840524    .1775082
+                  700  |  -.5572797   .1086172    -5.13   0.000    -.7703492   -.3442101
+                  701  |  -.6075158   .1102865    -5.51   0.000    -.8238598   -.3911718
+                  702  |  -.4866852    .096684    -5.03   0.000    -.6763458   -.2970245
+                  703  |  -.2726741   .1575979    -1.73   0.084    -.5818269    .0364787
+                  704  |   -.381905   .1239036    -3.08   0.002    -.6249611   -.1388488
+                  705  |  -.4064534   .1065995    -3.81   0.000    -.6155649   -.1973419
+                  706  |  -.5213099   .0892205    -5.84   0.000    -.6963298     -.34629
+                  707  |  -.4778645   .1051316    -4.55   0.000    -.6840963   -.2716326
+                  708  |   -.424245   .1572333    -2.70   0.007    -.7326824   -.1158075
+                  709  |  -.1953291   .2380009    -0.82   0.412    -.6622047    .2715466
+                  710  |  -.2304419   .0981806    -2.35   0.019    -.4230384   -.0378454
+                  711  |  -.2344686   .0922318    -2.54   0.011    -.4153956   -.0535415
+                  712  |  -.2137628   .1031356    -2.07   0.038    -.4160792   -.0114464
+                  713  |  -.1383828   .1062999    -1.30   0.193    -.3469065    .0701408
+                  714  |  -.3363915   .1021321    -3.29   0.001    -.5367395   -.1360435
+                  715  |  -.4305319   .1123242    -3.83   0.000    -.6508733   -.2101905
+                  716  |  -.4410736   .0826304    -5.34   0.000    -.6031659   -.2789814
+                  717  |  -.3138251   .0853487    -3.68   0.000    -.4812497   -.1464004
+                  718  |  -.3776467   .0705148    -5.36   0.000    -.5159724   -.2393209
+                  719  |  -.3342612   .0682931    -4.89   0.000    -.4682288   -.2002936
+                  720  |  -.4661678    .103326    -4.51   0.000    -.6688577   -.2634779
+                  721  |  -.2856974   .1228229    -2.33   0.020    -.5266336   -.0447613
+                  722  |  -.2636254   .0850908    -3.10   0.002    -.4305442   -.0967065
+                  723  |  -.4135341   .0679935    -6.08   0.000    -.5469139   -.2801544
+                  724  |  -.3278617   .0759571    -4.32   0.000    -.4768632   -.1788602
+                  725  |   -.447817   .0590763    -7.58   0.000    -.5637043   -.3319296
+                  726  |  -.2977404   .0646596    -4.60   0.000    -.4245803   -.1709006
+                  727  |  -.4211836   .0628823    -6.70   0.000     -.544537   -.2978302
+                  728  |  -.3851036   .0670597    -5.74   0.000    -.5166517   -.2535555
+                  729  |  -.2638439   .0678194    -3.89   0.000    -.3968821   -.1308056
+                  730  |   -.317324   .0662276    -4.79   0.000    -.4472397   -.1874082
+                  731  |  -.2498914   .0567421    -4.40   0.000    -.3611997   -.1385831
+                  732  |  -.4839891   .0746464    -6.48   0.000    -.6304196   -.3375586
+                  733  |  -.3060587   .0812524    -3.77   0.000    -.4654478   -.1466696
+                  734  |  -.3981147    .065769    -6.05   0.000    -.5271308   -.2690987
+                  735  |  -.3409468   .0614022    -5.55   0.000    -.4613968   -.2204968
+                  736  |  -.2523236   .0716707    -3.52   0.000    -.3929169   -.1117303
+                  737  |  -.2790463   .0720374    -3.87   0.000    -.4203588   -.1377338
+                  738  |   -.200434   .0704909    -2.84   0.005    -.3387128   -.0621551
+                  739  |  -.2845165   .0668952    -4.25   0.000    -.4157418   -.1532911
+                  740  |  -.3409825   .0725768    -4.70   0.000    -.4833532   -.1986118
+                  741  |  -.3024686   .1340465    -2.26   0.024    -.5654216   -.0395156
+                  742  |   -.271962   .1340224    -2.03   0.043    -.5348677   -.0090562
+                  743  |  -.2768379    .121154    -2.29   0.022    -.5145003   -.0391755
+                  744  |  -.2357245   .1445759    -1.63   0.103    -.5193325    .0478835
+                  745  |  -.2249192   .1456895    -1.54   0.123    -.5107119    .0608734
+                  746  |  -.1029603   .1357104    -0.76   0.448    -.3691772    .1632567
+                  747  |  -.1627873   .1329104    -1.22   0.221    -.4235117     .097937
+                  748  |  -.1019727   .1335813    -0.76   0.445    -.3640131    .1600678
+                  749  |   -.386987   .1364383    -2.84   0.005     -.654632   -.1193421
+                  750  |  -.2355548   .1351128    -1.74   0.081    -.5005994    .0294898
+                  751  |   -.274917   .1339881    -2.05   0.040    -.5377555   -.0120784
+                  752  |  -.3465187   .1385701    -2.50   0.013    -.6183454    -.074692
+                  753  |  -.3380553   .1356728    -2.49   0.013    -.6041985    -.071912
+                  754  |  -.2597353   .1346322    -1.93   0.054    -.5238371    .0043666
+                  755  |  -.2405323   .1339989    -1.80   0.073    -.5033919    .0223274
+                  756  |  -.3168855   .1540556    -2.06   0.040    -.6190895   -.0146816
+                  757  |  -.2817353   .1397791    -2.02   0.044    -.5559337   -.0075369
+                  758  |  -.3144447   .1349683    -2.33   0.020    -.5792059   -.0496835
+                  759  |  -.0437172   .1346512    -0.32   0.745    -.3078564    .2204221
+                  760  |  -.3591531   .1349092    -2.66   0.008    -.6237984   -.0945077
+                  761  |  -.2695193   .1342071    -2.01   0.045    -.5327874   -.0062513
+                  762  |  -.1125168   .1448181    -0.78   0.437       -.3966    .1715665
+                  763  |  -.2375482   .1429487    -1.66   0.097    -.5179643    .0428679
+                  764  |  -.1384489   .1291664    -1.07   0.284    -.3918288     .114931
+                  765  |  -.0936007    .143954    -0.65   0.516    -.3759887    .1887874
+                  766  |  -.1691805   .1344378    -1.26   0.208    -.4329011    .0945401
+                  767  |  -.1183379   .1452742    -0.81   0.415    -.4033159      .16664
+                  768  |  -.2822934   .1405805    -2.01   0.045    -.5580639    -.006523
+                  769  |  -.0347544   .1348938    -0.26   0.797    -.2993695    .2298607
+                  770  |  -.1049582   .1296429    -0.81   0.418    -.3592729    .1493565
+                  771  |  -.1877582   .1460463    -1.29   0.199    -.4742506    .0987342
+                  772  |   -.064716    .129307    -0.50   0.617    -.3183718    .1889398
+                  773  |   -.072036   .1286753    -0.56   0.576    -.3244526    .1803807
+                  774  |  -.0865002   .1372185    -0.63   0.529    -.3556757    .1826753
+                  775  |  -.1596065   .1367937    -1.17   0.244    -.4279486    .1087355
+                  776  |  -.2094889   .1491786    -1.40   0.160    -.5021258    .0831481
+                  777  |  -.1403661   .1611997    -0.87   0.384    -.4565843    .1758522
+                  778  |  -.1803013   .1666595    -1.08   0.280    -.5072297     .146627
+                  779  |  -.1200687   .1782354    -0.67   0.501    -.4697051    .2295677
+                  780  |  -.4075488   .2985885    -1.36   0.172    -.9932763    .1781788
+                  781  |  -.7701039   .1262798    -6.10   0.000    -1.017821   -.5223865
+                       |
+        court_level_id |
+                 中院  |  -.0448113   .0714938    -0.63   0.531    -.1850575    .0954349
+             基层法院  |  -.1546466   .1631081    -0.95   0.343    -.4746084    .1653152
+               最高法  |  -.1595306    .074993    -2.13   0.034     -.306641   -.0124202
+             高级法院  |   .0245461   .1402783     0.17   0.861    -.2506314    .2997237
+                 高院  |   -.278183   .2152307    -1.29   0.196    -.7003915    .1440254
+                       |
+    procedure_stage_id |
+                 二审  |  -.0497191   .1925361    -0.26   0.796    -.4274086    .3279704
+            二审/终审  |   .0172822   .2043671     0.08   0.933    -.3836155    .4181799
+                 再审  |   .0910951   .1334758     0.68   0.495    -.1707385    .3529286
+     发回重审后的一审  |   .4022057   .1614966     2.49   0.013     .0854051    .7190062
+                       |
+           doc_type_id |
+                    0  |          0  (omitted)
+                       |
+  case_type_primary_id |
+                    0  |          0  (omitted)
+                       |
+case_type_secondary_id |
+                    0  |          0  (omitted)
+             ln_amount |          0  (omitted)
+  1.ln_amount_miss_did |          0  (omitted)
+         1.is_appeal_b |  -.0665345   .1394694    -0.48   0.633    -.3401253    .2070564
+  0.is_appeal_miss_did |          0  (omitted)
+                 _cons |   .8398568    .165591     5.07   0.000     .5150244    1.164689
+----------------------------------------------------------------------------------------
+
+. if !_rc estimates store did2021
+
+. 
+. // 输出 DID 表（esttab）
+. if `HAVE_ESTTAB' {
+.         capture noisily esttab did2017 did2021 using "`TABLEDIR'/did_contract_invalid.rtf", ///
+>                 replace rtf se ///
+>                 star(* 0.10 ** 0.05 *** 0.01) ///
+>                 b(%9.3f) se(%9.3f) ///
+>                 title("DID: 政策冲击对合同效力(无效/未成立=1)的影响") ///
+>                 mtitles("Post-2017(94公告)" "Post-2021(254通知)") ///
+>                 keep(1.trade_group 1.post2017 1.trade_group#1.post2017 1.post2021 1.trade_group#1.post2021) ///
+>                 addnotes("样本=民事/商事且讨论合同效力；处理组=交易类(activity_type含交易/OTC/买卖/ICO等); 时间FE=月度; 聚类=`CLUSTER_ID'")
+(output written to D:\BaiduSyncdisk\Doctor\论文\数字货币\数据构建/analyze/tables/did_contract_invalid.rtf)
+. }
+
+. restore
+
+. 
+. // -----------------------------
+. // 4C) 事件研究（动态 DID）：
+. //     检验并行趋势：政策前若干月×处理组 交互系数应接近 0
+. //     输出：esttab RTF + 系数路径图（95%CI）
+. // -----------------------------
+. di as txt "开始事件研究（动态 DID）..."
+开始事件研究（动态 DID）...
+
+. 
+. // 事件窗：前后 24 个月（可根据需要调整）
+. local WIN = 24
+
+. 
+. // 复用 DID 样本定义
+. preserve
+
+. keep if sample_civil_commercial==1 & !missing(contract_invalid) & !missing(trade_group) & !missing(ym)
+(8,114 observations deleted)
+
+. 
+. // 控制变量缺失处理（同 DID）
+. replace court_level_id = 0 if missing(court_level_id)
+(0 real changes made)
+
+. replace procedure_stage_id = 0 if missing(procedure_stage_id)
+(0 real changes made)
+
+. replace doc_type_id = 0 if missing(doc_type_id)
+(3,984 real changes made)
+
+. replace case_type_primary_id = 0 if missing(case_type_primary_id)
+(3,984 real changes made)
+
+. replace case_type_secondary_id = 0 if missing(case_type_secondary_id)
+(3,984 real changes made)
+
+. gen byte is_appeal_miss_es = missing(is_appeal_b)
+
+. replace is_appeal_b = 0 if missing(is_appeal_b)
+(0 real changes made)
+
+. replace `CLUSTER_ID' = 0 if missing(`CLUSTER_ID')
+(0 real changes made)
+
+. 
+. // === 2017 事件研究 ===
+. // 将政策日转换成“月度日期”（%tm），并计算相对月份
+. local YM2017 = mofd(`P2017')
+
+. gen int rel2017 = ym - `YM2017'
+
+. keep if rel2017 >= -`WIN' & rel2017 <= `WIN'
+(3,257 observations deleted)
+
+. 
+. // 生成处理组×相对月份的哑变量（基准期：-1）
+. // 命名规则：负数用 m（minus）前缀，非负用 p（plus）前缀，例如 -12 => es17_m12，0 => es17_p0
+. forvalues k = -`WIN'/`WIN' {
+  2.         if `k' != -1 {
+  3.                 if `k' < 0 local suf "m`=abs(`k')'"
+  4.                 else local suf "p`k'"
+  5.                 gen byte es17_`suf' = (rel2017==`k' & trade_group==1)
+  6.         }
+  7. }
+
+. 
+. capture noisily regress contract_invalid ///
+>                 i.trade_group es17_* ///
+>                 i.ym ///
+>                 i.court_level_id i.procedure_stage_id i.doc_type_id ///
+>                 i.case_type_primary_id i.case_type_secondary_id ///
+>                 i.is_appeal_b i.is_appeal_miss_es, ///
+>                 vce(cluster `CLUSTER_ID')
+note: es17_m24 omitted because of collinearity.
+note: es17_m22 omitted because of collinearity.
+note: es17_m21 omitted because of collinearity.
+note: es17_m20 omitted because of collinearity.
+note: es17_m19 omitted because of collinearity.
+note: es17_m17 omitted because of collinearity.
+note: es17_m15 omitted because of collinearity.
+note: es17_m10 omitted because of collinearity.
+note: es17_m9 omitted because of collinearity.
+note: es17_m7 omitted because of collinearity.
+note: es17_m5 omitted because of collinearity.
+note: es17_p0 omitted because of collinearity.
+note: es17_p1 omitted because of collinearity.
+note: es17_p5 omitted because of collinearity.
+note: 669.ym omitted because of collinearity.
+note: 5.court_level_id omitted because of collinearity.
+note: 0.doc_type_id omitted because of collinearity.
+note: 0.case_type_primary_id omitted because of collinearity.
+note: 0.case_type_secondary_id omitted because of collinearity.
+note: 0.is_appeal_miss_es omitted because of collinearity.
+
+Linear regression                               Number of obs     =        727
+                                                F(69, 355)        =          .
+                                                Prob > F          =          .
+                                                R-squared         =     0.4154
+                                                Root MSE          =      .4056
+
+                                  (Std. err. adjusted for 356 clusters in court_name_id)
+----------------------------------------------------------------------------------------
+                       |               Robust
+      contract_invalid | Coefficient  std. err.      t    P>|t|     [95% conf. interval]
+-----------------------+----------------------------------------------------------------
+           trade_group |
+               交易类  |  -.1571444   .3682369    -0.43   0.670    -.8813445    .5670558
+              es17_m24 |          0  (omitted)
+              es17_m23 |   .0007601    .376772     0.00   0.998    -.7402256    .7417459
+              es17_m22 |          0  (omitted)
+              es17_m21 |          0  (omitted)
+              es17_m20 |          0  (omitted)
+              es17_m19 |          0  (omitted)
+              es17_m18 |   1.157144   .3682369     3.14   0.002     .4329442    1.881344
+              es17_m17 |          0  (omitted)
+              es17_m16 |   .5814544   .5490953     1.06   0.290    -.4984343    1.661343
+              es17_m15 |          0  (omitted)
+              es17_m14 |   1.302102   .3827296     3.40   0.001     .5493995    2.054804
+              es17_m13 |   .6571444   .5280643     1.24   0.214    -.3813833    1.695672
+              es17_m12 |  -.1799979   .4713438    -0.38   0.703    -1.106975    .7469793
+              es17_m11 |    .151431   .3732129     0.41   0.685    -.5825552    .8854172
+              es17_m10 |          0  (omitted)
+               es17_m9 |          0  (omitted)
+               es17_m8 |   .6571444   .5273695     1.25   0.214    -.3800168    1.694306
+               es17_m7 |          0  (omitted)
+               es17_m6 |  -.0382849   .4137657    -0.09   0.926     -.852025    .7754551
+               es17_m5 |          0  (omitted)
+               es17_m4 |   .4061921   .4962946     0.82   0.414    -.5698551    1.382239
+               es17_m3 |   .3831755   .4641767     0.83   0.410    -.5297063    1.296057
+               es17_m2 |   .0690499   .4945437     0.14   0.889    -.9035538    1.041654
+               es17_p0 |          0  (omitted)
+               es17_p1 |          0  (omitted)
+               es17_p2 |  -.5497117   .4081714    -1.35   0.179     -1.35245    .2530263
+               es17_p3 |   .6523832   .4434805     1.47   0.142    -.2197962    1.524563
+               es17_p4 |    .603474   .4844811     1.25   0.214    -.3493399    1.556288
+               es17_p5 |          0  (omitted)
+               es17_p6 |   .5475154   .4164549     1.31   0.189    -.2715134    1.366544
+               es17_p7 |    .654859   .4265314     1.54   0.126    -.1839869    1.493705
+               es17_p8 |   .5688451   .4830286     1.18   0.240    -.3811122    1.518802
+               es17_p9 |  -.0250201   .3887885    -0.06   0.949    -.7896383    .7395981
+              es17_p10 |   .6889541   .4341568     1.59   0.113    -.1648885    1.542797
+              es17_p11 |   .3941945    .484631     0.81   0.417    -.5589142    1.347303
+              es17_p12 |   .2921229   .4555713     0.64   0.522    -.6038349    1.188081
+              es17_p13 |   .1674713   .4851925     0.35   0.730    -.7867417    1.121684
+              es17_p14 |   .6285461   .4354153     1.44   0.150    -.2277717    1.484864
+              es17_p15 |   .0359533   .4132457     0.09   0.931    -.7767642    .8486707
+              es17_p16 |   .6184785   .5101995     1.21   0.226     -.384915    1.621872
+              es17_p17 |  -.5522442   .4073692    -1.36   0.176    -1.353405    .2489162
+              es17_p18 |   .5521346   .4200295     1.31   0.190    -.2739244    1.378194
+              es17_p19 |   .4531183   .4088198     1.11   0.268     -.350895    1.257132
+              es17_p20 |   .9239788   .3811042     2.42   0.016     .1744731    1.673484
+              es17_p21 |   .9912923   .3766948     2.63   0.009     .2504584    1.732126
+              es17_p22 |  -.0855981   .4302637    -0.20   0.842    -.9317843    .7605882
+              es17_p23 |     .07797   .4628405     0.17   0.866     -.832284    .9882239
+              es17_p24 |   .4061921   .4635555     0.88   0.381     -.505468    1.317852
+                       |
+                    ym |
+                  669  |          0  (omitted)
+                  670  |  -.1449575    .078436    -1.85   0.065    -.2992152    .0093002
+                  671  |  -.1563842   .0701252    -2.23   0.026    -.2942973   -.0184712
+                  672  |   .3493292   .3887873     0.90   0.370    -.4152868    1.113945
+                  673  |  -.1563842   .0701252    -2.23   0.026    -.2942973   -.0184712
+                  674  |  -.1449575    .078436    -1.85   0.065    -.2992152    .0093002
+                  675  |   .3436158   .3843221     0.89   0.372    -.4122186     1.09945
+                  676  |  -.0806942   .1428471    -0.56   0.572    -.3616272    .2002388
+                  677  |  -.1478142   .0739822    -2.00   0.046    -.2933126   -.0023157
+                  678  |  -.1449575    .078436    -1.85   0.065    -.2992152    .0093002
+                  679  |   .3436158   .3842646     0.89   0.372    -.4121055    1.099337
+                  680  |    .180758   .2956577     0.61   0.541    -.4007028    .7622189
+                  681  |  -.1506708    .070973    -2.12   0.034    -.2902512   -.0110905
+                  682  |  -.1518135    .070096    -2.17   0.031    -.2896692   -.0139578
+                  683  |  -.1525753   .0698237    -2.19   0.030    -.2898955   -.0152551
+                  684  |  -.1563842   .0701252    -2.23   0.026    -.2942973   -.0184712
+                  685  |  -.1563842   .0701252    -2.23   0.026    -.2942973   -.0184712
+                  686  |   .0504718   .2070607     0.24   0.808    -.3567479    .4576916
+                  687  |   .3493292    .380371     0.92   0.359    -.3987346    1.097393
+                  688  |   .3474247   .2333354     1.49   0.137    -.1114687    .8063181
+                  689  |  -.0414642   .1327867    -0.31   0.755    -.3026117    .2196833
+                  690  |   .1845669   .2156633     0.86   0.393    -.2395713    .6087052
+                  691  |   .3455202   .2281507     1.51   0.131    -.1031766    .7942171
+                  692  |  -.1548607   .0695826    -2.23   0.027    -.2917066   -.0180147
+                  693  |   .4481865   .2412729     1.86   0.064    -.0263175    .9226904
+                  694  |   .5504718   .1677102     3.28   0.001     .2206414    .8803022
+                  695  |   .0188525   .1364994     0.14   0.890    -.2495967    .2873017
+                  696  |   .0018568   .1288211     0.01   0.989    -.2514916    .2552053
+                  697  |   .1845669   .2994232     0.62   0.538    -.4042994    .7734333
+                  698  |   .3434032   .1744467     1.97   0.050     .0003244    .6864821
+                  699  |   .3459011   .2236957     1.55   0.123    -.0940343    .7858366
+                  700  |  -.0389249   .1324994    -0.29   0.769    -.2995074    .2216576
+                  701  |   .0295891   .1419121     0.21   0.835    -.2495049    .3086832
+                  702  |  -.0177184   .1231018    -0.14   0.886    -.2598189    .2243821
+                  703  |   .2808501   .1838866     1.53   0.128     -.080794    .6424942
+                  704  |   .2124461   .1688081     1.26   0.209    -.1195436    .5444358
+                  705  |   .1666221   .1327067     1.26   0.210    -.0943681    .4276123
+                  706  |  -.0326877   .1087425    -0.30   0.764    -.2465483    .1811729
+                  707  |   .1409958   .1274573     1.11   0.269    -.1096705    .3916622
+                  708  |   .0527572   .2051275     0.26   0.797    -.3506607    .4561751
+                  709  |   .5644311   .1946297     2.90   0.004     .1816588    .9472033
+                  710  |   .2838634   .1358921     2.09   0.037     .0166085    .5511182
+                  711  |   .3033552   .1389721     2.18   0.030     .0300431    .5766673
+                  712  |   .0863037   .1256648     0.69   0.493    -.1608374    .3334448
+                  713  |   3.95e-14          .        .       .            .           .
+                  714  |   .2863582   .1268593     2.26   0.025      .036868    .5358484
+                  715  |   .3148531   .1697997     1.85   0.065    -.0190866    .6487929
+                  716  |   .1002814   .1106016     0.91   0.365    -.1172354    .3177981
+                       |
+        court_level_id |
+                 中院  |   .1449575    .078436     1.85   0.065    -.0093002    .2992152
+             基层法院  |   .2615976   .3319754     0.79   0.431    -.3912882    .9144833
+               最高法  |  -.1002814   .1106016    -0.91   0.365    -.3177981    .1172354
+             高级法院  |          0  (omitted)
+                 高院  |    .016431   .2356574     0.07   0.944    -.4470292    .4798911
+                       |
+    procedure_stage_id |
+                 二审  |   .2480475   .4902482     0.51   0.613    -.7161083    1.212203
+                 再审  |   .2958798   .4699388     0.63   0.529    -.6283342    1.220094
+                       |
+           doc_type_id |
+                    0  |          0  (omitted)
+                       |
+  case_type_primary_id |
+                    0  |          0  (omitted)
+                       |
+case_type_secondary_id |
+                    0  |          0  (omitted)
+         1.is_appeal_b |  -.1428342   .4841912    -0.29   0.768    -1.095078    .8094096
+   0.is_appeal_miss_es |          0  (omitted)
+                 _cons |  -.1052133   .3082386    -0.34   0.733    -.7114167      .50099
+----------------------------------------------------------------------------------------
+
+. if !_rc estimates store es2017
+
+. 
+. // 将系数整理成数据并画图（外层已 preserve，避免嵌套 preserve 导致 r(621)）
+. capture noisily estimates restore es2017
+(results es2017 are active now)
+
+. clear
+
+. set obs `=2*`WIN'+1'
+Number of observations (_N) was 0, now 49.
+
+. gen int k = _n - (`WIN'+1)   // -WIN ... WIN
+
+. gen double b = .
+(49 missing values generated)
+
+. gen double se = .
+(49 missing values generated)
+
+. gen double lb = .
+(49 missing values generated)
+
+. gen double ub = .
+(49 missing values generated)
+
+. forvalues i=1/`=_N' {
+  2.         local kk = k[`i']
+  3.         if `kk' != -1 {
+  4.                 if `kk' < 0 local suf "m`=abs(`kk')'"
+  5.                 else local suf "p`kk'"
+  6.                 capture {
+  7.                         replace b  = _b[es17_`suf'] in `i'
+  8.                         replace se = _se[es17_`suf'] in `i'
+  9.                 }
+ 10.                 replace lb = b - 1.96*se in `i'
+ 11.                 replace ub = b + 1.96*se in `i'
+ 12.         }
+ 13. }
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+
+. twoway ///
+>         (rcap lb ub k, lcolor(gs10)) ///
+>         (connected b k, msymbol(o) mcolor(navy) lcolor(navy)) ///
+>         , xline(-1, lpattern(dash) lcolor(gs8)) yline(0, lpattern(solid) lcolor(gs12)) ///
+>           title("事件研究：2017 政策冲击（交易类×相对月份）") ///
+>           xtitle("相对月份（0=政策月）") ytitle("系数（相对基准期 -1 月）")
+
+. graph export "`FIGDIR'/eventstudy_2017.png", replace width(2400)
+(file D:\BaiduSyncdisk\Doctor\论文\数字货币\数据构建/analyze/figures/eventstudy_2017.png not found)
+file D:\BaiduSyncdisk\Doctor\论文\数字货币\数据构建/analyze/figures/eventstudy_2017.png saved as PNG format
+
+. 
+. // 输出 esttab（仅交互项 + N）
+. if `HAVE_ESTTAB' {
+.         capture noisily esttab es2017 using "`TABLEDIR'/eventstudy_2017.rtf", ///
+>                 replace rtf se ///
+>                 star(* 0.10 ** 0.05 *** 0.01) ///
+>                 b(%9.3f) se(%9.3f) ///
+>                 title("Event study: 2017 政策冲击（交易类×相对月份，基准=-1）") ///
+>                 addnotes("样本=民事/商事且讨论合同效力；时间FE=月度；聚类=`CLUSTER_ID'；事件窗=±`WIN'个月")
+(file D:\BaiduSyncdisk\Doctor\论文\数字货币\数据构建/analyze/tables/eventstudy_2017.rtf not found)
+(output written to D:\BaiduSyncdisk\Doctor\论文\数字货币\数据构建/analyze/tables/eventstudy_2017.rtf)
+. }
+
+. 
+. // === 2021 事件研究 ===
+. restore, preserve
+
+. keep if sample_civil_commercial==1 & !missing(contract_invalid) & !missing(trade_group) & !missing(ym)
+(8,114 observations deleted)
+
+. replace court_level_id = 0 if missing(court_level_id)
+(0 real changes made)
+
+. replace procedure_stage_id = 0 if missing(procedure_stage_id)
+(0 real changes made)
+
+. replace doc_type_id = 0 if missing(doc_type_id)
+(3,984 real changes made)
+
+. replace case_type_primary_id = 0 if missing(case_type_primary_id)
+(3,984 real changes made)
+
+. replace case_type_secondary_id = 0 if missing(case_type_secondary_id)
+(3,984 real changes made)
+
+. gen byte is_appeal_miss_es2 = missing(is_appeal_b)
+
+. replace is_appeal_b = 0 if missing(is_appeal_b)
+(0 real changes made)
+
+. replace `CLUSTER_ID' = 0 if missing(`CLUSTER_ID')
+(0 real changes made)
+
+. 
+. local YM2021 = mofd(`P2021')
+
+. gen int rel2021 = ym - `YM2021'
+
+. keep if rel2021 >= -`WIN' & rel2021 <= `WIN'
+(1,298 observations deleted)
+
+. 
+. forvalues k = -`WIN'/`WIN' {
+  2.         if `k' != -1 {
+  3.                 if `k' < 0 local suf "m`=abs(`k')'"
+  4.                 else local suf "p`k'"
+  5.                 gen byte es21_`suf' = (rel2021==`k' & trade_group==1)
+  6.         }
+  7. }
+
+. 
+. capture noisily regress contract_invalid ///
+>                 i.trade_group es21_* ///
+>                 i.ym ///
+>                 i.court_level_id i.procedure_stage_id i.doc_type_id ///
+>                 i.case_type_primary_id i.case_type_secondary_id ///
+>                 i.is_appeal_b i.is_appeal_miss_es2, ///
+>                 vce(cluster `CLUSTER_ID')
+note: 0.doc_type_id omitted because of collinearity.
+note: 0.case_type_primary_id omitted because of collinearity.
+note: 0.case_type_secondary_id omitted because of collinearity.
+note: 0.is_appeal_miss_es2 omitted because of collinearity.
+
+Linear regression                               Number of obs     =      2,686
+                                                F(104, 1109)      =          .
+                                                Prob > F          =          .
+                                                R-squared         =     0.0983
+                                                Root MSE          =     .48358
+
+                                (Std. err. adjusted for 1,110 clusters in court_name_id)
+----------------------------------------------------------------------------------------
+                       |               Robust
+      contract_invalid | Coefficient  std. err.      t    P>|t|     [95% conf. interval]
+-----------------------+----------------------------------------------------------------
+           trade_group |
+               交易类  |   .1647811   .1653902     1.00   0.319    -.1597318    .4892941
+              es21_m24 |   .0881645   .3134324     0.28   0.779    -.5268229    .7031519
+              es21_m23 |  -.0665621   .2739163    -0.24   0.808    -.6040148    .4708905
+              es21_m22 |   .2490936   .2280667     1.09   0.275    -.1983974    .6965846
+              es21_m21 |    .235594    .228511     1.03   0.303    -.2127686    .6839566
+              es21_m20 |   .6423245     .19352     3.32   0.001     .2626178    1.022031
+              es21_m19 |   .1813172   .3095584     0.59   0.558    -.4260691    .7887034
+              es21_m18 |  -.2123266   .2679345    -0.79   0.428    -.7380424    .3133892
+              es21_m17 |   .4645755    .219479     2.12   0.035     .0339346    .8952163
+              es21_m16 |   .2762792    .233144     1.19   0.236     -.181174    .7337324
+              es21_m15 |   .1097484   .2088234     0.53   0.599     -.299985    .5194819
+              es21_m14 |   .2894658   .2152084     1.35   0.179    -.1327957    .7117273
+              es21_m13 |   .2204626   .2308684     0.95   0.340    -.2325256    .6734508
+              es21_m12 |   .2666965    .224914     1.19   0.236    -.1746086    .7080016
+              es21_m11 |   .3696841   .2004909     1.84   0.065    -.0237001    .7630683
+              es21_m10 |   .1294596   .2299327     0.56   0.574    -.3216927    .5806118
+               es21_m9 |   .0628236   .2025063     0.31   0.756    -.3345151    .4601623
+               es21_m8 |   .2158925   .2601524     0.83   0.407    -.2945539    .7263389
+               es21_m7 |   .3155158   .2434038     1.30   0.195     -.162068    .7930996
+               es21_m6 |  -.0344582   .2115026    -0.16   0.871    -.4494485    .3805322
+               es21_m5 |    .309734    .209991     1.47   0.140    -.1022905    .7217586
+               es21_m4 |   .1348342   .2060688     0.65   0.513    -.2694945    .5391628
+               es21_m3 |   .1421723   .2361821     0.60   0.547    -.3212418    .6055864
+               es21_m2 |  -.0571143   .2266984    -0.25   0.801    -.5019204    .3876917
+               es21_p0 |  -.0485204   .2019877    -0.24   0.810    -.4448416    .3478007
+               es21_p1 |  -.1304907   .2297436    -0.57   0.570    -.5812718    .3202904
+               es21_p2 |    .107347   .2128522     0.50   0.614    -.3102914    .5249854
+               es21_p3 |   .0959812   .2010221     0.48   0.633    -.2984454    .4904078
+               es21_p4 |  -.3055898   .2682277    -1.14   0.255    -.8318809    .2207012
+               es21_p5 |  -.0170332   .2920173    -0.06   0.953     -.590002    .5559356
+               es21_p6 |   .0681256   .2047522     0.33   0.739    -.3336197    .4698709
+               es21_p7 |   .2778332   .1818434     1.53   0.127    -.0789628    .6346291
+               es21_p8 |  -.1318968   .2423658    -0.54   0.586    -.6074439    .3436504
+               es21_p9 |   -.073566   .2180926    -0.34   0.736    -.5014866    .3543546
+              es21_p10 |   .2571738   .2239567     1.15   0.251    -.1822529    .6966006
+              es21_p11 |   .1230338   .2341656     0.53   0.599    -.3364238    .5824914
+              es21_p12 |  -.0658853   .3094147    -0.21   0.831    -.6729896     .541219
+              es21_p13 |  -.0352111   .2397285    -0.15   0.883    -.5055838    .4351615
+              es21_p14 |   .1702894   .2282322     0.75   0.456    -.2775261     .618105
+              es21_p15 |  -.1121619   .2620408    -0.43   0.669    -.6263136    .4019897
+              es21_p16 |  -.4083831   .3008145    -1.36   0.175    -.9986128    .1818466
+              es21_p17 |   .0487471   .2730261     0.18   0.858    -.4869588    .5844531
+              es21_p18 |   .2306439   .2194676     1.05   0.294    -.1999748    .6612625
+              es21_p19 |  -.1792345   .2519455    -0.71   0.477    -.6735782    .3151092
+              es21_p20 |   .0527224   .2296494     0.23   0.818    -.3978738    .5033187
+              es21_p21 |    .441883   .1848787     2.39   0.017     .0791315    .8046344
+              es21_p22 |  -.4767416   .2647819    -1.80   0.072    -.9962716    .0427884
+              es21_p23 |  -.0792193   .2949767    -0.27   0.788    -.6579946    .4995561
+              es21_p24 |  -.0997578   .3720979    -0.27   0.789    -.8298531    .6303376
+                       |
+                    ym |
+                  717  |   .1523291   .1144174     1.33   0.183    -.0721698    .3768281
+                  718  |   .0376324   .1083596     0.35   0.728    -.1749805    .2502453
+                  719  |   .0791893   .1090959     0.73   0.468    -.1348683     .293247
+                  720  |  -.0613525   .1259119    -0.49   0.626    -.3084049    .1856998
+                  721  |   .1496548   .1612081     0.93   0.353    -.1666524     .465962
+                  722  |     .22598   .1189274     1.90   0.058    -.0073681    .4593281
+                  723  |  -.0202957   .1003346    -0.20   0.840    -.2171627    .1765714
+                  724  |   .0831964   .1139075     0.73   0.465     -.140302    .3066949
+                  725  |  -.0050297   .0969049    -0.05   0.959    -.1951673    .1851078
+                  726  |   .1123034   .1056313     1.06   0.288    -.0949563    .3195632
+                  727  |    .000981   .1007077     0.01   0.992    -.1966181    .1985801
+                  728  |   .0229355   .1083122     0.21   0.832    -.1895845    .2354555
+                  729  |   .1216865   .1106508     1.10   0.272     -.095422     .338795
+                  730  |    .120746   .1061707     1.14   0.256    -.0875722    .3290641
+                  731  |   .2020526   .1000713     2.02   0.044     .0057022    .3984031
+                  732  |  -.0634919   .1107491    -0.57   0.567    -.2807933    .1538095
+                  733  |    .101187   .1186681     0.85   0.394    -.1316524    .3340264
+                  734  |   .0971006   .1122207     0.87   0.387    -.1230883    .3172895
+                  735  |   .0656118   .1039378     0.63   0.528     -.138325    .2695486
+                  736  |   .1882796   .1167622     1.61   0.107    -.0408201    .4173794
+                  737  |   .1533757   .1086082     1.41   0.158     -.059725    .3664765
+                  738  |   .2777667    .111092     2.50   0.013     .0597926    .4957409
+                  739  |   .1903814   .1053886     1.81   0.071    -.0164022     .397165
+                  740  |    .154983   .0996805     1.55   0.120    -.0406007    .3505667
+                  741  |   .2150589   .1133033     1.90   0.058     -.007254    .4373719
+                  742  |   .1952739   .1002082     1.95   0.052    -.0013451    .3918929
+                  743  |   .1898353   .1001849     1.89   0.058    -.0067381    .3864087
+                  744  |    .311604   .1178577     2.64   0.008     .0803548    .5428532
+                  745  |   .2694668   .1305035     2.06   0.039     .0134053    .5255284
+                  746  |   .3730717   .1122466     3.32   0.001     .1528321    .5933113
+                  747  |   .3103313   .1145644     2.71   0.007     .0855438    .5351188
+                  748  |   .4120835   .1076983     3.83   0.000     .2007682    .6233989
+                  749  |   .1165636   .1200265     0.97   0.332     -.118941    .3520682
+                  750  |   .2083228   .1143792     1.82   0.069    -.0161012    .4327469
+                  751  |   .1904418   .1140655     1.67   0.095    -.0333667    .4142503
+                  752  |   .1468573   .1123839     1.31   0.192    -.0736517    .3673663
+                  753  |   .1622316   .1149227     1.41   0.158    -.0632589     .387722
+                  754  |   .1843395   .1210753     1.52   0.128    -.0532231     .421902
+                  755  |   .2648529   .1131947     2.34   0.019     .0427528    .4869529
+                  756  |   .2393551   .1391288     1.72   0.086    -.0336303    .5123404
+                  757  |    .201289   .1114299     1.81   0.071    -.0173481    .4199262
+                  758  |   .1208218   .1133958     1.07   0.287    -.1016728    .3433163
+                  759  |   .4786022   .1102535     4.34   0.000     .2622731    .6949312
+                  760  |   .1163779   .1125164     1.03   0.301    -.1043911    .3371468
+                  761  |   .1357468   .1157203     1.17   0.241    -.0913086    .3628022
+                  762  |   .4792887   .1180803     4.06   0.000     .2476028    .7109746
+                  763  |   .2659452   .1300258     2.05   0.041     .0108209    .5210696
+                  764  |    .353171   .1085967     3.25   0.001     .1400928    .5662492
+                       |
+        court_level_id |
+                 中院  |  -.0510069   .0778417    -0.66   0.512    -.2037404    .1017267
+             基层法院  |  -.2966226      .1945    -1.53   0.128    -.6782522     .085007
+               最高法  |  -.1416711    .077805    -1.82   0.069    -.2943327    .0109904
+             高级法院  |  -.1003158   .1340519    -0.75   0.454    -.3633398    .1627081
+                 高院  |  -.0395606   .2983166    -0.13   0.895    -.6248892     .545768
+                       |
+    procedure_stage_id |
+                 二审  |  -.2125732   .2299894    -0.92   0.356    -.6638367    .2386902
+            二审/终审  |  -.1714508   .2414314    -0.71   0.478    -.6451647     .302263
+                 再审  |   .0066999   .2029319     0.03   0.974    -.3914738    .4048737
+     发回重审后的一审  |   .4757086   .2451969     1.94   0.053    -.0053935    .9568107
+                       |
+           doc_type_id |
+                    0  |          0  (omitted)
+                       |
+  case_type_primary_id |
+                    0  |          0  (omitted)
+                       |
+case_type_secondary_id |
+                    0  |          0  (omitted)
+         1.is_appeal_b |  -.0474275   .1582171    -0.30   0.764    -.3578662    .2630112
+  0.is_appeal_miss_es2 |          0  (omitted)
+                 _cons |   .5508695   .2084877     2.64   0.008     .1417947    .9599442
+----------------------------------------------------------------------------------------
+
+. if !_rc estimates store es2021
+
+. 
+. // 画图（外层已 preserve，避免嵌套 preserve）
+. capture noisily estimates restore es2021
+(results es2021 are active now)
+
+. clear
+
+. set obs `=2*`WIN'+1'
+Number of observations (_N) was 0, now 49.
+
+. gen int k = _n - (`WIN'+1)
+
+. gen double b = .
+(49 missing values generated)
+
+. gen double se = .
+(49 missing values generated)
+
+. gen double lb = .
+(49 missing values generated)
+
+. gen double ub = .
+(49 missing values generated)
+
+. forvalues i=1/`=_N' {
+  2.         local kk = k[`i']
+  3.         if `kk' != -1 {
+  4.                 if `kk' < 0 local suf "m`=abs(`kk')'"
+  5.                 else local suf "p`kk'"
+  6.                 capture {
+  7.                         replace b  = _b[es21_`suf'] in `i'
+  8.                         replace se = _se[es21_`suf'] in `i'
+  9.                 }
+ 10.                 replace lb = b - 1.96*se in `i'
+ 11.                 replace ub = b + 1.96*se in `i'
+ 12.         }
+ 13. }
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+
+. twoway ///
+>         (rcap lb ub k, lcolor(gs10)) ///
+>         (connected b k, msymbol(o) mcolor(maroon) lcolor(maroon)) ///
+>         , xline(-1, lpattern(dash) lcolor(gs8)) yline(0, lpattern(solid) lcolor(gs12)) ///
+>           title("事件研究：2021 政策冲击（交易类×相对月份）") ///
+>           xtitle("相对月份（0=政策月）") ytitle("系数（相对基准期 -1 月）")
+
+. graph export "`FIGDIR'/eventstudy_2021.png", replace width(2400)
+(file D:\BaiduSyncdisk\Doctor\论文\数字货币\数据构建/analyze/figures/eventstudy_2021.png not found)
+file D:\BaiduSyncdisk\Doctor\论文\数字货币\数据构建/analyze/figures/eventstudy_2021.png saved as PNG format
+
+. 
+. if `HAVE_ESTTAB' {
+.         capture noisily esttab es2021 using "`TABLEDIR'/eventstudy_2021.rtf", ///
+>                 replace rtf se ///
+>                 star(* 0.10 ** 0.05 *** 0.01) ///
+>                 b(%9.3f) se(%9.3f) ///
+>                 title("Event study: 2021 政策冲击（交易类×相对月份，基准=-1）") ///
+>                 addnotes("样本=民事/商事且讨论合同效力；时间FE=月度；聚类=`CLUSTER_ID'；事件窗=±`WIN'个月")
+(file D:\BaiduSyncdisk\Doctor\论文\数字货币\数据构建/analyze/tables/eventstudy_2021.rtf not found)
+(output written to D:\BaiduSyncdisk\Doctor\论文\数字货币\数据构建/analyze/tables/eventstudy_2021.rtf)
+. }
+
+. 
+. restore
+
+. 
+. // 回归（logit）也用 esttab 输出一份（若可用）
+. if `HAVE_ESTTAB' {
+.         cap which esttab
+.         if !_rc {
+.                 capture noisily esttab m1 using "`TABLEDIR'/logit_contract_invalid.rtf", ///
+>                         replace rtf se ///
+>                         star(* 0.10 ** 0.05 *** 0.01) ///
+>                         b(%9.3f) se(%9.3f) ///
+>                         title("Logit: 合同效力(无效/未成立=1) 及控制变量") ///
+>                         addnotes("聚类稳健标准误: `CLUSTER_ID'；缺失值：金额/是否二审用缺失指示；分类缺失归入0类")
+(output written to D:\BaiduSyncdisk\Doctor\论文\数字货币\数据构建/analyze/tables/logit_contract_invalid.rtf)
+.         }
+. }
+
+. 
+. // -----------------------------
+. // 5) 画图（导出 PNG）
+. // -----------------------------
+. di as txt "开始画图..."
+开始画图...
+
+. 
+. // 图1：年度案件量
+. preserve
+
+. keep if !missing(judgment_year)
+(1 observation deleted)
+
+. gen byte one = 1
+
+. graph bar (sum) one, over(judgment_year, sort(1) label(angle(45))) ///
+>         title("年度案件量") ytitle("案件数")
+
+. graph export "`FIGDIR'/fig_cases_by_year.png", replace width(2000)
+file D:\BaiduSyncdisk\Doctor\论文\数字货币\数据构建/analyze/figures/fig_cases_by_year.png saved as PNG format
+
+. restore
+
+. 
+. // 图2：合同无效比例（按年份）
+. preserve
+
+. keep if !missing(judgment_year) & !missing(contract_invalid)
+(6,406 observations deleted)
+
+. gen byte one = 1
+
+. collapse (mean) invalid_rate=contract_invalid (sum) N=one, by(judgment_year)
+
+. twoway (line invalid_rate judgment_year, lwidth(medthick)) ///
+>         , title("合同无效/部分无效比例（按年份）") ///
+>           ytitle("比例") xtitle("年份") ylabel(0(0.1)1)
+
+. graph export "`FIGDIR'/fig_invalid_rate_by_year.png", replace width(2000)
+file D:\BaiduSyncdisk\Doctor\论文\数字货币\数据构建/analyze/figures/fig_invalid_rate_by_year.png saved as PNG format
+
+. restore
+
+. 
+. // 图3：活动类型 Top10（条形图）
+. preserve
+
+. keep if trim(activity_type)!=""
+(4,074 observations deleted)
+
+. gen byte one = 1
+
+. collapse (sum) N=one, by(activity_type)
+
+. gsort -N
+
+. keep in 1/10
+(191 observations deleted)
+
+. graph bar N, over(activity_type, sort(1) label(angle(30))) ///
+>         title("活动类型 Top10") ytitle("案件数")
+
+. graph export "`FIGDIR'/fig_activity_type_top10.png", replace width(2400)
+file D:\BaiduSyncdisk\Doctor\论文\数字货币\数据构建/analyze/figures/fig_activity_type_top10.png saved as PNG format
+
+. restore
+
+. 
+. // -----------------------------
+. // 6) 生成 RTF 报告（便于阅读/粘贴，解决中文乱码：全部写为 RTF \uXXXX?）
+. // -----------------------------
+. di as txt "开始生成 RTF 报告..."
+开始生成 RTF 报告...
+
+. 
+. local REPORTDIR "`OUTDIR'/report"
+
+. local RTF "`REPORTDIR'/report.rtf"
+
+. 
+. capture noisily python:
+----------------------------------------------- python (type end to exit) -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+>>> import os, csv, re
+>>> from collections import Counter
+>>> 
+>>> report_dir = r"""`REPORTDIR'"""
+>>> rtf_path = r"""`RTF'"""
+>>> figdir = r"""`FIGDIR'"""
+>>> datadir = r"""`DATADIR'"""
+>>> root = r"""`ROOT'"""
+>>> outdir = r"""`OUTDIR'"""
+>>> cluster_id = r"""`CLUSTER_ID'"""
+>>> reg_status = r"""`REG_STATUS'"""
+>>> reg_note = r"""`REG_NOTE'"""
+>>> flat_csv = os.path.join(datadir, "final_all_flat.csv")
+>>> 
+>>> os.makedirs(report_dir, exist_ok=True)
+>>> 
+>>> def rtf_escape(text: str) -> str:
+...     if text is None:
+...         return ""
+...     s = str(text)
+...     out = []
+...     for ch in s:
+...         if ch == "\\":
+...             out.append("\\\\")
+...         elif ch == "{":
+...             out.append("\\{")
+...         elif ch == "}":
+...             out.append("\\}")
+...         elif ch == "\n":
+...             out.append("\\par\n")
+...         else:
+...             code = ord(ch)
+...             if code < 128:
+...                 out.append(ch)
+...             else:
+...                 # RTF \uN uses signed 16-bit integers
+...                 if code > 0x7FFF:
+...                     code -= 0x10000
+...                 out.append(f"\\u{code}?")
+...     return "".join(out)
+... 
+>>> def nonempty_str(x):
+...     return x is not None and str(x).strip() != ""
+... 
+>>> def parse_year(date_str: str):
+...     # 期待格式 YYYY-MM-DD；若不是则尝试抓取前4位数字
+...     if not nonempty_str(date_str):
+...         return None
+...     s = str(date_str).strip()
+...     m = re.match(r"^(\d{4})", s)
+...     if m:
+...         return int(m.group(1))
+...     return None
+... 
+>>> def cv_cat_and_invalid(cv: str):
+...     if not nonempty_str(cv):
+...         return (None, None)
+...     s = str(cv).strip()
+...     # 分类：尽量对齐 do 文件里的逻辑（优先更具体的“部分无效”）
+...     if "部分无效" in s:
+...         cat = 3
+...     elif "无效" in s:
+...         cat = 2
+...     elif "未成立" in s:
+...         cat = 4
+...     elif "有效" in s:
+...         cat = 1
+...     else:
+...         cat = 5
+...     # 二元：无效/部分无效/未成立=1；有效=0；其他缺失
+...     if ("无效" in s) or ("未成立" in s):
+...         inv = 1
+...     elif "有效" in s:
+...         inv = 0
+...     else:
+...         inv = None
+...     return (cat, inv)
+... 
+... # 从扁平 CSV 统计（不依赖 sfi API）
+>>> N_ALL = 0
+>>> N_CV = 0
+>>> N_INV = 0
+>>> N_VAL = 0
+>>> year_counts = Counter()
+>>> cv_counts = Counter()
+>>> act_counts = Counter()
+>>> 
+>>> with open(flat_csv, "r", encoding="utf-8-sig", newline="") as f:
+...     reader = csv.DictReader(f)
+...     for row in reader:
+...         N_ALL += 1
+...         cv = row.get("contract_validity", "")
+...         if nonempty_str(cv):
+...             N_CV += 1
+...         cat, inv = cv_cat_and_invalid(cv)
+...         if cat is not None:
+...             cv_counts[cat] += 1
+...         if inv == 1:
+...             N_INV += 1
+...         elif inv == 0:
+...             N_VAL += 1
+...         y = parse_year(row.get("judgment_date", ""))
+...         if y is not None:
+...             year_counts[y] += 1
+...         at = row.get("activity_type", "")
+...         if nonempty_str(at):
+...             act_counts[str(at).strip()] += 1
+... 
+>>> top20_act = act_counts.most_common(20)
+>>> cv_labels = {1: "有效", 2: "无效", 3: "部分无效", 4: "未成立", 5: "其他"}
+>>> 
+>>> # 回归系数（如有）
+... coef_rows = []
+>>> coef_csv = os.path.join(datadir, "reg_logit_contract_invalid.csv")
+>>> if os.path.exists(coef_csv):
+...     with open(coef_csv, "r", encoding="utf-8-sig", newline="") as f:
+...         reader = csv.DictReader(f)
+...         for row in reader:
+...             coef_rows.append(row)
+... 
+>>> lines = []
+>>> lines.append(r"{\rtf1\ansi\uc1\deff0{\fonttbl{\f0 Arial;}}")
+>>> lines.append(r"\f0\b " + rtf_escape("数字货币裁判文书结构化数据：Stata 分析报告") + r" \b0\par")
+>>> lines.append(rtf_escape(f"工作目录：{root}") + r"\par")
+>>> lines.append(rtf_escape(f"输出目录：{outdir}") + r"\par\par")
+>>> 
+>>> lines.append(r"\b " + rtf_escape("1. 数据概览") + r" \b0\par")
+>>> lines.append(rtf_escape(f"总样本量 (N)：{N_ALL}") + r"\par")
+>>> lines.append(rtf_escape(f"contract_validity 非空样本量：{N_CV}") + r"\par")
+>>> lines.append(rtf_escape(f"contract_invalid=1 (无效/部分无效/未成立)：{N_INV}") + r"\par")
+>>> lines.append(rtf_escape(f"contract_invalid=0 (有效)：{N_VAL}") + r"\par\par")
+>>> 
+>>> lines.append(r"\b " + rtf_escape("2. 描述统计表") + r" \b0\par")
+>>> lines.append(r"\b " + rtf_escape("2.1 按年份案件量") + r" \b0\par")
+>>> lines.append(rtf_escape("年份\t案件数") + r"\par")
+>>> for y in sorted(year_counts):
+...     lines.append(rtf_escape(f"{y}\t{year_counts[y]}") + r"\par")
+>>> lines.append(r"\par")
+>>> 
+>>> lines.append(r"\b " + rtf_escape("2.2 合同效力分布（contract_validity_cat）") + r" \b0\par")
+>>> lines.append(rtf_escape("类别\t案件数") + r"\par")
+>>> for k in sorted(cv_counts):
+...     lab = cv_labels.get(k, str(k))
+...     lines.append(rtf_escape(f"{lab}\t{cv_counts[k]}") + r"\par")
+>>> lines.append(r"\par")
+>>> 
+>>> lines.append(r"\b " + rtf_escape("2.3 活动类型 Top20") + r" \b0\par")
+>>> lines.append(rtf_escape("活动类型\t案件数") + r"\par")
+>>> for a, n in top20_act:
+...     lines.append(rtf_escape(f"{a}\t{n}") + r"\par")
+>>> lines.append(r"\par")
+>>> 
+>>> lines.append(r"\b " + rtf_escape("3. 回归模型") + r" \b0\par")
+>>> lines.append(rtf_escape("模型：Logit(二元因变量)") + r"\par")
+>>> lines.append(rtf_escape("因变量：contract_invalid（无效/部分无效/未成立=1；有效=0）") + r"\par")
+>>> lines.append(rtf_escape("自变量：activity_type(类别) + court_level(类别) + judgment_year(年份虚拟变量) + ln(涉案金额+1) + 是否二审") + r"\par")
+>>> lines.append(rtf_escape("缺失处理：对 ln_amount / is_appeal 生成缺失指示，并将缺失值置0；分类变量缺失归入0类") + r"\par")
+>>> lines.append(rtf_escape(f"稳健标准误：按 {cluster_id} 聚类（优先 region，否则 court_name）") + r"\par\par")
+>>> lines.append(rtf_escape(f"回归状态：{reg_status}") + r"\par")
+>>> if reg_note and reg_note.strip():
+...     lines.append(rtf_escape(f"备注：{reg_note}") + r"\par")
+... 
+>>> if coef_rows:
+...     lines.append(r"\par\b " + rtf_escape("3.1 系数表（logit）") + r" \b0\par")
+...     lines.append(rtf_escape("term\tb\tse\tz\tp") + r"\par")
+...     for row in coef_rows[:500]:
+...         term = row.get("term","")
+...         b = row.get("b","")
+...         se = row.get("se","")
+...         z = row.get("z","")
+...         p = row.get("p","")
+...         lines.append(rtf_escape(f"{term}\t{b}\t{se}\t{z}\t{p}") + r"\par")
+... 
+>>> lines.append(r"\par\b " + rtf_escape("4. 图形输出（PNG 文件）") + r" \b0\par")
+>>> lines.append(rtf_escape(os.path.join(figdir, "fig_cases_by_year.png")) + r"\par")
+>>> lines.append(rtf_escape(os.path.join(figdir, "fig_invalid_rate_by_year.png")) + r"\par")
+>>> lines.append(rtf_escape(os.path.join(figdir, "fig_activity_type_top10.png")) + r"\par")
+>>> 
+>>> lines.append("}")
+>>> with open(rtf_path, "w", encoding="utf-8", newline="\n") as f:
+...     f.write("\n".join(lines))
+10849
+>>> print("[python] wrote rtf:", rtf_path)
+[python] wrote rtf: D:\BaiduSyncdisk\Doctor\论文\数字货币\数据构建/analyze/report/report.rtf
+>>> end
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+. 
+. if _rc {
+.         di as err "RTF 报告生成失败（python rc=" _rc "）。请检查 Stata 的 python 配置。"
+. }
+
+. else {
+.         di as txt "RTF 报告已生成: `RTF'"
+RTF 报告已生成: D:\BaiduSyncdisk\Doctor\论文\数字货币\数据构建/analyze/report/report.rtf
+. }
+
+. 
+. di as txt "============================================================"
+============================================================
+
+. di as txt "分析完成：请查看 analyze/ 目录下 data/tables/figures/logs"
+分析完成：请查看 analyze/ 目录下 data/tables/figures/logs
+
+. di as txt "============================================================"
+============================================================
+
+. 
+. log close
+      name:  <unnamed>
+       log:  D:\BaiduSyncdisk\Doctor\论文\数字货币\数据构建/analyze/logs/analyze.log
+  log type:  text
+ closed on:  27 Jan 2026, 11:13:23
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------

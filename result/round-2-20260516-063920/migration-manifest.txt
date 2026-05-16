@@ -1,0 +1,18 @@
+﻿Source: D:\BaiduSyncdisk\Doctor\论文\数字货币\研究\数据构建
+Destination: D:\BaiduSyncdisk\Doctor\论文\数字货币\研究\newstudy
+Round: round-2-20260516-063920
+Finalized: 2026-05-16 07:01:25
+Scope: selected code, scripts, processed datasets, raw indexes/texts, analysis-ready datasets, reports, figures, tables, logs
+Layout:
+- code/legacy: historical root scripts and config
+- code/round-2-20260516-063920: active package and per-round coding workspace
+- data/raw: original indexes and texts
+- data/processed/extraction: flattened extraction outputs
+- data/processed/analysis_data: analysis-ready datasets
+- result/round-2-20260516-063920: tables, figures, logs, and round artifacts
+Exclusions: pyc, tar.gz, zip, temp caches, duplicate noise, .env secrets
+Final counts:
+- code: files=41, bytes=254046
+- data: files=296, bytes=266876375
+- docs: files=15, bytes=110725
+- result: files=67, bytes=24913571

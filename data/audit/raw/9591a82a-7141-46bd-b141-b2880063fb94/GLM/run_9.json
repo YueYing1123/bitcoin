@@ -1,0 +1,79 @@
+{
+  "document_id": "9591a82a-7141-46bd-b141-b2880063fb94",
+  "metadata": {
+    "case_number": "（2024）新01民终8979号",
+    "court_name": "新疆维吾尔自治区乌鲁木齐市中级人民法院",
+    "court_level": "中级法院",
+    "region": null,
+    "judgment_date": "2025-02-17",
+    "doc_type": null
+  },
+  "case_profile": {
+    "case_type_primary": null,
+    "case_type_secondary": "民间借贷纠纷",
+    "procedure_stage": "二审",
+    "is_appeal": null,
+    "litigant_profile": {
+      "plaintiff_types": [],
+      "defendant_types": []
+    }
+  },
+  "virtual_currency_info": {
+    "involved": null,
+    "currency_types": [],
+    "activity_type": [],
+    "total_amount_cny": null
+  },
+  "judicial_analysis": {
+    "legal_characterization": "民间借贷关系",
+    "virtual_currency_property_legality": "不具有与法定货币同等的法律地位，不受法律保护",
+    "contract_validity": "有效",
+    "reason_for_invalidity": [],
+    "cited_laws": [
+      "《中华人民共和国民法典》第六百八十条",
+      "《中华人民共和国民法典》第六百七十五条",
+      "《最高人民法院关于审理民间借贷案件适用法律若干问题的规定》第二十八条第二款第一项",
+      "《中华人民共和国民事诉讼法》第一百七十七条第一款第一项",
+      "《最高人民法院关于审理民间借贷案件适用法律若干问题的规定》第十六条"
+    ],
+    "cited_policies": [],
+    "economic_substance_factors": {
+      "evidence_of_loan_agreement": "微信聊天记录显示杜某某认可借款事实并承诺还款",
+      "lack_of_evidence_for_investment": "杜某某未能提供有效证据证明款项用于投资虚拟货币或双方有委托理财合意",
+      "burden_of_proof": "杜某某作为抗辩方承担举证不能的不利后果"
+    },
+    "judicial_framing": [
+      "借贷合意认定",
+      "举证责任分配",
+      "民间借贷关系与委托理财关系的区分"
+    ]
+  },
+  "meta_ensemble": {
+    "model_votes": {},
+    "agreement_rate": null,
+    "final_label_source": null,
+    "confidence_mean": null,
+    "validation_status": null
+  },
+  "llm_summary": {
+    "outcome_summary": "二审法院驳回上诉，维持原判。杜某某需偿还贾某某借款本金82,310元及相应利息，并承担部分保全费。",
+    "reasoning_summary": "法院认为，杜某某主张双方为委托理财关系，但未能提供充分证据证明其主张，应承担举证不能的不利后果。贾某某提供的微信聊天记录等证据足以证明双方存在借贷合意，故一审法院认定双方为民间借贷关系正确，判决应予维持。",
+    "issues_list": []
+  },
+  "custom_annotations": {
+    "law_firm_names": [],
+    "field_confidence": {
+      "legal_characterization": 1.0,
+      "virtual_currency_property_legality": 0.9,
+      "contract_validity": 1.0,
+      "reason_for_invalidity": 1.0,
+      "cited_laws": 1.0,
+      "cited_policies": 1.0,
+      "economic_substance_factors": 0.9,
+      "judicial_framing": 0.9,
+      "outcome_summary": 1.0,
+      "reasoning_summary": 1.0,
+      "law_firm_names": 1.0
+    }
+  }
+}

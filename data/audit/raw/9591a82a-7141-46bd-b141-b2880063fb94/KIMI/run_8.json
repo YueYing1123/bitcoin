@@ -1,0 +1,115 @@
+{
+  "document_id": "9591a82a-7141-46bd-b141-b2880063fb94",
+  "metadata": {
+    "case_number": "（2024）新01民终8979号",
+    "court_name": "新疆维吾尔自治区乌鲁木齐市中级人民法院",
+    "court_level": "中级法院",
+    "region": null,
+    "judgment_date": "2025-02-17",
+    "doc_type": null
+  },
+  "case_profile": {
+    "case_type_primary": null,
+    "case_type_secondary": "民间借贷纠纷",
+    "procedure_stage": "二审",
+    "is_appeal": true,
+    "litigant_profile": {
+      "plaintiff_types": [],
+      "defendant_types": []
+    }
+  },
+  "virtual_currency_info": {
+    "involved": true,
+    "currency_types": [
+      "XXX数字货币"
+    ],
+    "activity_type": [
+      "投资"
+    ],
+    "total_amount_cny": 96400
+  },
+  "judicial_analysis": {
+    "legal_characterization": {
+      "value": "民间借贷关系",
+      "confidence": 0.95
+    },
+    "virtual_currency_property_legality": {
+      "value": "不具有与法定货币同等的法律地位，不受法律保护",
+      "confidence": 0.6
+    },
+    "contract_validity": {
+      "value": "不适用",
+      "confidence": 0.5
+    },
+    "reason_for_invalidity": {
+      "value": [],
+      "confidence": 0.5
+    },
+    "cited_laws": {
+      "value": [
+        "《中华人民共和国民法典》第六百八十条",
+        "《中华人民共和国民法典》第六百七十五条",
+        "《最高人民法院关于审理民间借贷案件适用法律若干问题的规定》第十六条",
+        "《最高人民法院关于审理民间借贷案件适用法律若干问题的规定》第二十八条第二款第一项",
+        "《中华人民共和国民事诉讼法》第一百七十七条第一款第一项"
+      ],
+      "confidence": 0.95
+    },
+    "cited_policies": {
+      "value": [],
+      "confidence": 0.5
+    },
+    "economic_substance_factors": {
+      "value": {
+        "微信聊天记录显示借贷合意及高利贷表述": true,
+        "被告承诺分期还款计划": true,
+        "原告实际交付资金": true,
+        "缺乏共同投资账户证据": true,
+        "缺乏直接投资虚拟货币证据": true
+      },
+      "confidence": 0.8
+    },
+    "judicial_framing": {
+      "value": [
+        "民间借贷关系与委托投资关系的界定",
+        "举证责任分配",
+        "借贷合意的认定",
+        "款项交付的审查",
+        "证据采信标准"
+      ],
+      "confidence": 0.85
+    }
+  },
+  "meta_ensemble": {
+    "model_votes": {},
+    "agreement_rate": null,
+    "final_label_source": null,
+    "confidence_mean": null,
+    "validation_status": null
+  },
+  "llm_summary": {
+    "outcome_summary": {
+      "value": "驳回上诉，维持原判",
+      "confidence": 0.95
+    },
+    "reasoning_summary": {
+      "value": "二审法院认为，上诉人未能提供充分证据证明双方存在委托投资关系，被上诉人提供的微信聊天记录显示上诉人认可借款事实并承诺还款方式。根据举证责任规则，上诉人应承担不利后果。一审法院认定民间借贷关系成立并计算本金及逾期利息符合法律规定。",
+      "confidence": 0.85
+    },
+    "issues_list": {
+      "value": [
+        "双方法律关系定性：民间借贷还是委托投资",
+        "虚拟货币投资的法律地位及保护问题",
+        "举证责任分配与证据采信",
+        "借款本金及利息的计算"
+      ],
+      "confidence": 0.8
+    }
+  },
+  "custom_annotations": {
+    "law_firm_names": {
+      "value": [],
+      "confidence": 0.5
+    }
+  }
+}

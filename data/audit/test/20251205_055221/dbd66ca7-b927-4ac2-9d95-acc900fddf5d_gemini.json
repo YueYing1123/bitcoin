@@ -1,0 +1,187 @@
+{
+  "document_id": "dbd66ca7-b927-4ac2-9d95-acc900fddf5d",
+  "metadata": {
+    "case_number": {
+      "value": "（2018）苏0681刑初579号"
+    },
+    "court_name": {
+      "value": "启东市人民法院"
+    },
+    "court_level": {
+      "value": "基层法院"
+    },
+    "province": {
+      "value": "江苏"
+    },
+    "judgment_date": {
+      "value": "2019-10-30"
+    },
+    "judgment_year": {
+      "value": 2019
+    },
+    "first_instance_case_number": {
+      "value": null
+    }
+  },
+  "case_profile": {
+    "case_cause": {
+      "value": "集资诈骗罪"
+    },
+    "procedure_stage": {
+      "value": "一审"
+    },
+    "is_appeal": {
+      "value": false
+    },
+    "appeal_result": {
+      "value": null
+    },
+    "is_default_judgment": {
+      "value": false
+    },
+    "transaction_time_span": {
+      "start_year": {
+        "value": 2016
+      },
+      "end_year": {
+        "value": 2016
+      },
+      "crosses_2017_94_notice": {
+        "value": false
+      },
+      "crosses_2021_254_notice": {
+        "value": false
+      }
+    }
+  },
+  "litigant_profile": {
+    "plaintiff_type": {
+      "value": "其他"
+    },
+    "defendant_type": {
+      "value": "自然人"
+    },
+    "counsel_representation": {
+      "plaintiff_has_lawyer": {
+        "value": false
+      },
+      "defendant_has_lawyer": {
+        "value": true
+      }
+    }
+  },
+  "procedural_status": {
+    "ruling_type": {
+      "value": "实体判决"
+    },
+    "criminal_civil_intersection": {
+      "value": true
+    },
+    "jurisdiction_challenge": {
+      "value": true
+    }
+  },
+  "virtual_currency_info": {
+    "involved_currencies": {
+      "value": [
+        "比特币"
+      ]
+    },
+    "is_usdt_involved": {
+      "value": false
+    },
+    "activity_type": {
+      "value": "委托理财/代投"
+    },
+    "transaction_venue": {
+      "value": "中心化交易所"
+    },
+    "amounts": {
+      "plaintiff_claimed_cny": {
+        "value": 0
+      },
+      "court_recognized_cny": {
+        "value": 36312358.83
+      }
+    }
+  },
+  "evidence_analysis": {
+    "key_evidence_types": {
+      "value": [
+        "微信/聊天记录",
+        "转账记录",
+        "交易所后台数据",
+        "司法鉴定意见",
+        "银行卡交易信息"
+      ]
+    },
+    "burden_of_proof_ruling": {
+      "value": null
+    },
+    "wallet_ownership_proven": {
+      "value": true
+    }
+  },
+  "judicial_analysis": {
+    "legal_characterization": {
+      "value": "集资诈骗"
+    },
+    "currency_property_nature": {
+      "value": null
+    },
+    "contract_validity": {
+      "value": "无效"
+    },
+    "validity_ground": {
+      "value": "违反法律强制性规定"
+    },
+    "illegal_debt_determination": {
+      "value": false
+    },
+    "moral_judgment_tags": {
+      "value": []
+    },
+    "remedy_mechanics": {
+      "method": {
+        "value": "退赔"
+      },
+      "fiat_conversion_logic": {
+        "value": "投入本金"
+      },
+      "interest_or_fee": {
+        "value": "不予支持"
+      }
+    },
+    "cited_norms": {
+      "laws": {
+        "value": [
+          "《中华人民共和国刑法》第一百九十二条",
+          "《中华人民共和国刑法》第三百一十二条",
+          "《中华人民共和国刑法》第二十五条",
+          "《中华人民共和国刑法》第二十六条",
+          "《中华人民共和国刑法》第六十七条",
+          "《中华人民共和国刑法》第六十四条"
+        ]
+      },
+      "policies": {
+        "value": [
+          "《最高人民法院关于审理非法集资刑事案件具体应用法律若干问题的解释》",
+          "《最高人民法院关于审理掩饰、隐瞒犯罪所得、犯罪所得收益刑事案件适用法律若干问题的解释》",
+          "《最高人民法院关于审理洗钱等刑事案件具体应用法律若干问题的解释》"
+        ]
+      },
+      "is_public_order_cited": {
+        "value": false
+      }
+    }
+  },
+  "llm_summary": {
+    "outcome_text": {
+      "value": "被告人刘某某犯集资诈骗罪，判处有期徒刑十一年六个月，并处罚金人民币二十五万元；被告人周某某犯掩饰、隐瞒犯罪所得罪，判处有期徒刑四年，并处罚金人民币七万元；责令刘某某退赔被害人经济损失。"
+    },
+    "core_issue": {
+      "value": "刘某某等人搭建虚假外汇众筹平台实施集资诈骗，以及周某某利用POS机刷卡和协助团伙通过比特币等方式转移、掩饰犯罪所得的刑事责任认定。"
+    }
+  },
+  "custom_annotations": {}
+}

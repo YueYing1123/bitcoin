@@ -1,0 +1,66 @@
+{
+  "document_id": "05e5c09f-7497-48cf-a5bb-b2920163446d",
+  "metadata": {
+    "case_number": "（2024）沪01民终16260号",
+    "court_name": "上海市第一中级人民法院",
+    "court_level": "中级法院",
+    "region": null,
+    "judgment_date": "2025-02-27",
+    "doc_type": null
+  },
+  "case_profile": {
+    "case_type_primary": null,
+    "case_type_secondary": "民间借贷纠纷",
+    "procedure_stage": "二审",
+    "is_appeal": null,
+    "litigant_profile": {
+      "plaintiff_types": [],
+      "defendant_types": []
+    }
+  },
+  "virtual_currency_info": {
+    "involved": null,
+    "currency_types": [],
+    "activity_type": [],
+    "total_amount_cny": null
+  },
+  "judicial_analysis": {
+    "legal_characterization": "结算型民间借贷",
+    "virtual_currency_property_legality": "未直接认定，作为借贷关系中的支付对价和质押物处理",
+    "contract_validity": "有效",
+    "reason_for_invalidity": [],
+    "cited_laws": [
+      "《中华人民共和国民法典》第六百六十七条",
+      "《中华人民共和国民法典》第六百七十五条",
+      "《最高人民法院关于审理民间借贷案件适用法律若干问题的规定》第二十六条",
+      "《最高人民法院关于审理民间借贷案件适用法律若干问题的规定》第二十八条",
+      "《最高人民法院关于审理民间借贷案件适用法律若干问题的规定》第三十一条第一款",
+      "《中华人民共和国民事诉讼法》第一百七十七条第一款第(一)项"
+    ],
+    "cited_policies": [],
+    "economic_substance_factors": {
+      "书面凭证": "借条、欠条明确载明借贷关系",
+      "资金流向": "上诉人出具借条后向被上诉人转账5万元，被认定为还款",
+      "主张合理性": "上诉人关于胁迫及补偿的主张因缺乏证据且不符合常理未被采信"
+    },
+    "judicial_framing": [
+      "民间借贷纠纷",
+      "结算型借贷关系"
+    ]
+  },
+  "meta_ensemble": {
+    "model_votes": {},
+    "agreement_rate": null,
+    "final_label_source": null,
+    "confidence_mean": null,
+    "validation_status": null
+  },
+  "llm_summary": {
+    "outcome_summary": "二审法院驳回上诉，维持原判。即判令许某某归还赖某某借款本金224,340元及相应利息，并支付律师费15,000元。",
+    "reasoning_summary": "法院认为，借条、欠条等书面凭证足以证明双方存在借贷关系。上诉人关于系虚拟货币交易及受胁迫出具借条的主张，因缺乏证据证明且不符合常理，不予采信。双方形成结算型民间借贷法律关系，原审判决认定事实清楚，适用法律正确。",
+    "issues_list": []
+  },
+  "custom_annotations": {
+    "law_firm_names": []
+  }
+}

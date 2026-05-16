@@ -1,0 +1,70 @@
+{
+  "document_id": "05e5c09f-7497-48cf-a5bb-b2920163446d",
+  "metadata": {
+    "case_number": "（2024）沪01民终16260号",
+    "court_name": "上海市第一中级人民法院",
+    "court_level": "中级法院",
+    "region": null,
+    "judgment_date": "2025-02-27",
+    "doc_type": null
+  },
+  "case_profile": {
+    "case_type_primary": null,
+    "case_type_secondary": "民间借贷纠纷",
+    "procedure_stage": "二审",
+    "is_appeal": null,
+    "litigant_profile": {
+      "plaintiff_types": [],
+      "defendant_types": []
+    }
+  },
+  "virtual_currency_info": {
+    "involved": null,
+    "currency_types": [],
+    "activity_type": [],
+    "total_amount_cny": null
+  },
+  "judicial_analysis": {
+    "legal_characterization": "结算型民间借贷法律关系",
+    "virtual_currency_property_legality": "未直接认定其财产属性合法性，但作为借贷关系的事实基础予以确认",
+    "contract_validity": "有效",
+    "reason_for_invalidity": [],
+    "cited_laws": [
+      "《中华人民共和国民法典》第六百六十七条",
+      "《中华人民共和国民法典》第六百七十五条",
+      "《最高人民法院关于审理民间借贷案件适用法律若干问题的规定》第二十六条",
+      "《最高人民法院关于审理民间借贷案件适用法律若干问题的规定》第二十八条",
+      "《最高人民法院关于审理民间借贷案件适用法律若干问题的规定》第三十一条第一款",
+      "《中华人民共和国民事诉讼法》第一百七十七条第一款第(一)项",
+      "《中华人民共和国民事诉讼法》第二百六十四条"
+    ],
+    "cited_policies": [],
+    "economic_substance_factors": {
+      "presence_of_written_agreement": "存在明确的借条、欠条，载明借款金额、还款期限、质押物等",
+      "subsequent_behavior": "借款人出具借条后有部分还款行为（5万元）",
+      "court_interpretation": "法院将借条、欠条视为双方对此前其他法律关系进行结算后达成的协议",
+      "rebuttal_of_alternative_claims": "法院未采信关于“虚拟货币买卖”及“胁迫出具借条”的辩称，认为缺乏证据且不合常理"
+    },
+    "judicial_framing": [
+      "本案核心争议为法律关系性质的认定，是民间借贷还是虚拟货币买卖",
+      "将涉案借条、欠条认定为双方对先前行为的结算，从而形成结算型民间借贷关系",
+      "虚拟货币（USDT、BZZ）作为借款交付的媒介和质押物，其本身合法性非本案审理核心，而是作为事实基础予以确认",
+      "强调证据规则，主张方需对其主张（如胁迫）承担举证责任"
+    ]
+  },
+  "meta_ensemble": {
+    "model_votes": {},
+    "agreement_rate": null,
+    "final_label_source": null,
+    "confidence_mean": null,
+    "validation_status": null
+  },
+  "llm_summary": {
+    "outcome_summary": "二审法院驳回上诉，维持原判。上诉人许某某需向被上诉人赖某某归还借款本金224,340元、支付以本金为基数自2021年7月11日起算的逾期利息，并承担律师费15,000元及二审案件受理费。",
+    "reasoning_summary": "法院认为，双方虽涉及虚拟货币USDT的交付，但后续出具的借条和欠条构成了有效的结算协议，确立了民间借贷法律关系。上诉人关于系虚拟货币买卖及受胁迫出具借条的主张，因缺乏证据支持且与书面凭证及后续还款行为相悖，未被法院采信。因此，借贷关系合法有效，借款人应按约履行还款义务。",
+    "issues_list": []
+  },
+  "custom_annotations": {
+    "law_firm_names": []
+  }
+}

@@ -1,0 +1,105 @@
+{
+  "document_id": "05e5c09f-7497-48cf-a5bb-b2920163446d",
+  "metadata": {
+    "case_number": "（2024）沪01民终16260号",
+    "court_name": "上海市第一中级人民法院",
+    "court_level": "中级法院",
+    "region": null,
+    "judgment_date": "2025-02-27",
+    "doc_type": null
+  },
+  "case_profile": {
+    "case_type_primary": null,
+    "case_type_secondary": "民间借贷纠纷",
+    "procedure_stage": "二审",
+    "is_appeal": null,
+    "litigant_profile": {
+      "plaintiff_types": [],
+      "defendant_types": []
+    }
+  },
+  "virtual_currency_info": {
+    "involved": null,
+    "currency_types": [],
+    "activity_type": [],
+    "total_amount_cny": null
+  },
+  "judicial_analysis": {
+    "legal_characterization": {
+      "value": "结算型民间借贷法律关系",
+      "confidence": 0.95
+    },
+    "virtual_currency_property_legality": {
+      "value": "不适用",
+      "confidence": 0.5
+    },
+    "contract_validity": {
+      "value": "有效",
+      "confidence": 0.9
+    },
+    "reason_for_invalidity": {
+      "value": [],
+      "confidence": 0.95
+    },
+    "cited_laws": {
+      "value": [
+        "《中华人民共和国民法典》第六百六十七条",
+        "《中华人民共和国民法典》第六百七十五条",
+        "《最高人民法院关于审理民间借贷案件适用法律若干问题的规定》第二十六条",
+        "《最高人民法院关于审理民间借贷案件适用法律若干问题的规定》第二十八条",
+        "《最高人民法院关于审理民间借贷案件适用法律若干问题的规定》第三十一条第一款",
+        "《中华人民共和国民事诉讼法》第一百七十七条第一款第(一)项",
+        "《中华人民共和国民事诉讼法》第二百六十四条"
+      ],
+      "confidence": 0.98
+    },
+    "cited_policies": {
+      "value": [],
+      "confidence": 0.95
+    },
+    "economic_substance_factors": {
+      "value": {
+        "prior_transaction": "2021年5月27日赖某某向许某某交付43,000 USDT",
+        "subsequent_agreement": "2021年6月23日双方签订借条和欠条，将USDT转账转化为人民币借款274,340元",
+        "partial_repayment": "2021年6月23日许某某向赖某某支付50,000元",
+        "pledge_arrangement": "许某某向赖某某交付1,200个BZZ作为质押",
+        "sequence_consideration": "法院认定借条书写在购币行为之后，构成对先前法律关系的结算"
+      },
+      "confidence": 0.85
+    },
+    "judicial_framing": {
+      "value": [
+        "结算型民间借贷法律关系",
+        "合法的民间借贷关系受法律保护",
+        "当事人意思自治与书面凭证效力",
+        "胁迫主张需充分举证",
+        "虚拟货币交易背景不影响结算协议效力"
+      ],
+      "confidence": 0.9
+    }
+  },
+  "meta_ensemble": {
+    "model_votes": {},
+    "agreement_rate": null,
+    "final_label_source": null,
+    "confidence_mean": null,
+    "validation_status": null
+  },
+  "llm_summary": {
+    "outcome_summary": {
+      "value": "二审法院驳回上诉，维持原判；许某某需偿还赖某某借款本金224,340元及逾期利息（自2021年7月11日起至实际清偿之日止，按同期一年期贷款市场报价利率计算），并支付律师费15,000元",
+      "confidence": 0.95
+    },
+    "reasoning_summary": {
+      "value": "法院认定双方通过出具借条和欠条将USDT转账关系转化为民间借贷关系；许某某作为完全民事行为能力人应对出具借条的行为负责；其主张受胁迫但无证据证明；出具借条后偿还5万元的行为佐证了借贷性质；虚拟货币交易背景不影响双方后续结算协议的效力",
+      "confidence": 0.9
+    },
+    "issues_list": []
+  },
+  "custom_annotations": {
+    "law_firm_names": {
+      "value": [],
+      "confidence": 0.95
+    }
+  }
+}

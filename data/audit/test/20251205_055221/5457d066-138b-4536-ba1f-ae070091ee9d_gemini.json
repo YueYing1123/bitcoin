@@ -1,0 +1,180 @@
+{
+  "document_id": "5457d066-138b-4536-ba1f-ae070091ee9d",
+  "metadata": {
+    "case_number": {
+      "value": "（2021）湘0281刑初343号"
+    },
+    "court_name": {
+      "value": "醴陵市人民法院"
+    },
+    "court_level": {
+      "value": "基层法院"
+    },
+    "province": {
+      "value": "湖南省"
+    },
+    "judgment_date": {
+      "value": "2021-11-09"
+    },
+    "judgment_year": {
+      "value": 2021
+    },
+    "first_instance_case_number": {
+      "value": null
+    }
+  },
+  "case_profile": {
+    "case_cause": {
+      "value": "帮助信息网络犯罪活动罪"
+    },
+    "procedure_stage": {
+      "value": "一审"
+    },
+    "is_appeal": {
+      "value": false
+    },
+    "appeal_result": {
+      "value": null
+    },
+    "is_default_judgment": {
+      "value": false
+    },
+    "transaction_time_span": {
+      "start_year": {
+        "value": 2021
+      },
+      "end_year": {
+        "value": 2021
+      },
+      "crosses_2017_94_notice": {
+        "value": false
+      },
+      "crosses_2021_254_notice": {
+        "value": false
+      }
+    }
+  },
+  "litigant_profile": {
+    "plaintiff_type": {
+      "value": "其他"
+    },
+    "defendant_type": {
+      "value": "自然人"
+    },
+    "counsel_representation": {
+      "plaintiff_has_lawyer": {
+        "value": false
+      },
+      "defendant_has_lawyer": {
+        "value": false
+      }
+    }
+  },
+  "procedural_status": {
+    "ruling_type": {
+      "value": "实体判决"
+    },
+    "criminal_civil_intersection": {
+      "value": false
+    },
+    "jurisdiction_challenge": {
+      "value": false
+    }
+  },
+  "virtual_currency_info": {
+    "involved_currencies": {
+      "value": [
+        "比特币"
+      ]
+    },
+    "is_usdt_involved": {
+      "value": false
+    },
+    "activity_type": {
+      "value": "场外交易(OTC)"
+    },
+    "transaction_venue": {
+      "value": "场外OTC/私下转账"
+    },
+    "amounts": {
+      "plaintiff_claimed_cny": {
+        "value": 0
+      },
+      "court_recognized_cny": {
+        "value": 0
+      }
+    }
+  },
+  "evidence_analysis": {
+    "key_evidence_types": {
+      "value": [
+        "转账记录"
+      ]
+    },
+    "burden_of_proof_ruling": {
+      "value": null
+    },
+    "wallet_ownership_proven": {
+      "value": null
+    }
+  },
+  "judicial_analysis": {
+    "legal_characterization": {
+      "value": null
+    },
+    "currency_property_nature": {
+      "value": null
+    },
+    "contract_validity": {
+      "value": null
+    },
+    "validity_ground": {
+      "value": null
+    },
+    "illegal_debt_determination": {
+      "value": false
+    },
+    "moral_judgment_tags": {
+      "value": [
+        "帮助信息网络犯罪"
+      ]
+    },
+    "remedy_mechanics": {
+      "method": {
+        "value": null
+      },
+      "fiat_conversion_logic": {
+        "value": "不适用"
+      },
+      "interest_or_fee": {
+        "value": "不予支持"
+      }
+    },
+    "cited_norms": {
+      "laws": {
+        "value": [
+          "《中华人民共和国刑法》第二百八十七条之二第一款",
+          "《中华人民共和国刑法》第六十七条第一款",
+          "《中华人民共和国刑法》第五十二条",
+          "《中华人民共和国刑法》第五十三条第一款",
+          "《中华人民共和国刑事诉讼法》第十五条"
+        ]
+      },
+      "policies": {
+        "value": []
+      },
+      "is_public_order_cited": {
+        "value": false
+      }
+    }
+  },
+  "llm_summary": {
+    "outcome_text": {
+      "value": "被告人程某某犯帮助信息网络犯罪活动罪，判处有期徒刑六个月，并处罚金三千元。"
+    },
+    "core_issue": {
+      "value": "被告人明知他人利用信息网络实施犯罪（声称购买比特币进行转账），仍出借多张银行卡提供支付结算帮助，流水金额巨大，是否构成帮助信息网络犯罪活动罪。"
+    }
+  },
+  "custom_annotations": {}
+}

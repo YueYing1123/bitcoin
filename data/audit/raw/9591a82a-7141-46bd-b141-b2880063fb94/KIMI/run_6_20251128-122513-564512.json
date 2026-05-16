@@ -1,0 +1,180 @@
+{
+  "document_id": "9591a82a-7141-46bd-b141-b2880063fb94",
+  "metadata": {
+    "case_number": {
+      "value": "（2024）新01民终8979号",
+      "confidence": 0.99
+    },
+    "court_name": {
+      "value": "新疆维吾尔自治区乌鲁木齐市中级人民法院",
+      "confidence": 0.99
+    },
+    "court_level": {
+      "value": "中级法院",
+      "confidence": 0.99
+    },
+    "region": {
+      "value": "新疆维吾尔自治区",
+      "confidence": 0.9
+    },
+    "judgment_date": {
+      "value": "2025-02-17",
+      "confidence": 0.99
+    },
+    "doc_type": {
+      "value": "民事判决书",
+      "confidence": 0.95
+    }
+  },
+  "case_profile": {
+    "case_type_primary": {
+      "value": "民事",
+      "confidence": 0.95
+    },
+    "case_type_secondary": {
+      "value": "民间借贷纠纷",
+      "confidence": 0.99
+    },
+    "procedure_stage": {
+      "value": "二审",
+      "confidence": 0.99
+    },
+    "is_appeal": {
+      "value": true,
+      "confidence": 0.99
+    },
+    "litigant_profile": {
+      "value": {
+        "plaintiff_types": [
+          "自然人"
+        ],
+        "defendant_types": [
+          "自然人"
+        ]
+      },
+      "confidence": 0.9
+    }
+  },
+  "virtual_currency_info": {
+    "involved": {
+      "value": true,
+      "confidence": 0.95
+    },
+    "currency_types": {
+      "value": [
+        "XXX数字货币",
+        "虚拟货币"
+      ],
+      "confidence": 0.9
+    },
+    "activity_type": {
+      "value": [
+        "投资",
+        "委托理财"
+      ],
+      "confidence": 0.85
+    },
+    "total_amount_cny": {
+      "value": 96400,
+      "confidence": 0.99
+    }
+  },
+  "judicial_analysis": {
+    "legal_characterization": {
+      "value": "民间借贷法律关系",
+      "confidence": 0.95
+    },
+    "virtual_currency_property_legality": {
+      "value": "不具有与法定货币同等的法律地位",
+      "confidence": 0.9
+    },
+    "contract_validity": {
+      "value": "有效",
+      "confidence": 0.9
+    },
+    "reason_for_invalidity": {
+      "value": [],
+      "confidence": 0.95
+    },
+    "cited_laws": {
+      "value": [
+        "《中华人民共和国民法典》第六百八十条",
+        "《中华人民共和国民法典》第六百七十五条",
+        "《最高人民法院关于审理民间借贷案件适用法律若干问题的规定》第二十八条第二款第一项",
+        "《最高人民法院关于审理民间借贷案件适用法律若干问题的规定》第十六条",
+        "《中华人民共和国民事诉讼法》第一百七十七条第一款第一项"
+      ],
+      "confidence": 0.95
+    },
+    "cited_policies": {
+      "value": [],
+      "confidence": 0.95
+    },
+    "economic_substance_factors": {
+      "value": {
+        "fund_transfer": "贾某某向杜某某转账96,400元",
+        "repayment_promise": "杜某某在微信中承诺分期还款",
+        "repayment_action": "杜某某实际还款10,000元并标注“还高利贷”",
+        "burden_of_proof": "杜某某未能证明委托投资关系"
+      },
+      "confidence": 0.85
+    },
+    "judicial_framing": {
+      "value": [
+        "民间借贷关系 vs 委托理财关系",
+        "举证责任分配",
+        "借贷合意的认定",
+        "证据审查与采信",
+        "经济实质重于形式"
+      ],
+      "confidence": 0.9
+    }
+  },
+  "meta_ensemble": {
+    "model_votes": {
+      "value": {},
+      "confidence": 0.5
+    },
+    "agreement_rate": {
+      "value": null,
+      "confidence": 0.5
+    },
+    "final_label_source": {
+      "value": null,
+      "confidence": 0.5
+    },
+    "confidence_mean": {
+      "value": null,
+      "confidence": 0.5
+    },
+    "validation_status": {
+      "value": null,
+      "confidence": 0.5
+    }
+  },
+  "llm_summary": {
+    "outcome_summary": {
+      "value": "驳回上诉，维持原判。杜某某应偿还贾某某借款本金82,310元、利息427.90元及保全费848.02元。",
+      "confidence": 0.95
+    },
+    "reasoning_summary": {
+      "value": "法院认为，贾某某提供的微信聊天记录和转账凭证证明双方存在借贷合意。杜某某主张系委托投资关系但未能提供充分证据，应承担举证不能的不利后果。根据《民法典》和民间借贷司法解释相关规定，认定双方成立民间借贷法律关系，判决杜某某偿还剩余本金及逾期利息。",
+      "confidence": 0.9
+    },
+    "issues_list": {
+      "value": [
+        "法律关系性质认定（民间借贷还是委托理财）",
+        "举证责任分配",
+        "虚拟货币投资的法律地位",
+        "借贷合意的证明标准"
+      ],
+      "confidence": 0.9
+    }
+  },
+  "custom_annotations": {
+    "law_firm_names": {
+      "value": [],
+      "confidence": 0.95
+    }
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "document_id": "9591a82a-7141-46bd-b141-b2880063fb94",
+  "metadata": {
+    "case_number": "（2024）新01民终8979号",
+    "court_name": "新疆维吾尔自治区乌鲁木齐市中级人民法院",
+    "court_level": "中级法院",
+    "region": null,
+    "judgment_date": "2025-02-17",
+    "doc_type": null
+  },
+  "case_profile": {
+    "case_type_primary": null,
+    "case_type_secondary": "民间借贷纠纷",
+    "procedure_stage": "二审",
+    "is_appeal": null,
+    "litigant_profile": {
+      "plaintiff_types": [],
+      "defendant_types": []
+    }
+  },
+  "virtual_currency_info": {
+    "involved": null,
+    "currency_types": [],
+    "activity_type": [],
+    "total_amount_cny": null
+  },
+  "judicial_analysis": {
+    "legal_characterization": "民间借贷关系",
+    "virtual_currency_property_legality": "不受法律保护",
+    "contract_validity": "不适用",
+    "reason_for_invalidity": [],
+    "cited_laws": [
+      "中华人民共和国民法典",
+      "最高人民法院关于审理民间借贷案件适用法律若干问题的规定",
+      "中华人民共和国民事诉讼法"
+    ],
+    "cited_policies": [],
+    "economic_substance_factors": {},
+    "judicial_framing": [
+      "民间借贷关系",
+      "委托理财关系"
+    ]
+  },
+  "meta_ensemble": {
+    "model_votes": {},
+    "agreement_rate": null,
+    "final_label_source": null,
+    "confidence_mean": null,
+    "validation_status": null
+  },
+  "llm_summary": {
+    "outcome_summary": "驳回上诉，维持原判",
+    "reasoning_summary": "法院认为杜某某未能提供足够证据证明委托投资关系，而贾某某提供的证据支持借贷关系，因此维持一审判决。",
+    "issues_list": []
+  },
+  "custom_annotations": {
+    "law_firm_names": [],
+    "confidence": {
+      "legal_characterization": 1.0,
+      "virtual_currency_property_legality": 0.8,
+      "contract_validity": 1.0,
+      "reason_for_invalidity": 1.0,
+      "cited_laws": 1.0,
+      "cited_policies": 1.0,
+      "economic_substance_factors": 0.5,
+      "judicial_framing": 0.9,
+      "outcome_summary": 1.0,
+      "reasoning_summary": 0.9,
+      "law_firm_names": 1.0
+    }
+  }
+}

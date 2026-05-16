@@ -1,0 +1,68 @@
+{
+  "document_id": "05e5c09f-7497-48cf-a5bb-b2920163446d",
+  "metadata": {
+    "case_number": "（2024）沪01民终16260号",
+    "court_name": "上海市第一中级人民法院",
+    "court_level": "中级法院",
+    "region": null,
+    "judgment_date": "2025-02-27",
+    "doc_type": null
+  },
+  "case_profile": {
+    "case_type_primary": null,
+    "case_type_secondary": "民间借贷纠纷",
+    "procedure_stage": "二审",
+    "is_appeal": null,
+    "litigant_profile": {
+      "plaintiff_types": [],
+      "defendant_types": []
+    }
+  },
+  "virtual_currency_info": {
+    "involved": null,
+    "currency_types": [],
+    "activity_type": [],
+    "total_amount_cny": null
+  },
+  "judicial_analysis": {
+    "legal_characterization": "结算型民间借贷法律关系",
+    "virtual_currency_property_legality": null,
+    "contract_validity": "有效",
+    "reason_for_invalidity": [],
+    "cited_laws": [
+      "《中华人民共和国民法典》第六百六十七条",
+      "《中华人民共和国民法典》第六百七十五条",
+      "《最高人民法院关于审理民间借贷案件适用法律若干问题的规定》第二十六条",
+      "《最高人民法院关于审理民间借贷案件适用法律若干问题的规定》第二十八条",
+      "《最高人民法院关于审理民间借贷案件适用法律若干问题的规定》第三十一条第一款",
+      "《中华人民共和国民事诉讼法》第一百七十七条第一款第(一)项",
+      "《中华人民共和国民事诉讼法》第二百六十四条"
+    ],
+    "cited_policies": [],
+    "economic_substance_factors": {
+      "settlement_agreement": "双方之间对此前其他法律关系进行结算后达成的协议",
+      "subsequent_payment_interpretation": "后续5万元还款被认定为还款而非补偿",
+      "evidence_of_debt": "存在明确的借条、欠条等借款凭证",
+      "party_capacity": "许某某为完全民事行为能力人，应知悉出具借条的后果"
+    },
+    "judicial_framing": [
+      "民间借贷纠纷",
+      "结算型民间借贷法律关系"
+    ]
+  },
+  "meta_ensemble": {
+    "model_votes": {},
+    "agreement_rate": null,
+    "final_label_source": null,
+    "confidence_mean": null,
+    "validation_status": null
+  },
+  "llm_summary": {
+    "outcome_summary": "二审法院驳回上诉人许某某的上诉请求，维持原判。即许某某需归还赖某某借款本金224,340元及相应逾期利息，并支付律师费15,000元。",
+    "reasoning_summary": "法院认为，涉案借条、欠条等证据足以证明双方存在借贷关系，该借条系对此前其他法律关系的结算，构成结算型民间借贷。上诉人许某某关于双方系虚拟货币交易、借条系受胁迫所写的主张，因缺乏证据证明，不予采信。原审判决认定事实清楚，适用法律正确，故予以维持。",
+    "issues_list": []
+  },
+  "custom_annotations": {
+    "law_firm_names": []
+  }
+}

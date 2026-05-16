@@ -1,0 +1,217 @@
+{\rtf1\ansi\uc1\deff0{\fonttbl{\f0 Arial;}}
+\f0\b \u25968?\u23383?\u-29401?\u24065?\u-30527?\u21028?\u25991?\u20070?\u32467?\u26500?\u21270?\u25968?\u25454?\u-230?Stata \u20998?\u26512?\u25253?\u21578? \b0\par
+\u24037?\u20316?\u30446?\u24405?\u-230?D:\\BaiduSyncdisk\\Doctor\\\u-29766?\u25991?\\\u25968?\u23383?\u-29401?\u24065?\\\u25968?\u25454?\u26500?\u24314?\par
+\u-28781?\u20986?\u30446?\u24405?\u-230?D:\\BaiduSyncdisk\\Doctor\\\u-29766?\u25991?\\\u25968?\u23383?\u-29401?\u24065?\\\u25968?\u25454?\u26500?\u24314?/analyze\par\par
+\b 1. \u25968?\u25454?\u27010?\u-30264? \b0\par
+\u24635?\u26679?\u26412?\u-28209? (N)\u-230?12098\par
+contract_validity \u-26786?\u31354?\u26679?\u26412?\u-28209?\u-230?5714\par
+contract_invalid=1 (\u26080?\u25928?/\u-28440?\u20998?\u26080?\u25928?/\u26410?\u25104?\u31435?)\u-230?2659\par
+contract_invalid=0 (\u26377?\u25928?)\u-230?3033\par\par
+\b 2. \u25551?\u-28688?\u32479?\u-29791?\u-30616? \b0\par
+\b 2.1 \u25353?\u24180?\u20221?\u26696?\u20214?\u-28209? \b0\par
+\u24180?\u20221?	\u26696?\u20214?\u25968?\par
+2010	17\par
+2011	4\par
+2012	6\par
+2013	41\par
+2014	149\par
+2015	176\par
+2016	271\par
+2017	561\par
+2018	865\par
+2019	1448\par
+2020	2044\par
+2021	2246\par
+2022	1302\par
+2023	1396\par
+2024	1559\par
+2025	12\par
+\par
+\b 2.2 \u21512?\u21516?\u25928?\u21147?\u20998?\u24067?\u-248?contract_validity_cat\u-247? \b0\par
+\u31867?\u21035?	\u26696?\u20214?\u25968?\par
+\u26377?\u25928?	3033\par
+\u26080?\u25928?	2030\par
+\u-28440?\u20998?\u26080?\u25928?	48\par
+\u26410?\u25104?\u31435?	581\par
+\u20854?\u20182?	22\par
+\par
+\b 2.3 \u27963?\u21160?\u31867?\u22411? Top20 \b0\par
+\u27963?\u21160?\u31867?\u22411?	\u26696?\u20214?\u25968?\par
+\u22996?\u25176?\u29702?\u-29406?/\u20195?\u25237?	1680\par
+\u21457?\u24065?/ICO	1034\par
+\u22330?\u22806?\u20132?\u26131?(OTC)	989\par
+\u25366?\u30719?	846\par
+\u-31142?\u25311?\u-29401?\u24065?\u20511?\u-29385?	731\par
+\u25216?\u26415?\u26381?\u21153?	687\par
+\u-31142?\u25311?\u-29401?\u24065?\u20132?\u26131?	381\par
+\u-31142?\u25311?\u-29401?\u24065?\u25237?\u-29372?	282\par
+\u20132?\u26131?\u25152?\u28818?\u24065?	204\par
+\u20854?\u20182?	168\par
+\u20080?\u21334?\u21512?\u21516?	99\par
+\u-31142?\u25311?\u-29401?\u24065?\u20080?\u21334?	85\par
+\u-26786?\u27861?\u-28207?\u-30835?\u27963?\u21160?	69\par
+\u26410?\u30693?	67\par
+\u-29752?\u-25961?	46\par
+\u19981?\u-28670?\u29992?	46\par
+\u-31142?\u25311?\u-29401?\u24065?\u-29364?\u21338?	36\par
+\u-31142?\u25311?\u-29401?\u24065?\u20817?\u25442?	35\par
+\u24110?\u21161?\u20449?\u24687?\u32593?\u32476?\u29359?\u32618?\u27963?\u21160?	27\par
+\u-31142?\u25311?\u-29401?\u24065?\u-29395?\u20080?	26\par
+\par
+\b 3. \u22238?\u24402?\u27169?\u22411? \b0\par
+\u27169?\u22411?\u-230?Logit(\u20108?\u20803?\u22240?\u21464?\u-28209?)\par
+\u22240?\u21464?\u-28209?\u-230?contract_invalid\u-248?\u26080?\u25928?/\u-28440?\u20998?\u26080?\u25928?/\u26410?\u25104?\u31435?=1\u-229?\u26377?\u25928?=0\u-247?\par
+\u-32278?\u21464?\u-28209?\u-230?activity_type(\u31867?\u21035?) + court_level(\u31867?\u21035?) + judgment_year(\u24180?\u20221?\u-31142?\u25311?\u21464?\u-28209?) + ln(\u28041?\u26696?\u-28207?\u-26467?+1) + \u26159?\u21542?\u20108?\u23457?\par
+\u32570?\u22833?\u22788?\u29702?\u-230?\u23545? ln_amount / is_appeal \u29983?\u25104?\u32570?\u22833?\u25351?\u31034?\u-244?\u24182?\u23558?\u32570?\u22833?\u20540?\u32622?0\u-229?\u20998?\u31867?\u21464?\u-28209?\u32570?\u22833?\u24402?\u20837?0\u31867?\par
+\u31283?\u20581?\u26631?\u20934?\u-29713?\u-230?\u25353? court_name_id \u-32678?\u31867?\u-248?\u20248?\u20808? region\u-244?\u21542?\u21017? court_name\u-247?\par\par
+\u22238?\u24402?\u29366?\u24577?\u-230?ok\par
+\par\b 3.1 \u31995?\u25968?\u-30616?\u-248?logit\u-247? \b0\par
+term	b	se	z	p\par
+0b.activity_type_id	0	0		\par
+1o.activity_type_id	0	0		\par
+2.activity_type_id	-.5305126921187282	.7398265	-.7170772	.47332647\par
+4o.activity_type_id	0	0		\par
+5.activity_type_id	1.492319228879476	.24561477	6.0758529	1.2333032e-09\par
+7o.activity_type_id	0	0		\par
+8.activity_type_id	2.007975352448745	.27349031	7.3420348	2.1037091e-13\par
+9o.activity_type_id	0	0		\par
+10o.activity_type_id	0	0		\par
+11.activity_type_id	.5530917531474846	.30627686	1.8058555	.070940919\par
+12.activity_type_id	3.624616001804453	.24270129	14.934474	0\par
+13.activity_type_id	2.819427956181634	1.036184	2.7209725	.0065090186\par
+14.activity_type_id	2.454999594620396	.20495628	11.978162	4.6246196e-33\par
+15.activity_type_id	1.623297268267954	.12396874	13.094409	0\par
+18o.activity_type_id	0	0		\par
+19o.activity_type_id	0	0		\par
+20.activity_type_id	1.135672912988099	.25525361	4.4491944	8.6192922e-06\par
+21.activity_type_id	2.011460350783313	1.3161058	1.5283425	.12642753\par
+22o.activity_type_id	0	0		\par
+24o.activity_type_id	0	0		\par
+26.activity_type_id	1.814702763611759	.77663934	2.3366094	.019459505\par
+27.activity_type_id	1.221329626129277	.15116413	8.0794935	6.5036328e-16\par
+30o.activity_type_id	0	0		\par
+31.activity_type_id	.3412342589108803	.49502605	.68932587	.49061823\par
+33.activity_type_id	.6126679432382309	.61969852	.98865479	.32283208\par
+36o.activity_type_id	0	0		\par
+43o.activity_type_id	0	0		\par
+44o.activity_type_id	0	0		\par
+45o.activity_type_id	0	0		\par
+46o.activity_type_id	0	0		\par
+47o.activity_type_id	0	0		\par
+48o.activity_type_id	0	0		\par
+49o.activity_type_id	0	0		\par
+51o.activity_type_id	0	0		\par
+52o.activity_type_id	0	0		\par
+53o.activity_type_id	0	0		\par
+54o.activity_type_id	0	0		\par
+55o.activity_type_id	0	0		\par
+59o.activity_type_id	0	0		\par
+60o.activity_type_id	0	0		\par
+61o.activity_type_id	0	0		\par
+62o.activity_type_id	0	0		\par
+63.activity_type_id	1.378222467600067	1.5941842	.86453152	.38729596\par
+64o.activity_type_id	0	0		\par
+65o.activity_type_id	0	0		\par
+66o.activity_type_id	0	0		\par
+70.activity_type_id	2.389182130826374	.31878746	7.4945927	6.6504500e-14\par
+75.activity_type_id	2.297043009595686	.27255443	8.4278316	3.5212774e-17\par
+80o.activity_type_id	0	0		\par
+83o.activity_type_id	0	0		\par
+84o.activity_type_id	0	0		\par
+86.activity_type_id	.7336795371943552	.15351176	4.779305	1.7590235e-06\par
+87.activity_type_id	1.592801499904123	1.4473578	1.1004891	.27111906\par
+89o.activity_type_id	0	0		\par
+90o.activity_type_id	0	0		\par
+91o.activity_type_id	0	0		\par
+92o.activity_type_id	0	0		\par
+97o.activity_type_id	0	0		\par
+98o.activity_type_id	0	0		\par
+107.activity_type_id	1.378689192768894	1.072523	1.2854636	.19863033\par
+108.activity_type_id	1.474307088876527	.18665877	7.8984075	2.8248902e-15\par
+111o.activity_type_id	0	0		\par
+113o.activity_type_id	0	0		\par
+114.activity_type_id	2.379580472242182	.93903923	2.5340586	.011274989\par
+115o.activity_type_id	0	0		\par
+117o.activity_type_id	0	0		\par
+119o.activity_type_id	0	0		\par
+121o.activity_type_id	0	0		\par
+123.activity_type_id	.7192245530450377	.84486997	.85128433	.39461142\par
+124o.activity_type_id	0	0		\par
+125o.activity_type_id	0	0		\par
+126o.activity_type_id	0	0		\par
+127o.activity_type_id	0	0		\par
+128o.activity_type_id	0	0		\par
+132.activity_type_id	1.698544630541194	1.004068	1.6916629	.090710275\par
+133o.activity_type_id	0	0		\par
+135o.activity_type_id	0	0		\par
+137o.activity_type_id	0	0		\par
+138o.activity_type_id	0	0		\par
+139o.activity_type_id	0	0		\par
+140o.activity_type_id	0	0		\par
+142o.activity_type_id	0	0		\par
+143.activity_type_id	3.047664968015491	1.1341978	2.6870666	.0072082602\par
+144.activity_type_id	.3305484247405693	1.3670517	.24179657	.80893779\par
+145o.activity_type_id	0	0		\par
+148o.activity_type_id	0	0		\par
+150o.activity_type_id	0	0		\par
+154o.activity_type_id	0	0		\par
+155.activity_type_id	1.866068469199315	.12651342	14.749964	0\par
+157o.activity_type_id	0	0		\par
+160o.activity_type_id	0	0		\par
+161o.activity_type_id	0	0		\par
+162o.activity_type_id	0	0		\par
+163.activity_type_id	1.419871362219987	.8568238	1.6571335	.097492501\par
+167o.activity_type_id	0	0		\par
+168o.activity_type_id	0	0		\par
+170o.activity_type_id	0	0		\par
+172o.activity_type_id	0	0		\par
+174o.activity_type_id	0	0		\par
+175o.activity_type_id	0	0		\par
+176o.activity_type_id	0	0		\par
+179o.activity_type_id	0	0		\par
+181o.activity_type_id	0	0		\par
+185o.activity_type_id	0	0		\par
+194o.activity_type_id	0	0		\par
+197o.activity_type_id	0	0		\par
+200.activity_type_id	4.459344095272962	1.0334476	4.3150167	.000015959065\par
+201o.activity_type_id	0	0		\par
+1b.court_level_id	0	0		\par
+2.court_level_id	-.3243833525421011	.20325787	-1.5959202	.1105066\par
+3.court_level_id	-.7416342513056475	.53313166	-1.3910903	.16419807\par
+4.court_level_id	-.7744312135145588	.29261729	-2.6465669	.0081313411\par
+5.court_level_id	-.0628041143981922	.70571572	-.088993505	.92908704\par
+6.court_level_id	-.8708516184616897	.87580526	-.99434388	.32005548\par
+2011b.judgment_year	0	0		\par
+2012o.judgment_year	0	0		\par
+2013.judgment_year	.7789135744389565	1.0903624	.71436208	.47500333\par
+2014.judgment_year	-.0476848111114239	.94501674	-.050459221	.95975643\par
+2015.judgment_year	-.2012285110043368	.95033711	-.21174435	.8323065\par
+2016.judgment_year	.0913927614633198	.86279798	.10592602	.91564107\par
+2017.judgment_year	.2322230915211331	.81545049	.28477889	.77581352\par
+2018.judgment_year	.4686108608864606	.77912241	.60145986	.54753375\par
+2019.judgment_year	.7211347915721461	.77677381	.92837167	.35321483\par
+2020.judgment_year	.7593946240543864	.76830679	.98840022	.32295668\par
+2021.judgment_year	.7968699714270451	.763475	1.0437407	.29660535\par
+2022.judgment_year	1.068879260146184	.76739424	1.3928685	.16365957\par
+2023.judgment_year	1.187768203553033	.76778573	1.5470048	.12186209\par
+2024.judgment_year	1.43213726654956	.76932377	1.8615533	.062666073\par
+2025o.judgment_year	0	0		\par
+1b.procedure_stage_id	0	0		\par
+2.procedure_stage_id	-.5975256956496005	.67097247	-.89053684	.37317768\par
+3.procedure_stage_id	-.4266708025976005	.70958412	-.60129702	.54764217\par
+4.procedure_stage_id	.4893023554561232	.59858811	.81742752	.41368416\par
+6o.procedure_stage_id	0	0		\par
+0o.doc_type_id	0	0		\par
+0o.case_type_primary_id	0	0		\par
+0o.case_type_secondary_id	0	0		\par
+o.ln_amount	0	0		\par
+1o.ln_amount_miss	0	0		\par
+0b.is_appeal_b	0	0		\par
+1.is_appeal_b	-.0742544987228088	.49380612	-.15037178	.88047129\par
+0o.is_appeal_miss	0	0		\par
+_cons	-1.61016963009807	.9081161	-1.7730879	.07621415\par
+\par\b 4. \u22270?\u24418?\u-28781?\u20986?\u-248?PNG \u25991?\u20214?\u-247? \b0\par
+D:\\BaiduSyncdisk\\Doctor\\\u-29766?\u25991?\\\u25968?\u23383?\u-29401?\u24065?\\\u25968?\u25454?\u26500?\u24314?/analyze/figures\\fig_cases_by_year.png\par
+D:\\BaiduSyncdisk\\Doctor\\\u-29766?\u25991?\\\u25968?\u23383?\u-29401?\u24065?\\\u25968?\u25454?\u26500?\u24314?/analyze/figures\\fig_invalid_rate_by_year.png\par
+D:\\BaiduSyncdisk\\Doctor\\\u-29766?\u25991?\\\u25968?\u23383?\u-29401?\u24065?\\\u25968?\u25454?\u26500?\u24314?/analyze/figures\\fig_activity_type_top10.png\par
+}

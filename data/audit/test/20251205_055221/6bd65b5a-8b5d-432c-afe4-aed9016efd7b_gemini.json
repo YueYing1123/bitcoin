@@ -1,0 +1,188 @@
+{
+  "document_id": "6bd65b5a-8b5d-432c-afe4-aed9016efd7b",
+  "metadata": {
+    "case_number": {
+      "value": "（2022）豫0204刑初52号"
+    },
+    "court_name": {
+      "value": "开封市鼓楼区人民法院"
+    },
+    "court_level": {
+      "value": "基层法院"
+    },
+    "province": {
+      "value": "河南"
+    },
+    "judgment_date": {
+      "value": "2022-05-18"
+    },
+    "judgment_year": {
+      "value": 2022
+    },
+    "first_instance_case_number": {
+      "value": null
+    }
+  },
+  "case_profile": {
+    "case_cause": {
+      "value": "组织、领导传销活动罪"
+    },
+    "procedure_stage": {
+      "value": "一审"
+    },
+    "is_appeal": {
+      "value": false
+    },
+    "appeal_result": {
+      "value": null
+    },
+    "is_default_judgment": {
+      "value": false
+    },
+    "transaction_time_span": {
+      "start_year": {
+        "value": 2019
+      },
+      "end_year": {
+        "value": 2020
+      },
+      "crosses_2017_94_notice": {
+        "value": false
+      },
+      "crosses_2021_254_notice": {
+        "value": false
+      }
+    }
+  },
+  "litigant_profile": {
+    "plaintiff_type": {
+      "value": "其他"
+    },
+    "defendant_type": {
+      "value": "自然人"
+    },
+    "counsel_representation": {
+      "plaintiff_has_lawyer": {
+        "value": true
+      },
+      "defendant_has_lawyer": {
+        "value": true
+      }
+    }
+  },
+  "procedural_status": {
+    "ruling_type": {
+      "value": "实体判决"
+    },
+    "criminal_civil_intersection": {
+      "value": false
+    },
+    "jurisdiction_challenge": {
+      "value": false
+    }
+  },
+  "virtual_currency_info": {
+    "involved_currencies": {
+      "value": [
+        "德孝通卡",
+        "DXT"
+      ]
+    },
+    "is_usdt_involved": {
+      "value": false
+    },
+    "activity_type": {
+      "value": "传销"
+    },
+    "transaction_venue": {
+      "value": "未知"
+    },
+    "amounts": {
+      "plaintiff_claimed_cny": {
+        "value": 0
+      },
+      "court_recognized_cny": {
+        "value": 0
+      }
+    }
+  },
+  "evidence_analysis": {
+    "key_evidence_types": {
+      "value": [
+        "书证",
+        "证人证言",
+        "供述",
+        "司法鉴定意见",
+        "辨认笔录"
+      ]
+    },
+    "burden_of_proof_ruling": {
+      "value": null
+    },
+    "wallet_ownership_proven": {
+      "value": true
+    }
+  },
+  "judicial_analysis": {
+    "legal_characterization": {
+      "value": "组织、领导传销活动罪"
+    },
+    "currency_property_nature": {
+      "value": null
+    },
+    "contract_validity": {
+      "value": null
+    },
+    "validity_ground": {
+      "value": null
+    },
+    "illegal_debt_determination": {
+      "value": false
+    },
+    "moral_judgment_tags": {
+      "value": [
+        "非法金融活动"
+      ]
+    },
+    "remedy_mechanics": {
+      "method": {
+        "value": "刑事处罚"
+      },
+      "fiat_conversion_logic": {
+        "value": "无法确定"
+      },
+      "interest_or_fee": {
+        "value": "不予支持"
+      }
+    },
+    "cited_norms": {
+      "laws": {
+        "value": [
+          "《中华人民共和国刑法》第二百二十四条之一",
+          "《中华人民共和国刑法》第二十五条第一款",
+          "《中华人民共和国刑法》第二十七条",
+          "《中华人民共和国刑法》第六十七条第三款",
+          "《中华人民共和国刑法》第五十二条",
+          "《中华人民共和国刑法》第五十三条",
+          "《中华人民共和国刑事诉讼法》第十五条",
+          "《中华人民共和国刑事诉讼法》第二百零一条"
+        ]
+      },
+      "policies": {
+        "value": []
+      },
+      "is_public_order_cited": {
+        "value": false
+      }
+    }
+  },
+  "llm_summary": {
+    "outcome_text": {
+      "value": "被告人范某某犯组织、领导传销活动罪，判处有期徒刑二年，并处罚金人民币二万元；被告人赵某某犯组织、领导传销活动罪，判处有期徒刑一年六个月，并处罚金人民币二万元。"
+    },
+    "core_issue": {
+      "value": "被告人通过“德孝通”平台以购买虚拟货币及拉人头返利模式组织、领导传销活动。"
+    }
+  },
+  "custom_annotations": {}
+}

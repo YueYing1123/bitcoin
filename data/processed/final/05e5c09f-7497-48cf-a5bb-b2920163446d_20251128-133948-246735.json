@@ -1,0 +1,11 @@
+{
+  "final_fields": {
+    "judicial_analysis.contract_validity": "有效",
+    "judicial_analysis.legal_characterization": "结算型民间借贷法律关系",
+    "virtual_currency_info.activity_type": []
+  },
+  "metrics": {
+    "agreement_rate": 0.6666666666666666,
+    "final_label_source": "majority_vote"
+  }
+}

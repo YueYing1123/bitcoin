@@ -1,0 +1,578 @@
+{
+  "DEEPSEEK": {
+    "metadata.case_number": {
+      "value": "（2024）新01民终8979号",
+      "support": 0.8,
+      "accepted": true
+    },
+    "metadata.court_name": {
+      "value": "新疆维吾尔自治区乌鲁木齐市中级人民法院",
+      "support": 1.0,
+      "accepted": true
+    },
+    "metadata.court_level": {
+      "value": "中级法院",
+      "support": 1.0,
+      "accepted": true
+    },
+    "metadata.judgment_date": {
+      "value": "2025-02-17",
+      "support": 1.0,
+      "accepted": true
+    },
+    "case_profile.case_type_secondary": {
+      "value": "民间借贷纠纷",
+      "support": 1.0,
+      "accepted": true
+    },
+    "case_profile.procedure_stage": {
+      "value": "二审",
+      "support": 1.0,
+      "accepted": true
+    },
+    "case_profile.litigant_profile.plaintiff_types": {
+      "value": [],
+      "support": 1.0,
+      "accepted": true
+    },
+    "case_profile.litigant_profile.defendant_types": {
+      "value": [],
+      "support": 1.0,
+      "accepted": true
+    },
+    "virtual_currency_info.currency_types": {
+      "value": [],
+      "support": 0.8,
+      "accepted": true
+    },
+    "virtual_currency_info.activity_type": {
+      "value": [],
+      "support": 0.8,
+      "accepted": true
+    },
+    "judicial_analysis.legal_characterization": {
+      "value": "民间借贷关系",
+      "support": 0.7,
+      "accepted": true
+    },
+    "judicial_analysis.contract_validity": {
+      "value": "有效",
+      "support": 0.6,
+      "accepted": false
+    },
+    "judicial_analysis.reason_for_invalidity": {
+      "value": [],
+      "support": 1.0,
+      "accepted": true
+    },
+    "judicial_analysis.cited_laws": {
+      "value": [
+        "《中华人民共和国民法典》第六百八十条",
+        "《中华人民共和国民法典》第六百七十五条",
+        "《最高人民法院关于审理民间借贷案件适用法律若干问题的规定》第二十八条第二款第一项",
+        "《最高人民法院关于审理民间借贷案件适用法律若干问题的规定》第十六条",
+        "《中华人民共和国民事诉讼法》第一百七十七条第一款第一项"
+      ],
+      "support": 0.3,
+      "accepted": false
+    },
+    "judicial_analysis.cited_policies": {
+      "value": [],
+      "support": 1.0,
+      "accepted": true
+    },
+    "judicial_analysis.judicial_framing": {
+      "value": [
+        "民间借贷关系",
+        "委托理财关系"
+      ],
+      "support": 0.2,
+      "accepted": false
+    },
+    "llm_summary.outcome_summary": {
+      "value": "驳回上诉，维持原判",
+      "support": 0.2,
+      "accepted": false
+    },
+    "llm_summary.reasoning_summary": {
+      "value": "法院基于微信聊天记录中杜某某承认借款事实并承诺还款方式，认定双方存在民间借贷合意。杜某某提供的证据不足以证明资金用于委托投资虚拟货币，故其抗辩不成立。根据相关法律规定，杜某某需承担还款责任。",
+      "support": 0.1,
+      "accepted": false
+    }
+  },
+  "DOUBAO": {
+    "metadata.case_number": {
+      "value": "（2024）新01民终8979号",
+      "support": 0.9,
+      "accepted": true
+    },
+    "metadata.court_name": {
+      "value": "新疆维吾尔自治区乌鲁木齐市中级人民法院",
+      "support": 1.0,
+      "accepted": true
+    },
+    "metadata.court_level": {
+      "value": "中级法院",
+      "support": 1.0,
+      "accepted": true
+    },
+    "metadata.judgment_date": {
+      "value": "2025-02-17",
+      "support": 1.0,
+      "accepted": true
+    },
+    "case_profile.case_type_secondary": {
+      "value": "民间借贷纠纷",
+      "support": 1.0,
+      "accepted": true
+    },
+    "case_profile.procedure_stage": {
+      "value": "二审",
+      "support": 1.0,
+      "accepted": true
+    },
+    "case_profile.litigant_profile.plaintiff_types": {
+      "value": [],
+      "support": 0.8,
+      "accepted": true
+    },
+    "case_profile.litigant_profile.defendant_types": {
+      "value": [],
+      "support": 0.8,
+      "accepted": true
+    },
+    "virtual_currency_info.involved": {
+      "value": true,
+      "support": 0.5,
+      "accepted": false
+    },
+    "virtual_currency_info.currency_types": {
+      "value": [],
+      "support": 0.5,
+      "accepted": false
+    },
+    "virtual_currency_info.activity_type": {
+      "value": [],
+      "support": 0.5,
+      "accepted": false
+    },
+    "judicial_analysis.legal_characterization": {
+      "value": "双方之间成立民间借贷法律关系",
+      "support": 0.6,
+      "accepted": false
+    },
+    "judicial_analysis.contract_validity": {
+      "value": "有效",
+      "support": 0.9,
+      "accepted": true
+    },
+    "judicial_analysis.reason_for_invalidity": {
+      "value": [],
+      "support": 1.0,
+      "accepted": true
+    },
+    "judicial_analysis.cited_laws": {
+      "value": [
+        {
+          "confidence": 1.0,
+          "value": "《中华人民共和国民法典》第六百八十条"
+        },
+        {
+          "confidence": 1.0,
+          "value": "《中华人民共和国民法典》第六百七十五条"
+        },
+        {
+          "confidence": 1.0,
+          "value": "《最高人民法院关于审理民间借贷案件适用法律若干问题的规定》第十六条"
+        },
+        {
+          "confidence": 1.0,
+          "value": "《最高人民法院关于审理民间借贷案件适用法律若干问题的规定》第二十八条第二款第一项"
+        },
+        {
+          "confidence": 1.0,
+          "value": "《中华人民共和国民事诉讼法》第一百七十七条第一款第一项"
+        }
+      ],
+      "support": 0.3,
+      "accepted": false
+    },
+    "judicial_analysis.cited_policies": {
+      "value": [],
+      "support": 1.0,
+      "accepted": true
+    },
+    "judicial_analysis.judicial_framing": {
+      "value": [
+        "将资金往来定性为民间借贷关系而非委托投资关系"
+      ],
+      "support": 0.2,
+      "accepted": false
+    },
+    "llm_summary.outcome_summary": {
+      "value": "二审法院驳回杜某某的上诉请求，维持一审判决，杜某某需向贾某某偿还借款本金82310元、利息427.9元及保全费848.02元，并承担二审案件受理费1913.62元",
+      "support": 0.2,
+      "accepted": false
+    },
+    "llm_summary.reasoning_summary": {
+      "value": "二审法院认为，贾某某提交的微信聊天记录及转账凭证足以证明双方存在借贷合意及款项交付；杜某某主张案涉款项为委托投资，但未能提供有效证据证明贾某某有委托投资的意思表示，应承担举证不能的不利后果。故维持一审关于双方成立民间借贷关系及相应本金、利息的认定。",
+      "support": 0.1,
+      "accepted": false
+    }
+  },
+  "GLM": {
+    "metadata.case_number": {
+      "value": "（2024）新01民终8979号",
+      "support": 1.0,
+      "accepted": true
+    },
+    "metadata.court_name": {
+      "value": "新疆维吾尔自治区乌鲁木齐市中级人民法院",
+      "support": 1.0,
+      "accepted": true
+    },
+    "metadata.court_level": {
+      "value": "中级法院",
+      "support": 1.0,
+      "accepted": true
+    },
+    "metadata.judgment_date": {
+      "value": "2025-02-17",
+      "support": 1.0,
+      "accepted": true
+    },
+    "case_profile.case_type_secondary": {
+      "value": "民间借贷纠纷",
+      "support": 1.0,
+      "accepted": true
+    },
+    "case_profile.procedure_stage": {
+      "value": "二审",
+      "support": 1.0,
+      "accepted": true
+    },
+    "case_profile.litigant_profile.plaintiff_types": {
+      "value": [],
+      "support": 1.0,
+      "accepted": true
+    },
+    "case_profile.litigant_profile.defendant_types": {
+      "value": [],
+      "support": 1.0,
+      "accepted": true
+    },
+    "virtual_currency_info.currency_types": {
+      "value": [],
+      "support": 1.0,
+      "accepted": true
+    },
+    "virtual_currency_info.activity_type": {
+      "value": [],
+      "support": 1.0,
+      "accepted": true
+    },
+    "judicial_analysis.legal_characterization": {
+      "value": "民间借贷关系",
+      "support": 0.8,
+      "accepted": true
+    },
+    "judicial_analysis.virtual_currency_property_legality": {
+      "value": "不具有与法定货币同等的法律地位，不受法律保护",
+      "support": 0.4,
+      "accepted": false
+    },
+    "judicial_analysis.contract_validity": {
+      "value": "有效",
+      "support": 0.8,
+      "accepted": true
+    },
+    "judicial_analysis.reason_for_invalidity": {
+      "value": [],
+      "support": 0.9,
+      "accepted": true
+    },
+    "judicial_analysis.cited_laws": {
+      "value": [
+        "《中华人民共和国民法典》第六百八十条",
+        "《中华人民共和国民法典》第六百七十五条",
+        "《最高人民法院关于审理民间借贷案件适用法律若干问题的规定》第二十八条第二款第一项",
+        "《最高人民法院关于审理民间借贷案件适用法律若干问题的规定》第十六条",
+        "《中华人民共和国民事诉讼法》第一百七十七条第一款第一项"
+      ],
+      "support": 0.6,
+      "accepted": false
+    },
+    "judicial_analysis.cited_policies": {
+      "value": [],
+      "support": 1.0,
+      "accepted": true
+    },
+    "judicial_analysis.judicial_framing": {
+      "value": [
+        "本案争议焦点为当事人双方之间系民间借贷关系或委托理财关系",
+        "主张委托理财关系的一方应承担举证责任"
+      ],
+      "support": 0.1,
+      "accepted": false
+    },
+    "llm_summary.outcome_summary": {
+      "value": "二审法院驳回上诉人杜某某的上诉请求，维持原判。即杜某某需向贾某某偿还借款本金82,310元、相应利息及保全费。",
+      "support": 0.1,
+      "accepted": false
+    },
+    "llm_summary.reasoning_summary": {
+      "value": "法院认为，被上诉人贾某某提供的微信聊天记录和转账凭证足以证明双方存在借贷合意。上诉人杜某某主张双方为委托理财关系，但其提供的证据不足以证明该主张，应承担举证不能的不利后果。因此，一审法院认定双方为民间借贷关系并无不当。",
+      "support": 0.1,
+      "accepted": false
+    }
+  },
+  "KIMI": {
+    "metadata.case_number": {
+      "value": "（2024）新01民终8979号",
+      "support": 0.8,
+      "accepted": true
+    },
+    "metadata.court_name": {
+      "value": "新疆维吾尔自治区乌鲁木齐市中级人民法院",
+      "support": 1.0,
+      "accepted": true
+    },
+    "metadata.court_level": {
+      "value": "中级法院",
+      "support": 1.0,
+      "accepted": true
+    },
+    "metadata.judgment_date": {
+      "value": "2025-02-17",
+      "support": 1.0,
+      "accepted": true
+    },
+    "case_profile.case_type_secondary": {
+      "value": "民间借贷纠纷",
+      "support": 1.0,
+      "accepted": true
+    },
+    "case_profile.procedure_stage": {
+      "value": "二审",
+      "support": 1.0,
+      "accepted": true
+    },
+    "case_profile.is_appeal": {
+      "value": true,
+      "support": 0.7,
+      "accepted": true
+    },
+    "case_profile.litigant_profile.plaintiff_types": {
+      "value": [],
+      "support": 0.6,
+      "accepted": false
+    },
+    "case_profile.litigant_profile.defendant_types": {
+      "value": [],
+      "support": 0.6,
+      "accepted": false
+    },
+    "virtual_currency_info.involved": {
+      "value": true,
+      "support": 0.9,
+      "accepted": true
+    },
+    "virtual_currency_info.currency_types": {
+      "value": [
+        "XXX数字货币"
+      ],
+      "support": 0.8,
+      "accepted": true
+    },
+    "virtual_currency_info.activity_type": {
+      "value": [
+        "投资"
+      ],
+      "support": 0.8,
+      "accepted": true
+    },
+    "virtual_currency_info.total_amount_cny": {
+      "value": 96400,
+      "support": 0.9,
+      "accepted": true
+    },
+    "judicial_analysis.legal_characterization": {
+      "value": "民间借贷法律关系",
+      "support": 0.5,
+      "accepted": false
+    },
+    "judicial_analysis.virtual_currency_property_legality": {
+      "value": "不适用",
+      "support": 0.2,
+      "accepted": false
+    },
+    "judicial_analysis.contract_validity": {
+      "value": "有效",
+      "support": 0.7,
+      "accepted": true
+    },
+    "judicial_analysis.reason_for_invalidity": {
+      "value": [],
+      "support": 0.9,
+      "accepted": true
+    },
+    "judicial_analysis.cited_laws": {
+      "value": [
+        "《中华人民共和国民法典》第六百八十条",
+        "《中华人民共和国民法典》第六百七十五条",
+        "《最高人民法院关于审理民间借贷案件适用法律若干问题的规定》第十六条",
+        "《最高人民法院关于审理民间借贷案件适用法律若干问题的规定》第二十八条第二款第一项",
+        "《中华人民共和国民事诉讼法》第一百七十七条第一款第一项"
+      ],
+      "support": 0.4,
+      "accepted": false
+    },
+    "judicial_analysis.cited_policies": {
+      "value": [],
+      "support": 1.0,
+      "accepted": true
+    },
+    "judicial_analysis.judicial_framing": {
+      "value": [
+        "民间借贷法律关系认定",
+        "委托理财关系与借贷关系的区分",
+        "举证责任分配",
+        "证据审查与事实认定"
+      ],
+      "support": 0.1,
+      "accepted": false
+    },
+    "llm_summary.outcome_summary": {
+      "value": "二审法院驳回上诉，维持原判。认定双方为民间借贷关系，判决杜某某偿还借款本金82,310元及相应利息、保全费。",
+      "support": 0.1,
+      "accepted": false
+    },
+    "llm_summary.reasoning_summary": {
+      "value": "法院认为，根据微信聊天记录和转账凭证，双方成立民间借贷关系。杜某某未能提供充分证据证明委托理财关系存在，应承担举证不能的后果。借款未明确约定利息，视为无利息。逾期利息从催告后按LPR标准计算。",
+      "support": 0.1,
+      "accepted": false
+    }
+  },
+  "QWEN": {
+    "metadata.case_number": {
+      "value": "（2024）新01民终8979号",
+      "support": 1.0,
+      "accepted": true
+    },
+    "metadata.court_name": {
+      "value": "新疆维吾尔自治区乌鲁木齐市中级人民法院",
+      "support": 1.0,
+      "accepted": true
+    },
+    "metadata.court_level": {
+      "value": "中级法院",
+      "support": 1.0,
+      "accepted": true
+    },
+    "metadata.judgment_date": {
+      "value": "2025-02-17",
+      "support": 1.0,
+      "accepted": true
+    },
+    "case_profile.case_type_secondary": {
+      "value": "民间借贷纠纷",
+      "support": 1.0,
+      "accepted": true
+    },
+    "case_profile.procedure_stage": {
+      "value": "二审",
+      "support": 1.0,
+      "accepted": true
+    },
+    "case_profile.litigant_profile.plaintiff_types": {
+      "value": [],
+      "support": 1.0,
+      "accepted": true
+    },
+    "case_profile.litigant_profile.defendant_types": {
+      "value": [],
+      "support": 1.0,
+      "accepted": true
+    },
+    "virtual_currency_info.involved": {
+      "value": true,
+      "support": 0.9,
+      "accepted": true
+    },
+    "virtual_currency_info.currency_types": {
+      "value": [
+        "XXX数字货币"
+      ],
+      "support": 0.9,
+      "accepted": true
+    },
+    "virtual_currency_info.activity_type": {
+      "value": [
+        "投资"
+      ],
+      "support": 0.5,
+      "accepted": false
+    },
+    "virtual_currency_info.total_amount_cny": {
+      "value": 96400,
+      "support": 0.9,
+      "accepted": true
+    },
+    "judicial_analysis.legal_characterization": {
+      "value": "民间借贷关系",
+      "support": 1.0,
+      "accepted": true
+    },
+    "judicial_analysis.virtual_currency_property_legality": {
+      "value": "不具有与法定货币同等的法律地位，相关投资行为不受法律保护",
+      "support": 0.6,
+      "accepted": false
+    },
+    "judicial_analysis.contract_validity": {
+      "value": "不适用",
+      "support": 0.5,
+      "accepted": false
+    },
+    "judicial_analysis.reason_for_invalidity": {
+      "value": [],
+      "support": 1.0,
+      "accepted": true
+    },
+    "judicial_analysis.cited_laws": {
+      "value": [
+        "《中华人民共和国民法典》第六百八十条",
+        "《中华人民共和国民法典》第六百七十五条",
+        "《最高人民法院关于审理民间借贷案件适用法律若干问题的规定》第十六条",
+        "《最高人民法院关于审理民间借贷案件适用法律若干问题的规定》第二十八条第二款第一项",
+        "《中华人民共和国民事诉讼法》第一百七十七条第一款第一项"
+      ],
+      "support": 0.6,
+      "accepted": false
+    },
+    "judicial_analysis.cited_policies": {
+      "value": [],
+      "support": 1.0,
+      "accepted": true
+    },
+    "judicial_analysis.judicial_framing": {
+      "value": [
+        "举证责任分配",
+        "借贷合意认定",
+        "虚拟货币投资风险自担",
+        "转账凭证与法律关系认定"
+      ],
+      "support": 0.3,
+      "accepted": false
+    },
+    "llm_summary.outcome_summary": {
+      "value": "驳回上诉，维持原判。杜某某应偿还贾某某借款本金82,310元、逾期利息427.90元及后续利息，并承担保全费848.02元。",
+      "support": 0.5,
+      "accepted": false
+    },
+    "llm_summary.reasoning_summary": {
+      "value": "法院认为贾某某提供的微信聊天记录和转账凭证足以证明双方存在借贷合意和款项交付，构成民间借贷关系；杜某某主张系委托投资关系但未能提供有效证据证明贾某某有委托意思表示或共享账户事实，应承担举证不能后果。一审对本金、利息及保全费的认定于法有据。",
+      "support": 0.1,
+      "accepted": false
+    }
+  }
+}

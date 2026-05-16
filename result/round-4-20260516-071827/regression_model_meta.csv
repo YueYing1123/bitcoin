@@ -1,0 +1,15 @@
+﻿model,type,nobs,rsquared,dep_mean,note,error,pseudo_rsquared
+m1_lpm_baseline,OLS/LPM,5709,0.17213164100393596,0.47398843930635837,"Baseline LPM: 2021 policy period, master amount, amount-quality flags, court level, cause group.",,
+m2_lpm_amount_interaction,OLS/LPM,5709,0.17216231256555004,0.47398843930635837,LPM with post-2021 by high-amount interaction.,,
+m3_lpm_activity_year,OLS/LPM,5710,0.27332847701754204,0.4740805604203152,LPM with activity group and year fixed effects.,,
+m4_lpm_region_big4,OLS/LPM,5696,0.17160820112019415,0.4743679775280899,LPM on mapped-region sample: Beijing/Shanghai/Guangdong/Zhejiang indicator.,,
+m5_lpm_region_macro,OLS/LPM,5696,0.1694173733151354,0.4743679775280899,LPM on mapped-region sample: macro-region categories.,,
+m6_lpm_llm_amount,OLS/LPM,5581,0.16827256136150126,0.46927074001075075,LPM using LLM top-level amount instead of master amount.,,
+m7_lpm_regex_amount,OLS/LPM,5709,0.17211470396897366,0.47398843930635837,LPM using regex full-text maximum amount instead of master amount.,,
+m8_lpm_civil_only,OLS/LPM,5175,0.09454907320538919,0.42028985507246375,Civil/commercial subsample LPM.,,
+m9_lpm_strict_dv,OLS/LPM,5661,0.17574488958164625,0.46952835188129305,"Robustness LPM: strict invalid/unformed DV, excluding partial/other validity labels.",,
+m10_amount_alignment_ols,OLS/LPM,11680,0.5675370118496202,12.201673984300825,OLS: LLM amount alignment with regex full-text maximum amount.,,
+m12_lpm_amount_quartile,OLS/LPM,5708,0.16750265217895377,0.4742466713384723,LPM using master-amount quartiles instead of a linear log amount.,,
+m13_lpm_civil_amount_quartile,OLS/LPM,5174,0.0875394238102305,0.4205643602628527,Civil/commercial LPM using master-amount quartiles.,,
+m14_lpm_policy_q4,OLS/LPM,5707,0.1721615713296718,0.47415454704748555,LPM interaction between post-2021 period and top master-amount quartile.,,
+m11_logit_simple,Logit,5709,,0.47398843930635837,Low-dimensional logit; high-dimensional categorical controls caused singularity.,,0.0203455221111265

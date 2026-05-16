@@ -1,0 +1,104 @@
+{
+  "document_id": "05e5c09f-7497-48cf-a5bb-b2920163446d",
+  "metadata": {
+    "case_number": "（2024）沪01民终16260号",
+    "court_name": "上海市第一中级人民法院",
+    "court_level": "中级法院",
+    "region": null,
+    "judgment_date": "2025-02-27",
+    "doc_type": null
+  },
+  "case_profile": {
+    "case_type_primary": null,
+    "case_type_secondary": "民间借贷纠纷",
+    "procedure_stage": "二审",
+    "is_appeal": null,
+    "litigant_profile": {
+      "plaintiff_types": [],
+      "defendant_types": []
+    }
+  },
+  "virtual_currency_info": {
+    "involved": null,
+    "currency_types": [],
+    "activity_type": [],
+    "total_amount_cny": null
+  },
+  "judicial_analysis": {
+    "legal_characterization": {
+      "value": "结算型民间借贷法律关系",
+      "confidence": 0.95
+    },
+    "virtual_currency_property_legality": {
+      "value": "法院未明确否定虚拟货币财产属性，认可USDT可计价并作为借款交付方式，但未援引专门政策文件",
+      "confidence": 0.6
+    },
+    "contract_validity": {
+      "value": "有效",
+      "confidence": 0.95
+    },
+    "reason_for_invalidity": {
+      "value": [],
+      "confidence": 0.9
+    },
+    "cited_laws": {
+      "value": [
+        "《中华人民共和国民法典》第六百六十七条",
+        "《中华人民共和国民法典》第六百七十五条",
+        "《最高人民法院关于审理民间借贷案件适用法律若干问题的规定》第二十六条",
+        "《最高人民法院关于审理民间借贷案件适用法律若干问题的规定》第二十八条",
+        "《最高人民法院关于审理民间借贷案件适用法律若干问题的规定》第三十一条第一款",
+        "《中华人民共和国民事诉讼法》第一百七十七条第一款第(一)项",
+        "《中华人民共和国民事诉讼法》第二百六十四条"
+      ],
+      "confidence": 0.98
+    },
+    "cited_policies": {
+      "value": [],
+      "confidence": 0.9
+    },
+    "economic_substance_factors": {
+      "value": {
+        "transaction_sequence": "购币行为发生在前，借条书写在后，法院据此认定借条系对先前关系的结算",
+        "pledge_arrangement": "1200个BZZ币作为质押物交付，借款还清后返还",
+        "repayment_indicators": "出具借条后转账5万元，法院认定为还款而非补偿",
+        "substance_over_form": "法院依据书面借条、欠条认定构成结算型民间借贷，否定上诉人关于虚拟货币买卖的主张"
+      },
+      "confidence": 0.75
+    },
+    "judicial_framing": {
+      "value": [
+        "合法的民间借贷关系应受法律保护",
+        "结算型民间借贷法律关系",
+        "借款人应当按照约定的期限返还借款",
+        "逾期利息按一年期贷款市场报价利率计算",
+        "书面证据优先原则"
+      ],
+      "confidence": 0.8
+    }
+  },
+  "meta_ensemble": {
+    "model_votes": {},
+    "agreement_rate": null,
+    "final_label_source": null,
+    "confidence_mean": null,
+    "validation_status": null
+  },
+  "llm_summary": {
+    "outcome_summary": {
+      "value": "二审法院驳回上诉，维持原判。判决许某某归还借款本金224,340元，支付自2021年7月11日起至实际清偿之日止按一年期LPR计算的逾期利息，并承担律师费15,000元及诉讼费用。",
+      "confidence": 0.95
+    },
+    "reasoning_summary": {
+      "value": "法院依据书面借条和欠条认定双方构成结算型民间借贷法律关系。上诉人主张系虚拟货币买卖且受胁迫出具借条，但未能提供充分证据，且与转账5万元的事实不符。原审判决认定事实清楚，适用法律正确，应予维持。",
+      "confidence": 0.85
+    },
+    "issues_list": []
+  },
+  "custom_annotations": {
+    "law_firm_names": {
+      "value": [],
+      "confidence": 0.9
+    }
+  }
+}

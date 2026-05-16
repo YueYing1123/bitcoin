@@ -1,0 +1,68 @@
+{
+  "document_id": "9591a82a-7141-46bd-b141-b2880063fb94",
+  "metadata": {
+    "case_number": "（2024）新01民终8979号",
+    "court_name": "新疆维吾尔自治区乌鲁木齐市中级人民法院",
+    "court_level": "中级法院",
+    "region": null,
+    "judgment_date": "2025-02-17",
+    "doc_type": null
+  },
+  "case_profile": {
+    "case_type_primary": null,
+    "case_type_secondary": "民间借贷纠纷",
+    "procedure_stage": "二审",
+    "is_appeal": null,
+    "litigant_profile": {
+      "plaintiff_types": [],
+      "defendant_types": []
+    }
+  },
+  "virtual_currency_info": {
+    "involved": null,
+    "currency_types": [],
+    "activity_type": [],
+    "total_amount_cny": null
+  },
+  "judicial_analysis": {
+    "legal_characterization": "民间借贷法律关系",
+    "virtual_currency_property_legality": "不具有与法定货币同等的法律地位，不受法律保护",
+    "contract_validity": "有效",
+    "reason_for_invalidity": [],
+    "cited_laws": [
+      "《中华人民共和国民法典》第六百八十条",
+      "《中华人民共和国民法典》第六百七十五条",
+      "《最高人民法院关于审理民间借贷案件适用法律若干问题的规定》第二十八条第二款第一项",
+      "《最高人民法院关于审理民间借贷案件适用法律若干问题的规定》第十六条",
+      "《中华人民共和国民事诉讼法》第一百七十七条第一款第一项"
+    ],
+    "cited_policies": [],
+    "economic_substance_factors": {
+      "资金流向": "贾某某向杜某某转账，杜某某向贾某某转账",
+      "风险承担": "法院认定为借贷关系，出借人不承担投资风险",
+      "利润分配": "上诉人主张为投资分红，法院认定为本金偿还",
+      "控制权": "法院认定出借人对资金使用无介入和控制权"
+    },
+    "judicial_framing": [
+      "当事人双方之间系民间借贷关系或委托理财关系",
+      "主张案件事实一方当事人承担证明责任，负担举证责任的一方当事人将承受对其不利的后果",
+      "原告仅依据金融机构的转账凭证提起民间借贷诉讼，被告抗辩转账系偿还双方之前借款或者其他债务的，被告应当对其主张提供证据证明",
+      "杜某某提交的证据均不足以证明贾某某委托其投资理财的意思表示，杜某某应当承担举证不能的不利后果"
+    ]
+  },
+  "meta_ensemble": {
+    "model_votes": {},
+    "agreement_rate": null,
+    "final_label_source": null,
+    "confidence_mean": null,
+    "validation_status": null
+  },
+  "llm_summary": {
+    "outcome_summary": "二审法院驳回上诉，维持原判。即杜某某需偿还贾某某借款本金82,310元及相应利息。",
+    "reasoning_summary": "法院认为，上诉人杜某某未能提供充分证据证明双方存在委托理财关系，应承担举证不能的不利后果。被上诉人贾某某提供的证据足以证明双方存在借贷合意。因此，一审法院认定双方为民间借贷关系并无不当，二审予以维持。",
+    "issues_list": []
+  },
+  "custom_annotations": {
+    "law_firm_names": []
+  }
+}

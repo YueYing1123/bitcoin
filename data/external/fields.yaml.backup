@@ -1,0 +1,133 @@
+fields:
+  - name: is_appeal
+    type: bool
+    target: case_profile.is_appeal
+  - name: appeal_result
+    type: string
+    target: case_profile.appeal_result
+    on_missing: na_or_empty
+  - name: is_default_judgment
+    type: bool
+    target: case_profile.is_default_judgment
+  - name: transaction_start_year
+    type: string
+    target: case_profile.transaction_time_span.start_year
+    on_missing: na_or_empty
+  - name: transaction_end_year
+    type: string
+    target: case_profile.transaction_time_span.end_year
+    on_missing: na_or_empty
+  - name: crosses_2017_94_notice
+    type: bool
+    target: case_profile.transaction_time_span.crosses_2017_94_notice
+  - name: crosses_2021_254_notice
+    type: bool
+    target: case_profile.transaction_time_span.crosses_2021_254_notice
+  - name: plaintiff_type
+    type: string
+    target: litigant_profile.plaintiff_type
+    on_missing: na_or_empty
+  - name: defendant_type
+    type: string
+    target: litigant_profile.defendant_type
+    on_missing: na_or_empty
+  - name: plaintiff_has_lawyer
+    type: bool
+    target: litigant_profile.counsel_representation.plaintiff_has_lawyer
+  - name: defendant_has_lawyer
+    type: bool
+    target: litigant_profile.counsel_representation.defendant_has_lawyer
+  - name: ruling_type
+    type: string
+    target: procedural_status.ruling_type
+    on_missing: na_or_empty
+  - name: criminal_civil_intersection
+    type: bool
+    target: procedural_status.criminal_civil_intersection
+  - name: jurisdiction_challenge
+    type: bool
+    target: procedural_status.jurisdiction_challenge
+  - name: involved_currencies
+    type: list[string]
+    target: virtual_currency_info.involved_currencies
+  - name: is_usdt_involved
+    type: bool
+    target: virtual_currency_info.is_usdt_involved
+  - name: activity_type
+    type: string
+    target: virtual_currency_info.activity_type
+    on_missing: na_or_empty
+  - name: transaction_venue
+    type: string
+    target: virtual_currency_info.transaction_venue
+    on_missing: na_or_empty
+  - name: plaintiff_claimed_cny
+    type: number
+    target: virtual_currency_info.amounts.plaintiff_claimed_cny
+  - name: court_recognized_cny
+    type: number
+    target: virtual_currency_info.amounts.court_recognized_cny
+  - name: key_evidence_types
+    type: list[string]
+    target: evidence_analysis.key_evidence_types
+  - name: burden_of_proof_ruling
+    type: string
+    target: evidence_analysis.burden_of_proof_ruling
+    on_missing: na_or_empty
+  - name: wallet_ownership_proven
+    type: bool
+    target: evidence_analysis.wallet_ownership_proven
+  - name: legal_characterization
+    type: string
+    target: judicial_analysis.legal_characterization
+    on_missing: na_or_empty
+  - name: contract_validity
+    type: string
+    target: judicial_analysis.contract_validity
+    on_missing: na_or_empty
+  - name: validity_ground
+    type: string
+    target: judicial_analysis.validity_ground
+    on_missing: na_or_empty
+  - name: illegal_debt_determination
+    type: bool
+    target: judicial_analysis.illegal_debt_determination
+  - name: moral_judgment_tags
+    type: list[string]
+    target: judicial_analysis.moral_judgment_tags
+  - name: remedy_method
+    type: string
+    target: judicial_analysis.remedy_mechanics.method
+    on_missing: na_or_empty
+  - name: fiat_conversion_logic
+    type: string
+    target: judicial_analysis.remedy_mechanics.fiat_conversion_logic
+    on_missing: na_or_empty
+  - name: interest_or_fee
+    type: string
+    target: judicial_analysis.remedy_mechanics.interest_or_fee
+    on_missing: na_or_empty
+  - name: cited_laws
+    type: list[string]
+    target: judicial_analysis.cited_norms.laws
+  - name: cited_policies
+    type: list[string]
+    target: judicial_analysis.cited_norms.policies
+  - name: is_public_order_cited
+    type: bool
+    target: judicial_analysis.cited_norms.is_public_order_cited
+  - name: meta_confidence_mean
+    type: number
+    target: meta_ensemble.confidence_mean
+  - name: validation_status
+    type: string
+    target: meta_ensemble.validation_status
+    on_missing: na_or_empty
+  - name: outcome_text
+    type: string
+    target: llm_summary.outcome_text
+    on_missing: na_or_empty
+  - name: core_issue
+    type: string
+    target: llm_summary.core_issue
+    on_missing: na_or_empty

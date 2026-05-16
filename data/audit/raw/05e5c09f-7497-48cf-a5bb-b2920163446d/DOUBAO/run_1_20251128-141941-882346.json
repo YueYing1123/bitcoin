@@ -1,0 +1,137 @@
+{
+  "document_id": "05e5c09f-7497-48cf-a5bb-b2920163446d",
+  "metadata": {
+    "case_number": {
+      "value": "(2024)沪01民终16260号",
+      "confidence": 1.0
+    },
+    "court_name": {
+      "value": "上海市第一中级人民法院",
+      "confidence": 1.0
+    },
+    "court_level": {
+      "value": "中级法院",
+      "confidence": 1.0
+    },
+    "judgment_date": {
+      "value": "2025-02-27",
+      "confidence": 1.0
+    },
+    "region": {
+      "value": "上海市",
+      "confidence": 1.0
+    },
+    "doc_type": {
+      "value": "民事判决书",
+      "confidence": 1.0
+    }
+  },
+  "case_profile": {
+    "case_type_primary": {
+      "value": "民事案件",
+      "confidence": 1.0
+    },
+    "case_type_secondary": {
+      "value": "民间借贷纠纷",
+      "confidence": 1.0
+    },
+    "procedure_stage": {
+      "value": "二审",
+      "confidence": 1.0
+    },
+    "is_appeal": {
+      "value": true,
+      "confidence": 1.0
+    },
+    "litigant_profile": {
+      "plaintiff_types": {
+        "value": [
+          "自然人"
+        ],
+        "confidence": 1.0
+      },
+      "defendant_types": {
+        "value": [
+          "自然人"
+        ],
+        "confidence": 1.0
+      }
+    }
+  },
+  "virtual_currency_info": {
+    "involved": {
+      "value": true,
+      "confidence": 1.0
+    },
+    "currency_types": {
+      "value": [
+        "USDT",
+        "BZZ"
+      ],
+      "confidence": 1.0
+    },
+    "activity_type": {
+      "value": [
+        "借贷",
+        "虚拟货币交易"
+      ],
+      "confidence": 0.9
+    },
+    "total_amount_cny": {
+      "value": 224340.0,
+      "confidence": 1.0
+    }
+  },
+  "judicial_analysis": {
+    "legal_characterization": {
+      "value": "结算型民间借贷法律关系",
+      "confidence": 1.0
+    },
+    "virtual_currency_property_legality": {
+      "value": "法院未明确认定虚拟货币的财产合法性,但认可其折算价值用于民间借贷结算",
+      "confidence": 0.8
+    },
+    "contract_validity": {
+      "value": "有效",
+      "confidence": 1.0
+    },
+    "reason_for_invalidity": {
+      "value": [],
+      "confidence": 1.0
+    },
+    "cited_laws": {
+      "value": [
+        "中华人民共和国民法典第六百六十七条",
+        "中华人民共和国民法典第六百七十五条",
+        "最高人民法院关于审理民间借贷案件适用法律若干问题的规定第二十六条",
+        "最高人民法院关于审理民间借贷案件适用法律若干问题的规定第二十八条",
+        "最高人民法院关于审理民间借贷案件适用法律若干问题的规定第三十一条第一款",
+        "中华人民共和国民事诉讼法第一百七十七条第一款第一项"
+      ],
+      "confidence": 1.0
+    },
+    "cited_policies": {
+      "value": [],
+      "confidence": 1.0
+    },
+    "judicial_framing": {
+      "value": [
+        "证据优势原则",
+        "结算型民间借贷认定",
+        "举证责任分配"
+      ],
+      "confidence": 0.9
+    }
+  },
+  "llm_summary": {
+    "outcome_summary": {
+      "value": "二审法院驳回上诉,维持原判,认定双方为结算型民间借贷关系,许某某应归还赖某某借款本金224340元及相应逾期利息、律师费",
+      "confidence": 1.0
+    },
+    "reasoning_summary": {
+      "value": "法院认为借条、欠条足以证明借贷关系,许某某主张系虚拟货币交易及受胁迫出具凭证但未提供充分证据,故维持原审判决",
+      "confidence": 1.0
+    }
+  },
+  "custom_annotations": {}
+}

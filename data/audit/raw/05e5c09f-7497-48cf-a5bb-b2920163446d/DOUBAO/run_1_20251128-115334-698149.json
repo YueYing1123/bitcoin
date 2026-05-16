@@ -1,0 +1,162 @@
+{
+  "document_id": "05e5c09f-7497-48cf-a5bb-b2920163446d",
+  "metadata": {
+    "case_number": {
+      "value": "（2024）沪01民终16260号",
+      "confidence": 1.0
+    },
+    "court_name": {
+      "value": "上海市第一中级人民法院",
+      "confidence": 1.0
+    },
+    "court_level": {
+      "value": "中级法院",
+      "confidence": 1.0
+    },
+    "region": {
+      "value": "上海市",
+      "confidence": 1.0
+    },
+    "judgment_date": {
+      "value": "2025-02-27",
+      "confidence": 1.0
+    },
+    "doc_type": {
+      "value": "民事判决书",
+      "confidence": 1.0
+    }
+  },
+  "case_profile": {
+    "case_type_primary": {
+      "value": "民事",
+      "confidence": 1.0
+    },
+    "case_type_secondary": {
+      "value": "民间借贷纠纷",
+      "confidence": 1.0
+    },
+    "procedure_stage": {
+      "value": "二审",
+      "confidence": 1.0
+    },
+    "is_appeal": {
+      "value": true,
+      "confidence": 1.0
+    },
+    "litigant_profile": {
+      "plaintiff_types": {
+        "value": [
+          "自然人"
+        ],
+        "confidence": 1.0
+      },
+      "defendant_types": {
+        "value": [
+          "自然人"
+        ],
+        "confidence": 1.0
+      }
+    }
+  },
+  "virtual_currency_info": {
+    "involved": {
+      "value": true,
+      "confidence": 1.0
+    },
+    "currency_types": {
+      "value": [
+        "USDT",
+        "BZZ"
+      ],
+      "confidence": 1.0
+    },
+    "activity_type": {
+      "value": [
+        "资金转移（USDT）",
+        "质押担保（BZZ）"
+      ],
+      "confidence": 0.9
+    },
+    "total_amount_cny": {
+      "value": 274340.0,
+      "confidence": 1.0
+    }
+  },
+  "judicial_analysis": {
+    "legal_characterization": {
+      "value": "结算型民间借贷关系",
+      "confidence": 0.9
+    },
+    "virtual_currency_property_legality": {
+      "value": null,
+      "confidence": 0.0
+    },
+    "contract_validity": {
+      "value": "有效",
+      "confidence": 0.9
+    },
+    "reason_for_invalidity": {
+      "value": [],
+      "confidence": 0.9
+    },
+    "cited_laws": {
+      "value": [
+        "《中华人民共和国民法典》第六百六十七条",
+        "《中华人民共和国民法典》第六百七十五条",
+        "《最高人民法院关于审理民间借贷案件适用法律若干问题的规定》第二十六条",
+        "《最高人民法院关于审理民间借贷案件适用法律若干问题的规定》第二十八条",
+        "《最高人民法院关于审理民间借贷案件适用法律若干问题的规定》第三十一条第一款",
+        "《中华人民共和国民事诉讼法》第一百七十七条第一款第（一）项",
+        "《中华人民共和国民事诉讼法》第二百六十四条"
+      ],
+      "confidence": 1.0
+    },
+    "cited_policies": {
+      "value": [],
+      "confidence": 0.9
+    },
+    "economic_substance_factors": {
+      "value": {
+        "written_agreements": "借条和欠条明确约定借款金额、还款期限及质押条款",
+        "partial_repayment": "被告已偿还50000元",
+        "settlement_nature": "法院认定借条/欠条是对先前交易的结算",
+        "payment_pledge_evidence": "原告支付USDT并接收BZZ作为质押",
+        "lack_of_invalidity_proof": "被告未能提供胁迫或无效的证据"
+      },
+      "confidence": 0.9
+    },
+    "judicial_framing": {
+      "value": [
+        "将书面凭证（借条/欠条）作为核心证据",
+        "认定结算型协议的法律效力",
+        "要求主张无效者承担举证责任",
+        "支持合法民间借贷关系的履行"
+      ],
+      "confidence": 0.8
+    }
+  },
+  "meta_ensemble": {
+    "model_votes": {},
+    "agreement_rate": null,
+    "final_label_source": null,
+    "confidence_mean": null,
+    "validation_status": null
+  },
+  "llm_summary": {
+    "outcome_summary": {
+      "value": "二审法院驳回上诉，维持原判。原判要求被告许某某偿还剩余借款本金224340元、支付逾期利息（按一年期LPR计算）、承担律师费15000元及诉讼费用。",
+      "confidence": 1.0
+    },
+    "reasoning_summary": {
+      "value": "法院认为借条和欠条系双方真实意思表示（作为先前交易的结算），被告关于胁迫或虚拟货币交易的主张无有效证据支持，故维持原审判决。",
+      "confidence": 0.9
+    },
+    "issues_list": []
+  },
+  "custom_annotations": {
+    "law_firm_names": {
+      "value": [],
+      "confidence": 0.9
+    }
+  }
+}

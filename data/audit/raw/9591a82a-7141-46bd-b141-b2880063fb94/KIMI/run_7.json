@@ -1,0 +1,97 @@
+{
+  "document_id": "9591a82a-7141-46bd-b141-b2880063fb94",
+  "metadata": {
+    "case_number": "（2024）新01民终8979号",
+    "court_name": "新疆维吾尔自治区乌鲁木齐市中级人民法院",
+    "court_level": "中级法院",
+    "region": null,
+    "judgment_date": "2025-02-17",
+    "doc_type": null
+  },
+  "case_profile": {
+    "case_type_primary": null,
+    "case_type_secondary": "民间借贷纠纷",
+    "procedure_stage": "二审",
+    "is_appeal": true,
+    "litigant_profile": {
+      "plaintiff_types": [],
+      "defendant_types": []
+    }
+  },
+  "virtual_currency_info": {
+    "involved": true,
+    "currency_types": [
+      "XXX数字货币"
+    ],
+    "activity_type": [
+      "投资"
+    ],
+    "total_amount_cny": 96400
+  },
+  "judicial_analysis": {
+    "legal_characterization": {
+      "value": "民间借贷关系",
+      "confidence": 0.98
+    },
+    "virtual_currency_property_legality": {
+      "value": "不具有与法定货币同等的法律地位，不受法律保护",
+      "confidence": 0.95
+    },
+    "contract_validity": {
+      "value": "有效",
+      "confidence": 0.96
+    },
+    "reason_for_invalidity": [],
+    "cited_laws": {
+      "value": [
+        "《中华人民共和国民法典》第六百八十条",
+        "《中华人民共和国民法典》第六百七十五条",
+        "《最高人民法院关于审理民间借贷案件适用法律若干问题的规定》第十六条",
+        "《最高人民法院关于审理民间借贷案件适用法律若干问题的规定》第二十八条第二款第一项",
+        "《中华人民共和国民事诉讼法》第一百七十七条第一款第一项"
+      ],
+      "confidence": 0.99
+    },
+    "cited_policies": [],
+    "economic_substance_factors": {
+      "value": {
+        "transaction_nature": "资金交付与还款承诺",
+        "evidence_of_lending_intent": "微信聊天记录显示上诉人承认借款并承诺还款方式",
+        "repayment_behavior": "上诉人曾还款10000元并标注“还高利贷”",
+        "fund_delivery": "被上诉人分七次向上诉人转账共计96400元",
+        "investment_control": "无证据证明被上诉人参与账户管理或共享投资账户"
+      },
+      "confidence": 0.92
+    },
+    "judicial_framing": {
+      "value": [
+        "民间借贷关系与委托理财关系的界定",
+        "举证责任分配",
+        "电子证据（微信聊天记录）的证明力认定",
+        "虚拟货币投资行为的法律性质分析"
+      ],
+      "confidence": 0.9
+    }
+  },
+  "meta_ensemble": {
+    "model_votes": {},
+    "agreement_rate": null,
+    "final_label_source": null,
+    "confidence_mean": null,
+    "validation_status": null
+  },
+  "llm_summary": {
+    "outcome_summary": {
+      "value": "驳回上诉，维持原判。上诉人杜某某需偿还被上诉人贾某某借款本金82310元、利息427.90元（计算至2024年7月25日）及保全费848.02元，并继续支付自2024年7月26日起至实际付清之日止的利息（以未还本金为基数，按年利率3.45%计算）。",
+      "confidence": 0.97
+    },
+    "reasoning_summary": {
+      "value": "法院认定双方成立民间借贷关系而非委托理财关系。主要理由：1）上诉人未能提供充分证据证明存在委托理财合意；2）微信聊天记录显示上诉人承认借款并承诺还款方式；3）上诉人存在还款行为并标注“还高利贷”；4）被上诉人仅出资而未参与投资管理。因此，上诉人应承担举证不能的不利后果，一审判决认定事实清楚，适用法律正确。",
+      "confidence": 0.94
+    },
+    "issues_list": []
+  },
+  "custom_annotations": {
+    "law_firm_names": []
+  }
+}

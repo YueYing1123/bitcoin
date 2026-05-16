@@ -1,0 +1,86 @@
+{
+  "document_id": "05e5c09f-7497-48cf-a5bb-b2920163446d",
+  "metadata": {
+    "case_number": "（2024）沪01民终16260号",
+    "court_name": "上海市第一中级人民法院",
+    "court_level": "中级法院",
+    "region": null,
+    "judgment_date": "2025-02-27",
+    "doc_type": null
+  },
+  "case_profile": {
+    "case_type_primary": null,
+    "case_type_secondary": "民间借贷纠纷",
+    "procedure_stage": "二审",
+    "is_appeal": null,
+    "litigant_profile": {
+      "plaintiff_types": [],
+      "defendant_types": []
+    }
+  },
+  "virtual_currency_info": {
+    "involved": null,
+    "currency_types": [
+      "USDT",
+      "BZZ"
+    ],
+    "activity_type": [
+      "借款",
+      "质押"
+    ],
+    "total_amount_cny": 274340
+  },
+  "judicial_analysis": {
+    "legal_characterization": "结算型民间借贷法律关系",
+    "virtual_currency_property_legality": "未直接认定，但作为结算依据承认其经济价值",
+    "contract_validity": "有效",
+    "reason_for_invalidity": [],
+    "cited_laws": [
+      "《中华人民共和国民法典》第六百六十七条",
+      "《中华人民共和国民法典》第六百七十五条",
+      "《最高人民法院关于审理民间借贷案件适用法律若干问题的规定》第二十六条",
+      "《最高人民法院关于审理民间借贷案件适用法律若干问题的规定》第二十八条",
+      "《最高人民法院关于审理民间借贷案件适用法律若干问题的规定》第三十一条第一款",
+      "《中华人民共和国民事诉讼法》第一百七十七条第一款第(一)项"
+    ],
+    "cited_policies": [],
+    "economic_substance_factors": {
+      "settlement_agreement": "双方通过借条、欠条将此前涉及虚拟货币的法律关系结算为人民币借贷关系",
+      "payment_behavior": "许某某出具借条后向赖某某转账5万元，被认定为部分还款",
+      "contract_terms": "借条明确了借款本金、还款日期、质押物（BZZ）及实现债权费用（律师费）等"
+    },
+    "judicial_framing": [
+      "结算型民间借贷",
+      "尊重当事人意思自治（以书面借条为准）",
+      "证据优势原则（借条证明力大于口头辩称）"
+    ]
+  },
+  "meta_ensemble": {
+    "model_votes": {},
+    "agreement_rate": null,
+    "final_label_source": null,
+    "confidence_mean": null,
+    "validation_status": null
+  },
+  "llm_summary": {
+    "outcome_summary": "二审法院驳回上诉人许某某的上诉请求，维持原判。即许某某需归还赖某某借款本金224,340元及相应利息，并支付律师费15,000元。",
+    "reasoning_summary": "法院认为，双方签订的借条和欠条是真实有效的，构成了结算型民间借贷关系。上诉人许某某主张的虚拟货币交易及受胁迫出具借条等理由，因缺乏证据证明而不被采纳。因此，双方应按借条约定履行还款义务。",
+    "issues_list": []
+  },
+  "custom_annotations": {
+    "law_firm_names": []
+  },
+  "_extraction_confidence": {
+    "judicial_analysis.legal_characterization": 0.95,
+    "judicial_analysis.virtual_currency_property_legality": 0.7,
+    "judicial_analysis.contract_validity": 0.98,
+    "judicial_analysis.reason_for_invalidity": 0.9,
+    "judicial_analysis.cited_laws": 1.0,
+    "judicial_analysis.cited_policies": 0.95,
+    "judicial_analysis.economic_substance_factors": 0.9,
+    "judicial_analysis.judicial_framing": 0.9,
+    "llm_summary.outcome_summary": 1.0,
+    "llm_summary.reasoning_summary": 0.95,
+    "custom_annotations.law_firm_names": 0.95
+  }
+}

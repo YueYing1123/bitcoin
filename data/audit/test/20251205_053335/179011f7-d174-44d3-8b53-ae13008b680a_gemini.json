@@ -1,0 +1,220 @@
+{
+  "document_id": "179011f7-d174-44d3-8b53-ae13008b680a",
+  "metadata": {
+    "case_number": {
+      "value": "（2021）粤0783刑初270号",
+      "confidence": 0.98
+    },
+    "court_name": {
+      "value": "开平市人民法院",
+      "confidence": 0.95
+    },
+    "court_level": {
+      "value": "基层法院",
+      "confidence": 0.9
+    },
+    "province": {
+      "value": "广东省",
+      "confidence": 0.95
+    },
+    "judgment_date": {
+      "value": "2021-10-13",
+      "confidence": 0.95
+    },
+    "judgment_year": {
+      "value": "2021",
+      "confidence": 0.98
+    },
+    "first_instance_case_number": {
+      "value": null,
+      "confidence": 0.0
+    }
+  },
+  "case_profile": {
+    "case_cause": {
+      "value": "开设赌场罪",
+      "confidence": 0.98
+    },
+    "procedure_stage": {
+      "value": "一审",
+      "confidence": 0.98
+    },
+    "is_appeal": {
+      "value": false,
+      "confidence": 0.98
+    },
+    "appeal_result": {
+      "value": null,
+      "confidence": 0.0
+    },
+    "is_default_judgment": {
+      "value": false,
+      "confidence": 0.95
+    },
+    "transaction_time_span": {
+      "start_year": {
+        "value": 2018,
+        "confidence": 0.95
+      },
+      "end_year": {
+        "value": 2020,
+        "confidence": 0.95
+      },
+      "crosses_2017_94_notice": {
+        "value": false,
+        "confidence": 0.9
+      },
+      "crosses_2021_254_notice": {
+        "value": false,
+        "confidence": 0.9
+      }
+    }
+  },
+  "litigant_profile": {
+    "plaintiff_type": {
+      "value": "其他",
+      "confidence": 0.95
+    },
+    "defendant_type": {
+      "value": "自然人",
+      "confidence": 0.95
+    },
+    "counsel_representation": {
+      "plaintiff_has_lawyer": {
+        "value": false,
+        "confidence": 0.9
+      },
+      "defendant_has_lawyer": {
+        "value": true,
+        "confidence": 0.95
+      }
+    }
+  },
+  "procedural_status": {
+    "ruling_type": {
+      "value": "实体判决",
+      "confidence": 0.98
+    },
+    "criminal_civil_intersection": {
+      "value": false,
+      "confidence": 0.8
+    },
+    "jurisdiction_challenge": {
+      "value": true,
+      "confidence": 0.9
+    }
+  },
+  "virtual_currency_info": {
+    "involved_currencies": {
+      "value": [],
+      "confidence": 0.98
+    },
+    "is_usdt_involved": {
+      "value": false,
+      "confidence": 0.98
+    },
+    "activity_type": {
+      "value": null,
+      "confidence": 0.0
+    },
+    "transaction_venue": {
+      "value": "不适用",
+      "confidence": 0.0
+    },
+    "amounts": {
+      "plaintiff_claimed_cny": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "court_recognized_cny": {
+        "value": 0,
+        "confidence": 0.9
+      }
+    }
+  },
+  "evidence_analysis": {
+    "key_evidence_types": {
+      "value": [
+        "转账记录"
+      ],
+      "confidence": 0.8
+    },
+    "burden_of_proof_ruling": {
+      "value": null,
+      "confidence": 0.0
+    },
+    "wallet_ownership_proven": {
+      "value": null,
+      "confidence": 0.0
+    }
+  },
+  "judicial_analysis": {
+    "legal_characterization": {
+      "value": "开设赌场罪",
+      "confidence": 0.98
+    },
+    "currency_property_nature": {
+      "value": null,
+      "confidence": 0.0
+    },
+    "contract_validity": {
+      "value": null,
+      "confidence": 0.0
+    },
+    "validity_ground": {
+      "value": null,
+      "confidence": 0.0
+    },
+    "illegal_debt_determination": {
+      "value": false,
+      "confidence": 0.9
+    },
+    "moral_judgment_tags": {
+      "value": [],
+      "confidence": 0.0
+    },
+    "remedy_mechanics": {
+      "method": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "fiat_conversion_logic": {
+        "value": "不适用",
+        "confidence": 0.0
+      },
+      "interest_or_fee": {
+        "value": "不适用",
+        "confidence": 0.0
+      }
+    },
+    "cited_norms": {
+      "laws": {
+        "value": [
+          "《中华人民共和国刑法修正案(六)》",
+          "《中华人民共和国刑法》第三百零三条第二款",
+          "《最高人民法院、最高人民检察院、公安部关于办理网络赌博犯罪案件适用法律若干问题的意见》"
+        ],
+        "confidence": 0.95
+      },
+      "policies": {
+        "value": [],
+        "confidence": 0.9
+      },
+      "is_public_order_cited": {
+        "value": false,
+        "confidence": 0.9
+      }
+    }
+  },
+  "llm_summary": {
+    "outcome_text": {
+      "value": "被告人李某某犯开设赌场罪，判处有期徒刑三年，并处罚金人民币三万元；依法追缴违法所得人民币118070元；没收作案工具。",
+      "confidence": 0.98
+    },
+    "core_issue": {
+      "value": "李某某在赌博网站注册代理账号并发展下线会员参与赌博，从中赚取佣金，其行为构成开设赌场罪。",
+      "confidence": 0.95
+    }
+  },
+  "custom_annotations": {}
+}

@@ -1,0 +1,111 @@
+{
+  "document_id": "9591a82a-7141-46bd-b141-b2880063fb94",
+  "metadata": {
+    "case_number": "(2024)新01民终8979号",
+    "court_name": "新疆维吾尔自治区乌鲁木齐市中级人民法院",
+    "court_level": "中级法院",
+    "region": null,
+    "judgment_date": "2025-02-17",
+    "doc_type": null
+  },
+  "case_profile": {
+    "case_type_primary": null,
+    "case_type_secondary": "民间借贷纠纷",
+    "procedure_stage": "二审",
+    "is_appeal": null,
+    "litigant_profile": {
+      "plaintiff_types": [],
+      "defendant_types": []
+    }
+  },
+  "virtual_currency_info": {
+    "involved": true,
+    "currency_types": [
+      "XXX数字货币"
+    ],
+    "activity_type": [
+      "投资"
+    ],
+    "total_amount_cny": 96400
+  },
+  "judicial_analysis": {
+    "legal_characterization": {
+      "value": "民间借贷法律关系",
+      "confidence": 0.95
+    },
+    "virtual_currency_property_legality": {
+      "value": "虚拟货币不具有与法定货币同等的法律地位，投资行为不受法律保护",
+      "confidence": 0.85
+    },
+    "contract_validity": {
+      "value": "有效",
+      "confidence": 0.9
+    },
+    "reason_for_invalidity": {
+      "value": [],
+      "confidence": 1.0
+    },
+    "cited_laws": {
+      "value": [
+        "《中华人民共和国民法典》第六百八十条",
+        "《中华人民共和国民法典》第六百七十五条",
+        "《最高人民法院关于审理民间借贷案件适用法律若干问题的规定》第二十八条第二款第一项",
+        "《中华人民共和国民事诉讼法》第一百七十七条第一款第一项",
+        "《最高人民法院关于审理民间借贷案件适用法律若干问题的规定》第十六条"
+      ],
+      "confidence": 0.95
+    },
+    "cited_policies": {
+      "value": [],
+      "confidence": 1.0
+    },
+    "economic_substance_factors": {
+      "value": {
+        "资金控制权": "杜某某实际控制和使用资金",
+        "投资人参与度": "贾某某仅出资，未参与投资决策，未共享投资账户",
+        "收益特征": "定期定额支付，符合借贷利息特征",
+        "风险承担": "未明确约定风险共担"
+      },
+      "confidence": 0.8
+    },
+    "judicial_framing": {
+      "value": [
+        "民间借贷法律关系认定",
+        "委托理财关系与借贷关系的区分",
+        "举证责任分配",
+        "证据审查与事实认定"
+      ],
+      "confidence": 0.9
+    }
+  },
+  "meta_ensemble": {
+    "model_votes": {},
+    "agreement_rate": null,
+    "final_label_source": null,
+    "confidence_mean": null,
+    "validation_status": null
+  },
+  "llm_summary": {
+    "outcome_summary": {
+      "value": "二审法院驳回上诉，维持原判。认定双方为民间借贷关系，判决杜某某偿还借款本金82,310元及相应利息、保全费。",
+      "confidence": 0.95
+    },
+    "reasoning_summary": {
+      "value": "法院认为，根据微信聊天记录和转账凭证，双方成立民间借贷关系。杜某某未能提供充分证据证明委托理财关系存在，应承担举证不能的后果。借款未明确约定利息，视为无利息。逾期利息从催告后按LPR标准计算。",
+      "confidence": 0.9
+    },
+    "issues_list": [
+      "双方之间是民间借贷关系还是委托理财关系",
+      "虚拟货币投资的法律性质及效力",
+      "借款利息的认定",
+      "逾期利息的计算标准",
+      "举证责任的分配"
+    ]
+  },
+  "custom_annotations": {
+    "law_firm_names": {
+      "value": [],
+      "confidence": 1.0
+    }
+  }
+}

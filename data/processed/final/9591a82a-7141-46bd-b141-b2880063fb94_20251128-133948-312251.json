@@ -1,0 +1,12 @@
+{
+  "final_fields": {
+    "case_profile.is_appeal": true,
+    "judicial_analysis.contract_validity": "有效",
+    "judicial_analysis.legal_characterization": "民间借贷关系",
+    "virtual_currency_info.activity_type": []
+  },
+  "metrics": {
+    "agreement_rate": 0.65,
+    "final_label_source": "majority_vote"
+  }
+}

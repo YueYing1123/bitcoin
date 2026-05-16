@@ -1,0 +1,96 @@
+{
+  "DEEPSEEK": {
+    "virtual_currency_info.activity_type": {
+      "value": [],
+      "support": 0.9,
+      "accepted": true
+    },
+    "judicial_analysis.legal_characterization": {
+      "value": "民间借贷纠纷",
+      "support": 0.7,
+      "accepted": true
+    },
+    "judicial_analysis.contract_validity": {
+      "value": "有效",
+      "support": 0.9,
+      "accepted": true
+    }
+  },
+  "DOUBAO": {
+    "virtual_currency_info.activity_type": {
+      "value": [],
+      "support": 0.6,
+      "accepted": false
+    },
+    "judicial_analysis.legal_characterization": {
+      "value": {
+        "confidence": 1.0,
+        "value": "结算型民间借贷法律关系"
+      },
+      "support": 0.6,
+      "accepted": false
+    },
+    "judicial_analysis.contract_validity": {
+      "value": {
+        "confidence": 1.0,
+        "value": "有效"
+      },
+      "support": 0.6,
+      "accepted": false
+    }
+  },
+  "GLM": {
+    "virtual_currency_info.activity_type": {
+      "value": [],
+      "support": 0.9,
+      "accepted": true
+    },
+    "judicial_analysis.legal_characterization": {
+      "value": "结算型民间借贷法律关系",
+      "support": 0.5,
+      "accepted": false
+    },
+    "judicial_analysis.contract_validity": {
+      "value": "有效",
+      "support": 0.8,
+      "accepted": true
+    }
+  },
+  "KIMI": {
+    "virtual_currency_info.activity_type": {
+      "value": [],
+      "support": 0.6,
+      "accepted": false
+    },
+    "judicial_analysis.legal_characterization": {
+      "value": "结算型民间借贷法律关系",
+      "support": 0.5,
+      "accepted": false
+    },
+    "judicial_analysis.contract_validity": {
+      "value": "有效",
+      "support": 0.5,
+      "accepted": false
+    }
+  },
+  "QWEN": {
+    "virtual_currency_info.activity_type": {
+      "value": [
+        "借贷",
+        "质押"
+      ],
+      "support": 1.0,
+      "accepted": true
+    },
+    "judicial_analysis.legal_characterization": {
+      "value": "本案系结算型民间借贷法律关系，虽涉及虚拟货币交易背景，但双方通过借条、欠条对前期经济往来进行结算，形成合法有效的借贷合意。",
+      "support": 0.2,
+      "accepted": false
+    },
+    "judicial_analysis.contract_validity": {
+      "value": "有效",
+      "support": 1.0,
+      "accepted": true
+    }
+  }
+}

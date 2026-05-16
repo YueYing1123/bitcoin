@@ -1,0 +1,157 @@
+{
+  "document_id": "9591a82a-7141-46bd-b141-b2880063fb94",
+  "metadata": {
+    "case_number": "(2024)新01民终8979号",
+    "court_name": "新疆维吾尔自治区乌鲁木齐市中级人民法院",
+    "court_level": "中级法院",
+    "region": null,
+    "judgment_date": "2025-02-17",
+    "doc_type": "民事判决书"
+  },
+  "case_profile": {
+    "case_type_primary": {
+      "value": "民事",
+      "confidence": 0.9
+    },
+    "case_type_secondary": {
+      "value": "民间借贷纠纷",
+      "confidence": 0.9
+    },
+    "procedure_stage": {
+      "value": "二审",
+      "confidence": 0.9
+    },
+    "is_appeal": {
+      "value": true,
+      "confidence": 0.9
+    },
+    "litigant_profile": {
+      "plaintiff_types": [
+        {
+          "value": "自然人",
+          "confidence": 0.9
+        }
+      ],
+      "defendant_types": [
+        {
+          "value": "自然人",
+          "confidence": 0.9
+        }
+      ]
+    }
+  },
+  "virtual_currency_info": {
+    "involved": {
+      "value": true,
+      "confidence": 0.9
+    },
+    "currency_types": [
+      {
+        "value": "XXX数字货币",
+        "confidence": 0.8
+      }
+    ],
+    "activity_type": [
+      {
+        "value": "委托投资",
+        "confidence": 0.8
+      }
+    ],
+    "total_amount_cny": {
+      "value": 96400,
+      "confidence": 0.9
+    }
+  },
+  "judicial_analysis": {
+    "legal_characterization": {
+      "value": "双方之间成立民间借贷法律关系",
+      "confidence": 0.9
+    },
+    "virtual_currency_property_legality": {
+      "value": "XXX数字货币不具有与法定货币同等的法律地位，不受法律保护",
+      "confidence": 0.8
+    },
+    "contract_validity": {
+      "value": "有效",
+      "confidence": 0.8
+    },
+    "reason_for_invalidity": [],
+    "cited_laws": [
+      {
+        "value": "《中华人民共和国民法典》第六百八十条",
+        "confidence": 0.9
+      },
+      {
+        "value": "《中华人民共和国民法典》第六百七十五条",
+        "confidence": 0.9
+      },
+      {
+        "value": "《最高人民法院关于审理民间借贷案件适用法律若干问题的规定》第十六条",
+        "confidence": 0.9
+      },
+      {
+        "value": "《最高人民法院关于审理民间借贷案件适用法律若干问题的规定》第二十八条第二款第一项",
+        "confidence": 0.9
+      },
+      {
+        "value": "《中华人民共和国民事诉讼法》第一百七十七条第一款第一项",
+        "confidence": 0.9
+      }
+    ],
+    "cited_policies": [],
+    "economic_substance_factors": {
+      "资金往来次数": {
+        "value": "贾某某7次转款，杜某某11次分红转款及1次还款",
+        "confidence": 0.9
+      },
+      "收益支付金额": {
+        "value": "贾某某收到4090元投资分红",
+        "confidence": 0.8
+      },
+      "投资损失情况": {
+        "value": "2024年4月XXX数字货币爆仓导致投资款损失",
+        "confidence": 0.8
+      }
+    },
+    "judicial_framing": [
+      {
+        "value": "民间借贷关系认定",
+        "confidence": 0.9
+      },
+      {
+        "value": "举证责任分配",
+        "confidence": 0.9
+      },
+      {
+        "value": "逾期利息计算",
+        "confidence": 0.8
+      }
+    ]
+  },
+  "meta_ensemble": {
+    "model_votes": {},
+    "agreement_rate": null,
+    "final_label_source": null,
+    "confidence_mean": null,
+    "validation_status": null
+  },
+  "llm_summary": {
+    "outcome_summary": {
+      "value": "二审驳回杜某某上诉，维持原判，杜某某需偿还贾某某借款本金82310元、利息427.9元及保全费848.02元，承担二审案件受理费1913.62元",
+      "confidence": 0.9
+    },
+    "reasoning_summary": {
+      "value": "二审法院认为贾某某提交的微信聊天记录、转账凭证等证据证明双方存在借贷合意及款项交付；杜某某主张委托投资关系，但提交的证据不足以证明贾某某有委托投资的意思表示，应承担举证不能的不利后果，故维持一审判决",
+      "confidence": 0.9
+    },
+    "issues_list": [
+      {
+        "value": "双方之间法律关系性质（民间借贷vs委托投资）",
+        "confidence": 0.9
+      }
+    ]
+  },
+  "custom_annotations": {
+    "law_firm_names": []
+  }
+}

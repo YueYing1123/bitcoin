@@ -1,0 +1,550 @@
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+      name:  <unnamed>
+       log:  D:\BaiduSyncdisk\Doctor\论文\数字货币\数据构建/analyze/civil_amount_scenarios/logs/civil_amount_scenarios.log
+  log type:  text
+ opened on:  27 Feb 2026, 03:16:33
+
+. 
+. di as txt "============================================================"
+============================================================
+
+. di as txt "民事组金额口径敏感性检验启动"
+民事组金额口径敏感性检验启动
+
+. di as txt "工作目录: `ROOT'"
+工作目录: D:\BaiduSyncdisk\Doctor\论文\数字货币\数据构建
+
+. di as txt "输出目录: `OUTROOT'"
+输出目录: D:\BaiduSyncdisk\Doctor\论文\数字货币\数据构建/analyze/civil_amount_scenarios
+
+. di as txt "============================================================"
+============================================================
+
+. 
+. // -----------------------------
+. // 0) 载入数据
+. // -----------------------------
+. local CSV "`ROOT'/analyze/data/final_all_flat.csv"
+
+. cap confirm file "`CSV'"
+
+. if _rc {
+.         di as err "找不到输入数据：`CSV'"
+.         error 601
+. }
+
+. import delimited using "`CSV'", clear varnames(1) encoding(UTF-8) stringcols(_all)
+(36 vars, 12,098 obs)
+
+. compress
+  legal_characterization is strL now coalesced
+  (852,303 bytes saved)
+
+. 
+. // 统一字符串缺失
+. foreach v of varlist _all {
+  2.         capture confirm string variable `v'
+  3.         if !_rc replace `v' = "" if lower(trim(`v')) == "null"
+  4. }
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+
+. 
+. // -----------------------------
+. // 1) 核心变量构造
+. // -----------------------------
+. // 金额与关键字段：字符串安全转数值
+. foreach v in case_amount amount_mean_regex amount_max_regex amount_median_regex amount_count_regex contract_validity_regex {
+  2.         capture confirm variable `v'
+  3.         if !_rc {
+  4.                 capture confirm numeric variable `v'
+  5.                 if _rc {
+  6.                         tempvar __num
+  7.                         gen double `__num' = real(subinstr(subinstr(trim(`v'), ",", "", .), " ", "", .))
+  8.                         drop `v'
+  9.                         rename `__num' `v'
+ 10.                 }
+ 11.         }
+ 12. }
+(414 missing values generated)
+(414 missing values generated)
+(414 missing values generated)
+(414 missing values generated)
+
+. 
+. // judgment_year
+. capture confirm variable judgment_year
+
+. if _rc {
+.         gen double judgment_date_d = daily(judgment_date, "YMD")
+(1 missing value generated)
+.         format judgment_date_d %td
+.         gen int judgment_year = year(judgment_date_d)
+(1 missing value generated)
+. }
+
+. 
+. // is_appeal
+. capture confirm variable is_appeal_b
+
+. if _rc {
+.         gen byte is_appeal_b = .
+(12,098 missing values generated)
+.         replace is_appeal_b = 1 if inlist(lower(trim(is_appeal)), "true", "1", "yes")
+(2,147 real changes made)
+.         replace is_appeal_b = 0 if inlist(lower(trim(is_appeal)), "false", "0", "no")
+(9,951 real changes made)
+. }
+
+. gen byte is_appeal_miss = missing(is_appeal_b)
+
+. replace is_appeal_b = 0 if missing(is_appeal_b)
+(0 real changes made)
+
+. 
+. // 主因变量：1=无效/未成立，0=有效
+. capture confirm variable contract_invalid
+
+. if _rc {
+.         gen byte contract_invalid = .
+(12,098 missing values generated)
+.         replace contract_invalid = 1 if regexm(trim(contract_validity), "无效|未成立")
+(2,659 real changes made)
+.         replace contract_invalid = 0 if contract_invalid==. & regexm(trim(contract_validity), "有效")
+(3,033 real changes made)
+. }
+
+. 
+. // activity_type 主解释变量：合并低频
+. local MIN_ACTIVITY_N = 20
+
+. gen strL activity_type_main = trim(activity_type)
+(4,074 missing values generated)
+
+. replace activity_type_main = "未分类" if activity_type_main==""
+(4,074 real changes made)
+
+. bysort activity_type_main: gen long activity_n = _N
+
+. replace activity_type_main = "其他(稀疏)" if activity_n < `MIN_ACTIVITY_N'
+(464 real changes made)
+
+. drop activity_n
+
+. encode activity_type_main, gen(activity_type_main_id)
+
+. 
+. // 固定主基准组（优先“买卖合同”），便于与主回归脚本对齐
+. local BASE_ACTIVITY_ID = .
+
+. quietly levelsof activity_type_main_id if activity_type_main=="买卖合同", local(__base_act)
+
+. if "`__base_act'" != "" {
+.         local BASE_ACTIVITY_ID : word 1 of `__base_act'
+. }
+
+. else {
+.         quietly summarize activity_type_main_id if !missing(activity_type_main_id), meanonly
+.         local BASE_ACTIVITY_ID = r(min)
+. }
+
+. 
+. // 控制变量编码
+. capture confirm variable court_level_id
+
+. if _rc {
+.         capture encode court_level, gen(court_level_id)
+.         if _rc gen long court_level_id = .
+. }
+
+. capture confirm variable procedure_stage_id
+
+. if _rc {
+.         capture encode procedure_stage, gen(procedure_stage_id)
+.         if _rc gen long procedure_stage_id = .
+. }
+
+. capture confirm variable doc_type_id
+
+. if _rc {
+.         capture encode doc_type, gen(doc_type_id)
+.         if _rc gen long doc_type_id = .
+. }
+
+. capture confirm variable region_id
+
+. if _rc {
+.         capture encode region, gen(region_id)
+.         if _rc gen long region_id = .
+. }
+
+. capture confirm variable court_name_id
+
+. if _rc {
+.         capture encode court_name, gen(court_name_id)
+.         if _rc gen long court_name_id = .
+. }
+
+. 
+. replace court_level_id = 0 if missing(court_level_id)
+(1 real change made)
+
+. replace procedure_stage_id = 0 if missing(procedure_stage_id)
+(0 real changes made)
+
+. replace doc_type_id = 0 if missing(doc_type_id)
+(12,098 real changes made)
+
+. replace judgment_year = 0 if missing(judgment_year)
+(1 real change made)
+
+. replace region_id = 0 if missing(region_id)
+(12,098 real changes made)
+
+. replace court_name_id = 0 if missing(court_name_id)
+(1 real change made)
+
+. 
+. // 刑民识别：只保留民事组
+. gen byte is_criminal = .
+(12,098 missing values generated)
+
+. replace is_criminal = 1 if regexm(trim(case_type_primary), "刑") | regexm(trim(doc_type), "刑") | regexm(trim(case_number), "刑")
+(5,972 real changes made)
+
+. replace is_criminal = 0 if is_criminal==. & (regexm(trim(case_type_primary), "民|商|合同") | regexm(trim(doc_type), "民|商") | regexm(trim(case_number), "民"))
+(6,037 real changes made)
+
+. 
+. // 金额变量与缺失指示
+. gen byte amt_case_miss = missing(case_amount)
+
+. gen byte amt_mean_miss = missing(amount_mean_regex)
+
+. gen byte amt_max_miss = missing(amount_max_regex)
+
+. gen byte amt_median_miss = missing(amount_median_regex)
+
+. gen byte amt_count_miss = missing(amount_count_regex)
+
+. 
+. gen double ln_amt_case = ln(case_amount + 1) if !missing(case_amount)
+(414 missing values generated)
+
+. gen double ln_amt_mean = ln(amount_mean_regex + 1) if !missing(amount_mean_regex)
+(414 missing values generated)
+
+. gen double ln_amt_max = ln(amount_max_regex + 1) if !missing(amount_max_regex)
+(414 missing values generated)
+
+. gen double ln_amt_median = ln(amount_median_regex + 1) if !missing(amount_median_regex)
+(414 missing values generated)
+
+. gen double ln_amt_count = ln(amount_count_regex + 1) if !missing(amount_count_regex)
+
+. 
+. replace ln_amt_case = 0 if missing(ln_amt_case)
+(414 real changes made)
+
+. replace ln_amt_mean = 0 if missing(ln_amt_mean)
+(414 real changes made)
+
+. replace ln_amt_max = 0 if missing(ln_amt_max)
+(414 real changes made)
+
+. replace ln_amt_median = 0 if missing(ln_amt_median)
+(414 real changes made)
+
+. replace ln_amt_count = 0 if missing(ln_amt_count)
+(0 real changes made)
+
+. 
+. // 仅民事组 + 因变量非缺失
+. keep if is_criminal==0 & !missing(contract_invalid)
+(6,942 observations deleted)
+
+. quietly count
+
+. if r(N) < 100 {
+.         di as err "民事组有效样本量不足，N=" r(N)
+.         error 2001
+. }
+
+. 
+. // 若民事样本中不存在全局基准组，回退到民事样本最小ID
+. quietly count if activity_type_main_id==`BASE_ACTIVITY_ID'
+
+. if r(N) == 0 {
+.         quietly summarize activity_type_main_id if !missing(activity_type_main_id), meanonly
+.         local BASE_ACTIVITY_ID = r(min)
+. }
+
+. local BASE_ACTIVITY_LABEL : label (activity_type_main_id) `BASE_ACTIVITY_ID'
+
+. di as txt "民事组 activity_type 基准组ID: `BASE_ACTIVITY_ID'，标签: `BASE_ACTIVITY_LABEL'"
+民事组 activity_type 基准组ID: 2，标签: 买卖合同
+
+. 
+. // 聚类层级：优先 region，否则 court_name
+. local CLUSTER_ID "court_name_id"
+
+. quietly count if region_id != 0
+
+. if r(N) > 0 local CLUSTER_ID "region_id"
+
+. replace `CLUSTER_ID' = 0 if missing(`CLUSTER_ID')
+(0 real changes made)
+
+. 
+. // 输出 activity_type 编码映射（便于解释 id）
+. preserve
+
+. decode activity_type_main_id, gen(activity_type_label)
+
+. keep activity_type_main_id activity_type_label
+
+. bysort activity_type_main_id activity_type_label: keep if _n==1
+(5,137 observations deleted)
+
+. sort activity_type_main_id
+
+. export delimited using "`DATADIR'/activity_type_id_map.csv", replace nolabel
+file D:\BaiduSyncdisk\Doctor\论文\数字货币\数据构建/analyze/civil_amount_scenarios/data/activity_type_id_map.csv saved
+
+. export excel using "`DATADIR'/activity_type_id_map.xlsx", firstrow(variables) replace
+file D:\BaiduSyncdisk\Doctor\论文\数字货币\数据构建/analyze/civil_amount_scenarios/data/activity_type_id_map.xlsx saved
+
+. restore
+
+. 
+. // esttab 可用性
+. local HAVE_ESTTAB = 0
+
+. cap which esttab
+
+. if _rc {
+.         capture noisily ssc install estout, replace
+.         cap which esttab
+. }
+
+. if !_rc local HAVE_ESTTAB = 1
+
+. 
+. local base_ctrl "i.court_level_id i.procedure_stage_id i.judgment_year i.doc_type_id i.is_appeal_b i.is_appeal_miss"
+
+. local fitopt "vce(cluster `CLUSTER_ID') iterate(50)"
+
+. local act_term "ib`BASE_ACTIVITY_ID'.activity_type_main_id"
+
+. 
+. tempfile coefdetail
+
+. postfile __coef str20 model_id str24 scenario int activity_id str120 activity_label ///
+>         double b se z p using "`coefdetail'", replace
+(file C:\Users\12427\AppData\Local\Temp\ST_27e0_000002.tmp not found)
+
+. 
+. local models ""
+
+. local titles ""
+
+. 
+. capture program drop run_one_model
+
+. program define run_one_model, rclass
+  1.         syntax, MODELID(string) SCENARIO(string) [AMTVAR(name) MISSVAR(name)]
+  2. 
+.         local rhs "$ACT_TERM $BASE_CTRL"
+  3.         if "`amtvar'" != "" {
+  4.                 local rhs "`rhs' c.`amtvar' i.`missvar'"
+  5.         }
+  6. 
+.         capture noisily logit contract_invalid `rhs', $FITOPT
+  7.         if _rc capture noisily logit contract_invalid `rhs', $FITOPT technique(nr)
+  8.         if _rc capture noisily logit contract_invalid `rhs', $FITOPT technique(bhhh)
+  9.         if _rc {
+ 10.                 return scalar ok = 0
+ 11.                 exit
+ 12.         }
+ 13. 
+.         estimates store `modelid'
+ 14. 
+.         matrix b = e(b)
+ 15.         matrix V = e(V)
+ 16.         local cn : colnames b
+ 17.         local k : word count `cn'
+ 18.         forvalues i = 1/`k' {
+ 19.                 local term : word `i' of `cn'
+ 20.                 if regexm("`term'", "^[0-9]+\.activity_type_main_id$") {
+ 21.                         local dot = strpos("`term'", ".")
+ 22.                         local aid = real(substr("`term'", 1, `dot'-1))
+ 23.                         local alabel : label (activity_type_main_id) `aid'
+ 24. 
+.                         scalar bi = b[1,`i']
+ 25.                         scalar sei = sqrt(V[`i',`i'])
+ 26.                         scalar zi = bi / sei
+ 27.                         scalar pi = 2*normal(-abs(zi))
+ 28. 
+.                         post __coef ("`modelid'") ("`scenario'") (`aid') ("`alabel'") (bi) (sei) (zi) (pi)
+ 29.                 }
+ 30.         }
+ 31. 
+.         return scalar ok = 1
+ 32. end
+
+. 
+. global BASE_CTRL "`base_ctrl'"
+
+. global FITOPT "`fitopt'"
+
+. global ACT_TERM "`act_term'"
+
+. 
+. // -----------------------------
+. // 2) 六种金额情形回归
+. // -----------------------------
+. quietly run_one_model, modelid(m_noamt) scenario(no_amount)
+
+. if r(ok)==1 {
+.         local models "`models' m_noamt"
+.         local titles `"`titles' "NoAmount""'
+. }
+
+. 
+. quietly run_one_model, modelid(m_mean) scenario(amount_mean_regex) amtvar(ln_amt_mean) missvar(amt_mean_miss)
+
+. if r(ok)==1 {
+.         local models "`models' m_mean"
+.         local titles `"`titles' "AmtMeanRegex""'
+. }
+
+. 
+. quietly run_one_model, modelid(m_max) scenario(amount_max_regex) amtvar(ln_amt_max) missvar(amt_max_miss)
+
+. if r(ok)==1 {
+.         local models "`models' m_max"
+.         local titles `"`titles' "AmtMaxRegex""'
+. }
+
+. 
+. quietly run_one_model, modelid(m_median) scenario(amount_median_regex) amtvar(ln_amt_median) missvar(amt_median_miss)
+
+. if r(ok)==1 {
+.         local models "`models' m_median"
+.         local titles `"`titles' "AmtMedianRegex""'
+. }
+
+. 
+. quietly run_one_model, modelid(m_count) scenario(amount_count_regex) amtvar(ln_amt_count) missvar(amt_count_miss)
+
+. if r(ok)==1 {
+.         local models "`models' m_count"
+.         local titles `"`titles' "AmtCountRegex""'
+. }
+
+. 
+. quietly run_one_model, modelid(m_case) scenario(case_amount) amtvar(ln_amt_case) missvar(amt_case_miss)
+
+. if r(ok)==1 {
+.         local models "`models' m_case"
+.         local titles `"`titles' "CaseAmount""'
+. }
+
+. 
+. if "`models'" == "" {
+.         di as err "所有模型都估计失败。"
+.         postclose __coef
+.         error 430
+. }
+
+. 
+. // 主回归表
+. if `HAVE_ESTTAB' {
+.         capture noisily esttab `models' using "`TABLEDIR'/reg_civil_amount_scenarios.rtf", ///
+>                 replace rtf se star(* 0.10 ** 0.05 *** 0.01) ///
+>                 b(%9.3f) se(%9.3f) ///
+>                 mtitles(`titles') ///
+>                 addnotes("Sample=civil only (is_criminal==0)", "DV=contract_invalid", "cluster=`CLUSTER_ID'", ///
+>                          "activity_type low-frequency merged: N<20 => 其他(稀疏)", "logit: iterate(50)+fallback(nr/bhhh)")
+(output written to D:\BaiduSyncdisk\Doctor\论文\数字货币\数据构建/analyze/civil_amount_scenarios/tables/reg_civil_amount_scenarios.rtf)
+. }
+
+. foreach m of local models {
+  2.         estimates save "`DATADIR'/`m'.ster", replace
+  3. }
+file D:\BaiduSyncdisk\Doctor\论文\数字货币\数据构建/analyze/civil_amount_scenarios/data/m_noamt.ster saved
+file D:\BaiduSyncdisk\Doctor\论文\数字货币\数据构建/analyze/civil_amount_scenarios/data/m_mean.ster saved
+file D:\BaiduSyncdisk\Doctor\论文\数字货币\数据构建/analyze/civil_amount_scenarios/data/m_max.ster saved
+file D:\BaiduSyncdisk\Doctor\论文\数字货币\数据构建/analyze/civil_amount_scenarios/data/m_median.ster saved
+file D:\BaiduSyncdisk\Doctor\论文\数字货币\数据构建/analyze/civil_amount_scenarios/data/m_count.ster saved
+file D:\BaiduSyncdisk\Doctor\论文\数字货币\数据构建/analyze/civil_amount_scenarios/data/m_case.ster saved
+
+. 
+. // 案由系数明细导出
+. postclose __coef
+
+. use "`coefdetail'", clear
+
+. gen str8 sign = cond(b>0, "positive", cond(b<0, "negative", "zero"))
+
+. gen str6 sig = cond(p<0.01, "***", cond(p<0.05, "**", cond(p<0.10, "*", "")))
+(36 missing values generated)
+
+. sort scenario activity_id
+
+. export delimited using "`DATADIR'/civil_activity_effects_by_amount_model.csv", replace
+file D:\BaiduSyncdisk\Doctor\论文\数字货币\数据构建/analyze/civil_amount_scenarios/data/civil_activity_effects_by_amount_model.csv saved
+
+. export excel using "`DATADIR'/civil_activity_effects_by_amount_model.xlsx", firstrow(variables) replace
+file D:\BaiduSyncdisk\Doctor\论文\数字货币\数据构建/analyze/civil_amount_scenarios/data/civil_activity_effects_by_amount_model.xlsx saved
+
+. save "`DATADIR'/civil_activity_effects_by_amount_model.dta", replace
+file D:\BaiduSyncdisk\Doctor\论文\数字货币\数据构建/analyze/civil_amount_scenarios/data/civil_activity_effects_by_amount_model.dta saved
+
+. 
+. di as txt "完成：民事组金额口径敏感性回归已输出。"
+完成：民事组金额口径敏感性回归已输出。
+
+. di as txt "输出目录：`OUTROOT'"
+输出目录：D:\BaiduSyncdisk\Doctor\论文\数字货币\数据构建/analyze/civil_amount_scenarios
+
+. log close
+      name:  <unnamed>
+       log:  D:\BaiduSyncdisk\Doctor\论文\数字货币\数据构建/analyze/civil_amount_scenarios/logs/civil_amount_scenarios.log
+  log type:  text
+ closed on:  27 Feb 2026, 03:16:37
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------

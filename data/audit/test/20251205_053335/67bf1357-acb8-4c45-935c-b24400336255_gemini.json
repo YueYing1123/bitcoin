@@ -1,0 +1,233 @@
+{
+  "document_id": "67bf1357-acb8-4c45-935c-b24400336255",
+  "metadata": {
+    "case_number": {
+      "value": "（2024）内0502刑初497号",
+      "confidence": 1.0
+    },
+    "court_name": {
+      "value": "通辽市科尔沁区人民法院",
+      "confidence": 1.0
+    },
+    "court_level": {
+      "value": "基层法院",
+      "confidence": 1.0
+    },
+    "province": {
+      "value": "内蒙古自治区",
+      "confidence": 1.0
+    },
+    "judgment_date": {
+      "value": "2024-11-28",
+      "confidence": 0.95
+    },
+    "judgment_year": {
+      "value": 2024,
+      "confidence": 1.0
+    },
+    "first_instance_case_number": {
+      "value": null,
+      "confidence": 1.0
+    }
+  },
+  "case_profile": {
+    "case_cause": {
+      "value": "组织、领导传销活动罪",
+      "confidence": 1.0
+    },
+    "procedure_stage": {
+      "value": "一审",
+      "confidence": 1.0
+    },
+    "is_appeal": {
+      "value": false,
+      "confidence": 1.0
+    },
+    "appeal_result": {
+      "value": null,
+      "confidence": 0.0
+    },
+    "is_default_judgment": {
+      "value": false,
+      "confidence": 1.0
+    },
+    "transaction_time_span": {
+      "start_year": {
+        "value": 2021,
+        "confidence": 1.0
+      },
+      "end_year": {
+        "value": 2022,
+        "confidence": 1.0
+      },
+      "crosses_2017_94_notice": {
+        "value": true,
+        "confidence": 1.0
+      },
+      "crosses_2021_254_notice": {
+        "value": true,
+        "confidence": 1.0
+      }
+    }
+  },
+  "litigant_profile": {
+    "plaintiff_type": {
+      "value": "其他",
+      "confidence": 0.95
+    },
+    "defendant_type": {
+      "value": "自然人",
+      "confidence": 1.0
+    },
+    "counsel_representation": {
+      "plaintiff_has_lawyer": {
+        "value": false,
+        "confidence": 0.9
+      },
+      "defendant_has_lawyer": {
+        "value": true,
+        "confidence": 1.0
+      }
+    }
+  },
+  "procedural_status": {
+    "ruling_type": {
+      "value": "实体判决",
+      "confidence": 1.0
+    },
+    "criminal_civil_intersection": {
+      "value": false,
+      "confidence": 0.9
+    },
+    "jurisdiction_challenge": {
+      "value": false,
+      "confidence": 1.0
+    }
+  },
+  "virtual_currency_info": {
+    "involved_currencies": {
+      "value": [
+        "USDT"
+      ],
+      "confidence": 1.0
+    },
+    "is_usdt_involved": {
+      "value": true,
+      "confidence": 1.0
+    },
+    "activity_type": {
+      "value": "传销活动",
+      "confidence": 1.0
+    },
+    "transaction_venue": {
+      "value": "场外OTC/私下转账",
+      "confidence": 0.9
+    },
+    "amounts": {
+      "plaintiff_claimed_cny": {
+        "value": 0.0,
+        "confidence": 1.0
+      },
+      "court_recognized_cny": {
+        "value": 0.0,
+        "confidence": 1.0
+      }
+    }
+  },
+  "evidence_analysis": {
+    "key_evidence_types": {
+      "value": [
+        "微信/聊天记录",
+        "转账记录",
+        "司法鉴定意见",
+        "交易所后台数据"
+      ],
+      "confidence": 0.95
+    },
+    "burden_of_proof_ruling": {
+      "value": null,
+      "confidence": 0.0
+    },
+    "wallet_ownership_proven": {
+      "value": null,
+      "confidence": 0.0
+    }
+  },
+  "judicial_analysis": {
+    "legal_characterization": {
+      "value": "组织、领导传销活动",
+      "confidence": 1.0
+    },
+    "currency_property_nature": {
+      "value": null,
+      "confidence": 0.8
+    },
+    "contract_validity": {
+      "value": "无效",
+      "confidence": 0.95
+    },
+    "validity_ground": {
+      "value": "违反法律强制性规定",
+      "confidence": 0.95
+    },
+    "illegal_debt_determination": {
+      "value": false,
+      "confidence": 1.0
+    },
+    "moral_judgment_tags": {
+      "value": [
+        "非法债务/不受保护"
+      ],
+      "confidence": 0.6
+    },
+    "remedy_mechanics": {
+      "method": {
+        "value": "没收违法所得",
+        "confidence": 1.0
+      },
+      "fiat_conversion_logic": {
+        "value": "裁判时市价",
+        "confidence": 0.85
+      },
+      "interest_or_fee": {
+        "value": "不适用",
+        "confidence": 1.0
+      }
+    },
+    "cited_norms": {
+      "laws": {
+        "value": [
+          "《中华人民共和国刑法》第二百二十四条之一",
+          "《中华人民共和国刑法》第二十五条",
+          "《中华人民共和国刑法》第二十七条",
+          "《中华人民共和国刑法》第六十七条",
+          "《中华人民共和国刑法》第六十四条",
+          "《中华人民共和国刑法》第七十二条",
+          "《中华人民共和国刑事诉讼法》第十五条"
+        ],
+        "confidence": 1.0
+      },
+      "policies": {
+        "value": [
+          "《最高人民法院、最高人民检察院、公安部关于办理组织、领导传销活动刑事案件适用法律若干问题的意见》"
+        ],
+        "confidence": 1.0
+      },
+      "is_public_order_cited": {
+        "value": false,
+        "confidence": 1.0
+      }
+    }
+  },
+  "llm_summary": {
+    "outcome_text": {
+      "value": "被告人关某某、巨某某、齐某某、张某某犯组织、领导传销活动罪，分别被判处有期徒刑并处罚金（适用缓刑），违法所得予以没收上缴国库。",
+      "confidence": 1.0
+    },
+    "core_issue": {
+      "value": "被告人通过“典画商城”平台以虚假字画交易为名，采用层级返利模式组织传销活动，并使用USDT虚拟货币缴纳技术服务费，涉案金额巨大。",
+      "confidence": 1.0
+    }
+  },
+  "custom_annotations": {}
+}

@@ -1,0 +1,87 @@
+{
+  "document_id": "05e5c09f-7497-48cf-a5bb-b2920163446d",
+  "metadata": {
+    "case_number": "（2024）沪01民终16260号",
+    "court_name": "上海市第一中级人民法院",
+    "court_level": "中级法院",
+    "region": null,
+    "judgment_date": "2025-02-27",
+    "doc_type": null
+  },
+  "case_profile": {
+    "case_type_primary": null,
+    "case_type_secondary": "民间借贷纠纷",
+    "procedure_stage": "二审",
+    "is_appeal": null,
+    "litigant_profile": {
+      "plaintiff_types": [],
+      "defendant_types": []
+    }
+  },
+  "virtual_currency_info": {
+    "involved": null,
+    "currency_types": [],
+    "activity_type": [],
+    "total_amount_cny": null
+  },
+  "judicial_analysis": {
+    "legal_characterization": "结算型民间借贷法律关系",
+    "virtual_currency_property_legality": null,
+    "contract_validity": "有效",
+    "reason_for_invalidity": [],
+    "cited_laws": [
+      "《中华人民共和国民法典》第六百六十七条",
+      "《中华人民共和国民法典》第六百七十五条",
+      "《最高人民法院关于审理民间借贷案件适用法律若干问题的规定》第二十六条",
+      "《最高人民法院关于审理民间借贷案件适用法律若干问题的规定》第二十八条",
+      "《最高人民法院关于审理民间借贷案件适用法律若干问题的规定》第三十一条第一款",
+      "《中华人民共和国民事诉讼法》第一百七十七条第一款第(一)项"
+    ],
+    "cited_policies": [],
+    "economic_substance_factors": {
+      "transaction_background": "朋友关系",
+      "original_transaction": "43000个USDT转账",
+      "settlement_agreement": "借条/欠条",
+      "pledge_asset": "1200个BZZ币",
+      "partial_repayment": "50000元",
+      "police_involvement": "2023年5月2日报警",
+      "legal_expenses": "15000元律师费"
+    },
+    "judicial_framing": [
+      "结算型民间借贷法律关系",
+      "合法的民间借贷关系受法律保护",
+      "逾期利息按LPR计算",
+      "实现债权费用支持",
+      "证据充分性审查",
+      "胁迫抗辩审查"
+    ]
+  },
+  "meta_ensemble": {
+    "model_votes": {},
+    "agreement_rate": null,
+    "final_label_source": null,
+    "confidence_mean": null,
+    "validation_status": null
+  },
+  "llm_summary": {
+    "outcome_summary": "二审法院驳回上诉，维持原判。上诉人许某某需偿还被上诉人赖某某借款本金224,340元及逾期利息（自2021年7月11日起按一年期LPR计算），并支付律师费15,000元。",
+    "reasoning_summary": "法院认定双方通过借条/欠条将此前的虚拟货币交易关系结算转化为民间借贷关系。上诉人主张的胁迫和虚假意思表示缺乏证据证明。上诉人已偿还5万元的事实佐证了借贷关系的真实性。原审判决认定事实清楚，适用法律正确。",
+    "issues_list": []
+  },
+  "custom_annotations": {
+    "law_firm_names": []
+  },
+  "confidence_scores": {
+    "judicial_analysis.legal_characterization": 0.95,
+    "judicial_analysis.virtual_currency_property_legality": 0.3,
+    "judicial_analysis.contract_validity": 0.95,
+    "judicial_analysis.reason_for_invalidity": 0.95,
+    "judicial_analysis.cited_laws": 0.98,
+    "judicial_analysis.cited_policies": 0.95,
+    "judicial_analysis.economic_substance_factors": 0.9,
+    "judicial_analysis.judicial_framing": 0.9,
+    "llm_summary.outcome_summary": 0.98,
+    "llm_summary.reasoning_summary": 0.95,
+    "custom_annotations.law_firm_names": 0.95
+  }
+}

@@ -1,0 +1,80 @@
+{
+  "document_id": "05e5c09f-7497-48cf-a5bb-b2920163446d",
+  "metadata": {
+    "case_number": "（2024）沪01民终16260号",
+    "court_name": "上海市第一中级人民法院",
+    "court_level": "中级法院",
+    "region": null,
+    "judgment_date": "2025-02-27",
+    "doc_type": null
+  },
+  "case_profile": {
+    "case_type_primary": null,
+    "case_type_secondary": "民间借贷纠纷",
+    "procedure_stage": "二审",
+    "is_appeal": null,
+    "litigant_profile": {
+      "plaintiff_types": [],
+      "defendant_types": []
+    }
+  },
+  "virtual_currency_info": {
+    "involved": true,
+    "currency_types": [
+      "USDT",
+      "BZZ"
+    ],
+    "activity_type": [
+      "借贷",
+      "质押"
+    ],
+    "total_amount_cny": 274340
+  },
+  "judicial_analysis": {
+    "legal_characterization": "本案系结算型民间借贷法律关系，双方通过借条、欠条对先前虚拟货币交易进行结算，形成合法有效的借贷关系。",
+    "virtual_currency_property_legality": "法院未直接否定虚拟货币的财产属性，但以双方已通过借条将虚拟货币交易转化为借贷关系为由，回避对虚拟货币本身合法性的直接认定。",
+    "contract_validity": "有效",
+    "reason_for_invalidity": [],
+    "cited_laws": [
+      "《中华人民共和国民法典》第六百六十七条",
+      "《中华人民共和国民法典》第六百七十五条",
+      "《最高人民法院关于审理民间借贷案件适用法律若干问题的规定》第二十六条",
+      "《最高人民法院关于审理民间借贷案件适用法律若干问题的规定》第二十八条",
+      "《最高人民法院关于审理民间借贷案件适用法律若干问题的规定》第三十一条第一款",
+      "《中华人民共和国民事诉讼法》第一百七十七条第一款第(一)项",
+      "《中华人民共和国民事诉讼法》第二百六十四条"
+    ],
+    "cited_policies": [],
+    "economic_substance_factors": {
+      "payment_method": "USDT转账",
+      "conversion_rate": "1 USDT = 6.38元人民币",
+      "collateral": "1,200个BZZ虚拟货币",
+      "partial_repayment": 50000,
+      "written_instruments": [
+        "借条",
+        "欠条"
+      ]
+    },
+    "judicial_framing": [
+      "结算型民间借贷",
+      "意思表示真实",
+      "举证责任分配",
+      "虚拟货币交易转化为借贷关系"
+    ]
+  },
+  "meta_ensemble": {
+    "model_votes": {},
+    "agreement_rate": null,
+    "final_label_source": null,
+    "confidence_mean": null,
+    "validation_status": null
+  },
+  "llm_summary": {
+    "outcome_summary": "驳回上诉，维持原判。许某某需归还借款本金224,340元、支付逾期利息及律师费15,000元。",
+    "reasoning_summary": "法院认为借条和欠条系双方真实意思表示，构成对先前虚拟货币交易的结算，形成合法借贷关系；许某某未能举证证明受胁迫或虚假意思表示，其抗辩不成立。",
+    "issues_list": []
+  },
+  "custom_annotations": {
+    "law_firm_names": []
+  }
+}

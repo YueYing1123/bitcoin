@@ -1,0 +1,74 @@
+{
+  "document_id": "9591a82a-7141-46bd-b141-b2880063fb94",
+  "metadata": {
+    "case_number": "（2024）新01民终8979号",
+    "court_name": "新疆维吾尔自治区乌鲁木齐市中级人民法院",
+    "court_level": "中级法院",
+    "region": null,
+    "judgment_date": "2025-02-17",
+    "doc_type": null
+  },
+  "case_profile": {
+    "case_type_primary": null,
+    "case_type_secondary": "民间借贷纠纷",
+    "procedure_stage": "二审",
+    "is_appeal": null,
+    "litigant_profile": {
+      "plaintiff_types": [],
+      "defendant_types": []
+    }
+  },
+  "virtual_currency_info": {
+    "involved": true,
+    "currency_types": [
+      "XXX数字货币"
+    ],
+    "activity_type": [
+      "投资"
+    ],
+    "total_amount_cny": 96400
+  },
+  "judicial_analysis": {
+    "legal_characterization": "民间借贷关系",
+    "virtual_currency_property_legality": "不具有与法定货币同等的法律地位，相关投资行为不受法律保护",
+    "contract_validity": "有效",
+    "reason_for_invalidity": [],
+    "cited_laws": [
+      "《中华人民共和国民法典》第六百八十条",
+      "《中华人民共和国民法典》第六百七十五条",
+      "《最高人民法院关于审理民间借贷案件适用法律若干问题的规定》第二十八条第二款第一项",
+      "《最高人民法院关于审理民间借贷案件适用法律若干问题的规定》第十六条",
+      "《中华人民共和国民事诉讼法》第一百七十七条第一款第一项"
+    ],
+    "cited_policies": [],
+    "economic_substance_factors": {
+      "funds_delivery": true,
+      "repayment_behavior": true,
+      "interest_payment": false,
+      "written_agreement": false,
+      "third_party_involvement": false
+    },
+    "judicial_framing": [
+      "以微信聊天记录认定借贷合意",
+      "否定委托理财关系因缺乏有效证据",
+      "虚拟货币投资风险自担",
+      "禁止高利放贷，未约定利息视为无息",
+      "逾期利息按LPR标准支持"
+    ]
+  },
+  "meta_ensemble": {
+    "model_votes": {},
+    "agreement_rate": null,
+    "final_label_source": null,
+    "confidence_mean": null,
+    "validation_status": null
+  },
+  "llm_summary": {
+    "outcome_summary": "驳回上诉，维持原判。杜某某应偿还贾某某借款本金82,310元、逾期利息427.90元及后续利息（按年利率3.45%计算），并承担保全费848.02元。",
+    "reasoning_summary": "法院认为贾某某提供的微信聊天记录和转账凭证足以证明双方存在借贷合意及款项交付事实；杜某某主张系委托投资关系但未能提供有效证据证明贾某某有委托意思表示或共享账户行为，应承担举证不能后果。案涉款项虽用于投资不受法律保护的虚拟货币，但不影响借贷关系成立。因未约定利息，已还款项抵扣本金；逾期利息自催告后合理期限起算，按LPR标准支持。",
+    "issues_list": []
+  },
+  "custom_annotations": {
+    "law_firm_names": []
+  }
+}

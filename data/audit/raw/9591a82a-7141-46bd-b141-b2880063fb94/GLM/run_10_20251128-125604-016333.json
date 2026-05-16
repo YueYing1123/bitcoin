@@ -1,0 +1,65 @@
+{
+  "document_id": "9591a82a-7141-46bd-b141-b2880063fb94",
+  "metadata": {
+    "case_number": "（2024）新01民终8979号",
+    "court_name": "新疆维吾尔自治区乌鲁木齐市中级人民法院",
+    "court_level": "中级法院",
+    "region": null,
+    "judgment_date": "2025-02-17",
+    "doc_type": null
+  },
+  "case_profile": {
+    "case_type_primary": null,
+    "case_type_secondary": "民间借贷纠纷",
+    "procedure_stage": "二审",
+    "is_appeal": null,
+    "litigant_profile": {
+      "plaintiff_types": [],
+      "defendant_types": []
+    }
+  },
+  "virtual_currency_info": {
+    "involved": null,
+    "currency_types": [],
+    "activity_type": [],
+    "total_amount_cny": null
+  },
+  "judicial_analysis": {
+    "legal_characterization": "民间借贷法律关系",
+    "virtual_currency_property_legality": "不具有与法定货币同等的法律地位，不受法律保护",
+    "contract_validity": "有效",
+    "reason_for_invalidity": [],
+    "cited_laws": [
+      "《中华人民共和国民法典》第六百八十条",
+      "《中华人民共和国民法典》第六百七十五条",
+      "《最高人民法院关于审理民间借贷案件适用法律若干问题的规定》第二十八条第二款第一项",
+      "《最高人民法院关于审理民间借贷案件适用法律若干问题的规定》第十六条",
+      "《中华人民共和国民事诉讼法》第一百七十七条第一款第一项"
+    ],
+    "cited_policies": [],
+    "economic_substance_factors": {
+      "资金往来": "贾某某向杜某某转款共计96,400元，杜某某向贾某某转款14,090元",
+      "沟通记录": "微信聊天记录显示杜某某认可借款事实并承诺还款，其中一笔还款备注为'还高利贷'",
+      "举证责任分配": "杜某某主张系委托理财关系，但未能提供有效证据证明，应承担举证不能的不利后果"
+    },
+    "judicial_framing": [
+      "争议焦点：当事人双方之间系民间借贷关系或委托理财关系",
+      "适用举证责任规则：主张委托理财关系的一方应承担举证责任"
+    ]
+  },
+  "meta_ensemble": {
+    "model_votes": {},
+    "agreement_rate": null,
+    "final_label_source": null,
+    "confidence_mean": null,
+    "validation_status": null
+  },
+  "llm_summary": {
+    "outcome_summary": "二审法院驳回上诉，维持原判。杜某某需偿还贾某某借款本金82,310元及相应利息，并承担保全费。",
+    "reasoning_summary": "法院认为，贾某某提供的微信聊天记录和转账凭证足以证明双方存在借贷合意。杜某某主张系委托理财关系，但其提交的证据不足以证明该主张，应承担举证不能的不利后果。因此，一审法院认定双方为民间借贷关系并无不当，二审予以维持。",
+    "issues_list": []
+  },
+  "custom_annotations": {
+    "law_firm_names": []
+  }
+}

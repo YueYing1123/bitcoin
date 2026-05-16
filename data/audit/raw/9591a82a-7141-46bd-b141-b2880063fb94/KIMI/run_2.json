@@ -1,0 +1,114 @@
+{
+  "document_id": "9591a82a-7141-46bd-b141-b2880063fb94",
+  "metadata": {
+    "case_number": "（2024）新01民终8979号",
+    "court_name": "新疆维吾尔自治区乌鲁木齐市中级人民法院",
+    "court_level": "中级法院",
+    "region": "新疆维吾尔自治区",
+    "judgment_date": "2025-02-17",
+    "doc_type": "民事判决书"
+  },
+  "case_profile": {
+    "case_type_primary": "民事",
+    "case_type_secondary": "民间借贷纠纷",
+    "procedure_stage": "二审",
+    "is_appeal": true,
+    "litigant_profile": {
+      "plaintiff_types": [
+        "自然人"
+      ],
+      "defendant_types": [
+        "自然人"
+      ]
+    }
+  },
+  "virtual_currency_info": {
+    "involved": true,
+    "currency_types": [
+      "XXX数字货币"
+    ],
+    "activity_type": [
+      "投资"
+    ],
+    "total_amount_cny": 96400
+  },
+  "judicial_analysis": {
+    "legal_characterization": {
+      "value": "民间借贷关系",
+      "confidence": 0.95
+    },
+    "virtual_currency_property_legality": {
+      "value": "不适用",
+      "confidence": 0.3
+    },
+    "contract_validity": {
+      "value": "有效，但利息约定不明视为无利息",
+      "confidence": 0.9
+    },
+    "reason_for_invalidity": {
+      "value": [],
+      "confidence": 1.0
+    },
+    "cited_laws": {
+      "value": [
+        "《中华人民共和国民法典》第六百八十条",
+        "《中华人民共和国民法典》第六百七十五条",
+        "《最高人民法院关于审理民间借贷案件适用法律若干问题的规定》第十六条",
+        "《最高人民法院关于审理民间借贷案件适用法律若干问题的规定》第二十八条第二款第一项"
+      ],
+      "confidence": 0.95
+    },
+    "cited_policies": {
+      "value": [],
+      "confidence": 1.0
+    },
+    "economic_substance_factors": {
+      "value": {
+        "fund_flow": "贾某某向杜某某转账96,400元，杜某某向贾某某转账14,090元",
+        "control_rights": "贾某某未参与账户管理，无投资账户控制权",
+        "risk_allocation": "杜某某主张投资爆仓风险由贾某某承担，但法院未采纳该主张",
+        "return_characteristics": "杜某某向贾某某支付的4,090元被认定为还款而非投资收益",
+        "evidence_of_intent": "微信聊天记录显示杜某某承认借款并承诺还款方式"
+      },
+      "confidence": 0.85
+    },
+    "judicial_framing": {
+      "value": [
+        "民间借贷关系认定",
+        "举证责任分配",
+        "委托投资关系的证据标准",
+        "利息约定不明的处理"
+      ],
+      "confidence": 0.9
+    }
+  },
+  "meta_ensemble": {
+    "model_votes": {},
+    "agreement_rate": null,
+    "final_label_source": null,
+    "confidence_mean": null,
+    "validation_status": null
+  },
+  "llm_summary": {
+    "outcome_summary": {
+      "value": "二审法院驳回杜某某上诉，维持原判，认定双方之间成立民间借贷法律关系。杜某某应偿还贾某某借款本金82,310元及逾期利息（自2024年6月1日起按年利率3.45%计算至实际付清之日），并承担保全费848.02元。",
+      "confidence": 0.95
+    },
+    "reasoning_summary": {
+      "value": "法院认为，根据《最高人民法院关于审理民间借贷案件适用法律若干问题的规定》第十六条，杜某某抗辩转账系委托投资关系，但未能提供充分证据证明贾某某有委托投资理财的意思表示及双方共享投资账户的事实。贾某某提供的微信聊天记录中杜某某明确承认借款并承诺还款方式，且款项已实际交付，故双方成立民间借贷关系。关于利息，因约定不明依法视为无利息；逾期利息自催告后的合理期限起算。",
+      "confidence": 0.9
+    },
+    "issues_list": [
+      "双方之间是民间借贷还是委托投资关系",
+      "借款本金及利息如何计算",
+      "逾期利息的起算时间和标准",
+      "保全费如何分担"
+    ]
+  },
+  "custom_annotations": {
+    "law_firm_names": {
+      "value": [],
+      "confidence": 1.0
+    }
+  }
+}

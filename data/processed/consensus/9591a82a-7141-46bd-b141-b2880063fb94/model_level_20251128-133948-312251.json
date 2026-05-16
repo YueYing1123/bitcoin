@@ -1,0 +1,108 @@
+{
+  "DEEPSEEK": {
+    "virtual_currency_info.activity_type": {
+      "value": [],
+      "support": 0.8,
+      "accepted": true
+    },
+    "judicial_analysis.legal_characterization": {
+      "value": "民间借贷关系",
+      "support": 0.6,
+      "accepted": false
+    },
+    "judicial_analysis.contract_validity": {
+      "value": "有效",
+      "support": 0.5,
+      "accepted": false
+    }
+  },
+  "DOUBAO": {
+    "virtual_currency_info.activity_type": {
+      "value": [],
+      "support": 0.5,
+      "accepted": false
+    },
+    "judicial_analysis.legal_characterization": {
+      "value": {
+        "confidence": 1.0,
+        "value": "双方之间成立民间借贷法律关系"
+      },
+      "support": 0.3,
+      "accepted": false
+    },
+    "judicial_analysis.contract_validity": {
+      "value": {
+        "confidence": 1.0,
+        "value": "有效"
+      },
+      "support": 0.5,
+      "accepted": false
+    }
+  },
+  "GLM": {
+    "virtual_currency_info.activity_type": {
+      "value": [],
+      "support": 1.0,
+      "accepted": true
+    },
+    "judicial_analysis.legal_characterization": {
+      "value": "民间借贷关系",
+      "support": 0.6,
+      "accepted": false
+    },
+    "judicial_analysis.contract_validity": {
+      "value": "有效",
+      "support": 0.7,
+      "accepted": true
+    }
+  },
+  "KIMI": {
+    "case_profile.is_appeal": {
+      "value": true,
+      "support": 0.6,
+      "accepted": false
+    },
+    "virtual_currency_info.activity_type": {
+      "value": [
+        "投资"
+      ],
+      "support": 0.8,
+      "accepted": true
+    },
+    "judicial_analysis.legal_characterization": {
+      "value": {
+        "confidence": 0.95,
+        "value": "民间借贷关系"
+      },
+      "support": 0.3,
+      "accepted": false
+    },
+    "judicial_analysis.contract_validity": {
+      "value": {
+        "confidence": 0.9,
+        "value": "有效"
+      },
+      "support": 0.3,
+      "accepted": false
+    }
+  },
+  "QWEN": {
+    "virtual_currency_info.activity_type": {
+      "value": [
+        "投资"
+      ],
+      "support": 0.5,
+      "accepted": false
+    },
+    "judicial_analysis.legal_characterization": {
+      "value": "民间借贷关系",
+      "support": 1.0,
+      "accepted": true
+    },
+    "judicial_analysis.contract_validity": {
+      "value": "不适用",
+      "support": 0.5,
+      "accepted": false
+    }
+  }
+}

@@ -1,0 +1,194 @@
+{
+  "document_id": {
+    "value": "4e1ef0e8-1c91-4125-a3cb-ab340187afd6"
+  },
+  "metadata": {
+    "case_number": {
+      "value": "（2018）湘0726刑初270号"
+    },
+    "court_name": {
+      "value": "石门县人民法院"
+    },
+    "court_level": {
+      "value": "基层法院"
+    },
+    "province": {
+      "value": "湖南"
+    },
+    "judgment_date": {
+      "value": "2019-11-29"
+    },
+    "judgment_year": {
+      "value": 2019
+    },
+    "first_instance_case_number": {
+      "value": null
+    }
+  },
+  "case_profile": {
+    "case_cause": {
+      "value": "组织、领导传销活动罪"
+    },
+    "procedure_stage": {
+      "value": "一审"
+    },
+    "is_appeal": {
+      "value": false
+    },
+    "appeal_result": {
+      "value": null
+    },
+    "is_default_judgment": {
+      "value": false
+    },
+    "transaction_time_span": {
+      "start_year": {
+        "value": 2012
+      },
+      "end_year": {
+        "value": 2017
+      },
+      "crosses_2017_94_notice": {
+        "value": false
+      },
+      "crosses_2021_254_notice": {
+        "value": false
+      }
+    }
+  },
+  "litigant_profile": {
+    "plaintiff_type": {
+      "value": "其他"
+    },
+    "defendant_type": {
+      "value": "自然人"
+    },
+    "counsel_representation": {
+      "plaintiff_has_lawyer": {
+        "value": true
+      },
+      "defendant_has_lawyer": {
+        "value": true
+      }
+    }
+  },
+  "procedural_status": {
+    "ruling_type": {
+      "value": "实体判决"
+    },
+    "criminal_civil_intersection": {
+      "value": false
+    },
+    "jurisdiction_challenge": {
+      "value": false
+    }
+  },
+  "virtual_currency_info": {
+    "involved_currencies": {
+      "value": [
+        "E币",
+        "GP积分"
+      ]
+    },
+    "is_usdt_involved": {
+      "value": false
+    },
+    "activity_type": {
+      "value": "网络传销"
+    },
+    "transaction_venue": {
+      "value": "中心化交易所"
+    },
+    "amounts": {
+      "plaintiff_claimed_cny": {
+        "value": 0
+      },
+      "court_recognized_cny": {
+        "value": 0
+      }
+    }
+  },
+  "evidence_analysis": {
+    "key_evidence_types": {
+      "value": [
+        "电子数据检验分析报告",
+        "司法会计鉴定意见",
+        "银行交易明细",
+        "证人证言",
+        "被告人供述"
+      ]
+    },
+    "burden_of_proof_ruling": {
+      "value": null
+    },
+    "wallet_ownership_proven": {
+      "value": true
+    }
+  },
+  "judicial_analysis": {
+    "legal_characterization": {
+      "value": "组织、领导传销活动"
+    },
+    "currency_property_nature": {
+      "value": null
+    },
+    "contract_validity": {
+      "value": null
+    },
+    "validity_ground": {
+      "value": null
+    },
+    "illegal_debt_determination": {
+      "value": false
+    },
+    "moral_judgment_tags": {
+      "value": [
+        "非法金融活动"
+      ]
+    },
+    "remedy_mechanics": {
+      "method": {
+        "value": "追缴/没收"
+      },
+      "fiat_conversion_logic": {
+        "value": "不适用"
+      },
+      "interest_or_fee": {
+        "value": "不适用"
+      }
+    },
+    "cited_norms": {
+      "laws": {
+        "value": [
+          "《中华人民共和国刑法》第二百二十四条之一",
+          "《中华人民共和国刑法》第二十五条",
+          "《中华人民共和国刑法》第二十六条",
+          "《中华人民共和国刑法》第二十七条",
+          "《中华人民共和国刑法》第六十七条",
+          "《中华人民共和国刑法》第六十八条",
+          "《中华人民共和国刑法》第六十四条",
+          "《中华人民共和国刑法》第五十二条",
+          "《中华人民共和国刑法》第七十二条",
+          "《中华人民共和国刑法》第七十三条"
+        ]
+      },
+      "policies": {
+        "value": [
+          "《关于办理组织领导、传销活动刑事案件适用法律若干问题的意见》"
+        ]
+      },
+      "is_public_order_cited": {
+        "value": false
+      }
+    }
+  },
+  "llm_summary": {
+    "outcome_text": {
+      "value": "被告人金某某犯组织、领导传销活动罪，判处有期徒刑二年三个月，缓刑三年，并处罚金人民币十五万元；没收违法所得40万元。"
+    },
+    "core_issue": {
+      "value": "金某某加入“GP7”网络传销平台，通过购买虚拟货币“E币”和积分，发展下线会员，层级和人数达到入刑标准，构成组织、领导传销活动罪。"
+    }
+  },
+  "custom_annotations": {}
+}

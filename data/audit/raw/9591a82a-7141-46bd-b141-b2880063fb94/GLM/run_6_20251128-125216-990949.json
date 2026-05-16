@@ -1,0 +1,67 @@
+{
+  "document_id": "9591a82a-7141-46bd-b141-b2880063fb94",
+  "metadata": {
+    "case_number": "（2024）新01民终8979号",
+    "court_name": "新疆维吾尔自治区乌鲁木齐市中级人民法院",
+    "court_level": "中级法院",
+    "region": null,
+    "judgment_date": "2025-02-17",
+    "doc_type": null
+  },
+  "case_profile": {
+    "case_type_primary": null,
+    "case_type_secondary": "民间借贷纠纷",
+    "procedure_stage": "二审",
+    "is_appeal": null,
+    "litigant_profile": {
+      "plaintiff_types": [],
+      "defendant_types": []
+    }
+  },
+  "virtual_currency_info": {
+    "involved": null,
+    "currency_types": [],
+    "activity_type": [],
+    "total_amount_cny": null
+  },
+  "judicial_analysis": {
+    "legal_characterization": "民间借贷关系",
+    "virtual_currency_property_legality": "不受法律保护",
+    "contract_validity": "不适用",
+    "reason_for_invalidity": [],
+    "cited_laws": [
+      "《中华人民共和国民法典》第六百八十条",
+      "《中华人民共和国民法典》第六百七十五条",
+      "《最高人民法院关于审理民间借贷案件适用法律若干问题的规定》第二十八条第二款第一项",
+      "《最高人民法院关于审理民间借贷案件适用法律若干问题的规定》第十六条",
+      "《中华人民共和国民事诉讼法》第一百七十七条第一款第一项"
+    ],
+    "cited_policies": [],
+    "economic_substance_factors": {
+      "fund_transfers": "贾某某向杜某某转账96,400元",
+      "repayment_behavior": "杜某某向贾某某转账14,090元，被认定为本金偿还",
+      "communication_evidence": "微信聊天记录显示杜某某承认借款事实",
+      "lack_of_investment_proof": "杜某某未能提供证据证明款项用于投资虚拟货币及贾某某知情同意"
+    },
+    "judicial_framing": [
+      "举证责任分配，主张方承担举证不能的后果",
+      "借贷关系的成立需具备借贷合意和款项交付两个要素",
+      "被告抗辩转账系其他债务时，应承担举证责任"
+    ]
+  },
+  "meta_ensemble": {
+    "model_votes": {},
+    "agreement_rate": null,
+    "final_label_source": null,
+    "confidence_mean": null,
+    "validation_status": null
+  },
+  "llm_summary": {
+    "outcome_summary": "二审法院驳回上诉，维持原判。杜某某需偿还贾某某借款本金82,310元、利息427.90元及保全费848.02元。",
+    "reasoning_summary": "法院认为，贾某某提供的转账凭证和微信聊天记录足以证明双方存在借贷合意。杜某某主张系委托投资关系，但未能提供充分证据证明其主张，应承担举证不能的不利后果。因此，一审法院认定双方为民间借贷关系并判决杜某某还款并无不当，二审法院予以维持。",
+    "issues_list": []
+  },
+  "custom_annotations": {
+    "law_firm_names": []
+  }
+}

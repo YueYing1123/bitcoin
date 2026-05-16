@@ -1,0 +1,66 @@
+{
+  "document_id": "05e5c09f-7497-48cf-a5bb-b2920163446d",
+  "metadata": {
+    "case_number": "（2024）沪01民终16260号",
+    "court_name": "上海市第一中级人民法院",
+    "court_level": "中级法院",
+    "region": null,
+    "judgment_date": "2025-02-27",
+    "doc_type": null
+  },
+  "case_profile": {
+    "case_type_primary": null,
+    "case_type_secondary": "民间借贷纠纷",
+    "procedure_stage": "二审",
+    "is_appeal": null,
+    "litigant_profile": {
+      "plaintiff_types": [],
+      "defendant_types": []
+    }
+  },
+  "virtual_currency_info": {
+    "involved": null,
+    "currency_types": [],
+    "activity_type": [],
+    "total_amount_cny": null
+  },
+  "judicial_analysis": {
+    "legal_characterization": "民间借贷纠纷",
+    "virtual_currency_property_legality": null,
+    "contract_validity": "有效",
+    "reason_for_invalidity": [],
+    "cited_laws": [
+      "《中华人民共和国民法典》",
+      "《最高人民法院关于审理民间借贷案件适用法律若干问题的规定》",
+      "《中华人民共和国民事诉讼法》"
+    ],
+    "cited_policies": [],
+    "economic_substance_factors": {
+      "existence_of_written_contract": "双方签署了借条和欠条",
+      "clear_terms": "借条明确了借款金额、交付方式（USDT及汇率）、还款日期、质押物及违约责任",
+      "subsequent_performance": "许某某在出具借条后向赖某某转账5万元，被法院认定为还款",
+      "court_characterization": "法院认定双方形成结算型民间借贷法律关系"
+    },
+    "judicial_framing": [
+      "合法的民间借贷关系应受法律保护",
+      "双方之间形成结算型民间借贷法律关系",
+      "书面借条、欠条是认定借贷关系的关键证据",
+      "上诉人关于虚拟货币交易或受胁迫的主张因证据不足不被采信"
+    ]
+  },
+  "meta_ensemble": {
+    "model_votes": {},
+    "agreement_rate": null,
+    "final_label_source": null,
+    "confidence_mean": null,
+    "validation_status": null
+  },
+  "llm_summary": {
+    "outcome_summary": "二审法院驳回上诉，维持原判。上诉人许某某需归还被上诉人赖某某借款本金224,340元、支付相应逾期利息，并承担律师费15,000元。",
+    "reasoning_summary": "法院认为，尽管双方最初涉及USDT与BZZ虚拟货币的往来，但后续签订的借条和欠条是对此前法律关系的结算，形成了合法有效的民间借贷关系。上诉人关于受胁迫或实为虚拟货币买卖的主张缺乏证据证明，不予采信。因此，借贷关系成立，上诉人应按约承担还款责任。",
+    "issues_list": []
+  },
+  "custom_annotations": {
+    "law_firm_names": []
+  }
+}

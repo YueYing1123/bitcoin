@@ -1,0 +1,782 @@
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+      name:  <unnamed>
+       log:  D:\BaiduSyncdisk\Doctor\论文\数字货币\数据构建/analyze/region_cause/logs/region_cause.log
+  log type:  text
+ opened on:  23 Feb 2026, 15:10:27
+
+. 
+. di as txt "============================================================"
+============================================================
+
+. di as txt "地域分布 × 案由分布：描述性分析"
+地域分布 × 案由分布：描述性分析
+
+. di as txt "工作目录: `ROOT'"
+工作目录: D:\BaiduSyncdisk\Doctor\论文\数字货币\数据构建
+
+. di as txt "输出目录: `OUTDIR'"
+输出目录: D:\BaiduSyncdisk\Doctor\论文\数字货币\数据构建/analyze/region_cause
+
+. di as txt "============================================================"
+============================================================
+
+. 
+. // ---------------------------------
+. // 1) 载入数据
+. // ---------------------------------
+. local DTA "`ROOT'/analyze/data/final_all_flat.dta"
+
+. local CSV "`ROOT'/analyze/data/final_all_flat.csv"
+
+. 
+. cap confirm file "`DTA'"
+
+. if !_rc {
+.         use "`DTA'", clear
+. }
+
+. else {
+.         cap confirm file "`CSV'"
+.         if _rc {
+.                 di as err "找不到扁平化数据：`DTA' 或 `CSV' 均不存在。请先运行 analyze_all.do"
+.                 error 601
+.         }
+.         import delimited using "`CSV'", clear varnames(1) encoding(UTF-8) stringcols(_all)
+. }
+
+. compress
+  variable activity_type_id was long now int
+  variable court_level_id was long now byte
+  variable region_id was long now byte
+  variable court_name_id was long now int
+  variable procedure_stage_id was long now byte
+  variable doc_type_id was long now byte
+  variable case_type_primary_id was long now byte
+  variable case_type_secondary_id was long now byte
+  variable judgment_date_d was double now int
+  variable ln_amount was double now byte
+  (423,430 bytes saved)
+
+. 
+. // 统一 "null" 字符串为空
+. foreach v of varlist _all {
+  2.         capture confirm string variable `v'
+  3.         if !_rc replace `v' = "" if lower(trim(`v')) == "null"
+  4. }
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+
+. 
+. // ---------------------------------
+. // 2) 构造“地域变量” region_final
+. //    - 优先用字段 region（如果有）
+. //    - 若缺失：从案号 case_number 提取省份简称（如 浙/京/粤/...）
+. // ---------------------------------
+. gen str20 region_final = ""
+(12,098 missing values generated)
+
+. capture confirm string variable region
+
+. if !_rc replace region_final = trim(region) if trim(region)!=""
+(0 real changes made)
+
+. 
+. // 从案号提取省份简称（常见格式：（2020）浙0203... 或 (2018)苏0106...）
+. gen str1 prov_abbr = ""
+(12,098 missing values generated)
+
+. capture confirm string variable case_number
+
+. if !_rc {
+.         replace prov_abbr = ustrregexs(1) if ustrregexm(case_number, "[\\)）]([京津沪渝冀豫云辽黑湘皖鲁新苏浙赣鄂桂甘晋蒙陕吉闽贵粤青藏川宁琼])")
+variable prov_abbr was str1 now str3
+(11,324 real changes made)
+. }
+
+. 
+. gen str20 province = ""
+(12,098 missing values generated)
+
+. replace province = "北京" if prov_abbr=="京"
+(513 real changes made)
+
+. replace province = "天津" if prov_abbr=="津"
+(109 real changes made)
+
+. replace province = "上海" if prov_abbr=="沪"
+(542 real changes made)
+
+. replace province = "重庆" if prov_abbr=="渝"
+(187 real changes made)
+
+. replace province = "河北" if prov_abbr=="冀"
+(280 real changes made)
+
+. replace province = "河南" if prov_abbr=="豫"
+(803 real changes made)
+
+. replace province = "云南" if prov_abbr=="云"
+(265 real changes made)
+
+. replace province = "辽宁" if prov_abbr=="辽"
+(316 real changes made)
+
+. replace province = "黑龙江" if prov_abbr=="黑"
+(215 real changes made)
+
+. replace province = "湖南" if prov_abbr=="湘"
+(882 real changes made)
+
+. replace province = "安徽" if prov_abbr=="皖"
+(390 real changes made)
+
+. replace province = "山东" if prov_abbr=="鲁"
+(741 real changes made)
+
+. replace province = "新疆" if prov_abbr=="新"
+(135 real changes made)
+
+. replace province = "江苏" if prov_abbr=="苏"
+(551 real changes made)
+
+. replace province = "浙江" if prov_abbr=="浙"
+(967 real changes made)
+
+. replace province = "江西" if prov_abbr=="赣"
+(368 real changes made)
+
+. replace province = "湖北" if prov_abbr=="鄂"
+(400 real changes made)
+
+. replace province = "广西" if prov_abbr=="桂"
+(246 real changes made)
+
+. replace province = "甘肃" if prov_abbr=="甘"
+(134 real changes made)
+
+. replace province = "山西" if prov_abbr=="晋"
+(140 real changes made)
+
+. replace province = "内蒙古" if prov_abbr=="蒙"
+(1 real change made)
+
+. replace province = "陕西" if prov_abbr=="陕"
+(345 real changes made)
+
+. replace province = "吉林" if prov_abbr=="吉"
+(157 real changes made)
+
+. replace province = "福建" if prov_abbr=="闽"
+(662 real changes made)
+
+. replace province = "贵州" if prov_abbr=="贵"
+(0 real changes made)
+
+. replace province = "广东" if prov_abbr=="粤"
+(1,338 real changes made)
+
+. replace province = "青海" if prov_abbr=="青"
+(25 real changes made)
+
+. replace province = "西藏" if prov_abbr=="藏"
+(1 real change made)
+
+. replace province = "四川" if prov_abbr=="川"
+(531 real changes made)
+
+. replace province = "宁夏" if prov_abbr=="宁"
+(51 real changes made)
+
+. replace province = "海南" if prov_abbr=="琼"
+(29 real changes made)
+
+. 
+. replace region_final = province if region_final=="" & province!=""
+(11,324 real changes made)
+
+. replace region_final = "未知" if region_final==""
+(774 real changes made)
+
+. 
+. di as txt "---- 地域变量覆盖率（region_final）----"
+---- 地域变量覆盖率（region_final）----
+
+. quietly count
+
+. di as txt "N=" r(N)
+N=12098
+
+. tab region_final, missing
+
+        region_final |      Freq.     Percent        Cum.
+---------------------+-----------------------------------
+                上海 |        542        4.48        4.48
+                云南 |        265        2.19        6.67
+              内蒙古 |          1        0.01        6.68
+                北京 |        513        4.24       10.92
+                吉林 |        157        1.30       12.22
+                四川 |        531        4.39       16.61
+                天津 |        109        0.90       17.51
+                宁夏 |         51        0.42       17.93
+                安徽 |        390        3.22       21.15
+                山东 |        741        6.12       27.28
+                山西 |        140        1.16       28.43
+                广东 |      1,338       11.06       39.49
+                广西 |        246        2.03       41.53
+                新疆 |        135        1.12       42.64
+                未知 |        774        6.40       49.04
+                江苏 |        551        4.55       53.60
+                江西 |        368        3.04       56.64
+                河北 |        280        2.31       58.95
+                河南 |        803        6.64       65.59
+                浙江 |        967        7.99       73.58
+                海南 |         29        0.24       73.82
+                湖北 |        400        3.31       77.13
+                湖南 |        882        7.29       84.42
+                甘肃 |        134        1.11       85.53
+                福建 |        662        5.47       91.00
+                西藏 |          1        0.01       91.01
+                辽宁 |        316        2.61       93.62
+                重庆 |        187        1.55       95.16
+                陕西 |        345        2.85       98.02
+                青海 |         25        0.21       98.22
+              黑龙江 |        215        1.78      100.00
+---------------------+-----------------------------------
+               Total |     12,098      100.00
+
+. 
+. // ---------------------------------
+. // 3) 构造“案由/纠纷类型” cause_main
+. //    - 优先 legal_characterization（通常更丰富）
+. //    - 否则用 case_type_primary
+. // ---------------------------------
+. gen str80 cause_main = ""
+(12,098 missing values generated)
+
+. capture confirm string variable legal_characterization
+
+. if !_rc replace cause_main = trim(legal_characterization) if trim(legal_characterization)!=""
+variable cause_main was str80 now str117
+(12,028 real changes made)
+
+. capture confirm string variable case_type_primary
+
+. if !_rc replace cause_main = trim(case_type_primary) if cause_main=="" & trim(case_type_primary)!=""
+(0 real changes made)
+
+. replace cause_main = "未知" if cause_main==""
+(70 real changes made)
+
+. 
+. // 生成“案由分组”：取全样本 Top10，其余并为“其他”
+. preserve
+
+. keep cause_main
+
+. gen byte one = 1
+
+. collapse (sum) N=one, by(cause_main)
+
+. gsort -N
+
+. gen int rank = _n
+
+. tempfile topcauses
+
+. keep if rank<=10
+(704 observations deleted)
+
+. save "`topcauses'", replace
+(file C:\Users\12427\AppData\Local\Temp\ST_1b998_000002.tmp not found)
+file C:\Users\12427\AppData\Local\Temp\ST_1b998_000002.tmp saved as .dta format
+
+. restore
+
+. 
+. gen str80 cause_group = "其他"
+
+. merge m:1 cause_main using "`topcauses'", keep(match master) nogen
+
+    Result                      Number of obs
+    -----------------------------------------
+    Not matched                         4,252
+        from master                     4,252  
+        from using                          0  
+
+    Matched                             7,846  
+    -----------------------------------------
+
+. replace cause_group = cause_main if !missing(N)
+(7,846 real changes made)
+
+. 
+. // ---------------------------------
+. // 4) 表格输出（Excel）
+. // ---------------------------------
+. di as txt "开始输出表格..."
+开始输出表格...
+
+. 
+. // 表1：地域分布（Top20）
+. preserve
+
+. gen byte one = 1
+
+. collapse (sum) N=one, by(region_final)
+
+. gsort -N
+
+. gen double share = N/sum(N)
+
+. keep in 1/20
+(11 observations deleted)
+
+. export excel using "`TABLEDIR'/tab_region_top20.xlsx", firstrow(variables) replace
+file D:\BaiduSyncdisk\Doctor\论文\数字货币\数据构建/analyze/region_cause/tables/tab_region_top20.xlsx saved
+
+. restore
+
+. 
+. // 表2：案由分布（Top20）
+. preserve
+
+. gen byte one = 1
+
+. collapse (sum) N=one, by(cause_main)
+
+. gsort -N
+
+. keep in 1/20
+(694 observations deleted)
+
+. export excel using "`TABLEDIR'/tab_cause_top20.xlsx", firstrow(variables) replace
+file D:\BaiduSyncdisk\Doctor\论文\数字货币\数据构建/analyze/region_cause/tables/tab_cause_top20.xlsx saved
+
+. restore
+
+. 
+. // 表3：地域 × 案由分组（Top10 地域；行内份额）
+. preserve
+
+. gen byte one = 1
+
+. collapse (sum) N=one, by(region_final cause_group)
+
+. 
+. // 取地域 Top10
+. bys region_final: egen total_r = total(N)
+
+. gsort -total_r
+
+. egen byte tag = tag(region_final)
+
+. keep if tag
+(282 observations deleted)
+
+. keep region_final total_r
+
+. gsort -total_r
+
+. keep in 1/10
+(21 observations deleted)
+
+. tempfile topregions
+
+. save "`topregions'", replace
+(file C:\Users\12427\AppData\Local\Temp\ST_1b998_000006.tmp not found)
+file C:\Users\12427\AppData\Local\Temp\ST_1b998_000006.tmp saved as .dta format
+
+. restore
+
+. 
+. preserve
+
+. gen byte one = 1
+
+. collapse (sum) N=one, by(region_final cause_group)
+
+. merge m:1 region_final using "`topregions'", keep(match) nogen
+
+    Result                      Number of obs
+    -----------------------------------------
+    Not matched                             0
+    Matched                               110  
+    -----------------------------------------
+
+. bys region_final: egen total = total(N)
+
+. gen double share = N/total
+
+. sort region_final -N
+
+. export excel using "`TABLEDIR'/tab_region_by_causegroup_top10.xlsx", firstrow(variables) replace
+file D:\BaiduSyncdisk\Doctor\论文\数字货币\数据构建/analyze/region_cause/tables/tab_region_by_causegroup_top10.xlsx saved
+
+. restore
+
+. 
+. // 卡方检验（地域×案由分组）
+. preserve
+
+. keep if region_final!="未知"
+(774 observations deleted)
+
+. tab region_final cause_group, chi2 row
+
++----------------+
+| Key            |
+|----------------|
+|   frequency    |
+| row percentage |
++----------------+
+
+                     |                                                       cause_group
+        region_final |  买卖合同       其他   合同纠纷   委托合同   帮助信..   开设赌..   掩饰、..   民间借贷     盗窃罪   组织、..     诈骗罪 |     Total
+---------------------+-------------------------------------------------------------------------------------------------------------------------+----------
+                上海 |        25        211         12         35         33          8         66         60          6          5         81 |       542 
+                     |      4.61      38.93       2.21       6.46       6.09       1.48      12.18      11.07       1.11       0.92      14.94 |    100.00 
+---------------------+-------------------------------------------------------------------------------------------------------------------------+----------
+                云南 |        21        105          9         23         11          6         16         57          2          4         11 |       265 
+                     |      7.92      39.62       3.40       8.68       4.15       2.26       6.04      21.51       0.75       1.51       4.15 |    100.00 
+---------------------+-------------------------------------------------------------------------------------------------------------------------+----------
+              内蒙古 |         0          0          0          0          0          1          0          0          0          0          0 |         1 
+                     |      0.00       0.00       0.00       0.00       0.00     100.00       0.00       0.00       0.00       0.00       0.00 |    100.00 
+---------------------+-------------------------------------------------------------------------------------------------------------------------+----------
+                北京 |        16        329         34         35          1          0          4         76          0          2         16 |       513 
+                     |      3.12      64.13       6.63       6.82       0.19       0.00       0.78      14.81       0.00       0.39       3.12 |    100.00 
+---------------------+-------------------------------------------------------------------------------------------------------------------------+----------
+                吉林 |         3         50          8          8          9         10         11         28          2         11         17 |       157 
+                     |      1.91      31.85       5.10       5.10       5.73       6.37       7.01      17.83       1.27       7.01      10.83 |    100.00 
+---------------------+-------------------------------------------------------------------------------------------------------------------------+----------
+                四川 |        29        190         15         48         20         33         28         74         16         46         32 |       531 
+                     |      5.46      35.78       2.82       9.04       3.77       6.21       5.27      13.94       3.01       8.66       6.03 |    100.00 
+---------------------+-------------------------------------------------------------------------------------------------------------------------+----------
+                天津 |         4         29          3          8          7          1          5          5         29          3         15 |       109 
+                     |      3.67      26.61       2.75       7.34       6.42       0.92       4.59       4.59      26.61       2.75      13.76 |    100.00 
+---------------------+-------------------------------------------------------------------------------------------------------------------------+----------
+                宁夏 |         0         19          3          3          8          2          2          7          1          2          4 |        51 
+                     |      0.00      37.25       5.88       5.88      15.69       3.92       3.92      13.73       1.96       3.92       7.84 |    100.00 
+---------------------+-------------------------------------------------------------------------------------------------------------------------+----------
+                安徽 |        24         82          9         23         17         15         32         45         73         16         54 |       390 
+                     |      6.15      21.03       2.31       5.90       4.36       3.85       8.21      11.54      18.72       4.10      13.85 |    100.00 
+---------------------+-------------------------------------------------------------------------------------------------------------------------+----------
+                山东 |        33        282         57         67         33         17         22        127          7         58         38 |       741 
+                     |      4.45      38.06       7.69       9.04       4.45       2.29       2.97      17.14       0.94       7.83       5.13 |    100.00 
+---------------------+-------------------------------------------------------------------------------------------------------------------------+----------
+                山西 |         1         33          1          5         21          7         12         19          8         16         17 |       140 
+                     |      0.71      23.57       0.71       3.57      15.00       5.00       8.57      13.57       5.71      11.43      12.14 |    100.00 
+---------------------+-------------------------------------------------------------------------------------------------------------------------+----------
+                广东 |        47        647        104        108         28         68         29        165          9         69         64 |     1,338 
+                     |      3.51      48.36       7.77       8.07       2.09       5.08       2.17      12.33       0.67       5.16       4.78 |    100.00 
+---------------------+-------------------------------------------------------------------------------------------------------------------------+----------
+                广西 |        11         52          6         16         22         27         23         35          2         34         18 |       246 
+                     |      4.47      21.14       2.44       6.50       8.94      10.98       9.35      14.23       0.81      13.82       7.32 |    100.00 
+---------------------+-------------------------------------------------------------------------------------------------------------------------+----------
+                新疆 |         5         39          6         23         10          0          6         19          2         19          6 |       135 
+                     |      3.70      28.89       4.44      17.04       7.41       0.00       4.44      14.07       1.48      14.07       4.44 |    100.00 
+---------------------+-------------------------------------------------------------------------------------------------------------------------+----------
+                江苏 |        24        180         22         50          9         27         27        103         12         32         65 |       551 
+                     |      4.36      32.67       3.99       9.07       1.63       4.90       4.90      18.69       2.18       5.81      11.80 |    100.00 
+---------------------+-------------------------------------------------------------------------------------------------------------------------+----------
+                江西 |         8        113         10         21         46         23         31         53          3         25         35 |       368 
+                     |      2.17      30.71       2.72       5.71      12.50       6.25       8.42      14.40       0.82       6.79       9.51 |    100.00 
+---------------------+-------------------------------------------------------------------------------------------------------------------------+----------
+                河北 |        11         80          1         10         34         10         13         32         32         34         23 |       280 
+                     |      3.93      28.57       0.36       3.57      12.14       3.57       4.64      11.43      11.43      12.14       8.21 |    100.00 
+---------------------+-------------------------------------------------------------------------------------------------------------------------+----------
+                河南 |        28        227         13         33        113         47        105         69         20         41        107 |       803 
+                     |      3.49      28.27       1.62       4.11      14.07       5.85      13.08       8.59       2.49       5.11      13.33 |    100.00 
+---------------------+-------------------------------------------------------------------------------------------------------------------------+----------
+                浙江 |        27        377         38         58         45        106         64        115         16         36         85 |       967 
+                     |      2.79      38.99       3.93       6.00       4.65      10.96       6.62      11.89       1.65       3.72       8.79 |    100.00 
+---------------------+-------------------------------------------------------------------------------------------------------------------------+----------
+                海南 |         1         12          1          1          2          1          2          1          1          1          6 |        29 
+                     |      3.45      41.38       3.45       3.45       6.90       3.45       6.90       3.45       3.45       3.45      20.69 |    100.00 
+---------------------+-------------------------------------------------------------------------------------------------------------------------+----------
+                湖北 |        20        135         23         36         35         15         39         53          5         11         28 |       400 
+                     |      5.00      33.75       5.75       9.00       8.75       3.75       9.75      13.25       1.25       2.75       7.00 |    100.00 
+---------------------+-------------------------------------------------------------------------------------------------------------------------+----------
+                湖南 |        20        225         24         50        155         96         83         58          9         85         77 |       882 
+                     |      2.27      25.51       2.72       5.67      17.57      10.88       9.41       6.58       1.02       9.64       8.73 |    100.00 
+---------------------+-------------------------------------------------------------------------------------------------------------------------+----------
+                甘肃 |         0         30          1          3         34          5         24         11          0         12         14 |       134 
+                     |      0.00      22.39       0.75       2.24      25.37       3.73      17.91       8.21       0.00       8.96      10.45 |    100.00 
+---------------------+-------------------------------------------------------------------------------------------------------------------------+----------
+                福建 |        22        163         22         37         39        151         59         84          5         28         52 |       662 
+                     |      3.32      24.62       3.32       5.59       5.89      22.81       8.91      12.69       0.76       4.23       7.85 |    100.00 
+---------------------+-------------------------------------------------------------------------------------------------------------------------+----------
+                西藏 |         0          1          0          0          0          0          0          0          0          0          0 |         1 
+                     |      0.00     100.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00 |    100.00 
+---------------------+-------------------------------------------------------------------------------------------------------------------------+----------
+                辽宁 |        18         99         25         36         18          8         15         43         24         15         15 |       316 
+                     |      5.70      31.33       7.91      11.39       5.70       2.53       4.75      13.61       7.59       4.75       4.75 |    100.00 
+---------------------+-------------------------------------------------------------------------------------------------------------------------+----------
+                重庆 |         7         79         11         15          5          2          8         35          4          4         17 |       187 
+                     |      3.74      42.25       5.88       8.02       2.67       1.07       4.28      18.72       2.14       2.14       9.09 |    100.00 
+---------------------+-------------------------------------------------------------------------------------------------------------------------+----------
+                陕西 |         5        116          5         34         63          6         21         55          6         12         22 |       345 
+                     |      1.45      33.62       1.45       9.86      18.26       1.74       6.09      15.94       1.74       3.48       6.38 |    100.00 
+---------------------+-------------------------------------------------------------------------------------------------------------------------+----------
+                青海 |         1          8          3          1          3          0          1          2          0          4          2 |        25 
+                     |      4.00      32.00      12.00       4.00      12.00       0.00       4.00       8.00       0.00      16.00       8.00 |    100.00 
+---------------------+-------------------------------------------------------------------------------------------------------------------------+----------
+              黑龙江 |         4         39          3          9         19          9         16         22         61         15         18 |       215 
+                     |      1.86      18.14       1.40       4.19       8.84       4.19       7.44      10.23      28.37       6.98       8.37 |    100.00 
+---------------------+-------------------------------------------------------------------------------------------------------------------------+----------
+               Total |       415      3,952        469        796        840        701        764      1,453        355        640        939 |    11,324 
+                     |      3.66      34.90       4.14       7.03       7.42       6.19       6.75      12.83       3.13       5.65       8.29 |    100.00 
+
+        Pearson chi2(290) =  3.5e+03   Pr = 0.000
+
+. restore
+
+. 
+. // ---------------------------------
+. // 5) 图片输出（PNG）
+. // ---------------------------------
+. di as txt "开始输出图片..."
+开始输出图片...
+
+. 
+. // 图1：地域 Top20（水平条形）
+. preserve
+
+. gen byte one = 1
+
+. collapse (sum) N=one, by(region_final)
+
+. gsort -N
+
+. keep in 1/20
+(11 observations deleted)
+
+. graph hbar N, over(region_final, sort(1) descending label(labsize(small))) ///
+>         title("地域分布 Top20") ytitle("案件数")
+
+. graph export "`FIGDIR'/fig_region_top20.png", replace width(2400)
+file D:\BaiduSyncdisk\Doctor\论文\数字货币\数据构建/analyze/region_cause/figures/fig_region_top20.png saved as PNG format
+
+. restore
+
+. 
+. // 图2：案由 Top20（水平条形）
+. preserve
+
+. gen byte one = 1
+
+. collapse (sum) N=one, by(cause_main)
+
+. gsort -N
+
+. keep in 1/20
+(694 observations deleted)
+
+. graph hbar N, over(cause_main, sort(1) descending label(labsize(vsmall))) ///
+>         title("案由/法律定性 Top20") ytitle("案件数")
+
+. graph export "`FIGDIR'/fig_cause_top20.png", replace width(2400)
+file D:\BaiduSyncdisk\Doctor\论文\数字货币\数据构建/analyze/region_cause/figures/fig_cause_top20.png saved as PNG format
+
+. restore
+
+. 
+. // 图3：地域 × 案由分组 热力图（Top10 地域；色阶=地域内份额）
+. di as txt "开始输出热力图（地域×案由分组）..."
+开始输出热力图（地域×案由分组）...
+
+. preserve
+
+. gen byte one = 1
+
+. collapse (sum) N=one, by(region_final cause_group)
+
+. 
+. // 仅保留地域 Top10（复用前面生成的 topregions）
+. merge m:1 region_final using "`topregions'", keep(match) nogen
+
+    Result                      Number of obs
+    -----------------------------------------
+    Not matched                             0
+    Matched                               110  
+    -----------------------------------------
+
+. 
+. // 地域内份额（0-100）
+. bys region_final: egen total = total(N)
+
+. gen double share_pct = 100*N/total
+
+. 
+. // 编码为数值轴（便于画热力图）
+. encode region_final, gen(rid)
+
+. encode cause_group, gen(cid)
+
+. 
+. // 优先使用 heatplot（若未安装则尝试安装）
+. local HAVE_HEATPLOT = 0
+
+. cap which heatplot
+
+. if _rc {
+.         capture noisily ssc install heatplot, replace
+.         cap which heatplot
+. }
+
+. if !_rc local HAVE_HEATPLOT = 1
+
+. 
+. local USED_HEATPLOT = 0
+
+. if `HAVE_HEATPLOT' {
+.         // heatplot 常见依赖：palettes / colrspace
+.         capture noisily ssc install palettes, replace
+checking palettes consistency and verifying not already installed...
+installing into C:\Users\12427\ado\plus\...
+installation complete.
+.         capture noisily ssc install colrspace, replace
+checking colrspace consistency and verifying not already installed...
+installing into C:\Users\12427\ado\plus\...
+installation complete.
+. 
+.         capture noisily heatplot share_pct rid cid, ///
+>                 xlabel(, valuelabel angle(45) labsize(small)) ///
+>                 ylabel(, valuelabel angle(0) labsize(small)) ///
+>                 title("地域×案由分组 热力图（Top10 地域；色阶=地域内份额%）") ///
+>                 legend(title("份额(%)")) ///
+>                 aspect(0.7)
+.         if !_rc {
+.                 graph export "`FIGDIR'/fig_region_cause_heatmap_top10.png", replace width(2600)
+(file D:\BaiduSyncdisk\Doctor\论文\数字货币\数据构建/analyze/region_cause/figures/fig_region_cause_heatmap_top10.png not found)
+file D:\BaiduSyncdisk\Doctor\论文\数字货币\数据构建/analyze/region_cause/figures/fig_region_cause_heatmap_top10.png saved as PNG format
+.                 local USED_HEATPLOT = 1
+.         }
+. }
+
+. 
+. if `USED_HEATPLOT'==0 {
+.         // 备用：分箱“方块散点图”模拟热力图（无需额外包）
+.         xtile bin = share_pct, nq(5)
+.         label define bin 1 "最低" 2 "较低" 3 "中等" 4 "较高" 5 "最高"
+.         label values bin bin
+. 
+.         twoway ///
+>                 (scatter rid cid if bin==1, msymbol(square) msize(large) mcolor(gs15)) ///
+>                 (scatter rid cid if bin==2, msymbol(square) msize(large) mcolor(gs12)) ///
+>                 (scatter rid cid if bin==3, msymbol(square) msize(large) mcolor(gs9)) ///
+>                 (scatter rid cid if bin==4, msymbol(square) msize(large) mcolor(gs6)) ///
+>                 (scatter rid cid if bin==5, msymbol(square) msize(large) mcolor(gs3)) ///
+>                 , ///
+>                 xlabel(, valuelabel angle(45) labsize(small)) ///
+>                 ylabel(, valuelabel angle(0) labsize(small)) ///
+>                 xtitle("案由分组") ytitle("地域") ///
+>                 title("地域×案由分组 热力图（Top10 地域；分位数色阶）") ///
+>                 legend(order(1 "最低" 2 "较低" 3 "中等" 4 "较高" 5 "最高") rows(1))
+.         graph export "`FIGDIR'/fig_region_cause_heatmap_top10.png", replace width(2600)
+. }
+
+. restore
+
+. 
+. // 图4：地域（Top8）内的案由分组份额（小多图）
+. preserve
+
+. gen byte one = 1
+
+. collapse (sum) N=one, by(region_final cause_group)
+
+. bys region_final: egen total_r = total(N)
+
+. gsort -total_r
+
+. egen byte tag = tag(region_final)
+
+. keep if tag
+(282 observations deleted)
+
+. keep region_final total_r
+
+. gsort -total_r
+
+. keep in 1/8
+(23 observations deleted)
+
+. tempfile topregions8
+
+. save "`topregions8'", replace
+(file C:\Users\12427\AppData\Local\Temp\ST_1b998_00000d.tmp not found)
+file C:\Users\12427\AppData\Local\Temp\ST_1b998_00000d.tmp saved as .dta format
+
+. restore
+
+. 
+. preserve
+
+. gen byte one = 1
+
+. collapse (sum) N=one, by(region_final cause_group)
+
+. merge m:1 region_final using "`topregions8'", keep(match) nogen
+
+    Result                      Number of obs
+    -----------------------------------------
+    Not matched                             0
+    Matched                                88  
+    -----------------------------------------
+
+. bys region_final: egen total = total(N)
+
+. gen double share = N/total
+
+. graph bar share, over(cause_group, sort(1) descending label(angle(30) labsize(small))) ///
+>         by(region_final, col(2) note("") title("地域内案由分组份额（Top8 地域）")) ///
+>         ytitle("份额") ylabel(0(0.2)1, format(%3.1f))
+
+. graph export "`FIGDIR'/fig_region_causegroup_share_top8.png", replace width(2600)
+file D:\BaiduSyncdisk\Doctor\论文\数字货币\数据构建/analyze/region_cause/figures/fig_region_causegroup_share_top8.png saved as PNG format
+
+. restore
+
+. 
+. di as txt "============================================================"
+============================================================
+
+. di as txt "完成：请查看 analyze/region_cause/ 下 tables/figures/logs"
+完成：请查看 analyze/region_cause/ 下 tables/figures/logs
+
+. di as txt "============================================================"
+============================================================
+
+. 
+. log close
+      name:  <unnamed>
+       log:  D:\BaiduSyncdisk\Doctor\论文\数字货币\数据构建/analyze/region_cause/logs/region_cause.log
+  log type:  text
+ closed on:  23 Feb 2026, 15:10:47
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------

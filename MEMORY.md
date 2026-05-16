@@ -126,8 +126,9 @@ cat ~/.ssh/yy_rsa.pub
 - `round-5-20260516-122140`
 - `round-6-20260516-215644`
 - `round-7-20260517-020639`
+- `round-8-20260517-031538`
 
-当前最新轮次为 `round-7-20260517-020639`。
+当前最新轮次为 `round-8-20260517-031538`。
 
 ## 主数据集约定
 
@@ -258,3 +259,36 @@ cat ~/.ssh/yy_rsa.pub
 - `docs/plan/round-7-20260517-020639/plan-20260517-020639.md`
 - `docs/analysis/round-7-20260517-020639/analysis-20260517-020639.md`
 - `docs/report/round-7-20260517-020639/report-20260517-020639.md`
+
+## round-8 DeepSeek 标准答案与 master F1 检验
+
+本轮按用户要求使用 SiliconFlow 上的 `deepseek-ai/DeepSeek-V4-Flash`，温度为 0，在 TPM 2,000,000、RPM 500 口径下，以 `docs/legacy/master_prompt.md` 当前正式提示词对主数据集约 1% 样本重新抽取。DeepSeek 输出作为标准答案，已有 `master_dataset.csv` 作为被评估对象。
+
+抽取结果：
+
+- 主数据集总量：12,135
+- 1% 目标正常输出：122
+- 实际正常输出：122
+- 安全拒绝：0
+- 其他失败：0
+- 标准答案文件：`data/processed/master/compare.jsonl`
+
+评分结果：
+
+- 评分脚本：`code/round-8-20260517-031538/deepseek_compare_eval.py`
+- 结果目录：`result/round-8-20260517-031538/`
+- `field_f1.csv`：逐字段 TP、FP、FN、precision、recall、F1
+- `f1_summary.json`：总体 micro/macro 指标
+- `f1_report.md`：可读报告
+- Micro precision：0.8333
+- Micro recall：0.2694
+- Micro F1：0.4072
+- Micro TP/FP/FN：930 / 186 / 2522
+- Macro F1：0.3157
+
+主要解释：
+
+- master 在案号、裁判日期、是否上诉、程序阶段、法院名称等基础字段上表现较好。
+- `case_amount` 可用但仍有错配：F1=0.6667，TP=75，FP=41，FN=34。
+- `contract_validity` F1=0.7708，`legal_characterization` F1=0.7131，`activity_type` F1=0.2796。
+- macro F1 低的主要原因是当前提示词要求抽取很多旧 master 中基本为空的字段，例如 region、doc_type、case_type、当事人类型、币种、引用法律政策、司法框架与摘要字段，导致大量 FN。

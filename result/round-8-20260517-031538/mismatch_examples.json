@@ -1,0 +1,5081 @@
+[
+  {
+    "document_id": "ca893419-aba4-436c-bb24-ac37018443ba",
+    "field": "metadata.region",
+    "gold": "湖南省",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "ca893419-aba4-436c-bb24-ac37018443ba",
+    "field": "metadata.doc_type",
+    "gold": "判决书",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "ca893419-aba4-436c-bb24-ac37018443ba",
+    "field": "case_profile.case_type_primary",
+    "gold": "民事",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "ca893419-aba4-436c-bb24-ac37018443ba",
+    "field": "case_profile.case_type_secondary",
+    "gold": "婚约财产纠纷",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "ca893419-aba4-436c-bb24-ac37018443ba",
+    "field": "case_profile.litigant_profile.plaintiff_types",
+    "gold": [
+      "自然人"
+    ],
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "ca893419-aba4-436c-bb24-ac37018443ba",
+    "field": "case_profile.litigant_profile.defendant_types",
+    "gold": [
+      "自然人",
+      "自然人"
+    ],
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "ca893419-aba4-436c-bb24-ac37018443ba",
+    "field": "virtual_currency_info.involved",
+    "gold": true,
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "ca893419-aba4-436c-bb24-ac37018443ba",
+    "field": "virtual_currency_info.currency_types",
+    "gold": [
+      "比特币"
+    ],
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "ca893419-aba4-436c-bb24-ac37018443ba",
+    "field": "virtual_currency_info.activity_type",
+    "gold": "其他",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "ca893419-aba4-436c-bb24-ac37018443ba",
+    "field": "judicial_analysis.virtual_currency_property_legality",
+    "gold": "未明确",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "ca893419-aba4-436c-bb24-ac37018443ba",
+    "field": "judicial_analysis.cited_laws",
+    "gold": [
+      "《最高人民法院关于适用〈中华人民共和国婚姻法〉若干问题的解释(二)》第十条",
+      "《中华人民共和国民事诉讼法》第六十四条"
+    ],
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 2
+  },
+  {
+    "document_id": "ca893419-aba4-436c-bb24-ac37018443ba",
+    "field": "judicial_analysis.judicial_framing",
+    "gold": [
+      "公平原则"
+    ],
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "ca893419-aba4-436c-bb24-ac37018443ba",
+    "field": "llm_summary.outcome_summary",
+    "gold": "部分支持原告诉请，判令被告刘某2返还原告廖某某彩礼100800元，被告卢某某承担连带责任，驳回其他诉讼请求。",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "ca893419-aba4-436c-bb24-ac37018443ba",
+    "field": "llm_summary.reasoning_summary",
+    "gold": "双方未办理结婚登记手续，原告有权要求返还彩礼，但考虑到双方共同生活近两年、女方流产等事实，酌情确定返还60%的彩礼。",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "c83d0517-8d6a-470e-ad28-ae0000c7e2fe",
+    "field": "case_amount",
+    "gold": 1280000,
+    "master": "100000",
+    "tp": 0,
+    "fp": 1,
+    "fn": 1
+  },
+  {
+    "document_id": "c83d0517-8d6a-470e-ad28-ae0000c7e2fe",
+    "field": "metadata.region",
+    "gold": "浙江省",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "c83d0517-8d6a-470e-ad28-ae0000c7e2fe",
+    "field": "metadata.doc_type",
+    "gold": "判决书",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "c83d0517-8d6a-470e-ad28-ae0000c7e2fe",
+    "field": "case_profile.case_type_primary",
+    "gold": "刑事",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "c83d0517-8d6a-470e-ad28-ae0000c7e2fe",
+    "field": "case_profile.case_type_secondary",
+    "gold": "诈骗罪",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "c83d0517-8d6a-470e-ad28-ae0000c7e2fe",
+    "field": "case_profile.litigant_profile.plaintiff_types",
+    "gold": [
+      "人民检察院"
+    ],
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "c83d0517-8d6a-470e-ad28-ae0000c7e2fe",
+    "field": "case_profile.litigant_profile.defendant_types",
+    "gold": [
+      "自然人"
+    ],
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "c83d0517-8d6a-470e-ad28-ae0000c7e2fe",
+    "field": "virtual_currency_info.involved",
+    "gold": true,
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "c83d0517-8d6a-470e-ad28-ae0000c7e2fe",
+    "field": "virtual_currency_info.currency_types",
+    "gold": [
+      "虚拟货币"
+    ],
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "c83d0517-8d6a-470e-ad28-ae0000c7e2fe",
+    "field": "virtual_currency_info.activity_type",
+    "gold": "诈骗",
+    "master": "其他",
+    "tp": 0,
+    "fp": 1,
+    "fn": 1
+  },
+  {
+    "document_id": "c83d0517-8d6a-470e-ad28-ae0000c7e2fe",
+    "field": "judicial_analysis.virtual_currency_property_legality",
+    "gold": "未明确",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "c83d0517-8d6a-470e-ad28-ae0000c7e2fe",
+    "field": "judicial_analysis.cited_laws",
+    "gold": [
+      "《中华人民共和国刑法》第二百六十六条",
+      "《中华人民共和国刑法》第二十五条第一款",
+      "《中华人民共和国刑法》第二十七条",
+      "《中华人民共和国刑法》第六十七条第三款",
+      "《中华人民共和国刑法》第六十八条",
+      "《中华人民共和国刑法》第七十二条第一款、第三款",
+      "《中华人民共和国刑法》第七十三条第二款、第三款",
+      "《中华人民共和国刑法》第五十二条",
+      "《中华人民共和国刑法》第五十三条",
+      "《中华人民共和国刑法》第六十四条",
+      "《中华人民共和国刑事诉讼法》第十五条"
+    ],
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 11
+  },
+  {
+    "document_id": "c83d0517-8d6a-470e-ad28-ae0000c7e2fe",
+    "field": "judicial_analysis.judicial_framing",
+    "gold": [
+      "电信网络诈骗",
+      "共同犯罪",
+      "从犯",
+      "认罪认罚",
+      "退赔谅解"
+    ],
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 5
+  },
+  {
+    "document_id": "c83d0517-8d6a-470e-ad28-ae0000c7e2fe",
+    "field": "llm_summary.outcome_summary",
+    "gold": "被告人林某某犯诈骗罪，判处有期徒刑二年，缓刑二年六个月，并处罚金人民币二万二千元；被告人苏某甲犯诈骗罪，判处有期徒刑一年六个月，缓刑二年，并处罚金人民币二万元；追缴违法所得，退赔被害人。",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "c83d0517-8d6a-470e-ad28-ae0000c7e2fe",
+    "field": "llm_summary.reasoning_summary",
+    "gold": "被告人林某某、苏某甲以非法占有为目的，利用电信网络技术，虚构事实、隐瞒真相骗取他人财物，数额巨大，构成诈骗罪，系共同犯罪；二被告人均系从犯，具有坦白、认罪认罚、退赔部分损失并取得谅解等情节，苏某甲有立功表现，依法从轻、减轻处罚并适用缓刑。",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "8fa49d0a-cac0-44cf-bf21-b0ca00a72455",
+    "field": "metadata.region",
+    "gold": "上海市",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "8fa49d0a-cac0-44cf-bf21-b0ca00a72455",
+    "field": "metadata.doc_type",
+    "gold": "判决书",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "8fa49d0a-cac0-44cf-bf21-b0ca00a72455",
+    "field": "case_profile.case_type_primary",
+    "gold": "刑事",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "8fa49d0a-cac0-44cf-bf21-b0ca00a72455",
+    "field": "case_profile.case_type_secondary",
+    "gold": "诈骗罪",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "8fa49d0a-cac0-44cf-bf21-b0ca00a72455",
+    "field": "case_profile.litigant_profile.plaintiff_types",
+    "gold": [
+      "人民检察院"
+    ],
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "8fa49d0a-cac0-44cf-bf21-b0ca00a72455",
+    "field": "case_profile.litigant_profile.defendant_types",
+    "gold": [
+      "自然人"
+    ],
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "8fa49d0a-cac0-44cf-bf21-b0ca00a72455",
+    "field": "virtual_currency_info.involved",
+    "gold": true,
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "8fa49d0a-cac0-44cf-bf21-b0ca00a72455",
+    "field": "virtual_currency_info.currency_types",
+    "gold": [
+      "FIL"
+    ],
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "8fa49d0a-cac0-44cf-bf21-b0ca00a72455",
+    "field": "virtual_currency_info.activity_type",
+    "gold": "其他",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "8fa49d0a-cac0-44cf-bf21-b0ca00a72455",
+    "field": "judicial_analysis.virtual_currency_property_legality",
+    "gold": "未明确",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "8fa49d0a-cac0-44cf-bf21-b0ca00a72455",
+    "field": "judicial_analysis.contract_validity",
+    "gold": null,
+    "master": "无效",
+    "tp": 0,
+    "fp": 1,
+    "fn": 0
+  },
+  {
+    "document_id": "8fa49d0a-cac0-44cf-bf21-b0ca00a72455",
+    "field": "judicial_analysis.cited_laws",
+    "gold": [
+      "《中华人民共和国刑法》第二百六十六条",
+      "《中华人民共和国刑法》第六十七条第三款",
+      "《中华人民共和国刑法》第七十二条第一款、第三款",
+      "《中华人民共和国刑法》第七十三条第二款、第三款"
+    ],
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 4
+  },
+  {
+    "document_id": "8fa49d0a-cac0-44cf-bf21-b0ca00a72455",
+    "field": "judicial_analysis.judicial_framing",
+    "gold": [
+      "诈骗罪构成",
+      "非法占有目的",
+      "虚构事实"
+    ],
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 3
+  },
+  {
+    "document_id": "8fa49d0a-cac0-44cf-bf21-b0ca00a72455",
+    "field": "llm_summary.outcome_summary",
+    "gold": "被告人熊某某犯诈骗罪，判处有期徒刑二年，缓刑二年，并处罚金人民币二万元。",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "8fa49d0a-cac0-44cf-bf21-b0ca00a72455",
+    "field": "llm_summary.reasoning_summary",
+    "gold": "被告人熊某某以非法占有为目的，虚构帮助被害人借款支付好处费的事实，骗取被害人交付虚拟币作为质押并支付利息，构成诈骗罪。",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "71a0c0b0-ed3f-41b4-a5ce-a2c6feba9984",
+    "field": "case_amount",
+    "gold": 3600,
+    "master": "2100",
+    "tp": 0,
+    "fp": 1,
+    "fn": 1
+  },
+  {
+    "document_id": "71a0c0b0-ed3f-41b4-a5ce-a2c6feba9984",
+    "field": "metadata.region",
+    "gold": "宁夏回族自治区",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "71a0c0b0-ed3f-41b4-a5ce-a2c6feba9984",
+    "field": "metadata.doc_type",
+    "gold": "判决书",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "71a0c0b0-ed3f-41b4-a5ce-a2c6feba9984",
+    "field": "case_profile.case_type_primary",
+    "gold": "民事",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "71a0c0b0-ed3f-41b4-a5ce-a2c6feba9984",
+    "field": "case_profile.case_type_secondary",
+    "gold": "合同纠纷",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "71a0c0b0-ed3f-41b4-a5ce-a2c6feba9984",
+    "field": "case_profile.litigant_profile.plaintiff_types",
+    "gold": [
+      "自然人"
+    ],
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "71a0c0b0-ed3f-41b4-a5ce-a2c6feba9984",
+    "field": "case_profile.litigant_profile.defendant_types",
+    "gold": [
+      "自然人"
+    ],
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "71a0c0b0-ed3f-41b4-a5ce-a2c6feba9984",
+    "field": "virtual_currency_info.involved",
+    "gold": true,
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "71a0c0b0-ed3f-41b4-a5ce-a2c6feba9984",
+    "field": "virtual_currency_info.currency_types",
+    "gold": [
+      "虚拟货币"
+    ],
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "71a0c0b0-ed3f-41b4-a5ce-a2c6feba9984",
+    "field": "virtual_currency_info.activity_type",
+    "gold": "委托理财/代投",
+    "master": "虚拟货币理财",
+    "tp": 0,
+    "fp": 1,
+    "fn": 1
+  },
+  {
+    "document_id": "71a0c0b0-ed3f-41b4-a5ce-a2c6feba9984",
+    "field": "judicial_analysis.virtual_currency_property_legality",
+    "gold": "未明确",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "71a0c0b0-ed3f-41b4-a5ce-a2c6feba9984",
+    "field": "judicial_analysis.contract_validity",
+    "gold": null,
+    "master": "无效",
+    "tp": 0,
+    "fp": 1,
+    "fn": 0
+  },
+  {
+    "document_id": "71a0c0b0-ed3f-41b4-a5ce-a2c6feba9984",
+    "field": "judicial_analysis.cited_laws",
+    "gold": [
+      "《中华人民共和国民法通则》第一百零六条",
+      "《最高人民法院关于民事诉讼证据的若干规定》第二条"
+    ],
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 2
+  },
+  {
+    "document_id": "71a0c0b0-ed3f-41b4-a5ce-a2c6feba9984",
+    "field": "judicial_analysis.judicial_framing",
+    "gold": [
+      "过错责任",
+      "返还本金"
+    ],
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 2
+  },
+  {
+    "document_id": "71a0c0b0-ed3f-41b4-a5ce-a2c6feba9984",
+    "field": "llm_summary.outcome_summary",
+    "gold": "部分支持原告诉请，判令被告返还原告2100元，驳回其他诉讼请求。",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "71a0c0b0-ed3f-41b4-a5ce-a2c6feba9984",
+    "field": "llm_summary.reasoning_summary",
+    "gold": "被告在未核实投资项目真实合法性的情况下向原告推销并保证，存在严重误导，应承担过错责任，返还通过微信收取的2100元；原告主张的1500元现金交付证据不足，不予支持。",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "544761d7-1567-4ff0-ac42-acfd01055093",
+    "field": "metadata.region",
+    "gold": "上海市",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "544761d7-1567-4ff0-ac42-acfd01055093",
+    "field": "metadata.doc_type",
+    "gold": "判决书",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "544761d7-1567-4ff0-ac42-acfd01055093",
+    "field": "case_profile.case_type_primary",
+    "gold": "刑事",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "544761d7-1567-4ff0-ac42-acfd01055093",
+    "field": "case_profile.case_type_secondary",
+    "gold": "掩饰、隐瞒犯罪所得、犯罪所得收益罪",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "544761d7-1567-4ff0-ac42-acfd01055093",
+    "field": "case_profile.litigant_profile.defendant_types",
+    "gold": [
+      "自然人"
+    ],
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "544761d7-1567-4ff0-ac42-acfd01055093",
+    "field": "virtual_currency_info.involved",
+    "gold": true,
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "544761d7-1567-4ff0-ac42-acfd01055093",
+    "field": "virtual_currency_info.currency_types",
+    "gold": [
+      "虚拟币"
+    ],
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "544761d7-1567-4ff0-ac42-acfd01055093",
+    "field": "virtual_currency_info.activity_type",
+    "gold": "洗钱/掩隐",
+    "master": "场外交易(OTC)",
+    "tp": 0,
+    "fp": 1,
+    "fn": 1
+  },
+  {
+    "document_id": "544761d7-1567-4ff0-ac42-acfd01055093",
+    "field": "judicial_analysis.virtual_currency_property_legality",
+    "gold": "未明确",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "544761d7-1567-4ff0-ac42-acfd01055093",
+    "field": "judicial_analysis.cited_laws",
+    "gold": [
+      "《中华人民共和国刑法》第三百一十二条第一款",
+      "《中华人民共和国刑法》第二十五条第一款",
+      "《中华人民共和国刑法》第六十七条第三款",
+      "《中华人民共和国刑法》第六十四条",
+      "《中华人民共和国刑事诉讼法》第十五条"
+    ],
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 5
+  },
+  {
+    "document_id": "544761d7-1567-4ff0-ac42-acfd01055093",
+    "field": "judicial_analysis.judicial_framing",
+    "gold": [
+      "明知是犯罪所得",
+      "情节严重",
+      "共同犯罪",
+      "如实供述",
+      "认罪认罚"
+    ],
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 5
+  },
+  {
+    "document_id": "544761d7-1567-4ff0-ac42-acfd01055093",
+    "field": "llm_summary.outcome_summary",
+    "gold": "各被告人犯掩饰、隐瞒犯罪所得罪，均判处有期徒刑三年并处罚金二万元，犯罪工具予以没收，违法所得予以追缴。",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "544761d7-1567-4ff0-ac42-acfd01055093",
+    "field": "llm_summary.reasoning_summary",
+    "gold": "被告人明知是犯罪所得，仍通过火币网购买虚拟币后过户至指定账户，帮助上游犯罪转移资金678万余元，情节严重，构成掩饰、隐瞒犯罪所得罪。",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "9d4c072f-07bc-4f92-a7a3-b1be016689fc",
+    "field": "metadata.region",
+    "gold": "上海市",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "9d4c072f-07bc-4f92-a7a3-b1be016689fc",
+    "field": "metadata.doc_type",
+    "gold": "判决书",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "9d4c072f-07bc-4f92-a7a3-b1be016689fc",
+    "field": "case_profile.case_type_primary",
+    "gold": "民事",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "9d4c072f-07bc-4f92-a7a3-b1be016689fc",
+    "field": "case_profile.case_type_secondary",
+    "gold": "侵害商标权纠纷,不正当竞争纠纷",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "9d4c072f-07bc-4f92-a7a3-b1be016689fc",
+    "field": "case_profile.litigant_profile.plaintiff_types",
+    "gold": [
+      "法人"
+    ],
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "9d4c072f-07bc-4f92-a7a3-b1be016689fc",
+    "field": "case_profile.litigant_profile.defendant_types",
+    "gold": [
+      "法人"
+    ],
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "9d4c072f-07bc-4f92-a7a3-b1be016689fc",
+    "field": "virtual_currency_info.involved",
+    "gold": false,
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "9d4c072f-07bc-4f92-a7a3-b1be016689fc",
+    "field": "judicial_analysis.cited_laws",
+    "gold": [
+      "《中华人民共和国民法典》第一百七十九条",
+      "《中华人民共和国反不正当竞争法》第二条",
+      "《中华人民共和国反不正当竞争法》第十七条"
+    ],
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 3
+  },
+  {
+    "document_id": "9d4c072f-07bc-4f92-a7a3-b1be016689fc",
+    "field": "judicial_analysis.judicial_framing",
+    "gold": [
+      "停止侵害",
+      "赔偿损失"
+    ],
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 2
+  },
+  {
+    "document_id": "9d4c072f-07bc-4f92-a7a3-b1be016689fc",
+    "field": "llm_summary.outcome_summary",
+    "gold": "判令被告停止不正当竞争行为，赔偿原告经济损失5万元及合理费用1万元，驳回原告其余诉讼请求。",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "9d4c072f-07bc-4f92-a7a3-b1be016689fc",
+    "field": "llm_summary.reasoning_summary",
+    "gold": "被告的记账软件全面模仿原告游戏的角色名称、形象、台词及互动模式，违反诚实信用原则，构成反不正当竞争法第二条的不正当竞争行为。",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "22d2930e-e1ea-4bc9-8570-62f673d9ba3b",
+    "field": "metadata.region",
+    "gold": "北京市",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "22d2930e-e1ea-4bc9-8570-62f673d9ba3b",
+    "field": "metadata.doc_type",
+    "gold": "判决书",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "22d2930e-e1ea-4bc9-8570-62f673d9ba3b",
+    "field": "case_profile.case_type_primary",
+    "gold": "民事",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "22d2930e-e1ea-4bc9-8570-62f673d9ba3b",
+    "field": "case_profile.case_type_secondary",
+    "gold": "网络服务合同纠纷",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "22d2930e-e1ea-4bc9-8570-62f673d9ba3b",
+    "field": "case_profile.litigant_profile.plaintiff_types",
+    "gold": [
+      "自然人"
+    ],
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "22d2930e-e1ea-4bc9-8570-62f673d9ba3b",
+    "field": "case_profile.litigant_profile.defendant_types",
+    "gold": [
+      "自然人",
+      "法人"
+    ],
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 2
+  },
+  {
+    "document_id": "22d2930e-e1ea-4bc9-8570-62f673d9ba3b",
+    "field": "virtual_currency_info.involved",
+    "gold": true,
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "22d2930e-e1ea-4bc9-8570-62f673d9ba3b",
+    "field": "virtual_currency_info.currency_types",
+    "gold": [
+      "抖币",
+      "钻石"
+    ],
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 2
+  },
+  {
+    "document_id": "22d2930e-e1ea-4bc9-8570-62f673d9ba3b",
+    "field": "virtual_currency_info.activity_type",
+    "gold": "交易所炒币",
+    "master": "虚拟货币消费",
+    "tp": 0,
+    "fp": 1,
+    "fn": 1
+  },
+  {
+    "document_id": "22d2930e-e1ea-4bc9-8570-62f673d9ba3b",
+    "field": "judicial_analysis.virtual_currency_property_legality",
+    "gold": "虚拟货币",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "22d2930e-e1ea-4bc9-8570-62f673d9ba3b",
+    "field": "judicial_analysis.cited_laws",
+    "gold": [
+      "《中华人民共和国民法典》第八条",
+      "《中华人民共和国民法典》第一百一十三条",
+      "《中华人民共和国民法典》第一百四十三条",
+      "《中华人民共和国民法典》第一千零六十条",
+      "《中华人民共和国民事诉讼法》第六十四条第一款"
+    ],
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 5
+  },
+  {
+    "document_id": "22d2930e-e1ea-4bc9-8570-62f673d9ba3b",
+    "field": "judicial_analysis.judicial_framing",
+    "gold": [
+      "风险自担",
+      "交易安全"
+    ],
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 2
+  },
+  {
+    "document_id": "22d2930e-e1ea-4bc9-8570-62f673d9ba3b",
+    "field": "llm_summary.outcome_summary",
+    "gold": "驳回原告高某2的全部诉讼请求",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "22d2930e-e1ea-4bc9-8570-62f673d9ba3b",
+    "field": "llm_summary.reasoning_summary",
+    "gold": "法院认为李某1的充值打赏行为系与微播公司之间的网络服务合同，每次消费独立且具有小额、高频特点，微播公司作为善意第三人无法审查资金来源，且无证据证明直播内容违反公序良俗，故合同有效，不支持返还请求。",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "2cb5e258-c097-49c6-a1e1-ab1b00ca1a63",
+    "field": "metadata.region",
+    "gold": "四川省",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "2cb5e258-c097-49c6-a1e1-ab1b00ca1a63",
+    "field": "metadata.doc_type",
+    "gold": "判决书",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "2cb5e258-c097-49c6-a1e1-ab1b00ca1a63",
+    "field": "case_profile.case_type_primary",
+    "gold": "刑事",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "2cb5e258-c097-49c6-a1e1-ab1b00ca1a63",
+    "field": "case_profile.case_type_secondary",
+    "gold": "开设赌场罪",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "2cb5e258-c097-49c6-a1e1-ab1b00ca1a63",
+    "field": "case_profile.litigant_profile.plaintiff_types",
+    "gold": [
+      "人民检察院"
+    ],
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "2cb5e258-c097-49c6-a1e1-ab1b00ca1a63",
+    "field": "case_profile.litigant_profile.defendant_types",
+    "gold": [
+      "自然人"
+    ],
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "2cb5e258-c097-49c6-a1e1-ab1b00ca1a63",
+    "field": "virtual_currency_info.involved",
+    "gold": true,
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "2cb5e258-c097-49c6-a1e1-ab1b00ca1a63",
+    "field": "virtual_currency_info.currency_types",
+    "gold": [
+      "钻石(虚拟货币)"
+    ],
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "2cb5e258-c097-49c6-a1e1-ab1b00ca1a63",
+    "field": "virtual_currency_info.activity_type",
+    "gold": "赌博",
+    "master": "虚拟货币借贷",
+    "tp": 0,
+    "fp": 1,
+    "fn": 1
+  },
+  {
+    "document_id": "2cb5e258-c097-49c6-a1e1-ab1b00ca1a63",
+    "field": "judicial_analysis.virtual_currency_property_legality",
+    "gold": "未明确",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "2cb5e258-c097-49c6-a1e1-ab1b00ca1a63",
+    "field": "judicial_analysis.cited_laws",
+    "gold": [
+      "《中华人民共和国刑法》第三百零三条第二款",
+      "《中华人民共和国刑法》第二十五条",
+      "《中华人民共和国刑法》第五十二条",
+      "《中华人民共和国刑法》第五十三条",
+      "《中华人民共和国刑法》第六十四条",
+      "《中华人民共和国刑法》第六十七条第三款",
+      "《中华人民共和国刑法》第七十二条",
+      "《中华人民共和国刑法》第七十三条"
+    ],
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 8
+  },
+  {
+    "document_id": "2cb5e258-c097-49c6-a1e1-ab1b00ca1a63",
+    "field": "judicial_analysis.judicial_framing",
+    "gold": [
+      "违法所得没收",
+      "坦白从轻",
+      "退缴全部违法所得"
+    ],
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 3
+  },
+  {
+    "document_id": "2cb5e258-c097-49c6-a1e1-ab1b00ca1a63",
+    "field": "llm_summary.outcome_summary",
+    "gold": "被告人黄某某、李某1犯开设赌场罪，均判处有期徒刑三年，缓刑三年，并处罚金人民币五千元；违法所得187,347.08元予以没收，上缴国库；作案工具手机予以没收。",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "2cb5e258-c097-49c6-a1e1-ab1b00ca1a63",
+    "field": "llm_summary.reasoning_summary",
+    "gold": "二被告人以营利为目的，在网上开设赌场供人赌博，抽头渔利共计187,347.08元，情节严重，构成开设赌场罪；到案后如实供述并退缴全部违法所得，依法从轻处罚并适用缓刑。",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "80443288-b1fb-4f37-9a84-b0fd00290f40",
+    "field": "metadata.region",
+    "gold": "湖南省",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "80443288-b1fb-4f37-9a84-b0fd00290f40",
+    "field": "metadata.doc_type",
+    "gold": "判决书",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "80443288-b1fb-4f37-9a84-b0fd00290f40",
+    "field": "case_profile.case_type_primary",
+    "gold": "刑事",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "80443288-b1fb-4f37-9a84-b0fd00290f40",
+    "field": "case_profile.case_type_secondary",
+    "gold": "掩饰、隐瞒犯罪所得、犯罪所得收益罪",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "80443288-b1fb-4f37-9a84-b0fd00290f40",
+    "field": "case_profile.litigant_profile.plaintiff_types",
+    "gold": [
+      "人民检察院"
+    ],
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "80443288-b1fb-4f37-9a84-b0fd00290f40",
+    "field": "case_profile.litigant_profile.defendant_types",
+    "gold": [
+      "自然人"
+    ],
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "80443288-b1fb-4f37-9a84-b0fd00290f40",
+    "field": "virtual_currency_info.involved",
+    "gold": true,
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "80443288-b1fb-4f37-9a84-b0fd00290f40",
+    "field": "virtual_currency_info.currency_types",
+    "gold": [
+      "U币"
+    ],
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "80443288-b1fb-4f37-9a84-b0fd00290f40",
+    "field": "virtual_currency_info.activity_type",
+    "gold": "洗钱/掩隐",
+    "master": "场外交易(OTC)",
+    "tp": 0,
+    "fp": 1,
+    "fn": 1
+  },
+  {
+    "document_id": "80443288-b1fb-4f37-9a84-b0fd00290f40",
+    "field": "judicial_analysis.virtual_currency_property_legality",
+    "gold": "未明确",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "80443288-b1fb-4f37-9a84-b0fd00290f40",
+    "field": "judicial_analysis.cited_laws",
+    "gold": [
+      "《中华人民共和国刑法》第三百一十二条第一款",
+      "《中华人民共和国刑法》第五十二条",
+      "《中华人民共和国刑法》第六十四条",
+      "《中华人民共和国刑法》第六十七条第三款",
+      "《中华人民共和国刑事诉讼法》第十五条"
+    ],
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 5
+  },
+  {
+    "document_id": "80443288-b1fb-4f37-9a84-b0fd00290f40",
+    "field": "judicial_analysis.judicial_framing",
+    "gold": [
+      "明知是犯罪所得而予以转移"
+    ],
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "80443288-b1fb-4f37-9a84-b0fd00290f40",
+    "field": "llm_summary.outcome_summary",
+    "gold": "被告人刘某1犯掩饰、隐瞒犯罪所得罪，判处有期徒刑六个月，并处罚金人民币二千元；犯罪使用手机2部予以没收，违法所得4977元予以追缴，退赔被害人段某980元、闫某9900元。",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "80443288-b1fb-4f37-9a84-b0fd00290f40",
+    "field": "llm_summary.reasoning_summary",
+    "gold": "被告人刘某1明知是犯罪所得而予以转移，情节严重，构成掩饰、隐瞒犯罪所得罪；到案后如实供述、认罪认罚、退赃，依法从轻处罚。",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "f74bfd2a-981d-424f-a862-b04c008b9710",
+    "field": "metadata.region",
+    "gold": "四川省",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "f74bfd2a-981d-424f-a862-b04c008b9710",
+    "field": "metadata.doc_type",
+    "gold": "判决书",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "f74bfd2a-981d-424f-a862-b04c008b9710",
+    "field": "case_profile.case_type_primary",
+    "gold": "民事",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "f74bfd2a-981d-424f-a862-b04c008b9710",
+    "field": "case_profile.case_type_secondary",
+    "gold": "不当得利纠纷",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "f74bfd2a-981d-424f-a862-b04c008b9710",
+    "field": "case_profile.litigant_profile.plaintiff_types",
+    "gold": [
+      "自然人"
+    ],
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "f74bfd2a-981d-424f-a862-b04c008b9710",
+    "field": "case_profile.litigant_profile.defendant_types",
+    "gold": [
+      "自然人"
+    ],
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "f74bfd2a-981d-424f-a862-b04c008b9710",
+    "field": "virtual_currency_info.involved",
+    "gold": true,
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "f74bfd2a-981d-424f-a862-b04c008b9710",
+    "field": "virtual_currency_info.currency_types",
+    "gold": [
+      "虚拟货币"
+    ],
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "f74bfd2a-981d-424f-a862-b04c008b9710",
+    "field": "judicial_analysis.virtual_currency_property_legality",
+    "gold": "未明确",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "f74bfd2a-981d-424f-a862-b04c008b9710",
+    "field": "judicial_analysis.contract_validity",
+    "gold": null,
+    "master": "未成立",
+    "tp": 0,
+    "fp": 1,
+    "fn": 0
+  },
+  {
+    "document_id": "f74bfd2a-981d-424f-a862-b04c008b9710",
+    "field": "judicial_analysis.cited_laws",
+    "gold": [
+      "《中华人民共和国民法典》第九百八十五条",
+      "《中华人民共和国民事诉讼法》第六十七条",
+      "《最高人民法院关于适用<中华人民共和国民事诉讼法>的解释》第九十条"
+    ],
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 3
+  },
+  {
+    "document_id": "f74bfd2a-981d-424f-a862-b04c008b9710",
+    "field": "judicial_analysis.judicial_framing",
+    "gold": [
+      "证据不足"
+    ],
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "f74bfd2a-981d-424f-a862-b04c008b9710",
+    "field": "llm_summary.outcome_summary",
+    "gold": "驳回原告刘某某的全部诉讼请求",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "f74bfd2a-981d-424f-a862-b04c008b9710",
+    "field": "llm_summary.reasoning_summary",
+    "gold": "原告未能证明被告因无法律依据而受益，被告已将款项转交供电方，不当得利不成立",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "a7b83521-3f68-43fa-a69d-ab7c00f842e9",
+    "field": "metadata.court_level",
+    "gold": "中级法院",
+    "master": "中院",
+    "tp": 0,
+    "fp": 1,
+    "fn": 1
+  },
+  {
+    "document_id": "a7b83521-3f68-43fa-a69d-ab7c00f842e9",
+    "field": "metadata.first_instance_case_number",
+    "gold": null,
+    "master": "（2019）吉24民初XXX号",
+    "tp": 0,
+    "fp": 1,
+    "fn": 0
+  },
+  {
+    "document_id": "a7b83521-3f68-43fa-a69d-ab7c00f842e9",
+    "field": "metadata.region",
+    "gold": "吉林省",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "a7b83521-3f68-43fa-a69d-ab7c00f842e9",
+    "field": "metadata.doc_type",
+    "gold": "判决书",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "a7b83521-3f68-43fa-a69d-ab7c00f842e9",
+    "field": "case_profile.case_type_primary",
+    "gold": "民事",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "a7b83521-3f68-43fa-a69d-ab7c00f842e9",
+    "field": "case_profile.case_type_secondary",
+    "gold": "委托合同纠纷",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "a7b83521-3f68-43fa-a69d-ab7c00f842e9",
+    "field": "case_profile.litigant_profile.plaintiff_types",
+    "gold": [
+      "自然人"
+    ],
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "a7b83521-3f68-43fa-a69d-ab7c00f842e9",
+    "field": "case_profile.litigant_profile.defendant_types",
+    "gold": [
+      "自然人",
+      "自然人"
+    ],
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "a7b83521-3f68-43fa-a69d-ab7c00f842e9",
+    "field": "virtual_currency_info.involved",
+    "gold": true,
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "a7b83521-3f68-43fa-a69d-ab7c00f842e9",
+    "field": "virtual_currency_info.currency_types",
+    "gold": [
+      "ETH"
+    ],
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "a7b83521-3f68-43fa-a69d-ab7c00f842e9",
+    "field": "judicial_analysis.virtual_currency_property_legality",
+    "gold": "不受法律保护",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "a7b83521-3f68-43fa-a69d-ab7c00f842e9",
+    "field": "judicial_analysis.reason_for_invalidity",
+    "gold": [
+      "违反法律强制性规定",
+      "非法金融活动"
+    ],
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 2
+  },
+  {
+    "document_id": "a7b83521-3f68-43fa-a69d-ab7c00f842e9",
+    "field": "judicial_analysis.cited_laws",
+    "gold": [
+      "《中华人民共和国民法总则》第二条",
+      "《中华人民共和国民法总则》第八条",
+      "《中华人民共和国民法通则》第六条",
+      "《中华人民共和国民法通则》第七条",
+      "《中华人民共和国民事诉讼法》第六十四条",
+      "《中华人民共和国民事诉讼法》第一百四十四条",
+      "《中华人民共和国民事诉讼法》第一百七十条第一款第(一)项"
+    ],
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 7
+  },
+  {
+    "document_id": "a7b83521-3f68-43fa-a69d-ab7c00f842e9",
+    "field": "judicial_analysis.cited_policies",
+    "gold": [
+      "《关于防范比特币风险的通知》",
+      "《关于防范代币发行融资风险的公告》"
+    ],
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 2
+  },
+  {
+    "document_id": "a7b83521-3f68-43fa-a69d-ab7c00f842e9",
+    "field": "judicial_analysis.judicial_framing",
+    "gold": [
+      "不受法律保护",
+      "风险自担"
+    ],
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 2
+  },
+  {
+    "document_id": "a7b83521-3f68-43fa-a69d-ab7c00f842e9",
+    "field": "llm_summary.outcome_summary",
+    "gold": "驳回上诉，维持原判，即驳回陈某某全部诉讼请求",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "a7b83521-3f68-43fa-a69d-ab7c00f842e9",
+    "field": "llm_summary.reasoning_summary",
+    "gold": "法院认为，根据《关于防范代币发行融资风险的公告》，以太币等虚拟货币不能作为货币流通，委托投资和交易虚拟货币的行为不受法律保护，后果由当事人自行承担。",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "ac66f6ed-4260-4b15-ae7a-ac8b00df07ef",
+    "field": "metadata.court_level",
+    "gold": "中级法院",
+    "master": "中院",
+    "tp": 0,
+    "fp": 1,
+    "fn": 1
+  },
+  {
+    "document_id": "ac66f6ed-4260-4b15-ae7a-ac8b00df07ef",
+    "field": "metadata.region",
+    "gold": "上海市",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "ac66f6ed-4260-4b15-ae7a-ac8b00df07ef",
+    "field": "metadata.doc_type",
+    "gold": "判决书",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "ac66f6ed-4260-4b15-ae7a-ac8b00df07ef",
+    "field": "case_profile.case_type_primary",
+    "gold": "民事",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "ac66f6ed-4260-4b15-ae7a-ac8b00df07ef",
+    "field": "case_profile.case_type_secondary",
+    "gold": "民间借贷纠纷",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "ac66f6ed-4260-4b15-ae7a-ac8b00df07ef",
+    "field": "case_profile.procedure_stage",
+    "gold": "二审",
+    "master": "二审/终审",
+    "tp": 0,
+    "fp": 1,
+    "fn": 1
+  },
+  {
+    "document_id": "ac66f6ed-4260-4b15-ae7a-ac8b00df07ef",
+    "field": "case_profile.litigant_profile.plaintiff_types",
+    "gold": [
+      "自然人"
+    ],
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "ac66f6ed-4260-4b15-ae7a-ac8b00df07ef",
+    "field": "case_profile.litigant_profile.defendant_types",
+    "gold": [
+      "自然人"
+    ],
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "ac66f6ed-4260-4b15-ae7a-ac8b00df07ef",
+    "field": "virtual_currency_info.involved",
+    "gold": true,
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "ac66f6ed-4260-4b15-ae7a-ac8b00df07ef",
+    "field": "virtual_currency_info.currency_types",
+    "gold": [
+      "比特币"
+    ],
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "ac66f6ed-4260-4b15-ae7a-ac8b00df07ef",
+    "field": "judicial_analysis.legal_characterization",
+    "gold": "投资关系",
+    "master": "民间借贷",
+    "tp": 0,
+    "fp": 1,
+    "fn": 1
+  },
+  {
+    "document_id": "ac66f6ed-4260-4b15-ae7a-ac8b00df07ef",
+    "field": "judicial_analysis.virtual_currency_property_legality",
+    "gold": "未明确",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "ac66f6ed-4260-4b15-ae7a-ac8b00df07ef",
+    "field": "judicial_analysis.contract_validity",
+    "gold": null,
+    "master": "未成立",
+    "tp": 0,
+    "fp": 1,
+    "fn": 0
+  },
+  {
+    "document_id": "ac66f6ed-4260-4b15-ae7a-ac8b00df07ef",
+    "field": "judicial_analysis.cited_laws",
+    "gold": [
+      "《中华人民共和国民事诉讼法》第一百七十条"
+    ],
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "ac66f6ed-4260-4b15-ae7a-ac8b00df07ef",
+    "field": "judicial_analysis.judicial_framing",
+    "gold": [
+      "证据不足"
+    ],
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "ac66f6ed-4260-4b15-ae7a-ac8b00df07ef",
+    "field": "llm_summary.outcome_summary",
+    "gold": "驳回上诉，维持原判，驳回孙某某全部诉讼请求",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "ac66f6ed-4260-4b15-ae7a-ac8b00df07ef",
+    "field": "llm_summary.reasoning_summary",
+    "gold": "孙某某未能提供充分证据证明双方存在借贷合意，郑某1提供的微信聊天记录显示款项为投资性质，故不认定为民间借贷关系",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "35d5872d-3b14-4fed-811a-b19a00e7183f",
+    "field": "metadata.region",
+    "gold": "上海市",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "35d5872d-3b14-4fed-811a-b19a00e7183f",
+    "field": "metadata.doc_type",
+    "gold": "判决书",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "35d5872d-3b14-4fed-811a-b19a00e7183f",
+    "field": "case_profile.case_type_primary",
+    "gold": "刑事",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "35d5872d-3b14-4fed-811a-b19a00e7183f",
+    "field": "case_profile.case_type_secondary",
+    "gold": "掩饰、隐瞒犯罪所得、犯罪所得收益罪",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "35d5872d-3b14-4fed-811a-b19a00e7183f",
+    "field": "case_profile.litigant_profile.plaintiff_types",
+    "gold": [
+      "人民检察院"
+    ],
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "35d5872d-3b14-4fed-811a-b19a00e7183f",
+    "field": "case_profile.litigant_profile.defendant_types",
+    "gold": [
+      "自然人"
+    ],
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "35d5872d-3b14-4fed-811a-b19a00e7183f",
+    "field": "virtual_currency_info.involved",
+    "gold": true,
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "35d5872d-3b14-4fed-811a-b19a00e7183f",
+    "field": "virtual_currency_info.currency_types",
+    "gold": [
+      "虚拟货币"
+    ],
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "35d5872d-3b14-4fed-811a-b19a00e7183f",
+    "field": "virtual_currency_info.activity_type",
+    "gold": "洗钱/掩隐",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "35d5872d-3b14-4fed-811a-b19a00e7183f",
+    "field": "judicial_analysis.cited_laws",
+    "gold": [
+      "《中华人民共和国刑法》第三百一十二条第一款",
+      "《中华人民共和国刑法》第二十五条",
+      "《中华人民共和国刑法》第二十七条",
+      "《中华人民共和国刑法》第六十七条第三款",
+      "《中华人民共和国刑法》第五十二条",
+      "《中华人民共和国刑法》第五十三条",
+      "《中华人民共和国刑法》第六十四条",
+      "《中华人民共和国刑事诉讼法》第十五条"
+    ],
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 8
+  },
+  {
+    "document_id": "35d5872d-3b14-4fed-811a-b19a00e7183f",
+    "field": "judicial_analysis.judicial_framing",
+    "gold": [
+      "明知是犯罪所得资金而帮助转移",
+      "情节严重",
+      "从犯",
+      "坦白",
+      "认罪认罚"
+    ],
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 5
+  },
+  {
+    "document_id": "35d5872d-3b14-4fed-811a-b19a00e7183f",
+    "field": "llm_summary.outcome_summary",
+    "gold": "被告人张某某犯掩饰、隐瞒犯罪所得罪，判处有期徒刑一年四个月，并处罚金人民币一万五千元；违法所得的一切财物予以追缴或责令退赔；作案工具予以没收。",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "35d5872d-3b14-4fed-811a-b19a00e7183f",
+    "field": "llm_summary.reasoning_summary",
+    "gold": "被告人张某某明知是犯罪所得资金而帮助转移，情节严重，构成掩饰、隐瞒犯罪所得罪；在共同犯罪中系从犯，有坦白情节，自愿认罪认罚，依法从轻处罚。",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "616bb02a-31c9-443b-8642-eb6c393c9c36",
+    "field": "case_amount",
+    "gold": null,
+    "master": "10000",
+    "tp": 0,
+    "fp": 1,
+    "fn": 0
+  },
+  {
+    "document_id": "616bb02a-31c9-443b-8642-eb6c393c9c36",
+    "field": "metadata.court_level",
+    "gold": "中级法院",
+    "master": "中院",
+    "tp": 0,
+    "fp": 1,
+    "fn": 1
+  },
+  {
+    "document_id": "616bb02a-31c9-443b-8642-eb6c393c9c36",
+    "field": "metadata.region",
+    "gold": "北京市",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "616bb02a-31c9-443b-8642-eb6c393c9c36",
+    "field": "metadata.doc_type",
+    "gold": "判决书",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "616bb02a-31c9-443b-8642-eb6c393c9c36",
+    "field": "case_profile.case_type_primary",
+    "gold": "刑事",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "616bb02a-31c9-443b-8642-eb6c393c9c36",
+    "field": "case_profile.case_type_secondary",
+    "gold": "抢劫罪",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "616bb02a-31c9-443b-8642-eb6c393c9c36",
+    "field": "case_profile.litigant_profile.plaintiff_types",
+    "gold": [
+      "人民检察院"
+    ],
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "616bb02a-31c9-443b-8642-eb6c393c9c36",
+    "field": "case_profile.litigant_profile.defendant_types",
+    "gold": [
+      "自然人"
+    ],
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "616bb02a-31c9-443b-8642-eb6c393c9c36",
+    "field": "virtual_currency_info.involved",
+    "gold": false,
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "616bb02a-31c9-443b-8642-eb6c393c9c36",
+    "field": "judicial_analysis.cited_laws",
+    "gold": [
+      "《中华人民共和国刑法》第二百六十三条第(五)项",
+      "《中华人民共和国刑法》第二十五条第一款",
+      "《中华人民共和国刑法》第二十七条",
+      "《中华人民共和国刑法》第五十二条",
+      "《中华人民共和国刑法》第五十三条",
+      "《中华人民共和国刑法》第六十一条",
+      "《中华人民共和国刑法》第六十四条",
+      "《最高人民法院关于适用财产刑若干问题的规定》第二条第一款",
+      "《最高人民法院关于适用财产刑若干问题的规定》第五条"
+    ],
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 9
+  },
+  {
+    "document_id": "616bb02a-31c9-443b-8642-eb6c393c9c36",
+    "field": "judicial_analysis.judicial_framing",
+    "gold": [
+      "共同犯罪",
+      "从犯",
+      "减轻处罚"
+    ],
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 3
+  },
+  {
+    "document_id": "616bb02a-31c9-443b-8642-eb6c393c9c36",
+    "field": "llm_summary.outcome_summary",
+    "gold": "被告人蒋某某犯抢劫罪，判处有期徒刑四年，并处罚金人民币八千元。",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "616bb02a-31c9-443b-8642-eb6c393c9c36",
+    "field": "llm_summary.reasoning_summary",
+    "gold": "蒋某某受他人纠集参与抢劫，在共同犯罪中起次要、辅助作用，系从犯；能积极赔偿被害方经济损失并取得谅解，依法减轻处罚。",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "a46f1dd8-9510-4721-b0d3-a7af008d5c42",
+    "field": "metadata.court_level",
+    "gold": "中级法院",
+    "master": "中院",
+    "tp": 0,
+    "fp": 1,
+    "fn": 1
+  },
+  {
+    "document_id": "a46f1dd8-9510-4721-b0d3-a7af008d5c42",
+    "field": "metadata.first_instance_case_number",
+    "gold": null,
+    "master": "（2016）桂1002刑初23号",
+    "tp": 0,
+    "fp": 1,
+    "fn": 0
+  },
+  {
+    "document_id": "a46f1dd8-9510-4721-b0d3-a7af008d5c42",
+    "field": "metadata.region",
+    "gold": "广西壮族自治区",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "a46f1dd8-9510-4721-b0d3-a7af008d5c42",
+    "field": "metadata.doc_type",
+    "gold": "判决书",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "a46f1dd8-9510-4721-b0d3-a7af008d5c42",
+    "field": "case_profile.case_type_primary",
+    "gold": "刑事",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "a46f1dd8-9510-4721-b0d3-a7af008d5c42",
+    "field": "case_profile.case_type_secondary",
+    "gold": "诈骗罪",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "a46f1dd8-9510-4721-b0d3-a7af008d5c42",
+    "field": "case_profile.litigant_profile.plaintiff_types",
+    "gold": [
+      "人民检察院"
+    ],
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "a46f1dd8-9510-4721-b0d3-a7af008d5c42",
+    "field": "case_profile.litigant_profile.defendant_types",
+    "gold": [
+      "自然人"
+    ],
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "a46f1dd8-9510-4721-b0d3-a7af008d5c42",
+    "field": "virtual_currency_info.involved",
+    "gold": true,
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "a46f1dd8-9510-4721-b0d3-a7af008d5c42",
+    "field": "virtual_currency_info.currency_types",
+    "gold": [
+      "老K游戏币",
+      "K币",
+      "游戏金币"
+    ],
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 3
+  },
+  {
+    "document_id": "a46f1dd8-9510-4721-b0d3-a7af008d5c42",
+    "field": "virtual_currency_info.activity_type",
+    "gold": "赌博",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "a46f1dd8-9510-4721-b0d3-a7af008d5c42",
+    "field": "judicial_analysis.virtual_currency_property_legality",
+    "gold": "未明确",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "a46f1dd8-9510-4721-b0d3-a7af008d5c42",
+    "field": "judicial_analysis.cited_laws",
+    "gold": [
+      "《中华人民共和国刑法》第二百六十六条",
+      "《中华人民共和国刑法》第六十七条第一款",
+      "《中华人民共和国刑法》第六十四条",
+      "《最高人民法院、最高人民检察院关于办理诈骗刑事案件具体应用法律若干问题的解释》第一条",
+      "《中华人民共和国刑事诉讼法》第二百二十五条第一款第(一)、(二)项"
+    ],
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 5
+  },
+  {
+    "document_id": "a46f1dd8-9510-4721-b0d3-a7af008d5c42",
+    "field": "judicial_analysis.judicial_framing",
+    "gold": [
+      "定罪处罚",
+      "退赔被害人"
+    ],
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 2
+  },
+  {
+    "document_id": "a46f1dd8-9510-4721-b0d3-a7af008d5c42",
+    "field": "llm_summary.outcome_summary",
+    "gold": "维持一审责令退赔246892元，改判有期徒刑四年六个月并处罚金一万元",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "a46f1dd8-9510-4721-b0d3-a7af008d5c42",
+    "field": "llm_summary.reasoning_summary",
+    "gold": "上诉人农某某以非法占有为目的，虚构事实骗取他人手机款246892元，数额巨大，构成诈骗罪；二审认定其有自首情节，依法从轻处罚。",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "7b80c1af-ee8a-4aa7-be48-aca10183bd2b",
+    "field": "metadata.region",
+    "gold": "湖南省",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "7b80c1af-ee8a-4aa7-be48-aca10183bd2b",
+    "field": "metadata.doc_type",
+    "gold": "判决书",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "7b80c1af-ee8a-4aa7-be48-aca10183bd2b",
+    "field": "case_profile.case_type_primary",
+    "gold": "刑事",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "7b80c1af-ee8a-4aa7-be48-aca10183bd2b",
+    "field": "case_profile.case_type_secondary",
+    "gold": "诈骗罪",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "7b80c1af-ee8a-4aa7-be48-aca10183bd2b",
+    "field": "case_profile.litigant_profile.plaintiff_types",
+    "gold": [
+      "人民检察院"
+    ],
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "7b80c1af-ee8a-4aa7-be48-aca10183bd2b",
+    "field": "case_profile.litigant_profile.defendant_types",
+    "gold": [
+      "自然人"
+    ],
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "7b80c1af-ee8a-4aa7-be48-aca10183bd2b",
+    "field": "virtual_currency_info.involved",
+    "gold": true,
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "7b80c1af-ee8a-4aa7-be48-aca10183bd2b",
+    "field": "virtual_currency_info.currency_types",
+    "gold": [
+      "POW币",
+      "ETV币",
+      "以太币",
+      "USDT"
+    ],
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 4
+  },
+  {
+    "document_id": "7b80c1af-ee8a-4aa7-be48-aca10183bd2b",
+    "field": "virtual_currency_info.activity_type",
+    "gold": "其他",
+    "master": "发币/ICO",
+    "tp": 0,
+    "fp": 1,
+    "fn": 1
+  },
+  {
+    "document_id": "7b80c1af-ee8a-4aa7-be48-aca10183bd2b",
+    "field": "judicial_analysis.virtual_currency_property_legality",
+    "gold": "未明确",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "7b80c1af-ee8a-4aa7-be48-aca10183bd2b",
+    "field": "judicial_analysis.contract_validity",
+    "gold": null,
+    "master": "无效",
+    "tp": 0,
+    "fp": 1,
+    "fn": 0
+  },
+  {
+    "document_id": "7b80c1af-ee8a-4aa7-be48-aca10183bd2b",
+    "field": "judicial_analysis.cited_laws",
+    "gold": [
+      "《中华人民共和国刑法》第二百六十六条",
+      "《中华人民共和国刑法》第二十五条第一款",
+      "《中华人民共和国刑法》第二十六条第一款和第四款",
+      "《中华人民共和国刑法》第二十七条",
+      "《中华人民共和国刑法》第六十七条第一款、第三款",
+      "《中华人民共和国刑法》第五十二条",
+      "《中华人民共和国刑法》第五十三条",
+      "《中华人民共和国刑法》第六十四条",
+      "《中华人民共和国刑事诉讼法》第二百条第(一)项"
+    ],
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 9
+  },
+  {
+    "document_id": "7b80c1af-ee8a-4aa7-be48-aca10183bd2b",
+    "field": "judicial_analysis.judicial_framing",
+    "gold": [
+      "刑民交叉"
+    ],
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "7b80c1af-ee8a-4aa7-be48-aca10183bd2b",
+    "field": "llm_summary.outcome_summary",
+    "gold": "四被告人犯诈骗罪，分别判处有期徒刑十年三个月、四年三个月、四年二个月、三年，并处罚金，责令共同退赔被害人共计856180元。",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "7b80c1af-ee8a-4aa7-be48-aca10183bd2b",
+    "field": "llm_summary.reasoning_summary",
+    "gold": "被告人以非法占有为目的，虚构事实、隐瞒真相，利用销售虚拟货币POW币项目骗取他人钱财，数额特别巨大，构成诈骗罪。",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "6b7a1178-6a7e-4770-87be-acc200c262f2",
+    "field": "metadata.court_name",
+    "gold": "上海市杨浦区人民法院",
+    "master": "杨浦区人民法院",
+    "tp": 0,
+    "fp": 1,
+    "fn": 1
+  },
+  {
+    "document_id": "6b7a1178-6a7e-4770-87be-acc200c262f2",
+    "field": "metadata.region",
+    "gold": "上海市",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "6b7a1178-6a7e-4770-87be-acc200c262f2",
+    "field": "metadata.doc_type",
+    "gold": "判决书",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "6b7a1178-6a7e-4770-87be-acc200c262f2",
+    "field": "case_profile.case_type_primary",
+    "gold": "刑事",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "6b7a1178-6a7e-4770-87be-acc200c262f2",
+    "field": "case_profile.case_type_secondary",
+    "gold": "诈骗罪",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "6b7a1178-6a7e-4770-87be-acc200c262f2",
+    "field": "case_profile.litigant_profile.plaintiff_types",
+    "gold": [
+      "人民检察院"
+    ],
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "6b7a1178-6a7e-4770-87be-acc200c262f2",
+    "field": "case_profile.litigant_profile.defendant_types",
+    "gold": [
+      "自然人"
+    ],
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "6b7a1178-6a7e-4770-87be-acc200c262f2",
+    "field": "virtual_currency_info.involved",
+    "gold": true,
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "6b7a1178-6a7e-4770-87be-acc200c262f2",
+    "field": "virtual_currency_info.currency_types",
+    "gold": [
+      "数字货币",
+      "DSM",
+      "BHZY"
+    ],
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 3
+  },
+  {
+    "document_id": "6b7a1178-6a7e-4770-87be-acc200c262f2",
+    "field": "virtual_currency_info.activity_type",
+    "gold": "诈骗",
+    "master": "场外OTC/私下转账",
+    "tp": 0,
+    "fp": 1,
+    "fn": 1
+  },
+  {
+    "document_id": "6b7a1178-6a7e-4770-87be-acc200c262f2",
+    "field": "judicial_analysis.virtual_currency_property_legality",
+    "gold": "未明确",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "6b7a1178-6a7e-4770-87be-acc200c262f2",
+    "field": "judicial_analysis.cited_laws",
+    "gold": [
+      "《中华人民共和国刑法》第二百六十六条",
+      "《中华人民共和国刑法》第二十五条第一款",
+      "《中华人民共和国刑法》第二十七条",
+      "《中华人民共和国刑法》第六十七条第三款",
+      "《中华人民共和国刑法》第五十二条",
+      "《中华人民共和国刑法》第五十三条",
+      "《中华人民共和国刑法》第六十四条",
+      "《中华人民共和国刑事诉讼法》第十五条"
+    ],
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 8
+  },
+  {
+    "document_id": "6b7a1178-6a7e-4770-87be-acc200c262f2",
+    "field": "judicial_analysis.judicial_framing",
+    "gold": [
+      "定罪处罚",
+      "从犯",
+      "退赔部分赃款"
+    ],
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 3
+  },
+  {
+    "document_id": "6b7a1178-6a7e-4770-87be-acc200c262f2",
+    "field": "llm_summary.outcome_summary",
+    "gold": "被告人谢某某犯诈骗罪，判处有期徒刑七年六个月，罚金五万元；被告人檀某某犯诈骗罪，判处有期徒刑五年，罚金二万元；违法所得予以追缴，不足部分责令继续退赔。",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "6b7a1178-6a7e-4770-87be-acc200c262f2",
+    "field": "llm_summary.reasoning_summary",
+    "gold": "被告人谢某某、檀某某伙同他人以非法占有为目的，通过虚假数字货币投资骗取被害人财物，数额特别巨大，构成诈骗罪；二人系从犯，到案后如实供述、认罪认罚、退赔部分赃款，依法减轻处罚。",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "7915dd4e-1f9c-4455-bd74-b20b00193f93",
+    "field": "case_amount",
+    "gold": null,
+    "master": "10000",
+    "tp": 0,
+    "fp": 1,
+    "fn": 0
+  },
+  {
+    "document_id": "7915dd4e-1f9c-4455-bd74-b20b00193f93",
+    "field": "metadata.region",
+    "gold": "辽宁省",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "7915dd4e-1f9c-4455-bd74-b20b00193f93",
+    "field": "metadata.doc_type",
+    "gold": "判决书",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "7915dd4e-1f9c-4455-bd74-b20b00193f93",
+    "field": "case_profile.case_type_primary",
+    "gold": "民事",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "7915dd4e-1f9c-4455-bd74-b20b00193f93",
+    "field": "case_profile.case_type_secondary",
+    "gold": "演出合同纠纷",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "7915dd4e-1f9c-4455-bd74-b20b00193f93",
+    "field": "case_profile.litigant_profile.plaintiff_types",
+    "gold": [
+      "法人"
+    ],
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "7915dd4e-1f9c-4455-bd74-b20b00193f93",
+    "field": "case_profile.litigant_profile.defendant_types",
+    "gold": [
+      "自然人"
+    ],
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "7915dd4e-1f9c-4455-bd74-b20b00193f93",
+    "field": "virtual_currency_info.involved",
+    "gold": false,
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "7915dd4e-1f9c-4455-bd74-b20b00193f93",
+    "field": "judicial_analysis.cited_laws",
+    "gold": [
+      "《中华人民共和国民法典》第七条",
+      "《中华人民共和国民法典》第四百六十五条第一款",
+      "《中华人民共和国民法典》第五百零九条",
+      "《中华人民共和国民法典》第五百六十二条",
+      "《中华人民共和国民法典》第五百六十五条",
+      "《中华人民共和国民法典》第五百七十七条",
+      "《中华人民共和国民法典》第五百八十五条第一款",
+      "《最高人民法院关于民事诉讼证据的若干规定》第八十五条",
+      "《最高人民法院关于民事诉讼证据的若干规定》第八十八条",
+      "《中华人民共和国民事诉讼法》第六十七条",
+      "《中华人民共和国民事诉讼法》第一百四十七条",
+      "《最高人民法院关于适用〈中华人民共和国民事诉讼法〉的解释》第九十条"
+    ],
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 12
+  },
+  {
+    "document_id": "7915dd4e-1f9c-4455-bd74-b20b00193f93",
+    "field": "judicial_analysis.judicial_framing",
+    "gold": [
+      "合同有效",
+      "违约",
+      "违约金调整"
+    ],
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 3
+  },
+  {
+    "document_id": "7915dd4e-1f9c-4455-bd74-b20b00193f93",
+    "field": "llm_summary.outcome_summary",
+    "gold": "确认合同于2024年2月23日解除；判令被告支付违约金10000元及保全保险费1000元；驳回其他诉讼请求。",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "7915dd4e-1f9c-4455-bd74-b20b00193f93",
+    "field": "llm_summary.reasoning_summary",
+    "gold": "合同合法有效，被告未按约定直播并使用其他账号直播构成违约，但约定违约金过高，法院酌情调减为10000元。",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "eb167c8d-63b9-4534-8154-b14101840d30",
+    "field": "metadata.region",
+    "gold": "山东省",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "eb167c8d-63b9-4534-8154-b14101840d30",
+    "field": "metadata.doc_type",
+    "gold": "判决书",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "eb167c8d-63b9-4534-8154-b14101840d30",
+    "field": "case_profile.case_type_primary",
+    "gold": "刑事",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "eb167c8d-63b9-4534-8154-b14101840d30",
+    "field": "case_profile.case_type_secondary",
+    "gold": "诈骗罪",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "eb167c8d-63b9-4534-8154-b14101840d30",
+    "field": "case_profile.litigant_profile.plaintiff_types",
+    "gold": [
+      "人民检察院"
+    ],
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "eb167c8d-63b9-4534-8154-b14101840d30",
+    "field": "case_profile.litigant_profile.defendant_types",
+    "gold": [
+      "自然人"
+    ],
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "eb167c8d-63b9-4534-8154-b14101840d30",
+    "field": "virtual_currency_info.involved",
+    "gold": true,
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "eb167c8d-63b9-4534-8154-b14101840d30",
+    "field": "virtual_currency_info.currency_types",
+    "gold": [
+      "虚拟币"
+    ],
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "eb167c8d-63b9-4534-8154-b14101840d30",
+    "field": "judicial_analysis.virtual_currency_property_legality",
+    "gold": "未明确",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "eb167c8d-63b9-4534-8154-b14101840d30",
+    "field": "judicial_analysis.cited_laws",
+    "gold": [
+      "《中华人民共和国刑法》第二百六十六条",
+      "《中华人民共和国刑法》第六十七条第一款",
+      "《中华人民共和国刑法》第七十二条第一款、第三款",
+      "《中华人民共和国刑法》第七十三条第一款、第三款",
+      "《中华人民共和国刑法》第五十二条",
+      "《中华人民共和国刑法》第五十三条",
+      "《中华人民共和国刑事诉讼法》第二百零一条"
+    ],
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 7
+  },
+  {
+    "document_id": "eb167c8d-63b9-4534-8154-b14101840d30",
+    "field": "judicial_analysis.judicial_framing",
+    "gold": [
+      "诈骗罪"
+    ],
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "eb167c8d-63b9-4534-8154-b14101840d30",
+    "field": "llm_summary.outcome_summary",
+    "gold": "被告人莫某某犯诈骗罪，判处拘役五个月，缓刑六个月，并处罚金人民币二千元。",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "eb167c8d-63b9-4534-8154-b14101840d30",
+    "field": "llm_summary.reasoning_summary",
+    "gold": "被告人莫某某以非法占有为目的，虚构事实骗取他人财物8000元，数额较大，构成诈骗罪；其具有自首、认罪认罚、退赔谅解等情节，依法从轻处罚并适用缓刑。",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "45313e2e-1c77-49d7-b486-af7b00c6525c",
+    "field": "case_amount",
+    "gold": 890091.12,
+    "master": "128058",
+    "tp": 0,
+    "fp": 1,
+    "fn": 1
+  },
+  {
+    "document_id": "45313e2e-1c77-49d7-b486-af7b00c6525c",
+    "field": "metadata.region",
+    "gold": "甘肃省",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "45313e2e-1c77-49d7-b486-af7b00c6525c",
+    "field": "metadata.doc_type",
+    "gold": "判决书",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "45313e2e-1c77-49d7-b486-af7b00c6525c",
+    "field": "case_profile.case_type_primary",
+    "gold": "刑事",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "45313e2e-1c77-49d7-b486-af7b00c6525c",
+    "field": "case_profile.case_type_secondary",
+    "gold": "掩饰、隐瞒犯罪所得、犯罪所得收益罪",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "45313e2e-1c77-49d7-b486-af7b00c6525c",
+    "field": "case_profile.litigant_profile.plaintiff_types",
+    "gold": [
+      "人民检察院"
+    ],
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "45313e2e-1c77-49d7-b486-af7b00c6525c",
+    "field": "case_profile.litigant_profile.defendant_types",
+    "gold": [
+      "自然人"
+    ],
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "45313e2e-1c77-49d7-b486-af7b00c6525c",
+    "field": "virtual_currency_info.involved",
+    "gold": true,
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "45313e2e-1c77-49d7-b486-af7b00c6525c",
+    "field": "virtual_currency_info.currency_types",
+    "gold": [
+      "USDT",
+      "泰达币"
+    ],
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 2
+  },
+  {
+    "document_id": "45313e2e-1c77-49d7-b486-af7b00c6525c",
+    "field": "virtual_currency_info.activity_type",
+    "gold": "洗钱/掩隐",
+    "master": "场外交易(OTC)",
+    "tp": 0,
+    "fp": 1,
+    "fn": 1
+  },
+  {
+    "document_id": "45313e2e-1c77-49d7-b486-af7b00c6525c",
+    "field": "judicial_analysis.virtual_currency_property_legality",
+    "gold": "未明确",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "45313e2e-1c77-49d7-b486-af7b00c6525c",
+    "field": "judicial_analysis.cited_laws",
+    "gold": [
+      "《中华人民共和国刑法》第三百一十二条第一款",
+      "《中华人民共和国刑法》第二十五条第一款",
+      "《中华人民共和国刑法》第二十七条",
+      "《中华人民共和国刑法》第六十四条",
+      "《中华人民共和国刑法》第六十七条第一款",
+      "《中华人民共和国刑法》第七十二条第一、三款",
+      "《中华人民共和国刑法》第七十三条第二、三款"
+    ],
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 7
+  },
+  {
+    "document_id": "45313e2e-1c77-49d7-b486-af7b00c6525c",
+    "field": "judicial_analysis.judicial_framing",
+    "gold": [
+      "自首",
+      "认罪认罚",
+      "退赃退赔",
+      "初犯",
+      "适用缓刑"
+    ],
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 5
+  },
+  {
+    "document_id": "45313e2e-1c77-49d7-b486-af7b00c6525c",
+    "field": "llm_summary.outcome_summary",
+    "gold": "三被告人均犯掩饰、隐瞒犯罪所得罪，张某2、张某1情节严重，分别判处有期徒刑一年六个月缓刑三年和二年，并处罚金10000元；阎某某判处拘役六个月缓刑一年，并处罚金5000元；违法所得没收，退赔被害人损失。",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "45313e2e-1c77-49d7-b486-af7b00c6525c",
+    "field": "llm_summary.reasoning_summary",
+    "gold": "三被告人明知所转移资金是犯罪所得，仍提供银行卡并帮助转移，构成掩饰、隐瞒犯罪所得罪；均系自首、认罪认罚、退赃退赔，依法从轻处罚并适用缓刑。",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "469d40c4-6ea5-45e6-a8ac-af2e00335e91",
+    "field": "case_amount",
+    "gold": null,
+    "master": "12000",
+    "tp": 0,
+    "fp": 1,
+    "fn": 0
+  },
+  {
+    "document_id": "469d40c4-6ea5-45e6-a8ac-af2e00335e91",
+    "field": "metadata.region",
+    "gold": "广东省",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "469d40c4-6ea5-45e6-a8ac-af2e00335e91",
+    "field": "metadata.doc_type",
+    "gold": "判决书",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "469d40c4-6ea5-45e6-a8ac-af2e00335e91",
+    "field": "case_profile.case_type_primary",
+    "gold": "民事",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "469d40c4-6ea5-45e6-a8ac-af2e00335e91",
+    "field": "case_profile.case_type_secondary",
+    "gold": "著作权权属纠纷",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "469d40c4-6ea5-45e6-a8ac-af2e00335e91",
+    "field": "case_profile.litigant_profile.plaintiff_types",
+    "gold": [
+      "法人"
+    ],
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "469d40c4-6ea5-45e6-a8ac-af2e00335e91",
+    "field": "case_profile.litigant_profile.defendant_types",
+    "gold": [
+      "法人"
+    ],
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "469d40c4-6ea5-45e6-a8ac-af2e00335e91",
+    "field": "virtual_currency_info.involved",
+    "gold": false,
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "469d40c4-6ea5-45e6-a8ac-af2e00335e91",
+    "field": "judicial_analysis.legal_characterization",
+    "gold": "著作权侵权纠纷",
+    "master": "著作权侵权",
+    "tp": 0,
+    "fp": 1,
+    "fn": 1
+  },
+  {
+    "document_id": "469d40c4-6ea5-45e6-a8ac-af2e00335e91",
+    "field": "judicial_analysis.cited_laws",
+    "gold": [
+      "《中华人民共和国著作权法》第九条第一款",
+      "《中华人民共和国著作权法》第十条第一款第十二项",
+      "《中华人民共和国著作权法》第十一条第一、二款",
+      "《中华人民共和国著作权法》第十二条第一款",
+      "《中华人民共和国著作权法》第五十二条",
+      "《中华人民共和国著作权法》第五十三条",
+      "《中华人民共和国著作权法》第五十四条第二款",
+      "《最高人民法院关于审理著作权民事纠纷案件适用法律若干问题的解释》第七条",
+      "《最高人民法院关于审理著作权民事纠纷案件适用法律若干问题的解释》第二十五条第一、二款",
+      "《最高人民法院关于审理著作权民事纠纷案件适用法律若干问题的解释》第二十六条",
+      "《中华人民共和国民事诉讼法》第六十七条第一款"
+    ],
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 11
+  },
+  {
+    "document_id": "469d40c4-6ea5-45e6-a8ac-af2e00335e91",
+    "field": "judicial_analysis.judicial_framing",
+    "gold": [
+      "停止侵权",
+      "赔偿损失"
+    ],
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 2
+  },
+  {
+    "document_id": "469d40c4-6ea5-45e6-a8ac-af2e00335e91",
+    "field": "llm_summary.outcome_summary",
+    "gold": "判令被告停止侵权，并赔偿原告经济损失及合理费用12000元，驳回原告其他诉讼请求。",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "469d40c4-6ea5-45e6-a8ac-af2e00335e91",
+    "field": "llm_summary.reasoning_summary",
+    "gold": "被告未经许可在其运营的网站上发布原告享有信息网络传播权的文章，构成侵权；因实际损失和违法所得难以确定，法院综合考虑作品类型、侵权情节等因素酌定赔偿数额。",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "90405648-be26-4234-ab08-acf0009fc5f4",
+    "field": "case_amount",
+    "gold": 40000,
+    "master": "20000",
+    "tp": 0,
+    "fp": 1,
+    "fn": 1
+  },
+  {
+    "document_id": "90405648-be26-4234-ab08-acf0009fc5f4",
+    "field": "metadata.region",
+    "gold": "山东省",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "90405648-be26-4234-ab08-acf0009fc5f4",
+    "field": "metadata.doc_type",
+    "gold": "判决书",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "90405648-be26-4234-ab08-acf0009fc5f4",
+    "field": "case_profile.case_type_primary",
+    "gold": "民事",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "90405648-be26-4234-ab08-acf0009fc5f4",
+    "field": "case_profile.case_type_secondary",
+    "gold": "委托合同纠纷",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "90405648-be26-4234-ab08-acf0009fc5f4",
+    "field": "case_profile.litigant_profile.plaintiff_types",
+    "gold": [
+      "自然人"
+    ],
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "90405648-be26-4234-ab08-acf0009fc5f4",
+    "field": "case_profile.litigant_profile.defendant_types",
+    "gold": [
+      "自然人"
+    ],
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "90405648-be26-4234-ab08-acf0009fc5f4",
+    "field": "virtual_currency_info.involved",
+    "gold": true,
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "90405648-be26-4234-ab08-acf0009fc5f4",
+    "field": "virtual_currency_info.currency_types",
+    "gold": [
+      "ATT币",
+      "虚拟货币"
+    ],
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 2
+  },
+  {
+    "document_id": "90405648-be26-4234-ab08-acf0009fc5f4",
+    "field": "virtual_currency_info.activity_type",
+    "gold": "其他",
+    "master": "委托理财/代投",
+    "tp": 0,
+    "fp": 1,
+    "fn": 1
+  },
+  {
+    "document_id": "90405648-be26-4234-ab08-acf0009fc5f4",
+    "field": "judicial_analysis.virtual_currency_property_legality",
+    "gold": "未明确",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "90405648-be26-4234-ab08-acf0009fc5f4",
+    "field": "judicial_analysis.cited_laws",
+    "gold": [
+      "《中华人民共和国合同法》第六十条第一款",
+      "《中华人民共和国合同法》第九十六条",
+      "《中华人民共和国合同法》第九十七条",
+      "《中华人民共和国合同法》第三百九十六条",
+      "《中华人民共和国合同法》第四百零二条",
+      "《中华人民共和国合同法》第四百一十条",
+      "《最高人民法院关于适用<中华人民共和国民法典>时间效力的若干规定》第一条",
+      "《中华人民共和国民事诉讼法》第六十四条第一款"
+    ],
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 8
+  },
+  {
+    "document_id": "90405648-be26-4234-ab08-acf0009fc5f4",
+    "field": "judicial_analysis.judicial_framing",
+    "gold": [
+      "返还本金"
+    ],
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "90405648-be26-4234-ab08-acf0009fc5f4",
+    "field": "llm_summary.outcome_summary",
+    "gold": "部分支持原告诉请，判令被告返还原告20000元及相应利息，驳回其他诉讼请求。",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "90405648-be26-4234-ab08-acf0009fc5f4",
+    "field": "llm_summary.reasoning_summary",
+    "gold": "法院认定双方为委托合同关系，合同合法有效；原告解除合同后，被告已向平台支付20000元，该部分原告无权要求返还；剩余20000元被告未能证明已支付，应返还给原告。",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "ad1896e1-a2f8-47f3-8f94-aa6100a9518c",
+    "field": "metadata.region",
+    "gold": "湖南省",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "ad1896e1-a2f8-47f3-8f94-aa6100a9518c",
+    "field": "metadata.doc_type",
+    "gold": "判决书",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "ad1896e1-a2f8-47f3-8f94-aa6100a9518c",
+    "field": "case_profile.case_type_primary",
+    "gold": "民事",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "ad1896e1-a2f8-47f3-8f94-aa6100a9518c",
+    "field": "case_profile.case_type_secondary",
+    "gold": "买卖合同纠纷",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "ad1896e1-a2f8-47f3-8f94-aa6100a9518c",
+    "field": "case_profile.litigant_profile.plaintiff_types",
+    "gold": [
+      "自然人"
+    ],
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "ad1896e1-a2f8-47f3-8f94-aa6100a9518c",
+    "field": "case_profile.litigant_profile.defendant_types",
+    "gold": [
+      "自然人"
+    ],
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "ad1896e1-a2f8-47f3-8f94-aa6100a9518c",
+    "field": "virtual_currency_info.involved",
+    "gold": true,
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "ad1896e1-a2f8-47f3-8f94-aa6100a9518c",
+    "field": "virtual_currency_info.currency_types",
+    "gold": [
+      "QC币"
+    ],
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "ad1896e1-a2f8-47f3-8f94-aa6100a9518c",
+    "field": "judicial_analysis.legal_characterization",
+    "gold": "买卖合同纠纷",
+    "master": "买卖合同",
+    "tp": 0,
+    "fp": 1,
+    "fn": 1
+  },
+  {
+    "document_id": "ad1896e1-a2f8-47f3-8f94-aa6100a9518c",
+    "field": "judicial_analysis.virtual_currency_property_legality",
+    "gold": "未明确",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "ad1896e1-a2f8-47f3-8f94-aa6100a9518c",
+    "field": "judicial_analysis.reason_for_invalidity",
+    "gold": [
+      "违反法律强制性规定",
+      "非法金融活动"
+    ],
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 2
+  },
+  {
+    "document_id": "ad1896e1-a2f8-47f3-8f94-aa6100a9518c",
+    "field": "judicial_analysis.cited_laws",
+    "gold": [
+      "《中华人民共和国合同法》第一百三十二条",
+      "《中华人民共和国民事诉讼法》第一百四十四条"
+    ],
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 2
+  },
+  {
+    "document_id": "ad1896e1-a2f8-47f3-8f94-aa6100a9518c",
+    "field": "judicial_analysis.cited_policies",
+    "gold": [
+      "《关于防范代币发行融资风险的公告》"
+    ],
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "ad1896e1-a2f8-47f3-8f94-aa6100a9518c",
+    "field": "judicial_analysis.judicial_framing",
+    "gold": [
+      "风险自担"
+    ],
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "ad1896e1-a2f8-47f3-8f94-aa6100a9518c",
+    "field": "llm_summary.outcome_summary",
+    "gold": "驳回原告罗某某的全部诉讼请求",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "ad1896e1-a2f8-47f3-8f94-aa6100a9518c",
+    "field": "llm_summary.reasoning_summary",
+    "gold": "法院认为，根据九四公告，代币发行融资属于非法融资行为，QC币交易违反监管规定，原告应自行承担交易风险，故对诉请不予支持。",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "58e66f1c-5dc2-44d5-bdd3-ad0f00c4b2f3",
+    "field": "case_amount",
+    "gold": 100000,
+    "master": "851991",
+    "tp": 0,
+    "fp": 1,
+    "fn": 1
+  },
+  {
+    "document_id": "58e66f1c-5dc2-44d5-bdd3-ad0f00c4b2f3",
+    "field": "metadata.region",
+    "gold": "河南省",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "58e66f1c-5dc2-44d5-bdd3-ad0f00c4b2f3",
+    "field": "metadata.doc_type",
+    "gold": "判决书",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "58e66f1c-5dc2-44d5-bdd3-ad0f00c4b2f3",
+    "field": "case_profile.case_type_primary",
+    "gold": "刑事",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "58e66f1c-5dc2-44d5-bdd3-ad0f00c4b2f3",
+    "field": "case_profile.case_type_secondary",
+    "gold": "帮助信息网络犯罪活动罪",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "58e66f1c-5dc2-44d5-bdd3-ad0f00c4b2f3",
+    "field": "case_profile.litigant_profile.plaintiff_types",
+    "gold": [
+      "人民检察院"
+    ],
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "58e66f1c-5dc2-44d5-bdd3-ad0f00c4b2f3",
+    "field": "case_profile.litigant_profile.defendant_types",
+    "gold": [
+      "自然人"
+    ],
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "58e66f1c-5dc2-44d5-bdd3-ad0f00c4b2f3",
+    "field": "virtual_currency_info.involved",
+    "gold": true,
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "58e66f1c-5dc2-44d5-bdd3-ad0f00c4b2f3",
+    "field": "virtual_currency_info.currency_types",
+    "gold": [
+      "虚拟货币"
+    ],
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "58e66f1c-5dc2-44d5-bdd3-ad0f00c4b2f3",
+    "field": "virtual_currency_info.activity_type",
+    "gold": "帮助信息网络犯罪活动罪",
+    "master": "技术服务",
+    "tp": 0,
+    "fp": 1,
+    "fn": 1
+  },
+  {
+    "document_id": "58e66f1c-5dc2-44d5-bdd3-ad0f00c4b2f3",
+    "field": "judicial_analysis.virtual_currency_property_legality",
+    "gold": "未明确",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "58e66f1c-5dc2-44d5-bdd3-ad0f00c4b2f3",
+    "field": "judicial_analysis.cited_laws",
+    "gold": [
+      "《中华人民共和国刑法》第二百八十七条之二第一款",
+      "《中华人民共和国刑法》第五十二条",
+      "《中华人民共和国刑法》第五十三条",
+      "《中华人民共和国刑法》第六十四条"
+    ],
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 4
+  },
+  {
+    "document_id": "58e66f1c-5dc2-44d5-bdd3-ad0f00c4b2f3",
+    "field": "judicial_analysis.judicial_framing",
+    "gold": [
+      "支付结算帮助",
+      "情节严重"
+    ],
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 2
+  },
+  {
+    "document_id": "58e66f1c-5dc2-44d5-bdd3-ad0f00c4b2f3",
+    "field": "llm_summary.outcome_summary",
+    "gold": "被告人邓某某犯帮助信息网络犯罪活动罪，判处有期徒刑八个月，并处罚金人民币一万元；退缴的违法所得1000元上缴国库。",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "58e66f1c-5dc2-44d5-bdd3-ad0f00c4b2f3",
+    "field": "llm_summary.reasoning_summary",
+    "gold": "被告人邓某某明知他人利用信息网络实施犯罪，为其提供支付结算帮助，情节严重，构成帮助信息网络犯罪活动罪；鉴于其退出全部违法所得并认罪认罚，酌情从轻处罚。",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "e9d525e0-a2f0-4d34-8050-a958017686ec",
+    "field": "case_amount",
+    "gold": 5625000,
+    "master": "600000",
+    "tp": 0,
+    "fp": 1,
+    "fn": 1
+  },
+  {
+    "document_id": "e9d525e0-a2f0-4d34-8050-a958017686ec",
+    "field": "metadata.region",
+    "gold": "广东省",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "e9d525e0-a2f0-4d34-8050-a958017686ec",
+    "field": "metadata.doc_type",
+    "gold": "判决书",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "e9d525e0-a2f0-4d34-8050-a958017686ec",
+    "field": "case_profile.case_type_primary",
+    "gold": "民事",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "e9d525e0-a2f0-4d34-8050-a958017686ec",
+    "field": "case_profile.case_type_secondary",
+    "gold": "买卖合同纠纷",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "e9d525e0-a2f0-4d34-8050-a958017686ec",
+    "field": "case_profile.litigant_profile.plaintiff_types",
+    "gold": [
+      "自然人"
+    ],
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "e9d525e0-a2f0-4d34-8050-a958017686ec",
+    "field": "case_profile.litigant_profile.defendant_types",
+    "gold": [
+      "自然人"
+    ],
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "e9d525e0-a2f0-4d34-8050-a958017686ec",
+    "field": "virtual_currency_info.involved",
+    "gold": true,
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "e9d525e0-a2f0-4d34-8050-a958017686ec",
+    "field": "virtual_currency_info.currency_types",
+    "gold": [
+      "比特币"
+    ],
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "e9d525e0-a2f0-4d34-8050-a958017686ec",
+    "field": "virtual_currency_info.activity_type",
+    "gold": "挖矿",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "e9d525e0-a2f0-4d34-8050-a958017686ec",
+    "field": "judicial_analysis.legal_characterization",
+    "gold": "买卖合同纠纷",
+    "master": "买卖合同",
+    "tp": 0,
+    "fp": 1,
+    "fn": 1
+  },
+  {
+    "document_id": "e9d525e0-a2f0-4d34-8050-a958017686ec",
+    "field": "judicial_analysis.virtual_currency_property_legality",
+    "gold": "未明确",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "e9d525e0-a2f0-4d34-8050-a958017686ec",
+    "field": "judicial_analysis.cited_laws",
+    "gold": [
+      "《中华人民共和国合同法》第十条",
+      "《中华人民共和国合同法》第十一条",
+      "《中华人民共和国合同法》第十二条",
+      "《中华人民共和国合同法》第一百一十五条"
+    ],
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 4
+  },
+  {
+    "document_id": "e9d525e0-a2f0-4d34-8050-a958017686ec",
+    "field": "judicial_analysis.judicial_framing",
+    "gold": [
+      "风险自担"
+    ],
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "e9d525e0-a2f0-4d34-8050-a958017686ec",
+    "field": "llm_summary.outcome_summary",
+    "gold": "驳回原告张某某的诉讼请求",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "e9d525e0-a2f0-4d34-8050-a958017686ec",
+    "field": "llm_summary.reasoning_summary",
+    "gold": "法院认定原告未按约定支付余款构成根本违约，根据定金罚则，原告无权要求返还定金，故驳回其双倍返还定金的诉请。",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "af67782b-05e5-421f-8b9a-b13e00b531e1",
+    "field": "metadata.region",
+    "gold": "广东省",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "af67782b-05e5-421f-8b9a-b13e00b531e1",
+    "field": "metadata.doc_type",
+    "gold": "判决书",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "af67782b-05e5-421f-8b9a-b13e00b531e1",
+    "field": "case_profile.case_type_primary",
+    "gold": "民事",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "af67782b-05e5-421f-8b9a-b13e00b531e1",
+    "field": "case_profile.case_type_secondary",
+    "gold": "民间借贷纠纷",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "af67782b-05e5-421f-8b9a-b13e00b531e1",
+    "field": "case_profile.litigant_profile.plaintiff_types",
+    "gold": [
+      "自然人"
+    ],
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "af67782b-05e5-421f-8b9a-b13e00b531e1",
+    "field": "case_profile.litigant_profile.defendant_types",
+    "gold": [
+      "自然人",
+      "自然人"
+    ],
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "af67782b-05e5-421f-8b9a-b13e00b531e1",
+    "field": "virtual_currency_info.involved",
+    "gold": true,
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "af67782b-05e5-421f-8b9a-b13e00b531e1",
+    "field": "virtual_currency_info.currency_types",
+    "gold": [
+      "虚拟货币"
+    ],
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "af67782b-05e5-421f-8b9a-b13e00b531e1",
+    "field": "virtual_currency_info.activity_type",
+    "gold": "交易所炒币",
+    "master": "虚拟货币投资",
+    "tp": 0,
+    "fp": 1,
+    "fn": 1
+  },
+  {
+    "document_id": "af67782b-05e5-421f-8b9a-b13e00b531e1",
+    "field": "judicial_analysis.legal_characterization",
+    "gold": "投资合同",
+    "master": "投资关系",
+    "tp": 0,
+    "fp": 1,
+    "fn": 1
+  },
+  {
+    "document_id": "af67782b-05e5-421f-8b9a-b13e00b531e1",
+    "field": "judicial_analysis.virtual_currency_property_legality",
+    "gold": "未明确",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "af67782b-05e5-421f-8b9a-b13e00b531e1",
+    "field": "judicial_analysis.contract_validity",
+    "gold": null,
+    "master": "未成立",
+    "tp": 0,
+    "fp": 1,
+    "fn": 0
+  },
+  {
+    "document_id": "af67782b-05e5-421f-8b9a-b13e00b531e1",
+    "field": "judicial_analysis.cited_laws",
+    "gold": [
+      "《中华人民共和国民法典》第六百六十七条",
+      "《最高人民法院关于审理民间借贷案件适用法律若干问题的规定》第十六条",
+      "《中华人民共和国民事诉讼法》第六十七条",
+      "《最高人民法院关于适用<中华人民共和国民事诉讼法>的解释》第九十条",
+      "《最高人民法院关于适用<中华人民共和国民事诉讼法>的解释》第一百零八条"
+    ],
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 5
+  },
+  {
+    "document_id": "af67782b-05e5-421f-8b9a-b13e00b531e1",
+    "field": "judicial_analysis.judicial_framing",
+    "gold": [
+      "证据不足",
+      "风险自担"
+    ],
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 2
+  },
+  {
+    "document_id": "af67782b-05e5-421f-8b9a-b13e00b531e1",
+    "field": "llm_summary.outcome_summary",
+    "gold": "驳回原告全部诉讼请求",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "af67782b-05e5-421f-8b9a-b13e00b531e1",
+    "field": "llm_summary.reasoning_summary",
+    "gold": "法院认定案涉款项系原告自行向TR外汇网络平台的投资款，原告未能证明与被告之间存在民间借贷关系或被告承诺返还本金，投资风险应由原告自行承担。",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "ea6b12f9-0022-408d-9696-ac7f00a02318",
+    "field": "metadata.region",
+    "gold": "河南省",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "ea6b12f9-0022-408d-9696-ac7f00a02318",
+    "field": "metadata.doc_type",
+    "gold": "判决书",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "ea6b12f9-0022-408d-9696-ac7f00a02318",
+    "field": "case_profile.case_type_primary",
+    "gold": "刑事",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "ea6b12f9-0022-408d-9696-ac7f00a02318",
+    "field": "case_profile.case_type_secondary",
+    "gold": "非法拘禁罪",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "ea6b12f9-0022-408d-9696-ac7f00a02318",
+    "field": "case_profile.litigant_profile.plaintiff_types",
+    "gold": [
+      "人民检察院"
+    ],
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "ea6b12f9-0022-408d-9696-ac7f00a02318",
+    "field": "case_profile.litigant_profile.defendant_types",
+    "gold": [
+      "自然人"
+    ],
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "ea6b12f9-0022-408d-9696-ac7f00a02318",
+    "field": "virtual_currency_info.involved",
+    "gold": true,
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "ea6b12f9-0022-408d-9696-ac7f00a02318",
+    "field": "virtual_currency_info.currency_types",
+    "gold": [
+      "比特币"
+    ],
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "ea6b12f9-0022-408d-9696-ac7f00a02318",
+    "field": "virtual_currency_info.activity_type",
+    "gold": "其他",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "ea6b12f9-0022-408d-9696-ac7f00a02318",
+    "field": "judicial_analysis.cited_laws",
+    "gold": [
+      "《中华人民共和国刑法》第二百三十八条",
+      "《中华人民共和国刑法》第六十七条第一款",
+      "《中华人民共和国刑法》第七十二条第一款",
+      "《中华人民共和国刑法》第七十三条第二款、第三款",
+      "《中华人民共和国刑事诉讼法》第二百零一条"
+    ],
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 5
+  },
+  {
+    "document_id": "ea6b12f9-0022-408d-9696-ac7f00a02318",
+    "field": "llm_summary.outcome_summary",
+    "gold": "三被告人均因非法拘禁罪被判处有期徒刑并适用缓刑，且已赔偿被害人并取得谅解。",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "ea6b12f9-0022-408d-9696-ac7f00a02318",
+    "field": "llm_summary.reasoning_summary",
+    "gold": "被告人因投资比特币纠纷非法剥夺他人人身自由并殴打致轻伤，构成非法拘禁罪，鉴于自首、认罪认罚、赔偿谅解等情节从轻处罚。",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "8e5edc5c-3379-4244-9c93-ae9300c6c4a4",
+    "field": "case_amount",
+    "gold": 2500000,
+    "master": "247000",
+    "tp": 0,
+    "fp": 1,
+    "fn": 1
+  },
+  {
+    "document_id": "8e5edc5c-3379-4244-9c93-ae9300c6c4a4",
+    "field": "metadata.region",
+    "gold": "浙江省",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "8e5edc5c-3379-4244-9c93-ae9300c6c4a4",
+    "field": "metadata.doc_type",
+    "gold": "判决书",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "8e5edc5c-3379-4244-9c93-ae9300c6c4a4",
+    "field": "case_profile.case_type_primary",
+    "gold": "刑事",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "8e5edc5c-3379-4244-9c93-ae9300c6c4a4",
+    "field": "case_profile.case_type_secondary",
+    "gold": "掩饰、隐瞒犯罪所得、犯罪所得收益罪",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "8e5edc5c-3379-4244-9c93-ae9300c6c4a4",
+    "field": "case_profile.litigant_profile.plaintiff_types",
+    "gold": [
+      "人民检察院"
+    ],
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "8e5edc5c-3379-4244-9c93-ae9300c6c4a4",
+    "field": "case_profile.litigant_profile.defendant_types",
+    "gold": [
+      "自然人"
+    ],
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "8e5edc5c-3379-4244-9c93-ae9300c6c4a4",
+    "field": "virtual_currency_info.involved",
+    "gold": true,
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "8e5edc5c-3379-4244-9c93-ae9300c6c4a4",
+    "field": "virtual_currency_info.currency_types",
+    "gold": [
+      "虚拟币"
+    ],
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "8e5edc5c-3379-4244-9c93-ae9300c6c4a4",
+    "field": "virtual_currency_info.activity_type",
+    "gold": "洗钱/掩隐",
+    "master": "技术服务",
+    "tp": 0,
+    "fp": 1,
+    "fn": 1
+  },
+  {
+    "document_id": "8e5edc5c-3379-4244-9c93-ae9300c6c4a4",
+    "field": "judicial_analysis.virtual_currency_property_legality",
+    "gold": "未明确",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "8e5edc5c-3379-4244-9c93-ae9300c6c4a4",
+    "field": "judicial_analysis.cited_laws",
+    "gold": [
+      "《中华人民共和国刑法》第三百一十二条第一款",
+      "《中华人民共和国刑法》第二十五条第一款",
+      "《中华人民共和国刑法》第二十七条",
+      "《中华人民共和国刑法》第六十七条第三款",
+      "《中华人民共和国刑法》第七十二条第一款、第三款",
+      "《中华人民共和国刑法》第七十三条第二款、第三款",
+      "《中华人民共和国刑法》第五十二条",
+      "《中华人民共和国刑法》第五十三条",
+      "《中华人民共和国刑法》第六十四条"
+    ],
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 9
+  },
+  {
+    "document_id": "8e5edc5c-3379-4244-9c93-ae9300c6c4a4",
+    "field": "judicial_analysis.judicial_framing",
+    "gold": [
+      "明知是犯罪所得而帮助转移"
+    ],
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "8e5edc5c-3379-4244-9c93-ae9300c6c4a4",
+    "field": "llm_summary.outcome_summary",
+    "gold": "被告人杨少平、罗国强犯掩饰、隐瞒犯罪所得罪，分别判处有期徒刑一年三个月并处罚金4000元、有期徒刑一年二个月缓刑一年六个月并处罚金2000元，作案工具手机没收，退缴违法所得1000元发还被害人。",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "8e5edc5c-3379-4244-9c93-ae9300c6c4a4",
+    "field": "llm_summary.reasoning_summary",
+    "gold": "被告人明知银行卡接收资金系犯罪所得，仍提供账户并采用接收赃款、微信转账、购买虚拟币等方式帮助转移资金，情节严重，构成掩饰、隐瞒犯罪所得罪。",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "6cd18546-67ea-48e0-a828-238610b0b3f9",
+    "field": "metadata.court_level",
+    "gold": "中级法院",
+    "master": "中院",
+    "tp": 0,
+    "fp": 1,
+    "fn": 1
+  },
+  {
+    "document_id": "6cd18546-67ea-48e0-a828-238610b0b3f9",
+    "field": "metadata.region",
+    "gold": "北京市",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "6cd18546-67ea-48e0-a828-238610b0b3f9",
+    "field": "metadata.doc_type",
+    "gold": "判决书",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "6cd18546-67ea-48e0-a828-238610b0b3f9",
+    "field": "case_profile.case_type_primary",
+    "gold": "民事",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "6cd18546-67ea-48e0-a828-238610b0b3f9",
+    "field": "case_profile.case_type_secondary",
+    "gold": "民间借贷纠纷",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "6cd18546-67ea-48e0-a828-238610b0b3f9",
+    "field": "case_profile.litigant_profile.plaintiff_types",
+    "gold": [
+      "自然人"
+    ],
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "6cd18546-67ea-48e0-a828-238610b0b3f9",
+    "field": "case_profile.litigant_profile.defendant_types",
+    "gold": [
+      "法人"
+    ],
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "6cd18546-67ea-48e0-a828-238610b0b3f9",
+    "field": "virtual_currency_info.involved",
+    "gold": true,
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "6cd18546-67ea-48e0-a828-238610b0b3f9",
+    "field": "virtual_currency_info.currency_types",
+    "gold": [
+      "ETH",
+      "ICCTOKENS"
+    ],
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 2
+  },
+  {
+    "document_id": "6cd18546-67ea-48e0-a828-238610b0b3f9",
+    "field": "virtual_currency_info.activity_type",
+    "gold": "其他",
+    "master": "发币/ICO",
+    "tp": 0,
+    "fp": 1,
+    "fn": 1
+  },
+  {
+    "document_id": "6cd18546-67ea-48e0-a828-238610b0b3f9",
+    "field": "judicial_analysis.virtual_currency_property_legality",
+    "gold": "未明确",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "6cd18546-67ea-48e0-a828-238610b0b3f9",
+    "field": "judicial_analysis.cited_laws",
+    "gold": [
+      "《中华人民共和国民法典》第六百七十五条",
+      "《中华人民共和国民法典》第六百七十六条",
+      "《最高人民法院关于审理民间借贷案件适用法律若干问题的规定》第九条",
+      "《最高人民法院关于审理民间借贷案件适用法律若干问题的规定》第二十八条",
+      "《最高人民法院关于适用〈中华人民共和国民法典〉时间效力的若干规定》第一条第三款",
+      "《中华人民共和国民事诉讼法》第一百七十七条第一款第一项"
+    ],
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 6
+  },
+  {
+    "document_id": "6cd18546-67ea-48e0-a828-238610b0b3f9",
+    "field": "judicial_analysis.judicial_framing",
+    "gold": [
+      "证据不足"
+    ],
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "6cd18546-67ea-48e0-a828-238610b0b3f9",
+    "field": "llm_summary.outcome_summary",
+    "gold": "驳回上诉，维持原判，支持冉某某要求能通天下公司偿还借款本金900万元及利息的诉讼请求。",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "6cd18546-67ea-48e0-a828-238610b0b3f9",
+    "field": "llm_summary.reasoning_summary",
+    "gold": "法院认定冉某某与能通天下公司之间的《借款协议》及补充协议系真实意思表示，能通天下公司未能举证证明款项为合作款或债权虚构，应承担举证不利后果，故应依约还款。",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "fbd48b63-51c5-482f-918c-adf10189fbed",
+    "field": "metadata.region",
+    "gold": "云南省",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "fbd48b63-51c5-482f-918c-adf10189fbed",
+    "field": "metadata.doc_type",
+    "gold": "判决书",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "fbd48b63-51c5-482f-918c-adf10189fbed",
+    "field": "case_profile.case_type_primary",
+    "gold": "刑事",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "fbd48b63-51c5-482f-918c-adf10189fbed",
+    "field": "case_profile.case_type_secondary",
+    "gold": "开设赌场罪",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "fbd48b63-51c5-482f-918c-adf10189fbed",
+    "field": "case_profile.litigant_profile.plaintiff_types",
+    "gold": [
+      "人民检察院"
+    ],
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "fbd48b63-51c5-482f-918c-adf10189fbed",
+    "field": "case_profile.litigant_profile.defendant_types",
+    "gold": [
+      "自然人"
+    ],
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "fbd48b63-51c5-482f-918c-adf10189fbed",
+    "field": "virtual_currency_info.involved",
+    "gold": false,
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "fbd48b63-51c5-482f-918c-adf10189fbed",
+    "field": "judicial_analysis.cited_laws",
+    "gold": [
+      "《中华人民共和国刑法》第三百零三条第二款",
+      "《中华人民共和国刑法》第二十五条第一款",
+      "《中华人民共和国刑法》第二十七条",
+      "《中华人民共和国刑法》第六十一条",
+      "《中华人民共和国刑法》第六十七条第三款",
+      "《中华人民共和国刑法》第五十二条",
+      "《中华人民共和国刑法》第五十三条",
+      "《中华人民共和国刑法》第六十四条"
+    ],
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 8
+  },
+  {
+    "document_id": "fbd48b63-51c5-482f-918c-adf10189fbed",
+    "field": "judicial_analysis.judicial_framing",
+    "gold": [
+      "情节严重",
+      "从犯",
+      "坦白"
+    ],
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 3
+  },
+  {
+    "document_id": "fbd48b63-51c5-482f-918c-adf10189fbed",
+    "field": "llm_summary.outcome_summary",
+    "gold": "被告人张某某犯开设赌场罪，判处有期徒刑三年，并处罚金人民币35000元，随案移送的手机1部、笔记本电脑1台予以没收。",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "fbd48b63-51c5-482f-918c-adf10189fbed",
+    "field": "llm_summary.reasoning_summary",
+    "gold": "法院认定被告人张某某为赌博网站担任代理，发展下线会员47人，有效投注总金额累计1091.2万余元，情节严重，构成开设赌场罪；鉴于其系从犯、有坦白情节，依法从轻处罚。",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "86e93fdb-3336-4b86-8740-b1d301404d5a",
+    "field": "case_amount",
+    "gold": 1427729,
+    "master": "NA",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "86e93fdb-3336-4b86-8740-b1d301404d5a",
+    "field": "metadata.region",
+    "gold": "四川省",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "86e93fdb-3336-4b86-8740-b1d301404d5a",
+    "field": "metadata.doc_type",
+    "gold": "判决书",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "86e93fdb-3336-4b86-8740-b1d301404d5a",
+    "field": "case_profile.case_type_primary",
+    "gold": "民事",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "86e93fdb-3336-4b86-8740-b1d301404d5a",
+    "field": "case_profile.case_type_secondary",
+    "gold": "民间借贷纠纷",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "86e93fdb-3336-4b86-8740-b1d301404d5a",
+    "field": "case_profile.litigant_profile.plaintiff_types",
+    "gold": [
+      "自然人"
+    ],
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "86e93fdb-3336-4b86-8740-b1d301404d5a",
+    "field": "case_profile.litigant_profile.defendant_types",
+    "gold": [
+      "自然人"
+    ],
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "86e93fdb-3336-4b86-8740-b1d301404d5a",
+    "field": "virtual_currency_info.involved",
+    "gold": true,
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "86e93fdb-3336-4b86-8740-b1d301404d5a",
+    "field": "virtual_currency_info.currency_types",
+    "gold": [
+      "USDT"
+    ],
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "86e93fdb-3336-4b86-8740-b1d301404d5a",
+    "field": "virtual_currency_info.activity_type",
+    "gold": "虚拟货币借贷",
+    "master": "委托理财/代投",
+    "tp": 0,
+    "fp": 1,
+    "fn": 1
+  },
+  {
+    "document_id": "86e93fdb-3336-4b86-8740-b1d301404d5a",
+    "field": "judicial_analysis.virtual_currency_property_legality",
+    "gold": "未明确",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "86e93fdb-3336-4b86-8740-b1d301404d5a",
+    "field": "judicial_analysis.contract_validity",
+    "gold": null,
+    "master": "未成立",
+    "tp": 0,
+    "fp": 1,
+    "fn": 0
+  },
+  {
+    "document_id": "86e93fdb-3336-4b86-8740-b1d301404d5a",
+    "field": "judicial_analysis.cited_laws",
+    "gold": [
+      "《最高人民法院关于审理民间借贷案件适用法律若干问题的规定(2020第二次修正)》第二条",
+      "《最高人民法院关于审理民间借贷案件适用法律若干问题的规定(2020第二次修正)》第十六条",
+      "《中华人民共和国民事诉讼法》第六十九条"
+    ],
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 3
+  },
+  {
+    "document_id": "86e93fdb-3336-4b86-8740-b1d301404d5a",
+    "field": "judicial_analysis.judicial_framing",
+    "gold": [
+      "证据不足"
+    ],
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "86e93fdb-3336-4b86-8740-b1d301404d5a",
+    "field": "llm_summary.outcome_summary",
+    "gold": "驳回原告钟某某的全部诉讼请求",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "86e93fdb-3336-4b86-8740-b1d301404d5a",
+    "field": "llm_summary.reasoning_summary",
+    "gold": "原告未能进一步举证证明双方存在借贷合意，现有证据不足以认定民间借贷法律关系成立，原告应承担举证不能的不利后果。",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "4f4f4fcf-9b7c-4c2a-adb4-ab76009ced26",
+    "field": "metadata.region",
+    "gold": "福建省",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "4f4f4fcf-9b7c-4c2a-adb4-ab76009ced26",
+    "field": "metadata.doc_type",
+    "gold": "判决书",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "4f4f4fcf-9b7c-4c2a-adb4-ab76009ced26",
+    "field": "case_profile.case_type_primary",
+    "gold": "刑事",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "4f4f4fcf-9b7c-4c2a-adb4-ab76009ced26",
+    "field": "case_profile.case_type_secondary",
+    "gold": "开设赌场罪",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "4f4f4fcf-9b7c-4c2a-adb4-ab76009ced26",
+    "field": "case_profile.litigant_profile.plaintiff_types",
+    "gold": [
+      "人民检察院"
+    ],
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "4f4f4fcf-9b7c-4c2a-adb4-ab76009ced26",
+    "field": "case_profile.litigant_profile.defendant_types",
+    "gold": [
+      "自然人"
+    ],
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "4f4f4fcf-9b7c-4c2a-adb4-ab76009ced26",
+    "field": "virtual_currency_info.involved",
+    "gold": false,
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "4f4f4fcf-9b7c-4c2a-adb4-ab76009ced26",
+    "field": "judicial_analysis.cited_laws",
+    "gold": [
+      "《中华人民共和国刑法》第三百零三条第二款",
+      "《中华人民共和国刑法》第六十七条第三款",
+      "《中华人民共和国刑法》第六十四条",
+      "《最高人民法院、最高人民检察院关于办理赌博刑事案件具体应用法律若干问题的解释》第八条第二款"
+    ],
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 4
+  },
+  {
+    "document_id": "4f4f4fcf-9b7c-4c2a-adb4-ab76009ced26",
+    "field": "judicial_analysis.judicial_framing",
+    "gold": [
+      "情节严重",
+      "抽头渔利",
+      "赌资认定"
+    ],
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 3
+  },
+  {
+    "document_id": "4f4f4fcf-9b7c-4c2a-adb4-ab76009ced26",
+    "field": "llm_summary.outcome_summary",
+    "gold": "被告人胡某某犯开设赌场罪，判处有期徒刑三年六个月，并处罚金八万元；追缴违法所得十万零六千七百七十元；作案工具手机予以没收。",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "4f4f4fcf-9b7c-4c2a-adb4-ab76009ced26",
+    "field": "llm_summary.reasoning_summary",
+    "gold": "胡某某充当赌博网站代理，接受投注并发展下级代理，抽头渔利106770元，赌资达11493021元，情节严重，构成开设赌场罪；到案后如实供述，可从轻处罚，但不构成自首。",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "4f43a217-4006-4720-ace1-b22e01434042",
+    "field": "case_amount",
+    "gold": 1700000,
+    "master": "1350000",
+    "tp": 0,
+    "fp": 1,
+    "fn": 1
+  },
+  {
+    "document_id": "4f43a217-4006-4720-ace1-b22e01434042",
+    "field": "metadata.court_level",
+    "gold": "中级法院",
+    "master": "中院",
+    "tp": 0,
+    "fp": 1,
+    "fn": 1
+  },
+  {
+    "document_id": "4f43a217-4006-4720-ace1-b22e01434042",
+    "field": "metadata.first_instance_case_number",
+    "gold": null,
+    "master": "XXXXXX人民法院民事判决",
+    "tp": 0,
+    "fp": 1,
+    "fn": 0
+  },
+  {
+    "document_id": "4f43a217-4006-4720-ace1-b22e01434042",
+    "field": "metadata.region",
+    "gold": "四川省",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "4f43a217-4006-4720-ace1-b22e01434042",
+    "field": "metadata.doc_type",
+    "gold": "判决书",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "4f43a217-4006-4720-ace1-b22e01434042",
+    "field": "case_profile.case_type_primary",
+    "gold": "民事",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "4f43a217-4006-4720-ace1-b22e01434042",
+    "field": "case_profile.case_type_secondary",
+    "gold": "委托合同纠纷",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "4f43a217-4006-4720-ace1-b22e01434042",
+    "field": "case_profile.litigant_profile.plaintiff_types",
+    "gold": [
+      "自然人"
+    ],
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "4f43a217-4006-4720-ace1-b22e01434042",
+    "field": "case_profile.litigant_profile.defendant_types",
+    "gold": [
+      "自然人"
+    ],
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "4f43a217-4006-4720-ace1-b22e01434042",
+    "field": "virtual_currency_info.involved",
+    "gold": true,
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "4f43a217-4006-4720-ace1-b22e01434042",
+    "field": "virtual_currency_info.currency_types",
+    "gold": [
+      "比特币"
+    ],
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "4f43a217-4006-4720-ace1-b22e01434042",
+    "field": "judicial_analysis.virtual_currency_property_legality",
+    "gold": "未明确",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "4f43a217-4006-4720-ace1-b22e01434042",
+    "field": "judicial_analysis.cited_laws",
+    "gold": [
+      "《中华人民共和国民法典》第五百零九条",
+      "《中华人民共和国民法典》第五百七十七条",
+      "《中华人民共和国民法典》第九百七十二条",
+      "《中华人民共和国民事诉讼法》第一百七十七条第一款第二项",
+      "《最高人民法院关于适用<中华人民共和国民事诉讼法>的解释》第九十条",
+      "《最高人民法院关于适用<中华人民共和国民事诉讼法>的解释》第一百一十五条"
+    ],
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 6
+  },
+  {
+    "document_id": "4f43a217-4006-4720-ace1-b22e01434042",
+    "field": "judicial_analysis.judicial_framing",
+    "gold": [
+      "证据不足"
+    ],
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "4f43a217-4006-4720-ace1-b22e01434042",
+    "field": "llm_summary.outcome_summary",
+    "gold": "二审改判，陈某某向刘某1、李某2支付代收贷款135万元及相应资金占用利息，驳回其他诉讼请求。",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "4f43a217-4006-4720-ace1-b22e01434042",
+    "field": "llm_summary.reasoning_summary",
+    "gold": "陈某某作为受托人未将代收的170万元贷款交付委托人，现有证据不足以证明已交付，应承担违约责任；二审根据新证据认定部分还款事实，扣减已还款项后改判支付135万元。",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "5e008751-fffd-4f25-8638-acca00d8694b",
+    "field": "metadata.region",
+    "gold": "浙江省",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "5e008751-fffd-4f25-8638-acca00d8694b",
+    "field": "metadata.doc_type",
+    "gold": "判决书",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "5e008751-fffd-4f25-8638-acca00d8694b",
+    "field": "case_profile.case_type_primary",
+    "gold": "刑事",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "5e008751-fffd-4f25-8638-acca00d8694b",
+    "field": "case_profile.case_type_secondary",
+    "gold": "开设赌场罪",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "5e008751-fffd-4f25-8638-acca00d8694b",
+    "field": "case_profile.litigant_profile.plaintiff_types",
+    "gold": [
+      "人民检察院"
+    ],
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "5e008751-fffd-4f25-8638-acca00d8694b",
+    "field": "case_profile.litigant_profile.defendant_types",
+    "gold": [
+      "自然人"
+    ],
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "5e008751-fffd-4f25-8638-acca00d8694b",
+    "field": "virtual_currency_info.involved",
+    "gold": true,
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "5e008751-fffd-4f25-8638-acca00d8694b",
+    "field": "virtual_currency_info.currency_types",
+    "gold": [
+      "虚拟币"
+    ],
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "5e008751-fffd-4f25-8638-acca00d8694b",
+    "field": "virtual_currency_info.activity_type",
+    "gold": "赌博",
+    "master": "虚拟货币借贷",
+    "tp": 0,
+    "fp": 1,
+    "fn": 1
+  },
+  {
+    "document_id": "5e008751-fffd-4f25-8638-acca00d8694b",
+    "field": "judicial_analysis.virtual_currency_property_legality",
+    "gold": "未明确",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "5e008751-fffd-4f25-8638-acca00d8694b",
+    "field": "judicial_analysis.cited_laws",
+    "gold": [
+      "《中华人民共和国刑法》第三百零三条第二款",
+      "《中华人民共和国刑法》第二十五条第一款",
+      "《中华人民共和国刑法》第二十七条",
+      "《中华人民共和国刑法》第六十七条第三款",
+      "《中华人民共和国刑法》第七十二条",
+      "《中华人民共和国刑法》第七十三条二款",
+      "《中华人民共和国刑法》第六十四条",
+      "《中华人民共和国刑事诉讼法》第十五条"
+    ],
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 8
+  },
+  {
+    "document_id": "5e008751-fffd-4f25-8638-acca00d8694b",
+    "field": "judicial_analysis.judicial_framing",
+    "gold": [
+      "情节严重",
+      "从犯",
+      "认罪认罚",
+      "退赃"
+    ],
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 4
+  },
+  {
+    "document_id": "5e008751-fffd-4f25-8638-acca00d8694b",
+    "field": "llm_summary.outcome_summary",
+    "gold": "各被告人犯开设赌场罪，分别判处有期徒刑或缓刑，并处罚金；已退出的违法所得予以没收，未退出的责令继续退赔；犯罪工具予以没收。",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "5e008751-fffd-4f25-8638-acca00d8694b",
+    "field": "llm_summary.reasoning_summary",
+    "gold": "被告人以营利为目的，结伙开设赌场，提供买卖虚拟币及资金结算服务，情节严重，构成开设赌场罪。",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "98b4e5d8-66e8-459f-9be1-b19600a9f4cc",
+    "field": "case_amount",
+    "gold": 131285,
+    "master": "143285",
+    "tp": 0,
+    "fp": 1,
+    "fn": 1
+  },
+  {
+    "document_id": "98b4e5d8-66e8-459f-9be1-b19600a9f4cc",
+    "field": "metadata.region",
+    "gold": "安徽省",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "98b4e5d8-66e8-459f-9be1-b19600a9f4cc",
+    "field": "metadata.doc_type",
+    "gold": "判决书",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "98b4e5d8-66e8-459f-9be1-b19600a9f4cc",
+    "field": "case_profile.case_type_primary",
+    "gold": "刑事",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "98b4e5d8-66e8-459f-9be1-b19600a9f4cc",
+    "field": "case_profile.case_type_secondary",
+    "gold": "开设赌场罪",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "98b4e5d8-66e8-459f-9be1-b19600a9f4cc",
+    "field": "case_profile.litigant_profile.plaintiff_types",
+    "gold": [
+      "人民检察院"
+    ],
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "98b4e5d8-66e8-459f-9be1-b19600a9f4cc",
+    "field": "case_profile.litigant_profile.defendant_types",
+    "gold": [
+      "自然人"
+    ],
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "98b4e5d8-66e8-459f-9be1-b19600a9f4cc",
+    "field": "virtual_currency_info.involved",
+    "gold": true,
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "98b4e5d8-66e8-459f-9be1-b19600a9f4cc",
+    "field": "virtual_currency_info.currency_types",
+    "gold": [
+      "USDT"
+    ],
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "98b4e5d8-66e8-459f-9be1-b19600a9f4cc",
+    "field": "virtual_currency_info.activity_type",
+    "gold": "赌博",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "98b4e5d8-66e8-459f-9be1-b19600a9f4cc",
+    "field": "judicial_analysis.virtual_currency_property_legality",
+    "gold": "未明确",
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "document_id": "98b4e5d8-66e8-459f-9be1-b19600a9f4cc",
+    "field": "judicial_analysis.cited_laws",
+    "gold": [
+      "《中华人民共和国刑法》第三百零三条第二款",
+      "《中华人民共和国刑法》第二十七条",
+      "《中华人民共和国刑法》第五十二条",
+      "《中华人民共和国刑法》第五十三条",
+      "《中华人民共和国刑法》第六十四条",
+      "《中华人民共和国刑法》第六十七条",
+      "《中华人民共和国刑法》第七十二条",
+      "《中华人民共和国刑法》第七十三条",
+      "《中华人民共和国刑事诉讼法》第二百零一条"
+    ],
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 9
+  },
+  {
+    "document_id": "98b4e5d8-66e8-459f-9be1-b19600a9f4cc",
+    "field": "judicial_analysis.judicial_framing",
+    "gold": [
+      "定罪处罚"
+    ],
+    "master": "",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+  }
+]

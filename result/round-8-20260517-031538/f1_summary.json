@@ -1,0 +1,16 @@
+{
+  "gold_compare_path": "D:\\BaiduSyncdisk\\Doctor\\论文\\数字货币\\研究\\newstudy\\data\\processed\\master\\compare.jsonl",
+  "master_path": "D:\\BaiduSyncdisk\\Doctor\\论文\\数字货币\\研究\\newstudy\\data\\processed\\master\\master_dataset.csv",
+  "gold_docs": 122,
+  "scored_docs": 122,
+  "micro": {
+    "tp": 930,
+    "fp": 186,
+    "fn": 2522,
+    "precision": 0.8333333333333334,
+    "recall": 0.2694090382387022,
+    "f1": 0.4071803852889668
+  },
+  "macro_f1": 0.31572589119852473,
+  "macro_fields_with_defined_f1": 26
+}

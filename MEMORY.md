@@ -125,8 +125,9 @@ cat ~/.ssh/yy_rsa.pub
 - `round-4-20260516-071827`
 - `round-5-20260516-122140`
 - `round-6-20260516-215644`
+- `round-7-20260517-020639`
 
-当前最新轮次为 `round-6-20260516-215644`。
+当前最新轮次为 `round-7-20260517-020639`。
 
 ## 主数据集约定
 
@@ -237,3 +238,23 @@ cat ~/.ssh/yy_rsa.pub
 - `docs/report/round-6-20260516-215644/report-20260516-215644.md`
 - `code/round-6-20260516-215644/README.md`
 - `result/round-6-20260516-215644/README.md`
+
+## round-7 提示词溯源与整合
+
+本轮任务是根据当前主数据集字段，追踪旧数据构建流程中实际使用的 LLM 提示词，并确认 `case_amount` 金额字段的来源。
+
+关键结论：
+
+- 基础法律字段的历史抽取提示词是 `数据构建/ensemble_els/prompts/extract_cn.jinja2`，迁移副本位于 `code/round-2-20260516-063920/ensemble_els/prompts/extract_cn.jinja2`。
+- 旧字段配置为 `数据构建/docs/fields.yaml`，迁移副本位于 `data/external/fields.yaml`。
+- 当前主数据集的主要 LLM 金额来自 `data/processed/extraction/final_all.jsonl` 顶层 `case_amount`，主数据集生成脚本将其保存为 `llm_top_case_amount_cny` 并优先用于 `amount_master_cny`。
+- 在 `数据构建` 与 `newstudy` 现有底稿中没有找到独立的 `case_amount` 抽取提示词或 schema；因此不能声称已经找到原始 `case_amount` 提示词原件。
+- 已基于旧主提示词和当前主数据集字段重构整合版提示词，保存在 `docs/legacy/master_prompt.md`。该版本不再使用 `plaintiff_claimed_cny` 与 `court_recognized_cny`，而是使用顶层 `case_amount` 作为 LLM 金额字段。
+- 本次提示词溯源按用户要求不纳入正则匹配金额口径；正则金额仍只作为审计、对照和兜底数据。
+
+本轮产物：
+
+- `docs/legacy/master_prompt.md`
+- `docs/plan/round-7-20260517-020639/plan-20260517-020639.md`
+- `docs/analysis/round-7-20260517-020639/analysis-20260517-020639.md`
+- `docs/report/round-7-20260517-020639/report-20260517-020639.md`

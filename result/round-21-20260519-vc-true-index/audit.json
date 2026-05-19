@@ -1,0 +1,33 @@
+{
+  "round": "round-21-20260519-vc-true-index",
+  "field_added": "vc_involved_dsv4_value",
+  "source_field": "master_dataset_dsv4.jsonl:virtual_currency_info.involved.value",
+  "dsv4_jsonl_rows": 12134,
+  "dsv4_involved_counts": {
+    "true": 9928,
+    "false": 2203,
+    "null": 3
+  },
+  "true_count": 9928,
+  "false_count": 2203,
+  "null_count": 3,
+  "raw_index_rows": 12135,
+  "raw_index_true_rows": 9928,
+  "master_rows": 12135,
+  "master_true_rows": 9928,
+  "master_dsv4_rows": 12134,
+  "master_dsv4_true_rows": 9928,
+  "ids_in_raw_index_missing_dsv4_value": 1,
+  "ids_in_master_missing_dsv4_value": 1,
+  "ids_in_dsv4_csv_missing_dsv4_value": 0,
+  "outputs": {
+    "index_augmented": "D:\\BaiduSyncdisk\\Doctor\\论文\\数字货币\\研究\\newstudy\\data\\processed\\extraction\\data-index_vc_involved_augmented.json",
+    "index_true": "D:\\BaiduSyncdisk\\Doctor\\论文\\数字货币\\研究\\newstudy\\data\\processed\\extraction\\data-index_vc_involved_true.json",
+    "master_augmented_csv": "D:\\BaiduSyncdisk\\Doctor\\论文\\数字货币\\研究\\newstudy\\data\\processed\\master\\master_dataset_vc_indexed.csv",
+    "master_true_csv": "D:\\BaiduSyncdisk\\Doctor\\论文\\数字货币\\研究\\newstudy\\data\\processed\\master\\master_dataset_vc_true.csv",
+    "master_dsv4_augmented_csv": "D:\\BaiduSyncdisk\\Doctor\\论文\\数字货币\\研究\\newstudy\\data\\processed\\master\\master_dataset_dsv4_vc_indexed.csv",
+    "master_dsv4_true_csv": "D:\\BaiduSyncdisk\\Doctor\\论文\\数字货币\\研究\\newstudy\\data\\processed\\master\\master_dataset_dsv4_vc_true.csv",
+    "master_dsv4_true_jsonl": "D:\\BaiduSyncdisk\\Doctor\\论文\\数字货币\\研究\\newstudy\\data\\processed\\master\\master_dataset_dsv4_vc_true.jsonl",
+    "audit_json": "D:\\BaiduSyncdisk\\Doctor\\论文\\数字货币\\研究\\newstudy\\result\\round-21-20260519-vc-true-index\\audit.json"
+  }
+}

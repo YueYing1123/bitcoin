@@ -1,0 +1,281 @@
+﻿doc_id,field,match,dsv4_value,gpt55_gold_value
+0f24f20c-5d9f-41c8-9d56-ace501843d7a,case_amount,1,2400000,2400000
+0f24f20c-5d9f-41c8-9d56-ace501843d7a,case_amount_type,1,"""诈骗金额""","""诈骗金额"""
+0f24f20c-5d9f-41c8-9d56-ace501843d7a,metadata.case_number,1,"""(2019)甘0102刑初1033号""","""(2019)甘0102刑初1033号"""
+0f24f20c-5d9f-41c8-9d56-ace501843d7a,metadata.court_name,1,"""兰州市城关区人民法院""","""兰州市城关区人民法院"""
+0f24f20c-5d9f-41c8-9d56-ace501843d7a,metadata.court_level,1,"""基层法院""","""基层法院"""
+0f24f20c-5d9f-41c8-9d56-ace501843d7a,metadata.judgment_date,1,"""2021-01-15""","""2021-01-15"""
+0f24f20c-5d9f-41c8-9d56-ace501843d7a,metadata.first_instance_case_number,1,null,null
+0f24f20c-5d9f-41c8-9d56-ace501843d7a,metadata.region,1,"""甘肃""","""甘肃"""
+0f24f20c-5d9f-41c8-9d56-ace501843d7a,metadata.doc_type,1,"""判决书""","""判决书"""
+0f24f20c-5d9f-41c8-9d56-ace501843d7a,case_profile.case_type_primary,1,"""刑事""","""刑事"""
+0f24f20c-5d9f-41c8-9d56-ace501843d7a,case_profile.case_type_secondary,1,"""合同诈骗罪""","""合同诈骗罪"""
+0f24f20c-5d9f-41c8-9d56-ace501843d7a,case_profile.procedure_stage,1,"""一审""","""一审"""
+0f24f20c-5d9f-41c8-9d56-ace501843d7a,case_profile.is_appeal,1,false,false
+0f24f20c-5d9f-41c8-9d56-ace501843d7a,case_profile.litigant_profile.plaintiff_types,1,"[""\""人民检察院\""""]","[""\""人民检察院\""""]"
+0f24f20c-5d9f-41c8-9d56-ace501843d7a,case_profile.litigant_profile.defendant_types,1,"[""\""自然人\""""]","[""\""自然人\""""]"
+0f24f20c-5d9f-41c8-9d56-ace501843d7a,virtual_currency_info.involved,1,true,true
+0f24f20c-5d9f-41c8-9d56-ace501843d7a,virtual_currency_info.currency_types,0,"[""\""虚拟货币\""""]","[""\""ZIRC\"""", ""\""虚拟货币\""""]"
+0f24f20c-5d9f-41c8-9d56-ace501843d7a,virtual_currency_info.activity_types,1,"[""\""其他\""""]","[""\""其他\""""]"
+0f24f20c-5d9f-41c8-9d56-ace501843d7a,judicial_analysis.legal_characterization,1,"""合同诈骗罪""","""合同诈骗罪"""
+0f24f20c-5d9f-41c8-9d56-ace501843d7a,judicial_analysis.virtual_currency_property_status,1,"""未明确""","""未明确"""
+0f24f20c-5d9f-41c8-9d56-ace501843d7a,judicial_analysis.transaction_legality_assessment,1,"""不适用""","""不适用"""
+0f24f20c-5d9f-41c8-9d56-ace501843d7a,judicial_analysis.contract_validity,1,"""不适用""","""不适用"""
+0f24f20c-5d9f-41c8-9d56-ace501843d7a,judicial_analysis.reasons_for_invalidity_or_no_protection,1,[],[]
+0f24f20c-5d9f-41c8-9d56-ace501843d7a,judicial_analysis.cited_laws,1,"[""\""《中华人民共和国刑法》第二百二十四条\"""", ""\""《中华人民共和国刑法》第六十四条\""""]","[""\""《中华人民共和国刑法》第二百二十四条\"""", ""\""《中华人民共和国刑法》第六十四条\""""]"
+0f24f20c-5d9f-41c8-9d56-ace501843d7a,judicial_analysis.cited_policies,1,[],[]
+0f24f20c-5d9f-41c8-9d56-ace501843d7a,judicial_analysis.policy_labels,1,[],[]
+0f24f20c-5d9f-41c8-9d56-ace501843d7a,judicial_analysis.judicial_framing,1,"[""\""其他\""""]","[""\""其他\""""]"
+0f24f20c-5d9f-41c8-9d56-ace501843d7a,low_confidence_fields,0,[],"[""\""court_name\""""]"
+22b20f1d-ea23-4fde-ab48-ad57012543f5,case_amount,1,1488037.5,1488037.5
+22b20f1d-ea23-4fde-ab48-ad57012543f5,case_amount_type,1,"""犯罪金额""","""犯罪金额"""
+22b20f1d-ea23-4fde-ab48-ad57012543f5,metadata.case_number,1,"""(2020)苏0981刑初780号""","""(2020)苏0981刑初780号"""
+22b20f1d-ea23-4fde-ab48-ad57012543f5,metadata.court_name,1,"""东台市人民法院""","""东台市人民法院"""
+22b20f1d-ea23-4fde-ab48-ad57012543f5,metadata.court_level,1,"""基层法院""","""基层法院"""
+22b20f1d-ea23-4fde-ab48-ad57012543f5,metadata.judgment_date,1,"""2021-03-30""","""2021-03-30"""
+22b20f1d-ea23-4fde-ab48-ad57012543f5,metadata.first_instance_case_number,1,null,null
+22b20f1d-ea23-4fde-ab48-ad57012543f5,metadata.region,1,"""江苏""","""江苏"""
+22b20f1d-ea23-4fde-ab48-ad57012543f5,metadata.doc_type,1,"""判决书""","""判决书"""
+22b20f1d-ea23-4fde-ab48-ad57012543f5,case_profile.case_type_primary,1,"""刑事""","""刑事"""
+22b20f1d-ea23-4fde-ab48-ad57012543f5,case_profile.case_type_secondary,1,"""组织、领导传销活动罪""","""组织、领导传销活动罪"""
+22b20f1d-ea23-4fde-ab48-ad57012543f5,case_profile.procedure_stage,1,"""一审""","""一审"""
+22b20f1d-ea23-4fde-ab48-ad57012543f5,case_profile.is_appeal,1,false,false
+22b20f1d-ea23-4fde-ab48-ad57012543f5,case_profile.litigant_profile.plaintiff_types,1,"[""\""人民检察院\""""]","[""\""人民检察院\""""]"
+22b20f1d-ea23-4fde-ab48-ad57012543f5,case_profile.litigant_profile.defendant_types,1,"[""\""自然人\""""]","[""\""自然人\""""]"
+22b20f1d-ea23-4fde-ab48-ad57012543f5,virtual_currency_info.involved,1,true,true
+22b20f1d-ea23-4fde-ab48-ad57012543f5,virtual_currency_info.currency_types,0,"[""\""以太坊\"""", ""\""柚子币\"""", ""\""比特币\"""", ""\""比特现金\"""", ""\""狗狗币\"""", ""\""瑞波币\"""", ""\""莱特币\"""", ""\""达世币\""""]","[""\""以太坊(ETH)\"""", ""\""数字货币\"""", ""\""柚子币(EOS)\"""", ""\""比特币(BTC)\"""", ""\""比特现金(BCH)\"""", ""\""狗狗币(DOGE)\"""", ""\""瑞波币(XRP)\"""", ""\""莱特币(LTC)\"""", ""\""达世币(DASH)\""""]"
+22b20f1d-ea23-4fde-ab48-ad57012543f5,virtual_currency_info.activity_types,1,"[""\""传销\""""]","[""\""传销\""""]"
+22b20f1d-ea23-4fde-ab48-ad57012543f5,judicial_analysis.legal_characterization,1,"""组织、领导传销活动罪""","""组织、领导传销活动罪"""
+22b20f1d-ea23-4fde-ab48-ad57012543f5,judicial_analysis.virtual_currency_property_status,1,"""未明确""","""未明确"""
+22b20f1d-ea23-4fde-ab48-ad57012543f5,judicial_analysis.transaction_legality_assessment,1,"""不适用""","""不适用"""
+22b20f1d-ea23-4fde-ab48-ad57012543f5,judicial_analysis.contract_validity,1,"""不适用""","""不适用"""
+22b20f1d-ea23-4fde-ab48-ad57012543f5,judicial_analysis.reasons_for_invalidity_or_no_protection,1,[],[]
+22b20f1d-ea23-4fde-ab48-ad57012543f5,judicial_analysis.cited_laws,1,"[""\""《中华人民共和国刑法》第二十五条第一款\"""", ""\""《中华人民共和国刑法》第二百二十四条之一\"""", ""\""《中华人民共和国刑法》第五十三条第一款\"""", ""\""《中华人民共和国刑法》第五十二条\"""", ""\""《中华人民共和国刑法》第六十七条第三款\"""", ""\""《中华人民共和国刑法》第六十四条\""""]","[""\""《中华人民共和国刑法》第二十五条第一款\"""", ""\""《中华人民共和国刑法》第二百二十四条之一\"""", ""\""《中华人民共和国刑法》第五十三条第一款\"""", ""\""《中华人民共和国刑法》第五十二条\"""", ""\""《中华人民共和国刑法》第六十七条第三款\"""", ""\""《中华人民共和国刑法》第六十四条\""""]"
+22b20f1d-ea23-4fde-ab48-ad57012543f5,judicial_analysis.cited_policies,1,[],[]
+22b20f1d-ea23-4fde-ab48-ad57012543f5,judicial_analysis.policy_labels,1,[],[]
+22b20f1d-ea23-4fde-ab48-ad57012543f5,judicial_analysis.judicial_framing,1,"[""\""其他\""""]","[""\""其他\""""]"
+22b20f1d-ea23-4fde-ab48-ad57012543f5,low_confidence_fields,0,[],"[""\""case_amount\""""]"
+34a2c3cb-eec6-41e9-94a9-ad17009a1ac9,case_amount,0,null,1686304.12
+34a2c3cb-eec6-41e9-94a9-ad17009a1ac9,case_amount_type,0,null,"""支付结算金额"""
+34a2c3cb-eec6-41e9-94a9-ad17009a1ac9,metadata.case_number,1,"""(2021)豫0502刑初91号""","""(2021)豫0502刑初91号"""
+34a2c3cb-eec6-41e9-94a9-ad17009a1ac9,metadata.court_name,1,"""安阳市文峰区人民法院""","""安阳市文峰区人民法院"""
+34a2c3cb-eec6-41e9-94a9-ad17009a1ac9,metadata.court_level,1,"""基层法院""","""基层法院"""
+34a2c3cb-eec6-41e9-94a9-ad17009a1ac9,metadata.judgment_date,1,"""2021-03-27""","""2021-03-27"""
+34a2c3cb-eec6-41e9-94a9-ad17009a1ac9,metadata.first_instance_case_number,1,null,null
+34a2c3cb-eec6-41e9-94a9-ad17009a1ac9,metadata.region,1,"""河南""","""河南"""
+34a2c3cb-eec6-41e9-94a9-ad17009a1ac9,metadata.doc_type,1,"""判决书""","""判决书"""
+34a2c3cb-eec6-41e9-94a9-ad17009a1ac9,case_profile.case_type_primary,1,"""刑事""","""刑事"""
+34a2c3cb-eec6-41e9-94a9-ad17009a1ac9,case_profile.case_type_secondary,1,"""帮助信息网络犯罪活动罪""","""帮助信息网络犯罪活动罪"""
+34a2c3cb-eec6-41e9-94a9-ad17009a1ac9,case_profile.procedure_stage,1,"""一审""","""一审"""
+34a2c3cb-eec6-41e9-94a9-ad17009a1ac9,case_profile.is_appeal,1,false,false
+34a2c3cb-eec6-41e9-94a9-ad17009a1ac9,case_profile.litigant_profile.plaintiff_types,1,"[""\""人民检察院\""""]","[""\""人民检察院\""""]"
+34a2c3cb-eec6-41e9-94a9-ad17009a1ac9,case_profile.litigant_profile.defendant_types,1,"[""\""自然人\""""]","[""\""自然人\""""]"
+34a2c3cb-eec6-41e9-94a9-ad17009a1ac9,virtual_currency_info.involved,1,true,true
+34a2c3cb-eec6-41e9-94a9-ad17009a1ac9,virtual_currency_info.currency_types,0,"[""\""USDT\"""", ""\""比特币\""""]","[""\""USDT\"""", ""\""数字货币\"""", ""\""比特币\"""", ""\""虚拟货币\""""]"
+34a2c3cb-eec6-41e9-94a9-ad17009a1ac9,virtual_currency_info.activity_types,0,"[""\""买卖/兑换\"""", ""\""帮助信息网络犯罪活动\""""]","[""\""买卖/兑换\"""", ""\""交易所交易\"""", ""\""帮助信息网络犯罪活动\"""", ""\""支付结算\"""", ""\""诈骗\""""]"
+34a2c3cb-eec6-41e9-94a9-ad17009a1ac9,judicial_analysis.legal_characterization,1,"""帮助信息网络犯罪活动罪""","""帮助信息网络犯罪活动罪"""
+34a2c3cb-eec6-41e9-94a9-ad17009a1ac9,judicial_analysis.virtual_currency_property_status,1,"""未明确""","""未明确"""
+34a2c3cb-eec6-41e9-94a9-ad17009a1ac9,judicial_analysis.transaction_legality_assessment,0,"""不适用""","""涉嫌犯罪"""
+34a2c3cb-eec6-41e9-94a9-ad17009a1ac9,judicial_analysis.contract_validity,1,"""不适用""","""不适用"""
+34a2c3cb-eec6-41e9-94a9-ad17009a1ac9,judicial_analysis.reasons_for_invalidity_or_no_protection,1,[],[]
+34a2c3cb-eec6-41e9-94a9-ad17009a1ac9,judicial_analysis.cited_laws,1,"[""\""《中华人民共和国刑法》第二百八十七条之二第一款\"""", ""\""《中华人民共和国刑法》第六十七条第三款\""""]","[""\""《中华人民共和国刑法》第二百八十七条之二第一款\"""", ""\""《中华人民共和国刑法》第六十七条第三款\""""]"
+34a2c3cb-eec6-41e9-94a9-ad17009a1ac9,judicial_analysis.cited_policies,1,[],[]
+34a2c3cb-eec6-41e9-94a9-ad17009a1ac9,judicial_analysis.policy_labels,1,[],[]
+34a2c3cb-eec6-41e9-94a9-ad17009a1ac9,judicial_analysis.judicial_framing,0,"[""\""其他\""""]","[""\""涉嫌犯罪\""""]"
+34a2c3cb-eec6-41e9-94a9-ad17009a1ac9,low_confidence_fields,0,"[""\""case_amount\"""", ""\""case_amount_evidence\"""", ""\""case_amount_type\""""]","[""\""case_amount\""""]"
+4b105da2-5648-4086-b344-ae16011d9b86,case_amount,1,620800,620800
+4b105da2-5648-4086-b344-ae16011d9b86,case_amount_type,1,"""掩隐金额""","""掩隐金额"""
+4b105da2-5648-4086-b344-ae16011d9b86,metadata.case_number,1,"""(2021)闽0802刑初1071号""","""(2021)闽0802刑初1071号"""
+4b105da2-5648-4086-b344-ae16011d9b86,metadata.court_name,1,"""龙岩市新罗区人民法院""","""龙岩市新罗区人民法院"""
+4b105da2-5648-4086-b344-ae16011d9b86,metadata.court_level,1,"""基层法院""","""基层法院"""
+4b105da2-5648-4086-b344-ae16011d9b86,metadata.judgment_date,1,"""2021-11-30""","""2021-11-30"""
+4b105da2-5648-4086-b344-ae16011d9b86,metadata.first_instance_case_number,1,null,null
+4b105da2-5648-4086-b344-ae16011d9b86,metadata.region,1,"""福建""","""福建"""
+4b105da2-5648-4086-b344-ae16011d9b86,metadata.doc_type,1,"""判决书""","""判决书"""
+4b105da2-5648-4086-b344-ae16011d9b86,case_profile.case_type_primary,1,"""刑事""","""刑事"""
+4b105da2-5648-4086-b344-ae16011d9b86,case_profile.case_type_secondary,0,"""掩饰、隐瞒犯罪所得、犯罪所得收益罪""","""掩饰、隐瞒犯罪所得罪"""
+4b105da2-5648-4086-b344-ae16011d9b86,case_profile.procedure_stage,1,"""一审""","""一审"""
+4b105da2-5648-4086-b344-ae16011d9b86,case_profile.is_appeal,1,false,false
+4b105da2-5648-4086-b344-ae16011d9b86,case_profile.litigant_profile.plaintiff_types,1,"[""\""人民检察院\""""]","[""\""人民检察院\""""]"
+4b105da2-5648-4086-b344-ae16011d9b86,case_profile.litigant_profile.defendant_types,1,"[""\""自然人\""""]","[""\""自然人\""""]"
+4b105da2-5648-4086-b344-ae16011d9b86,virtual_currency_info.involved,1,true,true
+4b105da2-5648-4086-b344-ae16011d9b86,virtual_currency_info.currency_types,1,"[""\""虚拟币\""""]","[""\""虚拟币\""""]"
+4b105da2-5648-4086-b344-ae16011d9b86,virtual_currency_info.activity_types,0,"[""\""洗钱/掩隐\""""]","[""\""买卖/兑换\"""", ""\""交易所交易\"""", ""\""洗钱/掩隐\""""]"
+4b105da2-5648-4086-b344-ae16011d9b86,judicial_analysis.legal_characterization,1,"""掩饰、隐瞒犯罪所得罪""","""掩饰、隐瞒犯罪所得罪"""
+4b105da2-5648-4086-b344-ae16011d9b86,judicial_analysis.virtual_currency_property_status,1,"""未明确""","""未明确"""
+4b105da2-5648-4086-b344-ae16011d9b86,judicial_analysis.transaction_legality_assessment,1,"""不适用""","""不适用"""
+4b105da2-5648-4086-b344-ae16011d9b86,judicial_analysis.contract_validity,1,"""不适用""","""不适用"""
+4b105da2-5648-4086-b344-ae16011d9b86,judicial_analysis.reasons_for_invalidity_or_no_protection,1,[],[]
+4b105da2-5648-4086-b344-ae16011d9b86,judicial_analysis.cited_laws,1,"[""\""《中华人民共和国刑事诉讼法》第二百零一条第一款\"""", ""\""《中华人民共和国刑事诉讼法》第十五条\"""", ""\""《中华人民共和国刑法》第七十三条第二、三款\"""", ""\""《中华人民共和国刑法》第七十二条第一、三款\"""", ""\""《中华人民共和国刑法》第三百一十二条第一款\"""", ""\""《中华人民共和国刑法》第二十七条\"""", ""\""《中华人民共和国刑法》第二十五条第一款\"""", ""\""《中华人民共和国刑法》第五十三条第一款\"""", ""\""《中华人民共和国刑法》第五十二条\"""", ""\""《中华人民共和国刑法》第六十一条\"""", ""\""《中华人民共和国刑法》第六十七条第三款\"""", ""\""《中华人民共和国刑法》第六十二条\"""", ""\""《中华人民共和国刑法》第六十四条\"""", ""\""《中华人民共和国刑法》第四十五条\""""]","[""\""《中华人民共和国刑事诉讼法》第二百零一条第一款\"""", ""\""《中华人民共和国刑事诉讼法》第十五条\"""", ""\""《中华人民共和国刑法》第七十三条第二、三款\"""", ""\""《中华人民共和国刑法》第七十二条第一、三款\"""", ""\""《中华人民共和国刑法》第三百一十二条第一款\"""", ""\""《中华人民共和国刑法》第二十七条\"""", ""\""《中华人民共和国刑法》第二十五条第一款\"""", ""\""《中华人民共和国刑法》第五十三条第一款\"""", ""\""《中华人民共和国刑法》第五十二条\"""", ""\""《中华人民共和国刑法》第六十一条\"""", ""\""《中华人民共和国刑法》第六十七条第三款\"""", ""\""《中华人民共和国刑法》第六十二条\"""", ""\""《中华人民共和国刑法》第六十四条\"""", ""\""《中华人民共和国刑法》第四十五条\""""]"
+4b105da2-5648-4086-b344-ae16011d9b86,judicial_analysis.cited_policies,1,[],[]
+4b105da2-5648-4086-b344-ae16011d9b86,judicial_analysis.policy_labels,1,[],[]
+4b105da2-5648-4086-b344-ae16011d9b86,judicial_analysis.judicial_framing,0,[],"[""\""其他\""""]"
+4b105da2-5648-4086-b344-ae16011d9b86,low_confidence_fields,1,[],[]
+5c487523-3862-42f7-ad69-00eadad32555,case_amount,1,7000000,7000000
+5c487523-3862-42f7-ad69-00eadad32555,case_amount_type,1,"""违法所得""","""违法所得"""
+5c487523-3862-42f7-ad69-00eadad32555,metadata.case_number,1,"""(2013)衢刑初字第65号""","""(2013)衢刑初字第65号"""
+5c487523-3862-42f7-ad69-00eadad32555,metadata.court_name,1,"""浙江省衢州市衢江区人民法院""","""浙江省衢州市衢江区人民法院"""
+5c487523-3862-42f7-ad69-00eadad32555,metadata.court_level,1,"""基层法院""","""基层法院"""
+5c487523-3862-42f7-ad69-00eadad32555,metadata.judgment_date,1,"""2013-05-07""","""2013-05-07"""
+5c487523-3862-42f7-ad69-00eadad32555,metadata.first_instance_case_number,1,null,null
+5c487523-3862-42f7-ad69-00eadad32555,metadata.region,1,"""浙江""","""浙江"""
+5c487523-3862-42f7-ad69-00eadad32555,metadata.doc_type,1,"""判决书""","""判决书"""
+5c487523-3862-42f7-ad69-00eadad32555,case_profile.case_type_primary,1,"""刑事""","""刑事"""
+5c487523-3862-42f7-ad69-00eadad32555,case_profile.case_type_secondary,1,"""赌博罪""","""赌博罪"""
+5c487523-3862-42f7-ad69-00eadad32555,case_profile.procedure_stage,1,"""一审""","""一审"""
+5c487523-3862-42f7-ad69-00eadad32555,case_profile.is_appeal,1,false,false
+5c487523-3862-42f7-ad69-00eadad32555,case_profile.litigant_profile.plaintiff_types,1,"[""\""人民检察院\""""]","[""\""人民检察院\""""]"
+5c487523-3862-42f7-ad69-00eadad32555,case_profile.litigant_profile.defendant_types,1,"[""\""自然人\""""]","[""\""自然人\""""]"
+5c487523-3862-42f7-ad69-00eadad32555,virtual_currency_info.involved,1,true,true
+5c487523-3862-42f7-ad69-00eadad32555,virtual_currency_info.currency_types,0,"[""\""银子\""""]","[""\""虚拟货币\"""", ""\""银子\""""]"
+5c487523-3862-42f7-ad69-00eadad32555,virtual_currency_info.activity_types,0,"[""\""赌博\""""]","[""\""买卖/兑换\"""", ""\""赌博\""""]"
+5c487523-3862-42f7-ad69-00eadad32555,judicial_analysis.legal_characterization,1,"""赌博罪""","""赌博罪"""
+5c487523-3862-42f7-ad69-00eadad32555,judicial_analysis.virtual_currency_property_status,1,"""未明确""","""未明确"""
+5c487523-3862-42f7-ad69-00eadad32555,judicial_analysis.transaction_legality_assessment,0,"""不适用""","""涉嫌犯罪"""
+5c487523-3862-42f7-ad69-00eadad32555,judicial_analysis.contract_validity,1,"""不适用""","""不适用"""
+5c487523-3862-42f7-ad69-00eadad32555,judicial_analysis.reasons_for_invalidity_or_no_protection,1,[],[]
+5c487523-3862-42f7-ad69-00eadad32555,judicial_analysis.cited_laws,1,"[""\""《中华人民共和国刑法》第三百零三条\"""", ""\""《中华人民共和国刑法》第六十四条\""""]","[""\""《中华人民共和国刑法》第三百零三条\"""", ""\""《中华人民共和国刑法》第六十四条\""""]"
+5c487523-3862-42f7-ad69-00eadad32555,judicial_analysis.cited_policies,1,[],[]
+5c487523-3862-42f7-ad69-00eadad32555,judicial_analysis.policy_labels,1,[],[]
+5c487523-3862-42f7-ad69-00eadad32555,judicial_analysis.judicial_framing,1,"[""\""其他\""""]","[""\""其他\""""]"
+5c487523-3862-42f7-ad69-00eadad32555,low_confidence_fields,0,[],"[""\""case_amount\"""", ""\""judicial_framing\"""", ""\""transaction_legality_assessment\""""]"
+6fc25feb-ec18-4bee-9af2-b12200c703d1,case_amount,1,140000,140000
+6fc25feb-ec18-4bee-9af2-b12200c703d1,case_amount_type,1,"""掩隐金额""","""掩隐金额"""
+6fc25feb-ec18-4bee-9af2-b12200c703d1,metadata.case_number,1,"""(2023)晋0109刑初262号""","""(2023)晋0109刑初262号"""
+6fc25feb-ec18-4bee-9af2-b12200c703d1,metadata.court_name,1,"""太原市万柏林区人民法院""","""太原市万柏林区人民法院"""
+6fc25feb-ec18-4bee-9af2-b12200c703d1,metadata.court_level,1,"""基层法院""","""基层法院"""
+6fc25feb-ec18-4bee-9af2-b12200c703d1,metadata.judgment_date,1,"""2023-05-08""","""2023-05-08"""
+6fc25feb-ec18-4bee-9af2-b12200c703d1,metadata.first_instance_case_number,1,null,null
+6fc25feb-ec18-4bee-9af2-b12200c703d1,metadata.region,1,"""山西""","""山西"""
+6fc25feb-ec18-4bee-9af2-b12200c703d1,metadata.doc_type,1,"""判决书""","""判决书"""
+6fc25feb-ec18-4bee-9af2-b12200c703d1,case_profile.case_type_primary,1,"""刑事""","""刑事"""
+6fc25feb-ec18-4bee-9af2-b12200c703d1,case_profile.case_type_secondary,1,"""掩饰、隐瞒犯罪所得罪""","""掩饰、隐瞒犯罪所得罪"""
+6fc25feb-ec18-4bee-9af2-b12200c703d1,case_profile.procedure_stage,1,"""一审""","""一审"""
+6fc25feb-ec18-4bee-9af2-b12200c703d1,case_profile.is_appeal,1,false,false
+6fc25feb-ec18-4bee-9af2-b12200c703d1,case_profile.litigant_profile.plaintiff_types,1,"[""\""人民检察院\""""]","[""\""人民检察院\""""]"
+6fc25feb-ec18-4bee-9af2-b12200c703d1,case_profile.litigant_profile.defendant_types,1,"[""\""自然人\""""]","[""\""自然人\""""]"
+6fc25feb-ec18-4bee-9af2-b12200c703d1,virtual_currency_info.involved,1,true,true
+6fc25feb-ec18-4bee-9af2-b12200c703d1,virtual_currency_info.currency_types,0,"[""\""虚拟币\""""]","[""\""数字货币\"""", ""\""虚拟币\""""]"
+6fc25feb-ec18-4bee-9af2-b12200c703d1,virtual_currency_info.activity_types,0,"[""\""诈骗\""""]","[""\""洗钱/掩隐\"""", ""\""诈骗\"""", ""\""赌博\""""]"
+6fc25feb-ec18-4bee-9af2-b12200c703d1,judicial_analysis.legal_characterization,1,"""掩饰、隐瞒犯罪所得罪""","""掩饰、隐瞒犯罪所得罪"""
+6fc25feb-ec18-4bee-9af2-b12200c703d1,judicial_analysis.virtual_currency_property_status,1,"""未明确""","""未明确"""
+6fc25feb-ec18-4bee-9af2-b12200c703d1,judicial_analysis.transaction_legality_assessment,1,"""不适用""","""不适用"""
+6fc25feb-ec18-4bee-9af2-b12200c703d1,judicial_analysis.contract_validity,1,"""不适用""","""不适用"""
+6fc25feb-ec18-4bee-9af2-b12200c703d1,judicial_analysis.reasons_for_invalidity_or_no_protection,1,[],[]
+6fc25feb-ec18-4bee-9af2-b12200c703d1,judicial_analysis.cited_laws,0,"[""\""《中华人民共和国刑事诉讼法》第十五条\"""", ""\""《中华人民共和国刑法》第三百一十二条第一款\"""", ""\""《中华人民共和国刑法》第二十五条第一款\"""", ""\""《中华人民共和国刑法》第五十三条\"""", ""\""《中华人民共和国刑法》第五十二条\"""", ""\""《中华人民共和国刑法》第六十一条\"""", ""\""《中华人民共和国刑法》第六十七条第一款、第三款\"""", ""\""《中华人民共和国刑法》第六十八条\""""]","[""\""《中华人民共和国刑事诉讼法》第十五条\"""", ""\""《中华人民共和国刑法》第三百一十二条第一款\"""", ""\""《中华人民共和国刑法》第二十五条第一款\"""", ""\""《中华人民共和国刑法》第五十三条\"""", ""\""《中华人民共和国刑法》第五十二条\"""", ""\""《中华人民共和国刑法》第六十一条\"""", ""\""《中华人民共和国刑法》第六十七条第一款\"""", ""\""《中华人民共和国刑法》第六十七条第三款\"""", ""\""《中华人民共和国刑法》第六十八条\""""]"
+6fc25feb-ec18-4bee-9af2-b12200c703d1,judicial_analysis.cited_policies,1,[],[]
+6fc25feb-ec18-4bee-9af2-b12200c703d1,judicial_analysis.policy_labels,1,[],[]
+6fc25feb-ec18-4bee-9af2-b12200c703d1,judicial_analysis.judicial_framing,1,"[""\""其他\""""]","[""\""其他\""""]"
+6fc25feb-ec18-4bee-9af2-b12200c703d1,low_confidence_fields,1,[],[]
+d14214ed-04ba-42e4-abf5-adc200fbfada,case_amount,0,1257709.88,1361768
+d14214ed-04ba-42e4-abf5-adc200fbfada,case_amount_type,0,"""原告诉请本金""","""交易本金"""
+d14214ed-04ba-42e4-abf5-adc200fbfada,metadata.case_number,1,"""(2020)粤0113民初2844号""","""(2020)粤0113民初2844号"""
+d14214ed-04ba-42e4-abf5-adc200fbfada,metadata.court_name,1,"""广州市番禺区人民法院""","""广州市番禺区人民法院"""
+d14214ed-04ba-42e4-abf5-adc200fbfada,metadata.court_level,1,"""基层法院""","""基层法院"""
+d14214ed-04ba-42e4-abf5-adc200fbfada,metadata.judgment_date,1,"""2021-05-19""","""2021-05-19"""
+d14214ed-04ba-42e4-abf5-adc200fbfada,metadata.first_instance_case_number,1,null,null
+d14214ed-04ba-42e4-abf5-adc200fbfada,metadata.region,1,"""广东""","""广东"""
+d14214ed-04ba-42e4-abf5-adc200fbfada,metadata.doc_type,1,"""判决书""","""判决书"""
+d14214ed-04ba-42e4-abf5-adc200fbfada,case_profile.case_type_primary,1,"""民事""","""民事"""
+d14214ed-04ba-42e4-abf5-adc200fbfada,case_profile.case_type_secondary,1,"""赠与合同纠纷""","""赠与合同纠纷"""
+d14214ed-04ba-42e4-abf5-adc200fbfada,case_profile.procedure_stage,1,"""一审""","""一审"""
+d14214ed-04ba-42e4-abf5-adc200fbfada,case_profile.is_appeal,1,false,false
+d14214ed-04ba-42e4-abf5-adc200fbfada,case_profile.litigant_profile.plaintiff_types,1,"[""\""自然人\""""]","[""\""自然人\""""]"
+d14214ed-04ba-42e4-abf5-adc200fbfada,case_profile.litigant_profile.defendant_types,1,"[""\""法人\"""", ""\""自然人\""""]","[""\""法人\"""", ""\""自然人\""""]"
+d14214ed-04ba-42e4-abf5-adc200fbfada,virtual_currency_info.involved,1,true,true
+d14214ed-04ba-42e4-abf5-adc200fbfada,virtual_currency_info.currency_types,1,"[""\""虚拟货币\""""]","[""\""虚拟货币\""""]"
+d14214ed-04ba-42e4-abf5-adc200fbfada,virtual_currency_info.activity_types,0,"[""\""其他\""""]","[""\""买卖/兑换\"""", ""\""其他\""""]"
+d14214ed-04ba-42e4-abf5-adc200fbfada,judicial_analysis.legal_characterization,0,"""赠与合同""","""网络服务合同关系、赠与合同关系"""
+d14214ed-04ba-42e4-abf5-adc200fbfada,judicial_analysis.virtual_currency_property_status,1,"""未明确""","""未明确"""
+d14214ed-04ba-42e4-abf5-adc200fbfada,judicial_analysis.transaction_legality_assessment,1,"""未明确""","""未明确"""
+d14214ed-04ba-42e4-abf5-adc200fbfada,judicial_analysis.contract_validity,1,"""未明确""","""未明确"""
+d14214ed-04ba-42e4-abf5-adc200fbfada,judicial_analysis.reasons_for_invalidity_or_no_protection,0,"[""\""证据不足\""""]","[""\""证据不足\"""", ""\""请求权基础不成立\""""]"
+d14214ed-04ba-42e4-abf5-adc200fbfada,judicial_analysis.cited_laws,1,"[""\""《中华人民共和国民事诉讼法》第六十四条\""""]","[""\""《中华人民共和国民事诉讼法》第六十四条\""""]"
+d14214ed-04ba-42e4-abf5-adc200fbfada,judicial_analysis.cited_policies,1,[],[]
+d14214ed-04ba-42e4-abf5-adc200fbfada,judicial_analysis.policy_labels,1,[],[]
+d14214ed-04ba-42e4-abf5-adc200fbfada,judicial_analysis.judicial_framing,0,"[""\""证据不足\""""]","[""\""证据不足\"""", ""\""请求权基础不成立\""""]"
+d14214ed-04ba-42e4-abf5-adc200fbfada,low_confidence_fields,0,[],"[""\""case_amount\"""", ""\""contract_validity\""""]"
+e1f64d02-ae49-4db7-823e-ad9d0113786a,case_amount,1,60310,60310
+e1f64d02-ae49-4db7-823e-ad9d0113786a,case_amount_type,0,"""原告诉请本金""","""购买价款"""
+e1f64d02-ae49-4db7-823e-ad9d0113786a,metadata.case_number,1,"""(2021)闽0481民初887号""","""(2021)闽0481民初887号"""
+e1f64d02-ae49-4db7-823e-ad9d0113786a,metadata.court_name,1,"""永安市人民法院""","""永安市人民法院"""
+e1f64d02-ae49-4db7-823e-ad9d0113786a,metadata.court_level,1,"""基层法院""","""基层法院"""
+e1f64d02-ae49-4db7-823e-ad9d0113786a,metadata.judgment_date,1,"""2021-04-09""","""2021-04-09"""
+e1f64d02-ae49-4db7-823e-ad9d0113786a,metadata.first_instance_case_number,1,null,null
+e1f64d02-ae49-4db7-823e-ad9d0113786a,metadata.region,1,"""福建""","""福建"""
+e1f64d02-ae49-4db7-823e-ad9d0113786a,metadata.doc_type,1,"""判决书""","""判决书"""
+e1f64d02-ae49-4db7-823e-ad9d0113786a,case_profile.case_type_primary,1,"""民事""","""民事"""
+e1f64d02-ae49-4db7-823e-ad9d0113786a,case_profile.case_type_secondary,1,"""民间借贷纠纷""","""民间借贷纠纷"""
+e1f64d02-ae49-4db7-823e-ad9d0113786a,case_profile.procedure_stage,1,"""一审""","""一审"""
+e1f64d02-ae49-4db7-823e-ad9d0113786a,case_profile.is_appeal,1,false,false
+e1f64d02-ae49-4db7-823e-ad9d0113786a,case_profile.litigant_profile.plaintiff_types,1,"[""\""自然人\""""]","[""\""自然人\""""]"
+e1f64d02-ae49-4db7-823e-ad9d0113786a,case_profile.litigant_profile.defendant_types,1,"[""\""自然人\""""]","[""\""自然人\""""]"
+e1f64d02-ae49-4db7-823e-ad9d0113786a,virtual_currency_info.involved,1,true,true
+e1f64d02-ae49-4db7-823e-ad9d0113786a,virtual_currency_info.currency_types,0,"[""\""虚拟货币\""""]","[""\""EUEN数字资产\"""", ""\""Gcc币\"""", ""\""vpc\"""", ""\""虚拟货币\""""]"
+e1f64d02-ae49-4db7-823e-ad9d0113786a,virtual_currency_info.activity_types,1,"[""\""买卖/兑换\""""]","[""\""买卖/兑换\""""]"
+e1f64d02-ae49-4db7-823e-ad9d0113786a,judicial_analysis.legal_characterization,0,"""民间借贷""",null
+e1f64d02-ae49-4db7-823e-ad9d0113786a,judicial_analysis.virtual_currency_property_status,1,"""未明确""","""未明确"""
+e1f64d02-ae49-4db7-823e-ad9d0113786a,judicial_analysis.transaction_legality_assessment,0,"""未明确""","""风险自担"""
+e1f64d02-ae49-4db7-823e-ad9d0113786a,judicial_analysis.contract_validity,0,"""不适用""","""未明确"""
+e1f64d02-ae49-4db7-823e-ad9d0113786a,judicial_analysis.reasons_for_invalidity_or_no_protection,0,"[""\""证据不足\""""]","[""\""投资风险自担\"""", ""\""证据不足\"""", ""\""请求权基础不成立\""""]"
+e1f64d02-ae49-4db7-823e-ad9d0113786a,judicial_analysis.cited_laws,0,"[""\""《中华人民共和国民法典》第七条\"""", ""\""《最高人民法院关于审理民间借贷案件适用法律若干问题的规定》第一条\"""", ""\""《最高人民法院关于审理民间借贷案件适用法律若干问题的规定》第十六条\"""", ""\""《最高人民法院关于适用〈中华人民共和国民事诉讼法〉的解释》第一百零八条\"""", ""\""《最高人民法院关于适用〈中华人民共和国民事诉讼法〉的解释》第九十条\""""]","[""\""《中华人民共和国民法典》第七条\"""", ""\""《最高人民法院关于审理民间借贷案件适用法律若干问题的规定》第一条\"""", ""\""《最高人民法院关于审理民间借贷案件适用法律若干问题的规定》第十七条\"""", ""\""《最高人民法院关于审理民间借贷案件适用法律若干问题的规定》第十六条\"""", ""\""《最高人民法院关于适用〈中华人民共和国民事诉讼法〉的解释》第一百零八条\"""", ""\""《最高人民法院关于适用〈中华人民共和国民事诉讼法〉的解释》第九十条\""""]"
+e1f64d02-ae49-4db7-823e-ad9d0113786a,judicial_analysis.cited_policies,1,[],[]
+e1f64d02-ae49-4db7-823e-ad9d0113786a,judicial_analysis.policy_labels,1,[],[]
+e1f64d02-ae49-4db7-823e-ad9d0113786a,judicial_analysis.judicial_framing,0,"[""\""证据不足\""""]","[""\""证据不足\"""", ""\""请求权基础不成立\"""", ""\""风险自担\""""]"
+e1f64d02-ae49-4db7-823e-ad9d0113786a,low_confidence_fields,1,[],[]
+e59df253-8141-4e02-91d9-b1f401887e4c,case_amount,1,127889.1,127889.1
+e59df253-8141-4e02-91d9-b1f401887e4c,case_amount_type,0,"""借款本金""","""交易本金"""
+e59df253-8141-4e02-91d9-b1f401887e4c,metadata.case_number,1,"""(2023)甘01民终5972号""","""(2023)甘01民终5972号"""
+e59df253-8141-4e02-91d9-b1f401887e4c,metadata.court_name,1,"""甘肃省兰州市中级人民法院""","""甘肃省兰州市中级人民法院"""
+e59df253-8141-4e02-91d9-b1f401887e4c,metadata.court_level,1,"""中级法院""","""中级法院"""
+e59df253-8141-4e02-91d9-b1f401887e4c,metadata.judgment_date,1,"""2024-02-02""","""2024-02-02"""
+e59df253-8141-4e02-91d9-b1f401887e4c,metadata.first_instance_case_number,1,null,null
+e59df253-8141-4e02-91d9-b1f401887e4c,metadata.region,1,"""甘肃""","""甘肃"""
+e59df253-8141-4e02-91d9-b1f401887e4c,metadata.doc_type,1,"""判决书""","""判决书"""
+e59df253-8141-4e02-91d9-b1f401887e4c,case_profile.case_type_primary,1,"""民事""","""民事"""
+e59df253-8141-4e02-91d9-b1f401887e4c,case_profile.case_type_secondary,1,"""民间借贷纠纷""","""民间借贷纠纷"""
+e59df253-8141-4e02-91d9-b1f401887e4c,case_profile.procedure_stage,1,"""二审""","""二审"""
+e59df253-8141-4e02-91d9-b1f401887e4c,case_profile.is_appeal,1,true,true
+e59df253-8141-4e02-91d9-b1f401887e4c,case_profile.litigant_profile.plaintiff_types,1,"[""\""自然人\""""]","[""\""自然人\""""]"
+e59df253-8141-4e02-91d9-b1f401887e4c,case_profile.litigant_profile.defendant_types,1,"[""\""自然人\""""]","[""\""自然人\""""]"
+e59df253-8141-4e02-91d9-b1f401887e4c,virtual_currency_info.involved,1,true,true
+e59df253-8141-4e02-91d9-b1f401887e4c,virtual_currency_info.currency_types,0,"[""\""虚拟币\""""]","[""\""虚拟币\"""", ""\""虚拟货币\""""]"
+e59df253-8141-4e02-91d9-b1f401887e4c,virtual_currency_info.activity_types,0,"[""\""买卖/兑换\""""]","[""\""买卖/兑换\"""", ""\""其他\""""]"
+e59df253-8141-4e02-91d9-b1f401887e4c,judicial_analysis.legal_characterization,1,"""民间借贷""","""民间借贷"""
+e59df253-8141-4e02-91d9-b1f401887e4c,judicial_analysis.virtual_currency_property_status,1,"""未明确""","""未明确"""
+e59df253-8141-4e02-91d9-b1f401887e4c,judicial_analysis.transaction_legality_assessment,1,"""未明确""","""未明确"""
+e59df253-8141-4e02-91d9-b1f401887e4c,judicial_analysis.contract_validity,0,"""不适用""","""未明确"""
+e59df253-8141-4e02-91d9-b1f401887e4c,judicial_analysis.reasons_for_invalidity_or_no_protection,1,"[""\""证据不足\""""]","[""\""证据不足\""""]"
+e59df253-8141-4e02-91d9-b1f401887e4c,judicial_analysis.cited_laws,0,"[""\""《中华人民共和国民事诉讼法》第一百七十七条第一款第一项\"""", ""\""《中华人民共和国民事诉讼法》第六十七条\"""", ""\""《中华人民共和国民法典》第一千零六十四条\"""", ""\""《最高人民法院关于审理民间借贷案件适用法律若干问题的规定》第二条\"""", ""\""《最高人民法院关于适用<中华人民共和国民事诉讼法>的解释》第九十条\""""]","[""\""《中华人民共和国民事诉讼法》第一百七十七条第一款第一项\"""", ""\""《中华人民共和国民事诉讼法》第六十七条\"""", ""\""《中华人民共和国民法典》第一千零六十四条\"""", ""\""《最高人民法院关于审理民间借贷案件适用法律若干问题的规定》第二条\"""", ""\""《最高人民法院关于审理涉及夫妻债务纠纷案件适用法律有关问题的解释》\"""", ""\""《最高人民法院关于适用<中华人民共和国民事诉讼法>的解释》第九十条\""""]"
+e59df253-8141-4e02-91d9-b1f401887e4c,judicial_analysis.cited_policies,1,[],[]
+e59df253-8141-4e02-91d9-b1f401887e4c,judicial_analysis.policy_labels,1,[],[]
+e59df253-8141-4e02-91d9-b1f401887e4c,judicial_analysis.judicial_framing,1,"[""\""证据不足\""""]","[""\""证据不足\""""]"
+e59df253-8141-4e02-91d9-b1f401887e4c,low_confidence_fields,1,[],[]
+ee5769c5-09d3-4320-95b3-ac7600900e26,case_amount,1,42565155.18,42565155.18
+ee5769c5-09d3-4320-95b3-ac7600900e26,case_amount_type,1,"""犯罪金额""","""犯罪金额"""
+ee5769c5-09d3-4320-95b3-ac7600900e26,metadata.case_number,1,"""(2020)豫9001刑初137号""","""(2020)豫9001刑初137号"""
+ee5769c5-09d3-4320-95b3-ac7600900e26,metadata.court_name,1,"""济源市人民法院""","""济源市人民法院"""
+ee5769c5-09d3-4320-95b3-ac7600900e26,metadata.court_level,1,"""基层法院""","""基层法院"""
+ee5769c5-09d3-4320-95b3-ac7600900e26,metadata.judgment_date,1,"""2020-08-12""","""2020-08-12"""
+ee5769c5-09d3-4320-95b3-ac7600900e26,metadata.first_instance_case_number,1,null,null
+ee5769c5-09d3-4320-95b3-ac7600900e26,metadata.region,1,"""河南""","""河南"""
+ee5769c5-09d3-4320-95b3-ac7600900e26,metadata.doc_type,1,"""判决书""","""判决书"""
+ee5769c5-09d3-4320-95b3-ac7600900e26,case_profile.case_type_primary,1,"""刑事""","""刑事"""
+ee5769c5-09d3-4320-95b3-ac7600900e26,case_profile.case_type_secondary,1,"""组织、领导传销活动罪""","""组织、领导传销活动罪"""
+ee5769c5-09d3-4320-95b3-ac7600900e26,case_profile.procedure_stage,1,"""一审""","""一审"""
+ee5769c5-09d3-4320-95b3-ac7600900e26,case_profile.is_appeal,1,false,false
+ee5769c5-09d3-4320-95b3-ac7600900e26,case_profile.litigant_profile.plaintiff_types,1,"[""\""人民检察院\""""]","[""\""人民检察院\""""]"
+ee5769c5-09d3-4320-95b3-ac7600900e26,case_profile.litigant_profile.defendant_types,1,"[""\""自然人\""""]","[""\""自然人\""""]"
+ee5769c5-09d3-4320-95b3-ac7600900e26,virtual_currency_info.involved,1,true,true
+ee5769c5-09d3-4320-95b3-ac7600900e26,virtual_currency_info.currency_types,1,"[""\""虚拟货币\""""]","[""\""虚拟货币\""""]"
+ee5769c5-09d3-4320-95b3-ac7600900e26,virtual_currency_info.activity_types,1,"[""\""传销\""""]","[""\""传销\""""]"
+ee5769c5-09d3-4320-95b3-ac7600900e26,judicial_analysis.legal_characterization,1,"""组织、领导传销活动罪""","""组织、领导传销活动罪"""
+ee5769c5-09d3-4320-95b3-ac7600900e26,judicial_analysis.virtual_currency_property_status,1,"""未明确""","""未明确"""
+ee5769c5-09d3-4320-95b3-ac7600900e26,judicial_analysis.transaction_legality_assessment,1,"""不适用""","""不适用"""
+ee5769c5-09d3-4320-95b3-ac7600900e26,judicial_analysis.contract_validity,1,"""不适用""","""不适用"""
+ee5769c5-09d3-4320-95b3-ac7600900e26,judicial_analysis.reasons_for_invalidity_or_no_protection,1,[],[]
+ee5769c5-09d3-4320-95b3-ac7600900e26,judicial_analysis.cited_laws,1,"[""\""《中华人民共和国刑事诉讼法》第二百零一条\"""", ""\""《中华人民共和国刑法》第二十七条\"""", ""\""《中华人民共和国刑法》第二十五条第一款\"""", ""\""《中华人民共和国刑法》第二百二十四条之一\"""", ""\""《中华人民共和国刑法》第六十七条第一款\"""", ""\""《中华人民共和国刑法》第六十四条\""""]","[""\""《中华人民共和国刑事诉讼法》第二百零一条\"""", ""\""《中华人民共和国刑法》第二十七条\"""", ""\""《中华人民共和国刑法》第二十五条第一款\"""", ""\""《中华人民共和国刑法》第二百二十四条之一\"""", ""\""《中华人民共和国刑法》第六十七条第一款\"""", ""\""《中华人民共和国刑法》第六十四条\""""]"
+ee5769c5-09d3-4320-95b3-ac7600900e26,judicial_analysis.cited_policies,1,[],[]
+ee5769c5-09d3-4320-95b3-ac7600900e26,judicial_analysis.policy_labels,1,[],[]
+ee5769c5-09d3-4320-95b3-ac7600900e26,judicial_analysis.judicial_framing,1,"[""\""其他\""""]","[""\""其他\""""]"
+ee5769c5-09d3-4320-95b3-ac7600900e26,low_confidence_fields,1,[],[]

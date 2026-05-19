@@ -292,3 +292,48 @@ cat ~/.ssh/yy_rsa.pub
 - `case_amount` 可用但仍有错配：F1=0.6667，TP=75，FP=41，FN=34。
 - `contract_validity` F1=0.7708，`legal_characterization` F1=0.7131，`activity_type` F1=0.2796。
 - macro F1 低的主要原因是当前提示词要求抽取很多旧 master 中基本为空的字段，例如 region、doc_type、case_type、当事人类型、币种、引用法律政策、司法框架与摘要字段，导致大量 FN。
+
+## ������ܽ��
+
+- `round-11-20260517-dsv4-reanalysis` ����ɣ��Ҹ�Ϊ�� Python ·��������ʹ�� mcp-stata��
+- �����ѱ���Ĺؼ��ļ���
+  - `result/round-11-20260517-dsv4-reanalysis/f1_basis.json`
+  - `result/round-11-20260517-dsv4-reanalysis/analysis_input_dsv4_merged.csv`
+  - `result/round-11-20260517-dsv4-reanalysis/paper_analysis_dataset.csv`
+  - `result/round-11-20260517-dsv4-reanalysis/paper_summary.json`
+  - `docs/plan/round-11-20260517-dsv4-reanalysis/plan-20260517-dsv4-reanalysis.md`
+  - `docs/analysis/round-11-20260517-dsv4-reanalysis/analysis-20260517-dsv4-reanalysis.md`
+  - `docs/report/round-11-20260517-dsv4-reanalysis/report-20260517-dsv4-reanalysis.md`
+- ���������ۣ�
+  - 2021 ���߳����Ȼ�ȶ�����
+  - �������ʹ����Ľ������������
+  - ���͵������ʺ���������������
+  - ��ǰ����ϣ�������������ǣ�
+    `�������˾�����������߳���������������ͬЧ���϶���ʵ֤�о������۽���ģ���������`
+- ���� F1 ���ۣ�
+  - micro F1 = `0.7791521890201529`
+  - micro precision = `0.8134068485200232`
+  - micro recall = `0.7476660442784743`
+  - macro F1 excluding free text = `0.8137672432638258`
+## round-12 顶刊规格深化研究
+
+本轮目录：`result/round-12-20260518-top-journal-deepening`。
+
+本轮基于第 11 轮 DSV4 主数据底稿，按顶刊实证论文要求补齐了样本审计、描述统计、模型设定、主回归、机制分析、金额与地区异质性、事件研究、严格因变量、替代金额、金额缩尾、剔除极端金额、安慰剂政策节点、留一省份和 Logit 稳健性检验，并生成完整中文报告。
+
+核心结论：
+- 2021 政策冲击在多数核心规格中保持显著，但加入线性时间趋势后不再显著，说明需要将政策节点与整体裁判时间趋势共同解释；
+- 交易类型带来的解释力提升最大，是当前论文的主机制；
+- 金额变量可用，`case_amount` F1 较好，但金额更适合做机制、控制与异质性；
+- 地区差异存在，适合放在异质性章节；
+- 研究主线继续确定为：`虚拟货币司法裁判中政策冲击、交易类型与合同效力认定的实证研究：兼论金额规模与地区差异`。
+
+核心产物：
+- `result/round-12-20260518-top-journal-deepening/round12_summary.json`
+- `result/round-12-20260518-top-journal-deepening/tables/publication_regression_table_wide.csv`
+- `result/round-12-20260518-top-journal-deepening/tables/model_key_terms.csv`
+- `result/round-12-20260518-top-journal-deepening/tables/event_study_2020_base.csv`
+- `result/round-12-20260518-top-journal-deepening/tables/robustness_placebo_cutoffs.csv`
+- `result/round-12-20260518-top-journal-deepening/tables/robustness_leave_one_province_out.csv`
+- `result/round-12-20260518-top-journal-deepening/figures/`
+- `docs/report/round-12-20260518-top-journal-deepening/report-20260518-top-journal-deepening.md`

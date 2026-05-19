@@ -1,0 +1,28 @@
+{
+  "round": "round-18-20260519-dsflash-vs-dspro-f1",
+  "seed": 2026051903,
+  "n": 20,
+  "excluded_previous_doc_count": 11,
+  "doc_ids": [
+    "5a34c6f1-1b61-433c-8897-ad1100a038df",
+    "c6b99ff3-402d-44cf-97d4-295b9562adee",
+    "c2ed7519-1db8-4169-9cd8-ab1100f097a8",
+    "7ce10ed1-8c5a-476b-b07f-b16200207c8c",
+    "0af5da90-059e-4f90-8980-acd9003c776c",
+    "d6f64036-7717-4438-b00a-ae0d014b4eb1",
+    "9a16a891-e5c4-4cda-bb74-b1a200c6456b",
+    "dca89470-12fe-4580-a13e-ab98009715f7",
+    "83ed5a36-6a09-4bdb-91a5-adfc00773dae",
+    "db92d3db-4507-4bfa-9c72-aad5008f7ddc",
+    "eda3dd34-067d-4869-82a5-ae06009c2449",
+    "ee54d878-eb16-4809-933b-a8b1009cea25",
+    "8f57b08f-1c85-46c2-ae76-abde0036b155",
+    "fca7ed68-84f7-4bd0-b1bc-af7a0112791a",
+    "daee3f58-bfeb-4bf5-9089-a9c60130ab4f",
+    "941ccba7-5df2-41f9-9487-b1e60117aaff",
+    "48d64cc1-50fb-4faf-9e23-aaa400b10fc3",
+    "b0e110b7-7bbb-4346-a794-b23500ed8b22",
+    "153ae032-9876-4fb2-b05e-ada600c639c9",
+    "35b1ba26-fe4a-4f12-9f19-b20900edad82"
+  ]
+}

@@ -1,0 +1,142 @@
+{
+  "round": "round-13-20260518-official-ds-gpt-f1",
+  "seed": 2026051802,
+  "sample_doc_ids": [
+    "b2f1b0d1-d80a-4825-8244-aaa400b11009",
+    "2f6d7dce-cf9a-4c82-a2d2-ac9301828d1d",
+    "279f4907-f482-4100-ada8-b23e001552e7",
+    "7ca115bc-1bda-4f18-a259-aca200fd97a3",
+    "b3a9cff3-bf17-440c-8d95-b1dd00063a4c",
+    "6a696386-f55b-4d15-a3fc-b1930182c7a7",
+    "a9a4ebaa-5ad0-4f9e-91ce-b2570016481b",
+    "ecf8336e-f069-4e22-b7dc-abc200a4c747",
+    "cbb0a353-8076-4d36-a76c-aef200c00264",
+    "423d0fdd-f9fd-4733-9553-ac9a0188031e"
+  ],
+  "evaluated_model": "deepseek-v4-pro",
+  "gold_model": "gpt-5.5",
+  "temperature": 0,
+  "workers": 10,
+  "prompt_path": "D:\\BaiduSyncdisk\\Doctor\\论文\\数字货币\\研究\\newstudy\\docs\\legacy\\master_prompt-260518.md",
+  "provider_audits": [
+    {
+      "provider": "ds",
+      "model": "deepseek-v4-pro",
+      "existing_before": 0,
+      "needed_this_run": 10,
+      "available_after": 10,
+      "submitted": 10,
+      "ok": 10,
+      "auth_error": 0,
+      "safety_refusal": 0,
+      "json_parse_error": 0,
+      "failed": 0
+    },
+    {
+      "provider": "gpt",
+      "model": "gpt-5.5",
+      "existing_before": 0,
+      "needed_this_run": 10,
+      "available_after": 10,
+      "submitted": 10,
+      "ok": 10,
+      "auth_error": 0,
+      "safety_refusal": 0,
+      "json_parse_error": 0,
+      "failed": 0
+    }
+  ],
+  "doc_count": 10,
+  "requested_doc_count": 10,
+  "missing_ds_doc_ids": [],
+  "missing_gpt_doc_ids": [],
+  "field_count": 19,
+  "primary_fields": [
+    "case_amount",
+    "judicial_analysis.contract_validity",
+    "virtual_currency_info.activity_types"
+  ],
+  "secondary_fields": [
+    "case_amount_type",
+    "metadata.court_level",
+    "metadata.judgment_date",
+    "metadata.region",
+    "case_profile.case_type_primary",
+    "case_profile.case_type_secondary",
+    "case_profile.procedure_stage",
+    "case_profile.is_appeal",
+    "virtual_currency_info.currency_types",
+    "judicial_analysis.legal_characterization",
+    "judicial_analysis.virtual_currency_property_status",
+    "judicial_analysis.transaction_legality_assessment",
+    "judicial_analysis.reasons_for_invalidity_or_no_protection",
+    "judicial_analysis.cited_policies",
+    "judicial_analysis.policy_labels",
+    "judicial_analysis.judicial_framing"
+  ],
+  "micro": {
+    "tp": 136,
+    "fp": 30,
+    "fn": 56,
+    "precision": 0.8192771084337349,
+    "recall": 0.7083333333333334,
+    "f1": 0.7597765363128491
+  },
+  "macro_f1": 0.7340848932538683,
+  "exact_match_rate": 0.7473684210526316,
+  "group_metrics": [
+    {
+      "group": "primary",
+      "field_count": 3,
+      "active_field_count": 3,
+      "tp": 22,
+      "fp": 7,
+      "fn": 13,
+      "precision": 0.7586206896551724,
+      "recall": 0.6285714285714286,
+      "f1": 0.6875,
+      "macro_f1": 0.6989473684210527,
+      "macro_f1_active": 0.6989473684210527,
+      "exact_match_rate": 0.6
+    },
+    {
+      "group": "secondary",
+      "field_count": 16,
+      "active_field_count": 16,
+      "tp": 114,
+      "fp": 23,
+      "fn": 43,
+      "precision": 0.8321167883211679,
+      "recall": 0.7261146496815286,
+      "f1": 0.7755102040816326,
+      "macro_f1": 0.7406731791600213,
+      "macro_f1_active": 0.7406731791600213,
+      "exact_match_rate": 0.775
+    },
+    {
+      "group": "primary_secondary",
+      "field_count": 19,
+      "active_field_count": 19,
+      "tp": 136,
+      "fp": 30,
+      "fn": 56,
+      "precision": 0.8192771084337349,
+      "recall": 0.7083333333333334,
+      "f1": 0.7597765363128491,
+      "macro_f1": 0.7340848932538683,
+      "macro_f1_active": 0.7340848932538683,
+      "exact_match_rate": 0.7473684210526316
+    }
+  ],
+  "outputs": {
+    "sample": "D:\\BaiduSyncdisk\\Doctor\\论文\\数字货币\\研究\\newstudy\\result\\round-13-20260518-official-ds-gpt-f1\\sample_10.json",
+    "ds_jsonl": "D:\\BaiduSyncdisk\\Doctor\\论文\\数字货币\\研究\\newstudy\\result\\round-13-20260518-official-ds-gpt-f1\\ds_official_outputs.jsonl",
+    "gpt_jsonl": "D:\\BaiduSyncdisk\\Doctor\\论文\\数字货币\\研究\\newstudy\\result\\round-13-20260518-official-ds-gpt-f1\\gpt55_gold_outputs.jsonl",
+    "fail_path": "D:\\BaiduSyncdisk\\Doctor\\论文\\数字货币\\研究\\newstudy\\result\\round-13-20260518-official-ds-gpt-f1\\failures.jsonl",
+    "field_metrics_csv": "D:\\BaiduSyncdisk\\Doctor\\论文\\数字货币\\研究\\newstudy\\result\\round-13-20260518-official-ds-gpt-f1\\field_f1.csv",
+    "group_metrics_csv": "D:\\BaiduSyncdisk\\Doctor\\论文\\数字货币\\研究\\newstudy\\result\\round-13-20260518-official-ds-gpt-f1\\group_f1.csv",
+    "pair_jsonl": "D:\\BaiduSyncdisk\\Doctor\\论文\\数字货币\\研究\\newstudy\\result\\round-13-20260518-official-ds-gpt-f1\\case_field_pairs.jsonl",
+    "summary_json": "D:\\BaiduSyncdisk\\Doctor\\论文\\数字货币\\研究\\newstudy\\result\\round-13-20260518-official-ds-gpt-f1\\summary.json",
+    "report": "D:\\BaiduSyncdisk\\Doctor\\论文\\数字货币\\研究\\newstudy\\result\\round-13-20260518-official-ds-gpt-f1\\REPORT.md"
+  }
+}

@@ -1,28 +1,3 @@
-# Master Prompt
-
-## 溯源结论
-
-本文件用于保存当前主数据集可追溯的历史抽取提示词口径，并补上后来进入主数据集的 `case_amount` 金额抽取口径。
-
-已核对的关键底稿：
-
-- 主数据集：`data/processed/master/master_dataset.csv`
-- 主数据集生成脚本：`code/round-3-20260516-070718/build_master_dataset.py`
-- LLM 抽取结果：`data/processed/extraction/final_all.jsonl`
-- 旧抽取模板：`数据构建/ensemble_els/prompts/extract_cn.jinja2`
-- 新研究中迁移的旧抽取模板：`code/round-2-20260516-063920/ensemble_els/prompts/extract_cn.jinja2`
-- 旧字段配置：`数据构建/docs/fields.yaml`，迁移副本为 `data/external/fields.yaml`
-
-结论：
-
-- `final_all.jsonl` 中的基础法律字段来自 `ensemble_els` 工作流，基础提示词应以 `extract_cn.jinja2` 为准。
-- 旧提示词和旧 schema 只包含 `virtual_currency_info.amounts.plaintiff_claimed_cny`、`virtual_currency_info.amounts.court_recognized_cny` 或旧字段配置里的 `virtual_currency_info.total_amount_cny`，没有找到 `case_amount` 的原始提示词。
-- `case_amount` 是 `final_all.jsonl` 顶层字段；当前主数据集将其保存为 `llm_top_case_amount_cny`，并优先用于 `amount_master_cny`。
-- 在 `数据构建` 与 `newstudy` 中检索 `case_amount` 后，只发现它出现在抽取结果、分析脚本、主数据集合并脚本和报告中，没有发现独立的 `case_amount` 提示词、schema 或后处理脚本。因此下面的正式提示词是“旧主抽取提示词 + 按当前主数据集字段重构的 `case_amount` 金额口径”。
-- 本文件不纳入正则匹配金额口径；正则金额只用于审计和兜底，不作为 LLM 提示词来源。
-
-## 正式提示词
-
 # Role
 
 你是一位精通中国民商事、刑事法律、虚拟货币监管政策，特别是“九四公告”“254号文”及证据规则的法律专家。你的任务是把非结构化裁判文书转化为可用于法学实证研究的结构化数据。

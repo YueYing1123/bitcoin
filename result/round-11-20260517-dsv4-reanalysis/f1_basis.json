@@ -1,0 +1,32 @@
+{
+  "source_round": "round-10-20260517-kimi-k26-f1",
+  "gold_model": "Pro/moonshotai/Kimi-K2.6",
+  "evaluated_model": "deepseek-ai/DeepSeek-V4-Flash",
+  "temperature": 0,
+  "sample_size": 122,
+  "field_count": 26,
+  "micro": {
+    "tp": 2803,
+    "fp": 643,
+    "fn": 946,
+    "precision": 0.8134068485200232,
+    "recall": 0.7476660442784743,
+    "f1": 0.7791521890201529
+  },
+  "macro_f1_all_fields": 0.7555833821804797,
+  "macro_f1_active_fields": 0.7858067174676989,
+  "macro_precision_all_fields": 0.7672653931267561,
+  "macro_recall_all_fields": 0.7516387123616295,
+  "macro_f1_excluding_free_text": 0.8137672432638258,
+  "excluded_free_text_fields": [
+    "llm_summary.outcome_summary",
+    "llm_summary.reasoning_summary"
+  ],
+  "overall_field_exact_match_rate": 0.798234552332913,
+  "case_amount_f1": 0.8493150684931506,
+  "case_amount_precision": 0.8773584905660378,
+  "case_amount_recall": 0.8230088495575221,
+  "contract_validity_f1": 0.9176470588235294,
+  "activity_type_f1": 0.75,
+  "report_source": "D:\\BaiduSyncdisk\\Doctor\\论文\\数字货币\\研究\\newstudy\\result\\round-10-20260517-kimi-k26-f1\\REPORT.md"
+}

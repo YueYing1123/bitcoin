@@ -1,0 +1,40 @@
+{
+  "round": "round-11-20260518-221344",
+  "seed": 20260518,
+  "sample_doc_ids": [
+    "5c487523-3862-42f7-ad69-00eadad32555",
+    "4b105da2-5648-4086-b344-ae16011d9b86",
+    "34a2c3cb-eec6-41e9-94a9-ad17009a1ac9",
+    "ee5769c5-09d3-4320-95b3-ac7600900e26",
+    "e1f64d02-ae49-4db7-823e-ad9d0113786a",
+    "d14214ed-04ba-42e4-abf5-adc200fbfada",
+    "6fc25feb-ec18-4bee-9af2-b12200c703d1",
+    "e59df253-8141-4e02-91d9-b1f401887e4c",
+    "0f24f20c-5d9f-41c8-9d56-ace501843d7a",
+    "22b20f1d-ea23-4fde-ab48-ad57012543f5"
+  ],
+  "dsv4_model": "deepseek-ai/DeepSeek-V4-Flash",
+  "gpt55_gold_model": "gpt-5.5",
+  "prompt_path": "D:\\BaiduSyncdisk\\Doctor\\论文\\数字货币\\研究\\newstudy\\docs\\legacy\\master_prompt-260518.md",
+  "outputs": {
+    "sample": "D:\\BaiduSyncdisk\\Doctor\\论文\\数字货币\\研究\\newstudy\\result\\round-11-20260518-221344\\sample_10.json",
+    "dsv4_jsonl": "D:\\BaiduSyncdisk\\Doctor\\论文\\数字货币\\研究\\newstudy\\result\\round-11-20260518-221344\\dsv4_outputs.jsonl",
+    "gpt55_jsonl": "D:\\BaiduSyncdisk\\Doctor\\论文\\数字货币\\研究\\newstudy\\result\\round-11-20260518-221344\\gpt55_gold_outputs.jsonl",
+    "field_metrics_csv": "D:\\BaiduSyncdisk\\Doctor\\论文\\数字货币\\研究\\newstudy\\result\\round-11-20260518-221344\\field_f1.csv",
+    "case_metrics_csv": "D:\\BaiduSyncdisk\\Doctor\\论文\\数字货币\\研究\\newstudy\\result\\round-11-20260518-221344\\case_field_scores.csv",
+    "fail_path": "D:\\BaiduSyncdisk\\Doctor\\论文\\数字货币\\研究\\newstudy\\result\\round-11-20260518-221344\\failures.jsonl"
+  },
+  "doc_count": 10,
+  "field_count": 28,
+  "micro_tp": 197,
+  "micro_fp": 34,
+  "micro_fn": 40,
+  "micro_tn": 42,
+  "micro_precision": 0.8528138528138528,
+  "micro_recall": 0.8312236286919831,
+  "micro_f1": 0.8418803418803418,
+  "macro_f1": 0.824310776942356,
+  "exact_match_accuracy": 0.8535714285714285,
+  "exact_match_correct": 239,
+  "exact_match_total": 280
+}

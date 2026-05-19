@@ -1,0 +1,9 @@
+﻿metric,value
+micro_precision,0.8134068485200232
+micro_recall,0.7476660442784743
+micro_f1,0.7791521890201529
+macro_f1_all_fields,0.7555833821804797
+macro_f1_excluding_free_text,0.8137672432638258
+case_amount_f1,0.8493150684931506
+contract_validity_f1,0.9176470588235294
+activity_type_f1,0.75

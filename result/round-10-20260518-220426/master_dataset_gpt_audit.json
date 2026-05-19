@@ -1,0 +1,19 @@
+{
+  "round": "round-10-20260518-220426",
+  "model": "gpt-4.1-mini",
+  "temperature": 0,
+  "prompt_path": "D:\\BaiduSyncdisk\\Doctor\\论文\\数字货币\\研究\\newstudy\\docs\\legacy\\master_prompt-260518.md",
+  "master_rows": 12135,
+  "existing_ok_before_run": 0,
+  "submitted_this_run": 1,
+  "ok_this_run": 1,
+  "auth_errors_this_run": 0,
+  "safety_refusals_this_run": 0,
+  "failed_this_run": 0,
+  "jsonl_rows": 1,
+  "csv_rows": 1,
+  "failure_rows": 2,
+  "output_jsonl": "D:\\BaiduSyncdisk\\Doctor\\论文\\数字货币\\研究\\newstudy\\data\\processed\\master\\master_dataset_gpt.jsonl",
+  "output_csv": "D:\\BaiduSyncdisk\\Doctor\\论文\\数字货币\\研究\\newstudy\\data\\processed\\master\\master_dataset_gpt.csv",
+  "fail_path": "D:\\BaiduSyncdisk\\Doctor\\论文\\数字货币\\研究\\newstudy\\result\\round-10-20260518-220426\\master_dataset_gpt_failures.jsonl"
+}

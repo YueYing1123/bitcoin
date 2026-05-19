@@ -1,0 +1,8 @@
+﻿test_name,hypothesis,statistic,df_num,df_denom,p_value,note
+joint_interaction_terms_zero,all post2021:transaction_code interaction terms equal 0,9.006381893690326,7.0,31.0,4.98081530307548e-06,Wald test on heterogeneity in transaction effects
+Mining_vs_Trading,post2021 effect Mining equals Trading,15.647185521257692,1.0,31.0,0.00041316677530326437,pairwise Wald comparison of implied treatment effects
+Mining_vs_Investment,post2021 effect Mining equals Investment,17.63990592625274,1.0,31.0,0.00020890801839612964,pairwise Wald comparison of implied treatment effects
+Trading_vs_Investment,post2021 effect Trading equals Investment,1.7311247514829116,1.0,31.0,0.19791515405680896,pairwise Wald comparison of implied treatment effects
+ICO_vs_Mining,post2021 effect ICO equals Mining,0.002590615391297571,1.0,31.0,0.959733281418412,pairwise Wald comparison of implied treatment effects
+ICO_vs_Trading,post2021 effect ICO equals Trading,1.4309048224203658,1.0,31.0,0.24068619533748262,pairwise Wald comparison of implied treatment effects
+TechService_vs_Lending,post2021 effect TechService equals Lending,0.0039928440458800755,1.0,31.0,0.9500217291900321,pairwise Wald comparison of implied treatment effects

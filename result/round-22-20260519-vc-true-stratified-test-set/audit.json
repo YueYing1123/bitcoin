@@ -1,0 +1,33 @@
+{
+  "round": "round-19-20260519-stratified-test-set",
+  "source": "D:\\BaiduSyncdisk\\Doctor\\论文\\数字货币\\研究\\newstudy\\data\\processed\\master\\master_dataset_dsv4_vc_true.csv",
+  "seed": 2026051905,
+  "fraction": 0.05,
+  "population_rows": 9928,
+  "target_n": 496,
+  "actual_n": 496,
+  "actual_fraction": 0.0499597099113618,
+  "allocation_method": "largest_remainder_by_year_then_by_region",
+  "within_year_region_sampling": "shuffle second-instance cases first, then non-second-instance cases",
+  "year_count": 16,
+  "year_region_group_count": 327,
+  "population_stage_counts": {
+    "一审": 8280,
+    "二审": 1619,
+    "再审": 23,
+    "其他": 5,
+    "非诉执行审查": 1
+  },
+  "selected_stage_counts": {
+    "二审": 474,
+    "一审": 22
+  },
+  "outputs": {
+    "test_csv": "D:\\BaiduSyncdisk\\Doctor\\论文\\数字货币\\研究\\newstudy\\result\\round-22-20260519-vc-true-stratified-test-set\\test_set_5pct_year_region_appeal_priority.csv",
+    "test_jsonl": "D:\\BaiduSyncdisk\\Doctor\\论文\\数字货币\\研究\\newstudy\\result\\round-22-20260519-vc-true-stratified-test-set\\test_set_5pct_year_region_appeal_priority.jsonl",
+    "ids_json": "D:\\BaiduSyncdisk\\Doctor\\论文\\数字货币\\研究\\newstudy\\result\\round-22-20260519-vc-true-stratified-test-set\\test_set_doc_ids.json",
+    "year_allocation_csv": "D:\\BaiduSyncdisk\\Doctor\\论文\\数字货币\\研究\\newstudy\\result\\round-22-20260519-vc-true-stratified-test-set\\year_allocation.csv",
+    "year_region_allocation_csv": "D:\\BaiduSyncdisk\\Doctor\\论文\\数字货币\\研究\\newstudy\\result\\round-22-20260519-vc-true-stratified-test-set\\year_region_allocation.csv",
+    "audit_json": "D:\\BaiduSyncdisk\\Doctor\\论文\\数字货币\\研究\\newstudy\\result\\round-22-20260519-vc-true-stratified-test-set\\audit.json"
+  }
+}

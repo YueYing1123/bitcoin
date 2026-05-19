@@ -1,0 +1,28 @@
+{
+  "round": "round-13-20260518-official-ds-gpt-f1",
+  "seed": 2026051902,
+  "n": 20,
+  "excluded_previous_doc_count": 11,
+  "doc_ids": [
+    "5195b9db-8b86-47ef-8c30-ae7f00ce7e2f",
+    "bd310ee6-3447-4ddc-be4c-e306c78f78a6",
+    "8845425f-8ddb-4621-aec8-ae900094e0fb",
+    "202c0024-a870-4232-832a-b2380016e0e9",
+    "606bb000-3e5f-4348-b255-af8c00ac352d",
+    "18d38386-8f6d-41fb-adbd-abe200a4a30b",
+    "458d429e-d818-471d-9efe-b0ed0149e36a",
+    "cac77b53-1066-4a7e-8340-114f545f872b",
+    "f7275f73-d10a-4545-938a-ac290105b06a",
+    "0085de59-2374-4694-8043-ae4900c61445",
+    "a996c323-201c-4895-a3c6-ac3000a16a57",
+    "c0b34b00-425a-4175-8913-acfc0158369d",
+    "566da7bb-9205-40a3-9b31-aeeb0115d4a4",
+    "62dbd160-c48d-4bc4-9b3a-af5500c7c1e6",
+    "4fe70d3c-c3fe-4d49-88ed-aeac0063f6ab",
+    "721dbbe1-2287-4bd8-93a3-ac1c00e211c0",
+    "d1a04afa-c54c-4559-991e-b23e00156cee",
+    "c4b684c2-7081-45d7-9466-acc300906d74",
+    "4a21b4f8-1b68-4ee0-ae9d-a7a200960b24",
+    "92a414f0-8ea3-4589-ac3b-b22d0014f57d"
+  ]
+}

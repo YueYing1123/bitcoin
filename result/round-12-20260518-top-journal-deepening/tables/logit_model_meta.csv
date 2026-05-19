@@ -1,0 +1,2 @@
+﻿model,formula,note,nobs,pseudo_rsquared,avg_predicted_post2021_effect,converged,error
+logit_robustness,"contract_invalid ~ post2021 + amount_log + amount_llm_regex_conflict_flag + C(court_level_code) + C(cause_code) + C(transaction_code, Treatment(reference='Lending')) + C(region_macro_code)",Logit非线性模型稳健性；报告post2021平均预测概率差。,5166,0.13438780512873827,0.0800855922440226,True,

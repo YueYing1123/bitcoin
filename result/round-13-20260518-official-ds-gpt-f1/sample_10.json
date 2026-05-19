@@ -1,0 +1,18 @@
+{
+  "round": "round-13-20260518-official-ds-gpt-f1",
+  "seed": 2026051802,
+  "n": 10,
+  "excluded_previous_doc_count": 11,
+  "doc_ids": [
+    "b2f1b0d1-d80a-4825-8244-aaa400b11009",
+    "2f6d7dce-cf9a-4c82-a2d2-ac9301828d1d",
+    "279f4907-f482-4100-ada8-b23e001552e7",
+    "7ca115bc-1bda-4f18-a259-aca200fd97a3",
+    "b3a9cff3-bf17-440c-8d95-b1dd00063a4c",
+    "6a696386-f55b-4d15-a3fc-b1930182c7a7",
+    "a9a4ebaa-5ad0-4f9e-91ce-b2570016481b",
+    "ecf8336e-f069-4e22-b7dc-abc200a4c747",
+    "cbb0a353-8076-4d36-a76c-aef200c00264",
+    "423d0fdd-f9fd-4733-9553-ac9a0188031e"
+  ]
+}

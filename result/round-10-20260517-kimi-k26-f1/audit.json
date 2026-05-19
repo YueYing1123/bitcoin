@@ -1,0 +1,23 @@
+{
+  "round": "round-10-20260517-kimi-k26-f1",
+  "model": "Pro/moonshotai/Kimi-K2.6",
+  "temperature": 0,
+  "rpm": 500,
+  "tpm": 2000000,
+  "workers": 96,
+  "max_tokens": 4096,
+  "sample_fraction": 0.01,
+  "seed": 20260517,
+  "target_docs_total": 12134,
+  "target_success_count": 122,
+  "existing_gold_before_run": 0,
+  "submitted_this_run": 122,
+  "ok_this_run": 122,
+  "safety_refusals_this_run": 0,
+  "failed_this_run": 0,
+  "gold_jsonl_rows": 122,
+  "gold_csv_rows": 122,
+  "output_gold_jsonl": "D:\\BaiduSyncdisk\\Doctor\\论文\\数字货币\\研究\\newstudy\\result\\round-10-20260517-kimi-k26-f1\\kimi_k26_gold_1pct.jsonl",
+  "output_gold_csv": "D:\\BaiduSyncdisk\\Doctor\\论文\\数字货币\\研究\\newstudy\\result\\round-10-20260517-kimi-k26-f1\\kimi_k26_gold_1pct.csv",
+  "fail_path": "D:\\BaiduSyncdisk\\Doctor\\论文\\数字货币\\研究\\newstudy\\result\\round-10-20260517-kimi-k26-f1\\kimi_k26_gold_failures.jsonl"
+}

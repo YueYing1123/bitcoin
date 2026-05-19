@@ -1,0 +1,19 @@
+{
+  "round": "round-9-20260517-033120",
+  "model": "deepseek-ai/DeepSeek-V4-Flash",
+  "temperature": 0,
+  "master_rows": 12135,
+  "target_docs_with_text": 12134,
+  "missing_text_docs": 1,
+  "jsonl_rows_before_dedupe": 12140,
+  "duplicate_rows_removed": 6,
+  "jsonl_rows": 12134,
+  "csv_rows": 12134,
+  "unique_document_ids": 12134,
+  "remaining_text_docs_without_dsv4": 0,
+  "failure_rows_historical": 294,
+  "deduped_at": "2026-05-17 10:10:24",
+  "output_jsonl": "D:\\BaiduSyncdisk\\Doctor\\论文\\数字货币\\研究\\newstudy\\data\\processed\\master\\master_dataset_dsv4.jsonl",
+  "output_csv": "D:\\BaiduSyncdisk\\Doctor\\论文\\数字货币\\研究\\newstudy\\data\\processed\\master\\master_dataset_dsv4.csv",
+  "fail_path": "D:\\BaiduSyncdisk\\Doctor\\论文\\数字货币\\研究\\newstudy\\result\\round-9-20260517-033120\\master_dataset_dsv4_failures.jsonl"
+}

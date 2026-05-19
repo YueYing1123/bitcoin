@@ -1,0 +1,28 @@
+{
+  "round": "round-10-20260517-kimi-k26-f1",
+  "gold_model": "Pro/moonshotai/Kimi-K2.6",
+  "evaluated_model": "deepseek-ai/DeepSeek-V4-Flash",
+  "temperature": 0,
+  "sample_size": 122,
+  "field_count": 26,
+  "micro": {
+    "tp": 2803,
+    "fp": 643,
+    "fn": 946,
+    "precision": 0.8134068485200232,
+    "recall": 0.7476660442784743,
+    "f1": 0.7791521890201529
+  },
+  "macro_f1_all_fields": 0.7555833821804797,
+  "macro_f1_active_fields": 0.7858067174676989,
+  "macro_precision_all_fields": 0.7672653931267561,
+  "macro_recall_all_fields": 0.7516387123616295,
+  "overall_field_exact_match_rate": 0.798234552332913,
+  "outputs": {
+    "gold_jsonl": "D:\\BaiduSyncdisk\\Doctor\\论文\\数字货币\\研究\\newstudy\\result\\round-10-20260517-kimi-k26-f1\\kimi_k26_gold_1pct.jsonl",
+    "gold_csv": "D:\\BaiduSyncdisk\\Doctor\\论文\\数字货币\\研究\\newstudy\\result\\round-10-20260517-kimi-k26-f1\\kimi_k26_gold_1pct.csv",
+    "field_metrics_csv": "D:\\BaiduSyncdisk\\Doctor\\论文\\数字货币\\研究\\newstudy\\result\\round-10-20260517-kimi-k26-f1\\field_metrics.csv",
+    "pairs_jsonl": "D:\\BaiduSyncdisk\\Doctor\\论文\\数字货币\\研究\\newstudy\\result\\round-10-20260517-kimi-k26-f1\\dsv4_vs_kimi_pairs.jsonl",
+    "report": "D:\\BaiduSyncdisk\\Doctor\\论文\\数字货币\\研究\\newstudy\\result\\round-10-20260517-kimi-k26-f1\\REPORT.md"
+  }
+}

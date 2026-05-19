@@ -1,0 +1,3 @@
+﻿spec,pre_years,f_stat,p_value,df_denom,df_num,nobs,note
+full_window_2014_2024,2014-2019,2.0934622795823414,0.08260329247479693,31.0,6.0,5166,2020 omitted base year; joint pretrend F-test.
+short_window_2017_2024,2017-2019,1.9808389804651403,0.13733454757566874,31.0,3.0,5064,2020 omitted base year; joint pretrend F-test.

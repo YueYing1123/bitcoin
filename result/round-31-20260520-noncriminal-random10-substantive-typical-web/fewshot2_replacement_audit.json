@@ -1,0 +1,218 @@
+{
+  "doc_id": "dbea019d-9a09-43e7-adf9-ac9a003d6f7b",
+  "manual_saved_at": "2026-05-20 08:53:08",
+  "manual_fields": {
+    "case_amount": "49800",
+    "case_amount_type": "原告诉请本金",
+    "typical_virtual_currency": "是",
+    "direct_related_contract_validity": "无效",
+    "indirect_related_contract_validity": "不适用",
+    "activity_types": [
+      "买卖/兑换",
+      "委托理财/代投"
+    ],
+    "court_level": "中级法院",
+    "judgment_date": "2020-09-22",
+    "region": "陕西",
+    "case_type_primary": "民事",
+    "case_type_secondary": "不当得利纠纷",
+    "procedure_stage": "二审",
+    "is_appeal": "true",
+    "legal_characterization": "不当得利",
+    "direct_transaction_legality_assessment": "不受法律保护",
+    "indirect_transaction_legality_assessment": "不适用",
+    "currency_types": [
+      "数字货币"
+    ],
+    "virtual_currency_property_status": [
+      "不具有法偿性",
+      "非货币",
+      "不属于法定货币"
+    ],
+    "reasons_for_invalidity_or_no_protection": [
+      "违反法律强制性规定",
+      "投资风险自担",
+      "不具有法偿性",
+      "不属于法定货币"
+    ],
+    "cited_policies": [],
+    "policy_labels": [],
+    "judicial_framing": [
+      "风险自担",
+      "合同无效",
+      "违反强制性规定"
+    ]
+  },
+  "source_text_chars": 2474,
+  "output": {
+    "document_id": "dbea019d-9a09-43e7-adf9-ac9a003d6f7b",
+    "case_amount": 49800,
+    "case_amount_type": "原告诉请本金",
+    "case_amount_evidence": null,
+    "metadata": {
+      "case_number": {
+        "value": "（2020）陕03民终1472号",
+        "evidence": "案号: （2020）陕03民终1472号"
+      },
+      "court_name": {
+        "value": "陕西省宝鸡市中级人民法院",
+        "evidence": "法院: 陕西省宝鸡市中级人民法院"
+      },
+      "court_level": {
+        "value": "中级法院",
+        "evidence": null
+      },
+      "judgment_date": {
+        "value": "2020-09-22",
+        "evidence": null
+      },
+      "first_instance_case_number": {
+        "value": null,
+        "evidence": null
+      },
+      "region": {
+        "value": "陕西",
+        "evidence": null
+      },
+      "doc_type": {
+        "value": "判决书",
+        "evidence": "民事判决书"
+      }
+    },
+    "case_profile": {
+      "case_type_primary": {
+        "value": "民事",
+        "evidence": null
+      },
+      "case_type_secondary": {
+        "value": "不当得利纠纷",
+        "evidence": null
+      },
+      "procedure_stage": {
+        "value": "二审",
+        "evidence": null
+      },
+      "is_appeal": {
+        "value": true,
+        "evidence": null
+      },
+      "litigant_profile": {
+        "plaintiff_types": {
+          "value": [
+            "自然人"
+          ],
+          "evidence": "上诉人俱某某"
+        },
+        "defendant_types": {
+          "value": [
+            "自然人"
+          ],
+          "evidence": "被上诉人仝某某"
+        }
+      }
+    },
+    "virtual_currency_info": {
+      "involved": {
+        "value": true,
+        "evidence": "被告将原告的31800元转给其朋友李某某,委托李某某在网络平台上购买数字货币"
+      },
+      "typical_virtual_currency": {
+        "value": "是",
+        "evidence": null
+      },
+      "currency_types": {
+        "value": [
+          "数字货币"
+        ],
+        "evidence": null
+      },
+      "activity_types": {
+        "value": [
+          "买卖/兑换",
+          "委托理财/代投"
+        ],
+        "evidence": null
+      }
+    },
+    "judicial_analysis": {
+      "legal_characterization": {
+        "value": "不当得利",
+        "evidence": null
+      },
+      "virtual_currency_property_status": {
+        "value": [
+          "不具有法偿性",
+          "非货币",
+          "不属于法定货币"
+        ],
+        "evidence": null
+      },
+      "direct_transaction_legality_assessment": {
+        "value": "不受法律保护",
+        "evidence": null
+      },
+      "indirect_transaction_legality_assessment": {
+        "value": "不适用",
+        "evidence": null
+      },
+      "direct_related_contract_validity": {
+        "value": "无效",
+        "evidence": null
+      },
+      "indirect_related_contract_validity": {
+        "value": "不适用",
+        "evidence": null
+      },
+      "reasons_for_invalidity_or_no_protection": {
+        "value": [
+          "违反法律强制性规定",
+          "投资风险自担",
+          "不具有法偿性",
+          "不属于法定货币"
+        ],
+        "evidence": null
+      },
+      "cited_laws": {
+        "value": [
+          "《中华人民共和国民法通则》第九十二条",
+          "《最高人民法院关于贯彻执行〈中华人民共和国民法通则〉若干问题的意见》第一百三十一条",
+          "《中华人民共和国民法总则》第一百一十九条",
+          "《中华人民共和国民法总则》第一百二十二条",
+          "《中华人民共和国民事诉讼法》第一百七十条第一款(一)项"
+        ],
+        "evidence": "依照《中华人民共和国民法通则》第九十二条,《最高人民法院关于贯彻执行〈中华人民共和国民法通则〉若干问题的意见》第一百三十一条,《中华人民共和国民法总则》第一百一十九条、第一百二十二条之规定"
+      },
+      "cited_policies": {
+        "value": [],
+        "evidence": null
+      },
+      "policy_labels": {
+        "value": [],
+        "evidence": null
+      },
+      "judicial_framing": {
+        "value": [
+          "风险自担",
+          "合同无效",
+          "违反强制性规定"
+        ],
+        "evidence": null
+      }
+    },
+    "llm_summary": {
+      "outcome_summary": {
+        "value": "驳回诉请",
+        "evidence": "判决:驳回原告俱某某的诉讼请求"
+      },
+      "reasoning_summary": {
+        "value": "法院认为，购买虚拟货币的行为违反强制性规定，不受法律保护，风险自担；且原告无证据证明被告获利，不构成不当得利。",
+        "evidence": "购买虚拟货币的行为违反了国家法律、行政法规的强制性规定,不具有合法性,不受法律保护,由此产生的风险应当由原告自行承担。且原告并无证据证明被告因给其购买数字货币而获利"
+      }
+    },
+    "low_confidence_fields": {
+      "value": [],
+      "evidence": null
+    }
+  },
+  "backup": "newstudy\\docs\\legacy\\master_prompt-260518.md.bak-before-fewshot2-latest"
+}

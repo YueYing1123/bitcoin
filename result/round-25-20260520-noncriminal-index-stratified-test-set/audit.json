@@ -1,0 +1,352 @@
+{
+  "round": "round-25-20260520-noncriminal-index-stratified-test-set",
+  "source": "D:\\BaiduSyncdisk\\Doctor\\论文\\数字货币\\研究\\newstudy\\data\\raw\\data-index.json",
+  "filter_rule": "exclude rows where 案由/罪名 contains 罪",
+  "seed": 20260520,
+  "fraction": 0.05,
+  "raw_rows": 12135,
+  "rows_with_doc_id": 12135,
+  "missing_doc_id": 0,
+  "excluded_criminal_rows": 5942,
+  "base_noncriminal_rows": 6193,
+  "target_n": 309,
+  "actual_n": 309,
+  "actual_fraction": 0.049895042790247056,
+  "allocation_method": "largest_remainder_by_year_then_by_region",
+  "within_year_region_sampling": "shuffle second-instance cases first, then non-second-instance cases",
+  "year_count": 16,
+  "year_region_group_count": 299,
+  "base_stage_counts": {
+    "二审": 1874,
+    "一审": 4275,
+    "非诉执行审查": 10,
+    "再审": 28,
+    "未明确程序": 5,
+    "再审审查与审判监督": 1
+  },
+  "selected_stage_counts": {
+    "一审": 6,
+    "二审": 303
+  },
+  "base_region_counts": {
+    "上海": 279,
+    "新疆": 103,
+    "云南": 196,
+    "陕西": 178,
+    "湖南": 280,
+    "广东": 961,
+    "宁夏": 25,
+    "辽宁": 196,
+    "河北": 91,
+    "北京": 461,
+    "湖北": 215,
+    "重庆": 124,
+    "安徽": 152,
+    "山东": 520,
+    "河南": 274,
+    "最高人民法院": 23,
+    "浙江": 481,
+    "内蒙古": 77,
+    "福建": 271,
+    "江苏": 318,
+    "四川": 291,
+    "江西": 156,
+    "吉林": 80,
+    "贵州": 45,
+    "天津": 35,
+    "黑龙江": 60,
+    "海南": 11,
+    "甘肃": 30,
+    "广西": 108,
+    "山西": 39,
+    "青海": 12,
+    "未明确地区": 100,
+    "西藏": 1
+  },
+  "selected_region_counts": {
+    "浙江": 27,
+    "未明确地区": 5,
+    "北京": 24,
+    "广东": 49,
+    "江苏": 16,
+    "上海": 15,
+    "四川": 15,
+    "福建": 14,
+    "山东": 26,
+    "江西": 8,
+    "河南": 15,
+    "湖北": 10,
+    "湖南": 15,
+    "辽宁": 9,
+    "重庆": 7,
+    "云南": 10,
+    "吉林": 4,
+    "安徽": 7,
+    "广西": 6,
+    "河北": 5,
+    "陕西": 9,
+    "内蒙古": 3,
+    "新疆": 6,
+    "天津": 1,
+    "贵州": 1,
+    "黑龙江": 2
+  },
+  "base_rows_missing_text": 0,
+  "top_excluded_case_reasons": [
+    [
+      "诈骗罪",
+      1041
+    ],
+    [
+      "帮助信息网络犯罪活动罪",
+      921
+    ],
+    [
+      "开设赌场罪",
+      914
+    ],
+    [
+      "掩饰、隐瞒犯罪所得、犯罪所得收益罪",
+      800
+    ],
+    [
+      "组织、领导传销活动罪",
+      711
+    ],
+    [
+      "盗窃罪",
+      405
+    ],
+    [
+      "非法吸收公众存款罪",
+      171
+    ],
+    [
+      "走私、贩卖、运输、制造毒品罪",
+      146
+    ],
+    [
+      "赌博罪",
+      127
+    ],
+    [
+      "侵犯公民个人信息罪",
+      112
+    ],
+    [
+      "非法侵入计算机信息系统罪",
+      84
+    ],
+    [
+      "集资诈骗罪",
+      68
+    ],
+    [
+      "非法利用信息网络罪",
+      53
+    ],
+    [
+      "职务侵占罪",
+      36
+    ],
+    [
+      "妨害信用卡管理罪",
+      35
+    ],
+    [
+      "合同诈骗罪",
+      34
+    ],
+    [
+      "非法拘禁罪",
+      29
+    ],
+    [
+      "传播淫秽物品罪",
+      24
+    ],
+    [
+      "信用卡诈骗罪",
+      23
+    ],
+    [
+      "抢劫罪",
+      18
+    ],
+    [
+      "破坏计算机信息系统罪",
+      18
+    ],
+    [
+      "侵犯著作权罪",
+      17
+    ],
+    [
+      "挪用资金罪",
+      17
+    ],
+    [
+      "偷越国（边）境罪",
+      13
+    ],
+    [
+      "洗钱罪",
+      12
+    ],
+    [
+      "窃取、收买、非法提供信用卡信息罪",
+      9
+    ],
+    [
+      "挪用公款罪",
+      8
+    ],
+    [
+      "组织淫秽表演罪",
+      7
+    ],
+    [
+      "贪污罪",
+      7
+    ],
+    [
+      "提供侵入、非法控制计算机信息系统程序、工具罪",
+      6
+    ]
+  ],
+  "top_kept_case_reasons": [
+    [
+      "民间借贷纠纷",
+      1841
+    ],
+    [
+      "合同纠纷",
+      1003
+    ],
+    [
+      "买卖合同纠纷",
+      463
+    ],
+    [
+      "不当得利纠纷",
+      429
+    ],
+    [
+      "委托合同纠纷",
+      417
+    ],
+    [
+      "网络服务合同纠纷",
+      179
+    ],
+    [
+      "委托理财合同纠纷",
+      161
+    ],
+    [
+      "侵害作品信息网络传播权纠纷",
+      161
+    ],
+    [
+      "民间委托理财合同纠纷",
+      114
+    ],
+    [
+      "著作权权属纠纷",
+      78
+    ],
+    [
+      "侵害商标权纠纷",
+      71
+    ],
+    [
+      "",
+      68
+    ],
+    [
+      "网络域名合同纠纷",
+      62
+    ],
+    [
+      "服务合同纠纷",
+      59
+    ],
+    [
+      "劳动争议",
+      51
+    ],
+    [
+      "赠与合同纠纷",
+      48
+    ],
+    [
+      "返还原物纠纷",
+      37
+    ],
+    [
+      "网络侵权责任纠纷",
+      36
+    ],
+    [
+      "不正当竞争纠纷",
+      36
+    ],
+    [
+      "财产损害赔偿纠纷",
+      35
+    ],
+    [
+      "合伙协议纠纷",
+      33
+    ],
+    [
+      "合伙合同纠纷",
+      31
+    ],
+    [
+      "侵权责任纠纷",
+      27
+    ],
+    [
+      "侵害外观设计专利权纠纷",
+      26
+    ],
+    [
+      "劳动合同纠纷",
+      25
+    ],
+    [
+      "房屋买卖合同纠纷",
+      25
+    ],
+    [
+      "租赁合同纠纷",
+      24
+    ],
+    [
+      "信息网络买卖合同纠纷",
+      23
+    ],
+    [
+      "计算机软件开发合同纠纷",
+      23
+    ],
+    [
+      "侵害作品发行权纠纷",
+      22
+    ]
+  ],
+  "outputs": {
+    "base_csv": "D:\\BaiduSyncdisk\\Doctor\\论文\\数字货币\\研究\\newstudy\\data\\processed\\master\\data_index_noncriminal_base.csv",
+    "base_jsonl": "D:\\BaiduSyncdisk\\Doctor\\论文\\数字货币\\研究\\newstudy\\data\\processed\\master\\data_index_noncriminal_base.jsonl",
+    "excluded_csv": "D:\\BaiduSyncdisk\\Doctor\\论文\\数字货币\\研究\\newstudy\\result\\round-25-20260520-noncriminal-index-stratified-test-set\\data_index_criminal_excluded_by_case_reason_contains_zui.csv",
+    "excluded_jsonl": "D:\\BaiduSyncdisk\\Doctor\\论文\\数字货币\\研究\\newstudy\\result\\round-25-20260520-noncriminal-index-stratified-test-set\\data_index_criminal_excluded_by_case_reason_contains_zui.jsonl",
+    "test_csv": "D:\\BaiduSyncdisk\\Doctor\\论文\\数字货币\\研究\\newstudy\\result\\round-25-20260520-noncriminal-index-stratified-test-set\\test_set_5pct_year_region_appeal_priority.csv",
+    "test_jsonl": "D:\\BaiduSyncdisk\\Doctor\\论文\\数字货币\\研究\\newstudy\\result\\round-25-20260520-noncriminal-index-stratified-test-set\\test_set_5pct_year_region_appeal_priority.jsonl",
+    "ids_json": "D:\\BaiduSyncdisk\\Doctor\\论文\\数字货币\\研究\\newstudy\\result\\round-25-20260520-noncriminal-index-stratified-test-set\\test_set_doc_ids.json",
+    "year_allocation_csv": "D:\\BaiduSyncdisk\\Doctor\\论文\\数字货币\\研究\\newstudy\\result\\round-25-20260520-noncriminal-index-stratified-test-set\\year_allocation.csv",
+    "year_region_allocation_csv": "D:\\BaiduSyncdisk\\Doctor\\论文\\数字货币\\研究\\newstudy\\result\\round-25-20260520-noncriminal-index-stratified-test-set\\year_region_allocation.csv",
+    "case_reason_counts_csv": "D:\\BaiduSyncdisk\\Doctor\\论文\\数字货币\\研究\\newstudy\\result\\round-25-20260520-noncriminal-index-stratified-test-set\\case_reason_filter_counts.csv",
+    "audit_json": "D:\\BaiduSyncdisk\\Doctor\\论文\\数字货币\\研究\\newstudy\\result\\round-25-20260520-noncriminal-index-stratified-test-set\\audit.json"
+  }
+}

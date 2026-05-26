@@ -1,0 +1,42 @@
+{
+  "source_rows": 6193,
+  "formal_test_file": "newstudy\\result\\round-25-20260520-noncriminal-index-stratified-test-set\\test_set_5pct_year_region_appeal_priority.csv",
+  "excluded_round25_test_ids": 309,
+  "prior_random_files": [
+    "newstudy\\result\\round-23-20260519-random10-dspro-web\\random10_from_master_dataset_vc_true.csv",
+    "newstudy\\result\\round-24-20260519-random10-dspro-web-no-overall-validity\\random10_from_master_dataset_vc_true.csv",
+    "newstudy\\result\\round-26-20260520-noncriminal-random10-dspro-web\\random10_from_data_index_noncriminal_base.csv",
+    "newstudy\\result\\round-27-20260520-noncriminal-random10-typical-vc-web\\random10_from_data_index_noncriminal_base.csv",
+    "newstudy\\result\\round-28-20260520-noncriminal-random10-typical-gate-web\\random10_from_data_index_noncriminal_base.csv",
+    "newstudy\\result\\round-29-20260520-noncriminal-random10-not-testset-typical-gate-web\\random10_from_data_index_noncriminal_base_excluding_testsets.csv",
+    "newstudy\\result\\round-30-20260520-fewshot-noncriminal-random10-web\\random10_from_data_index_noncriminal_base_excluding_testsets_and_prior_web.csv"
+  ],
+  "excluded_prior_random_ids": 70,
+  "candidate_rows": 5827,
+  "sample_rows": 10,
+  "output": "newstudy\\result\\round-31-20260520-noncriminal-random10-substantive-typical-web\\random10_from_data_index_noncriminal_base_excluding_round25_testset_and_prior_web.csv",
+  "sample_doc_ids": [
+    "c31d8970-d871-48a1-8b04-acfc012572ad",
+    "f74bfd2a-981d-424f-a862-b04c008b9710",
+    "a94bd0a2-7c0c-4a3d-aca1-abfb00cd5346",
+    "610b1988-2768-4461-933d-aae000abd97f",
+    "fc148ab1-a06f-48bd-bffb-b1e30116b8a9",
+    "7ec55e60-10aa-4c3c-8d4d-aefa00b51ee5",
+    "60e237b9-1c0e-47bb-ac23-b13400f1e950",
+    "dbea019d-9a09-43e7-adf9-ac9a003d6f7b",
+    "f8bfb3f4-97eb-4961-946d-ae56017d1468",
+    "ede7008d-91f1-4597-ac96-ae9b0015cc6f"
+  ],
+  "sample_titles": [
+    "某公司1与某公司2著作权权属、侵权纠纷二审民事案",
+    "刘某某与安某某不当得利纠纷一审民事案",
+    "黄某某、王某某民间借贷纠纷二审民事案",
+    "费某某与焦某某民间借贷纠纷一审民事案",
+    "彦某与林某、韩某委托合同纠纷再审审查民事案",
+    "黄某某、肖某某买卖合同纠纷民事一审民事案",
+    "唐某某与周某某、张某某委托理财合同纠纷一审民事案",
+    "俱某某与仝某某不当得利纠纷二审民事案",
+    "魏某某、曹某某等民间借贷纠纷民事一审民事案",
+    "徐某某、李某某等买卖合同纠纷民事一审民事案"
+  ]
+}

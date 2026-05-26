@@ -98,6 +98,65 @@ class LLMSummary(BaseModel):
 	core_issue: Optional[str] = None
 
 
+class InstanceFields(BaseModel):
+	case_amount_first_instance: Optional[float] = None
+	case_amount_type_first_instance: Optional[str] = None
+	case_amount_evidence_first_instance: Optional[str] = None
+	case_amount_second_instance: Optional[float] = None
+	case_amount_type_second_instance: Optional[str] = None
+	case_amount_evidence_second_instance: Optional[str] = None
+	case_type_primary_first_instance: Dict[str, Any] = Field(default_factory=dict)
+	case_type_primary_second_instance: Dict[str, Any] = Field(default_factory=dict)
+	case_type_secondary_first_instance: Dict[str, Any] = Field(default_factory=dict)
+	case_type_secondary_second_instance: Dict[str, Any] = Field(default_factory=dict)
+	involved_first_instance: Dict[str, Any] = Field(default_factory=dict)
+	involved_second_instance: Dict[str, Any] = Field(default_factory=dict)
+	typical_virtual_currency_first_instance: Dict[str, Any] = Field(default_factory=dict)
+	typical_virtual_currency_second_instance: Dict[str, Any] = Field(default_factory=dict)
+	currency_types_first_instance: Dict[str, Any] = Field(default_factory=dict)
+	currency_types_second_instance: Dict[str, Any] = Field(default_factory=dict)
+	activity_types_first_instance: Dict[str, Any] = Field(default_factory=dict)
+	activity_types_second_instance: Dict[str, Any] = Field(default_factory=dict)
+	legal_characterization_first_instance: Dict[str, Any] = Field(default_factory=dict)
+	legal_characterization_second_instance: Dict[str, Any] = Field(default_factory=dict)
+	virtual_currency_property_status_first_instance: Dict[str, Any] = Field(default_factory=dict)
+	virtual_currency_property_status_second_instance: Dict[str, Any] = Field(default_factory=dict)
+	direct_transaction_legality_assessment_first_instance: Dict[str, Any] = Field(default_factory=dict)
+	direct_transaction_legality_assessment_second_instance: Dict[str, Any] = Field(default_factory=dict)
+	indirect_transaction_legality_assessment_first_instance: Dict[str, Any] = Field(default_factory=dict)
+	indirect_transaction_legality_assessment_second_instance: Dict[str, Any] = Field(default_factory=dict)
+	direct_related_contract_validity_first_instance: Dict[str, Any] = Field(default_factory=dict)
+	direct_related_contract_validity_second_instance: Dict[str, Any] = Field(default_factory=dict)
+	indirect_related_contract_validity_first_instance: Dict[str, Any] = Field(default_factory=dict)
+	indirect_related_contract_validity_second_instance: Dict[str, Any] = Field(default_factory=dict)
+	reasons_for_invalidity_or_no_protection_first_instance: Dict[str, Any] = Field(default_factory=dict)
+	reasons_for_invalidity_or_no_protection_second_instance: Dict[str, Any] = Field(default_factory=dict)
+	cited_laws_first_instance: Dict[str, Any] = Field(default_factory=dict)
+	cited_laws_second_instance: Dict[str, Any] = Field(default_factory=dict)
+	cited_policies_first_instance: Dict[str, Any] = Field(default_factory=dict)
+	cited_policies_second_instance: Dict[str, Any] = Field(default_factory=dict)
+	policy_labels_first_instance: Dict[str, Any] = Field(default_factory=dict)
+	policy_labels_second_instance: Dict[str, Any] = Field(default_factory=dict)
+	judicial_framing_first_instance: Dict[str, Any] = Field(default_factory=dict)
+	judicial_framing_second_instance: Dict[str, Any] = Field(default_factory=dict)
+	outcome_summary_first_instance: Dict[str, Any] = Field(default_factory=dict)
+	outcome_summary_second_instance: Dict[str, Any] = Field(default_factory=dict)
+	reasoning_summary_first_instance: Dict[str, Any] = Field(default_factory=dict)
+	reasoning_summary_second_instance: Dict[str, Any] = Field(default_factory=dict)
+	low_confidence_fields_first_instance: Dict[str, Any] = Field(default_factory=dict)
+	low_confidence_fields_second_instance: Dict[str, Any] = Field(default_factory=dict)
+
+
+class FinalOutputPointer(BaseModel):
+	appeal_outcome: Dict[str, Any] = Field(default_factory=dict)
+	final_effective_instance: Dict[str, Any] = Field(default_factory=dict)
+	use_fields_suffix: Dict[str, Any] = Field(default_factory=dict)
+	reasoning_changed: Dict[str, Any] = Field(default_factory=dict)
+	result_changed: Dict[str, Any] = Field(default_factory=dict)
+	procedural_only: Dict[str, Any] = Field(default_factory=dict)
+	changed_fields_between_instances: Dict[str, Any] = Field(default_factory=dict)
+
+
 class MasterRecord(BaseModel):
 	document_id: str
 	metadata: Metadata = Field(default_factory=Metadata)
@@ -109,6 +168,8 @@ class MasterRecord(BaseModel):
 	judicial_analysis: JudicialAnalysis = Field(default_factory=JudicialAnalysis)
 	meta_ensemble: MetaEnsemble = Field(default_factory=MetaEnsemble)
 	llm_summary: LLMSummary = Field(default_factory=LLMSummary)
+	instance_fields: InstanceFields = Field(default_factory=InstanceFields)
+	final_output_pointer: FinalOutputPointer = Field(default_factory=FinalOutputPointer)
 	custom_annotations: Dict[str, Any] = Field(default_factory=dict)
 
 

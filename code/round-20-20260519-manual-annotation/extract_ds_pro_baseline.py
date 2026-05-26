@@ -14,13 +14,16 @@ from typing import Any
 from openai import OpenAI
 from tqdm import tqdm
 
+from instance_schema import ALL_FIELDS, field_key_to_csv_column, get_field_value, scalar_leaf
+
 
 ROOT = Path(__file__).resolve().parents[2]
 PROJECT_ROOT = ROOT.parent
 ROUND_DIR = ROOT / "result" / "round-20-20260519-manual-annotation"
 DEFAULT_TEST_SET = ROOT / "result" / "round-22-20260519-vc-true-stratified-test-set" / "test_set_5pct_year_region_appeal_priority.csv"
 DEFAULT_TEXTS = ROOT / "data" / "raw" / "data-texts.json"
-DEFAULT_PROMPT = ROOT / "docs" / "legacy" / "master_prompt-260518.md"
+DEFAULT_DATA_INDEX = ROOT / "data" / "raw" / "data-index.json"
+DEFAULT_PROMPT = ROOT / "docs" / "legacy" / "master_prompt-260525.md"
 DEFAULT_ENV = PROJECT_ROOT / ".env"
 DEFAULT_JSONL = ROUND_DIR / "ds_v4_pro_testset_baseline.jsonl"
 DEFAULT_CSV = ROUND_DIR / "ds_v4_pro_testset_baseline.csv"
@@ -29,38 +32,20 @@ DEFAULT_FAIL = ROUND_DIR / "ds_v4_pro_testset_baseline_failures.jsonl"
 
 MODEL = "deepseek-v4-pro"
 
-CONTENT_FIELDS = [
-    "case_amount",
-    "case_amount_type",
-    "metadata.case_number",
-    "metadata.court_name",
-    "metadata.court_level",
-    "metadata.judgment_date",
-    "metadata.first_instance_case_number",
-    "metadata.region",
-    "metadata.doc_type",
-    "case_profile.case_type_primary",
-    "case_profile.case_type_secondary",
-    "case_profile.procedure_stage",
-    "case_profile.is_appeal",
-    "case_profile.litigant_profile.plaintiff_types",
-    "case_profile.litigant_profile.defendant_types",
-    "virtual_currency_info.involved",
-    "virtual_currency_info.currency_types",
-    "virtual_currency_info.activity_types",
-    "judicial_analysis.legal_characterization",
-    "judicial_analysis.virtual_currency_property_status",
-    "judicial_analysis.transaction_legality_assessment",
-    "judicial_analysis.contract_validity",
-    "judicial_analysis.reasons_for_invalidity_or_no_protection",
-    "judicial_analysis.cited_laws",
-    "judicial_analysis.cited_policies",
-    "judicial_analysis.policy_labels",
-    "judicial_analysis.judicial_framing",
-    "llm_summary.outcome_summary",
-    "llm_summary.reasoning_summary",
-    "low_confidence_fields",
-]
+CONTENT_FIELDS = [field["key"] for field in ALL_FIELDS]
+
+INDEX_META_ALIASES = {
+    "doc_id": ["可唯一识别id", "doc_id", "document_id"],
+    "title": ["文书标题", "index_title", "title"],
+    "case_reason": ["案由/罪名", "index_case_cause", "case_profile__case_type_secondary"],
+    "case_number": ["案号", "index_case_number", "metadata__case_number", "case_number"],
+    "judgment_date": ["审结时间", "index_close_date", "metadata__judgment_date", "judgment_date"],
+    "court_name": ["审理法院", "index_court_name", "metadata__court_name", "court_name"],
+    "court_level": ["法院级别", "index_court_level", "metadata__court_level", "court_level"],
+    "procedure_stage": ["审理程序", "index_procedure", "case_profile__procedure_stage", "procedure_stage"],
+    "region": ["省级地区", "metadata__region", "sample_region", "test_sample_region"],
+    "doc_type": ["文书类型", "metadata__doc_type", "doc_type"],
+}
 
 
 class RateLimiter:
@@ -100,6 +85,67 @@ def read_csv(path: Path) -> list[dict[str, str]]:
 def read_json(path: Path) -> Any:
     with path.open("r", encoding="utf-8") as f:
         return json.load(f)
+
+
+def first_nonblank(*values: Any) -> str:
+    for value in values:
+        text = str(value or "").strip()
+        if text:
+            return text
+    return ""
+
+
+def load_data_index(path: Path) -> dict[str, dict[str, Any]]:
+    if not path.exists():
+        return {}
+    data = read_json(path)
+    rows = data if isinstance(data, list) else list(data.values()) if isinstance(data, dict) else []
+    out: dict[str, dict[str, Any]] = {}
+    for row in rows:
+        if not isinstance(row, dict):
+            continue
+        doc_id = first_nonblank(*(row.get(key) for key in INDEX_META_ALIASES["doc_id"]))
+        if doc_id:
+            out[doc_id] = row
+    return out
+
+
+def index_meta_for(row: dict[str, str], data_index: dict[str, dict[str, Any]]) -> dict[str, str]:
+    doc_id = first_nonblank(*(row.get(key) for key in INDEX_META_ALIASES["doc_id"]))
+    index_row = data_index.get(doc_id, {})
+    meta: dict[str, str] = {"doc_id": doc_id}
+    for key, aliases in INDEX_META_ALIASES.items():
+        meta[key] = first_nonblank(*(index_row.get(alias) for alias in aliases), *(row.get(alias) for alias in aliases))
+    return meta
+
+
+def apply_index_metadata(obj: dict[str, Any], meta: dict[str, str]) -> dict[str, Any]:
+    metadata = {
+        "case_number": scalar_leaf(meta.get("case_number") or None, "data-index"),
+        "court_name": scalar_leaf(meta.get("court_name") or None, "data-index"),
+        "court_level": scalar_leaf(meta.get("court_level") or None, "data-index"),
+        "judgment_date": scalar_leaf(meta.get("judgment_date") or None, "data-index"),
+        "first_instance_case_number": scalar_leaf(None, None),
+        "first_instance_court_name": scalar_leaf(None, None),
+        "first_instance_judgment_date": scalar_leaf(None, None),
+        "second_instance_case_number": scalar_leaf(None, None),
+        "second_instance_court_name": scalar_leaf(None, None),
+        "second_instance_judgment_date": scalar_leaf(None, None),
+        "region": scalar_leaf(meta.get("region") or None, "data-index"),
+        "doc_type": scalar_leaf(meta.get("doc_type") or None, "data-index"),
+    }
+    procedure = meta.get("procedure_stage") or None
+    is_appeal = True if procedure == "二审" else False if procedure else None
+    case_profile = obj.get("case_profile") if isinstance(obj.get("case_profile"), dict) else {}
+    litigant_profile = case_profile.get("litigant_profile") if isinstance(case_profile.get("litigant_profile"), dict) else {}
+    obj["metadata"] = metadata
+    obj["case_profile"] = {
+        "procedure_stage": scalar_leaf(procedure, "data-index"),
+        "is_appeal": scalar_leaf(is_appeal, "data-index"),
+        "litigant_profile": litigant_profile,
+    }
+    obj["_index_metadata"] = dict(meta)
+    return obj
 
 
 def write_json(path: Path, payload: Any) -> None:
@@ -186,16 +232,7 @@ def clean_existing_jsonl(path: Path) -> dict[str, dict[str, Any]]:
     return records
 
 
-def render_prompt(template: str, row: dict[str, str], doc_text: str) -> str:
-    meta = {
-        "title": row.get("index_title") or row.get("metadata__case_number") or "",
-        "case_reason": row.get("index_case_cause") or row.get("case_profile__case_type_secondary") or "",
-        "case_number": row.get("case_number") or row.get("index_case_number") or row.get("metadata__case_number") or "",
-        "judgment_date": row.get("judgment_date") or row.get("index_close_date") or row.get("metadata__judgment_date") or "",
-        "court_name": row.get("court_name") or row.get("index_court_name") or row.get("metadata__court_name") or "",
-        "court_level": row.get("court_level") or row.get("index_court_level") or row.get("metadata__court_level") or "",
-        "procedure_stage": row.get("procedure_stage") or row.get("index_procedure") or row.get("case_profile__procedure_stage") or "",
-    }
+def render_prompt(template: str, row: dict[str, str], doc_text: str, meta: dict[str, str]) -> str:
     out = template.replace("{{ document_id }}", row["doc_id"])
     out = out.replace("{{ document_text }}", doc_text)
     for key, value in meta.items():
@@ -278,7 +315,7 @@ def cell(value: Any) -> str:
 
 def write_flat_csv(jsonl_path: Path, csv_path: Path) -> int:
     rows = load_jsonl(jsonl_path)
-    cols = ["doc_id", "status", "model", "temperature"] + [field.replace(".", "__") for field in CONTENT_FIELDS]
+    cols = ["doc_id", "status", "model", "temperature"] + [field_key_to_csv_column(field["key"], use_labels=True) for field in ALL_FIELDS]
     tmp = csv_path.with_suffix(csv_path.suffix + ".tmp")
     csv_path.parent.mkdir(parents=True, exist_ok=True)
     with tmp.open("w", encoding="utf-8-sig", newline="") as f:
@@ -290,9 +327,8 @@ def write_flat_csv(jsonl_path: Path, csv_path: Path) -> int:
             out["status"] = "ok"
             out["model"] = MODEL
             out["temperature"] = "0"
-            for field in CONTENT_FIELDS:
-                value = obj.get(field) if field in {"case_amount", "case_amount_type"} else get_path_value(obj, field)
-                out[field.replace(".", "__")] = cell(value)
+            for field in ALL_FIELDS:
+                out[field_key_to_csv_column(field["key"], use_labels=True)] = cell(get_field_value(obj, field))
             writer.writerow(out)
     shutil.move(str(tmp), str(csv_path))
     return len(rows)
@@ -301,6 +337,7 @@ def write_flat_csv(jsonl_path: Path, csv_path: Path) -> int:
 def run(args: argparse.Namespace) -> dict[str, Any]:
     test_set = read_csv(Path(args.test_set))
     texts = read_json(Path(args.texts))
+    data_index = load_data_index(Path(args.data_index))
     prompt_template = Path(args.prompt).read_text(encoding="utf-8").strip()
     output_jsonl = Path(args.output_jsonl)
     existing = clean_existing_jsonl(output_jsonl)
@@ -316,10 +353,13 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
     counters = {"submitted": 0, "ok": 0, "auth_error": 0, "timeout": 0, "json_parse_error": 0, "failed": 0}
 
     def work(doc_id: str) -> tuple[str, str]:
-        prompt = render_prompt(prompt_template, rows_by_doc[doc_id], texts.get(doc_id, ""))
+        row = rows_by_doc[doc_id]
+        index_meta = index_meta_for(row, data_index)
+        prompt = render_prompt(prompt_template, row, texts.get(doc_id, ""), index_meta)
         status, obj, error = call_ds(client, args.model, prompt, limiter, args.max_tokens, args.timeout, args.retries)
         if status == "ok" and obj is not None:
             obj["document_id"] = doc_id
+            apply_index_metadata(obj, index_meta)
             obj["_ds_meta"] = {
                 "provider": "official_deepseek",
                 "model": args.model,
@@ -406,6 +446,7 @@ def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser()
     parser.add_argument("--test-set", default=str(DEFAULT_TEST_SET))
     parser.add_argument("--texts", default=str(DEFAULT_TEXTS))
+    parser.add_argument("--data-index", default=str(DEFAULT_DATA_INDEX))
     parser.add_argument("--prompt", default=str(DEFAULT_PROMPT))
     parser.add_argument("--env", default=str(DEFAULT_ENV))
     parser.add_argument("--output-jsonl", default=str(DEFAULT_JSONL))

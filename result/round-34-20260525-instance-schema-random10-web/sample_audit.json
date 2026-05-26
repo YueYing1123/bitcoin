@@ -1,0 +1,78 @@
+﻿{
+  "base_path": "data\\processed\\master\\data_index_noncriminal_base.csv",
+  "base_rows": 6193,
+  "formal_test_path": "result\\round-25-20260520-noncriminal-index-stratified-test-set\\test_set_5pct_year_region_appeal_priority.csv",
+  "formal_test_rows": 309,
+  "formal_test_doc_ids": 309,
+  "prior_random_files": [
+    {
+      "path": "result\\round-23-20260519-random10-dspro-web\\random10_from_master_dataset_vc_true.csv",
+      "rows": 10,
+      "doc_ids": 10
+    },
+    {
+      "path": "result\\round-24-20260519-random10-dspro-web-no-overall-validity\\random10_from_master_dataset_vc_true.csv",
+      "rows": 10,
+      "doc_ids": 10
+    },
+    {
+      "path": "result\\round-26-20260520-noncriminal-random10-dspro-web\\random10_from_data_index_noncriminal_base.csv",
+      "rows": 10,
+      "doc_ids": 10
+    },
+    {
+      "path": "result\\round-27-20260520-noncriminal-random10-typical-vc-web\\random10_from_data_index_noncriminal_base.csv",
+      "rows": 10,
+      "doc_ids": 10
+    },
+    {
+      "path": "result\\round-28-20260520-noncriminal-random10-typical-gate-web\\random10_from_data_index_noncriminal_base.csv",
+      "rows": 10,
+      "doc_ids": 10
+    },
+    {
+      "path": "result\\round-29-20260520-noncriminal-random10-not-testset-typical-gate-web\\random10_from_data_index_noncriminal_base_excluding_testsets.csv",
+      "rows": 10,
+      "doc_ids": 10
+    },
+    {
+      "path": "result\\round-30-20260520-fewshot-noncriminal-random10-web\\random10_from_data_index_noncriminal_base_excluding_testsets_and_prior_web.csv",
+      "rows": 10,
+      "doc_ids": 10
+    },
+    {
+      "path": "result\\round-31-20260520-noncriminal-random10-substantive-typical-web\\random10_from_data_index_noncriminal_base_excluding_round25_testset_and_prior_web.csv",
+      "rows": 10,
+      "doc_ids": 10
+    },
+    {
+      "path": "result\\round-32-20260525-noncriminal-random10-annotation-web\\random10_from_data_index_noncriminal_base_excluding_round25_testset_and_prior_web.csv",
+      "rows": 10,
+      "doc_ids": 10
+    },
+    {
+      "path": "result\\round-33-20260525-noncriminal-random10-reasons-energy-web\\random10_from_data_index_noncriminal_base_excluding_round25_testset_and_prior_web.csv",
+      "rows": 10,
+      "doc_ids": 10
+    }
+  ],
+  "prior_random_doc_ids": 100,
+  "eligible_rows_after_exclusion": 5797,
+  "sample_rows": 10,
+  "seed": 2026052504,
+  "output_csv": "result\\round-34-20260525-instance-schema-random10-web\\random10_from_data_index_noncriminal_base_excluding_round25_testset_and_prior_web.csv",
+  "overlap_with_formal_test": 0,
+  "overlap_with_prior_random": 0,
+  "sample_doc_ids": [
+    "f93c2684-6096-4473-8510-ad75015d62e3",
+    "f7bfe281-a32a-427d-b7b9-b5a659a2f9da",
+    "387493c7-3a17-4322-b969-af280015ee4d",
+    "f3a391d2-06a7-4cec-b1c6-ac7c009d796b",
+    "2c065cb2-2802-4d82-82c1-af65014aaef3",
+    "d9fadcd8-22e8-4a1d-9127-ab68011bdd96",
+    "84b134df-b6cb-4695-b80a-b05000a84236",
+    "53b94d29-0413-40f4-8905-b21301210764",
+    "c0190e31-ff56-4da0-a923-b1be00110bd9",
+    "ba327771-631c-42b5-902b-abee00d4c994"
+  ]
+}

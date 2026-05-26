@@ -1,0 +1,67 @@
+{
+  "seed": 2026052611,
+  "base_path": "data\\processed\\master\\data_index_noncriminal_base.csv",
+  "base_count": 6193,
+  "explicit_criminal_removed_by_title_casecause_procedure": 73,
+  "unsupported_stage_removed_after_criminal_filter": 43,
+  "supported_stages": [
+    "一审",
+    "二审"
+  ],
+  "formal_test_set_path": "result\\round-25-20260520-noncriminal-index-stratified-test-set\\test_set_5pct_year_region_appeal_priority.csv",
+  "formal_test_set_ids": 309,
+  "prior_random10_files": [
+    "result\\round-23-20260519-random10-dspro-web\\random10_from_master_dataset_vc_true.csv",
+    "result\\round-24-20260519-random10-dspro-web-no-overall-validity\\random10_from_master_dataset_vc_true.csv",
+    "result\\round-26-20260520-noncriminal-random10-dspro-web\\random10_from_data_index_noncriminal_base.csv",
+    "result\\round-27-20260520-noncriminal-random10-typical-vc-web\\random10_from_data_index_noncriminal_base.csv",
+    "result\\round-28-20260520-noncriminal-random10-typical-gate-web\\random10_from_data_index_noncriminal_base.csv",
+    "result\\round-29-20260520-noncriminal-random10-not-testset-typical-gate-web\\random10_from_data_index_noncriminal_base_excluding_testsets.csv",
+    "result\\round-30-20260520-fewshot-noncriminal-random10-web\\random10_from_data_index_noncriminal_base_excluding_testsets_and_prior_web.csv",
+    "result\\round-31-20260520-noncriminal-random10-substantive-typical-web\\random10_from_data_index_noncriminal_base_excluding_round25_testset_and_prior_web.csv",
+    "result\\round-32-20260525-noncriminal-random10-annotation-web\\random10_from_data_index_noncriminal_base_excluding_round25_testset_and_prior_web.csv",
+    "result\\round-33-20260525-noncriminal-random10-reasons-energy-web\\random10_from_data_index_noncriminal_base_excluding_round25_testset_and_prior_web.csv",
+    "result\\round-34-20260525-instance-schema-random10-web\\random10_from_data_index_noncriminal_base_excluding_round25_testset_and_prior_web.csv",
+    "result\\round-35-20260525-instance-pointer-null-random10-web\\random10_from_data_index_noncriminal_base_excluding_round25_testset_and_prior_web.csv"
+  ],
+  "prior_random10_ids": 120,
+  "eligible_count": 5664,
+  "sample_count": 10,
+  "output_csv": "result\\round-36-20260526-fewshot-6051-random10-web\\random10_from_data_index_noncriminal_base_excluding_round25_testset_and_prior_web.csv",
+  "sample_doc_ids": [
+    "3a2f98cc-e3ae-4fe2-a68f-b21700b4966b",
+    "b92eade8-7714-41c5-9069-ac8b00a3ed59",
+    "60569959-4010-42fc-96a9-b05800260390",
+    "93f56d2d-3122-4215-bc0f-b05001724158",
+    "7cf988ed-a168-4286-9073-aca3001459d0",
+    "c6bf3168-7284-4494-9255-aa78009de203",
+    "a8984556-7423-4015-9d42-ab8e009a6b89",
+    "8a7833d5-1292-4df5-942e-aecd0023287f",
+    "d617820d-839a-4921-8777-b144016abce1",
+    "421fefbc-47f6-4eac-93fb-b1f60000666d"
+  ],
+  "sample_titles": [
+    "董某某、高某1民间借贷纠纷民事二审民事案",
+    "杨某某与张某1、高某某委托合同纠纷一审民事案",
+    "谭某某、黄某某委托合同纠纷民事一审民事案",
+    "孙某某与商某某信息网络买卖合同纠纷一审民事案",
+    "关标福、深圳必旺电子商务有限公司委托合同纠纷二审民事案",
+    "原告李某2诉被告王某某民间借贷纠纷一审民事案",
+    "某公司1、某公司2计算机软件开发合同纠纷一审民事案",
+    "某公司、胡某某买卖合同纠纷民事二审民事案",
+    "宋英华、沙美娟等合同纠纷二审民事案",
+    "张某2与黄某某民间借贷纠纷一审民事案"
+  ],
+  "sample_procedures": [
+    "二审",
+    "一审",
+    "一审",
+    "一审",
+    "二审",
+    "一审",
+    "一审",
+    "二审",
+    "二审",
+    "一审"
+  ]
+}

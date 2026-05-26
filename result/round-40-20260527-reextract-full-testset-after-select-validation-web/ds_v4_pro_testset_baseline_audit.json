@@ -1,0 +1,20 @@
+{
+  "provider": "official_deepseek",
+  "model": "deepseek-v4-pro",
+  "temperature": 0,
+  "thinking": "disabled",
+  "test_rows": 309,
+  "existing_before_run": 308,
+  "jsonl_rows": 309,
+  "csv_rows": 309,
+  "remaining": 0,
+  "output_jsonl": "result\\round-40-20260527-reextract-full-testset-after-select-validation-web\\ds_v4_pro_testset_baseline.jsonl",
+  "output_csv": "result\\round-40-20260527-reextract-full-testset-after-select-validation-web\\ds_v4_pro_testset_baseline.csv",
+  "fail_path": "result\\round-40-20260527-reextract-full-testset-after-select-validation-web\\ds_v4_pro_testset_baseline_failures.jsonl",
+  "submitted": 1,
+  "ok": 1,
+  "auth_error": 0,
+  "timeout": 0,
+  "json_parse_error": 0,
+  "failed": 0
+}

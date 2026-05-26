@@ -14,6 +14,20 @@ from pathlib import Path
 from typing import Any
 from urllib.parse import parse_qs, urlparse
 
+from instance_schema import (
+    ALL_FIELDS,
+    BASE_INSTANCE_FIELDS,
+    BOOLEAN_FIELD_KEYS,
+    FIELD_GROUP_LABELS,
+    FIELD_GROUPS,
+    LIST_FIELD_KEYS,
+    NUMERIC_FIELD_KEYS,
+    coerce_field_value,
+    empty_for_field,
+    get_field_value,
+    scalar_leaf,
+)
+
 
 ROOT = Path(__file__).resolve().parents[2]
 ROUND = "round-20-20260519-manual-annotation"
@@ -29,123 +43,63 @@ DEFAULT_GOLD_CSV = DEFAULT_OUTDIR / "manual_gold_standard_final.csv"
 DEFAULT_GOLD_JSONL = DEFAULT_OUTDIR / "manual_gold_standard_final.jsonl"
 DEFAULT_GOLD_METRICS = DEFAULT_OUTDIR / "manual_gold_standard_metrics.json"
 
-PRIMARY_FIELDS = [
-    {
-        "key": "case_amount",
-        "label": "案件金额",
-        "type": "number",
-        "source": "case_amount",
-        "help": "人民币元；无法判断留空。",
-    },
-    {
-        "key": "case_amount_type",
-        "label": "金额类型",
-        "type": "select",
-        "source": "case_amount_type",
-        "options": [
-            "",
-            "交易本金",
-            "返还本金",
-            "合同价款",
-            "投资款",
-            "借款本金",
-            "购买价款",
-            "原告诉请本金",
-            "诈骗金额",
-            "犯罪金额",
-            "被害人损失",
-            "违法所得",
-            "支付结算金额",
-            "掩隐金额",
-            "涉案流水",
-            "罚金",
-            "其他",
-        ],
-    },
-    {
-        "key": "contract_validity",
-        "label": "合同效力",
-        "type": "select",
-        "source": "judicial_analysis__contract_validity",
-        "options": ["", "有效", "无效", "未成立", "部分有效", "部分无效", "不受法律保护", "不适用", "未明确"],
-    },
-    {
-        "key": "activity_types",
-        "label": "涉币活动类型",
-        "type": "multi",
-        "source": "virtual_currency_info__activity_type",
-        "options": [
-            "挖矿",
-            "场外交易OTC",
-            "交易所交易",
-            "买卖/兑换",
-            "虚拟货币借贷",
-            "委托理财/代投",
-            "技术服务",
-            "发币/ICO",
-            "赌博",
-            "洗钱/掩隐",
-            "帮助信息网络犯罪活动",
-            "诈骗",
-            "传销",
-            "支付结算",
-            "其他",
-        ],
-    },
-]
-
-SECONDARY_FIELDS = [
-    {"key": "court_level", "label": "法院层级", "type": "select", "source": "metadata__court_level", "options": ["", "最高人民法院", "高级法院", "中级法院", "基层法院", "专门法院", "其他", "未明确"]},
-    {"key": "judgment_date", "label": "裁判日期", "type": "text", "source": "metadata__judgment_date"},
-    {"key": "region", "label": "省级地区", "type": "text", "source": "metadata__region"},
-    {"key": "case_type_primary", "label": "案件类型", "type": "select", "source": "case_profile__case_type_primary", "options": ["", "民事", "刑事", "行政", "执行", "其他", "未明确"]},
-    {"key": "case_type_secondary", "label": "具体案由", "type": "text", "source": "case_profile__case_type_secondary"},
-    {"key": "procedure_stage", "label": "程序阶段", "type": "select", "source": "case_profile__procedure_stage", "options": ["", "一审", "二审", "再审", "执行", "审判监督", "其他", "未明确"]},
-    {"key": "is_appeal", "label": "是否上诉", "type": "select", "source": "case_profile__is_appeal", "options": ["", "true", "false"]},
-    {"key": "currency_types", "label": "币种", "type": "list_text", "source": "virtual_currency_info__currency_types"},
-    {"key": "legal_characterization", "label": "法律定性", "type": "text", "source": "judicial_analysis__legal_characterization"},
-    {"key": "virtual_currency_property_status", "label": "财产属性", "type": "select", "source": "judicial_analysis__virtual_currency_property_legality", "options": ["", "网络虚拟财产", "虚拟财产", "特定虚拟商品", "财产利益", "数据权益", "不具有法偿性", "非货币", "不属于法定货币", "未明确"]},
-    {"key": "transaction_legality_assessment", "label": "交易合法性", "type": "select", "source": "judicial_analysis__transaction_legality_assessment", "options": ["", "合法有效", "合同无效", "不受法律保护", "非法金融活动", "违反监管政策", "违背公序良俗", "涉嫌犯罪", "风险自担", "未明确", "不适用"]},
-    {"key": "reasons_for_invalidity_or_no_protection", "label": "无效/不保护理由", "type": "multi", "source": "judicial_analysis__reason_for_invalidity", "options": ["违反法律强制性规定", "违背公序良俗", "扰乱金融秩序", "扰乱货币秩序", "违反金融监管政策", "非法金融活动", "非法债务", "不属于民事案件受理范围", "涉嫌犯罪", "证据不足", "请求权基础不成立", "投资风险自担", "不具有法偿性", "不属于法定货币", "其他"]},
-    {"key": "cited_policies", "label": "监管政策", "type": "list_text", "source": "judicial_analysis__cited_policies"},
-    {"key": "policy_labels", "label": "政策标签", "type": "multi", "source": "judicial_analysis__policy_labels", "options": ["2013五部委通知", "2017九四公告", "2021九二四通知", "挖矿整治文件", "地方监管文件", "其他"]},
-    {"key": "judicial_framing", "label": "司法裁判框架", "type": "multi", "source": "judicial_analysis__judicial_framing", "options": ["风险自担", "非法债务", "不受法律保护", "合同无效", "返还本金", "折价赔偿", "财产属性保护", "证据不足", "刑民交叉", "移送公安", "涉嫌犯罪", "扰乱金融秩序", "扰乱货币秩序", "违背公序良俗", "违反强制性规定", "监管政策影响私法效力", "请求权基础不成立", "其他"]},
-]
-
-ALL_FIELDS = PRIMARY_FIELDS + SECONDARY_FIELDS
 FIELD_KEYS = {field["key"] for field in ALL_FIELDS}
-LIST_FIELD_KEYS = {field["key"] for field in ALL_FIELDS if field["type"] in {"multi", "list_text"}}
-NUMERIC_FIELD_KEYS = {"case_amount"}
-BOOLEAN_FIELD_KEYS = {"is_appeal"}
 
-FIELD_BASELINE_PATHS = {
-    "case_amount": ["case_amount"],
-    "case_amount_type": ["case_amount_type"],
-    "contract_validity": ["judicial_analysis.contract_validity"],
-    "activity_types": ["virtual_currency_info.activity_types", "virtual_currency_info.activity_type"],
-    "court_level": ["metadata.court_level"],
-    "judgment_date": ["metadata.judgment_date"],
-    "region": ["metadata.region"],
-    "case_type_primary": ["case_profile.case_type_primary"],
-    "case_type_secondary": ["case_profile.case_type_secondary"],
-    "procedure_stage": ["case_profile.procedure_stage"],
-    "is_appeal": ["case_profile.is_appeal"],
-    "currency_types": ["virtual_currency_info.currency_types"],
-    "legal_characterization": ["judicial_analysis.legal_characterization"],
-    "virtual_currency_property_status": [
-        "judicial_analysis.virtual_currency_property_status",
-        "judicial_analysis.virtual_currency_property_legality",
-    ],
-    "transaction_legality_assessment": ["judicial_analysis.transaction_legality_assessment"],
-    "reasons_for_invalidity_or_no_protection": [
-        "judicial_analysis.reasons_for_invalidity_or_no_protection",
-        "judicial_analysis.reason_for_invalidity",
-    ],
-    "cited_policies": ["judicial_analysis.cited_policies"],
-    "policy_labels": ["judicial_analysis.policy_labels"],
-    "judicial_framing": ["judicial_analysis.judicial_framing"],
+SYSTEM_META_ALIASES = {
+    "文书标题": ["文书标题", "index_title", "title"],
+    "案由/罪名": ["案由/罪名", "index_case_cause", "case_profile__case_type_secondary"],
+    "案号": ["案号", "index_case_number", "metadata__case_number"],
+    "审结时间": ["审结时间", "index_close_date", "metadata__judgment_date"],
+    "审理法院": ["审理法院", "index_court_name", "metadata__court_name"],
+    "法院级别": ["法院级别", "index_court_level", "metadata__court_level"],
+    "审理程序": ["审理程序", "index_procedure", "case_profile__procedure_stage"],
+    "可唯一识别id": ["可唯一识别id", "doc_id", "document_id"],
+    "省级地区": ["省级地区", "sample_region", "test_sample_region", "metadata__region"],
+    "文书类型": ["文书类型", "metadata__doc_type"],
 }
 
+
+def first_nonblank(*values: Any) -> str:
+    for value in values:
+        text = str(value or "").strip()
+        if text:
+            return text
+    return ""
+
+
+def system_metadata_from_row(row: dict[str, str]) -> dict[str, str]:
+    meta: dict[str, str] = {}
+    for label, aliases in SYSTEM_META_ALIASES.items():
+        meta[label] = first_nonblank(*(row.get(alias) for alias in aliases))
+    if not meta["可唯一识别id"]:
+        meta["可唯一识别id"] = str(row.get("doc_id") or "")
+    return meta
+
+
+def metadata_structured_from_row(row: dict[str, str]) -> dict[str, Any]:
+    meta = system_metadata_from_row(row)
+    return {
+        "metadata": {
+            "case_number": scalar_leaf(meta.get("案号") or None, "data-index"),
+            "court_name": scalar_leaf(meta.get("审理法院") or None, "data-index"),
+            "court_level": scalar_leaf(meta.get("法院级别") or None, "data-index"),
+            "judgment_date": scalar_leaf(meta.get("审结时间") or None, "data-index"),
+            "first_instance_case_number": scalar_leaf(None, None),
+            "first_instance_court_name": scalar_leaf(None, None),
+            "first_instance_judgment_date": scalar_leaf(None, None),
+            "second_instance_case_number": scalar_leaf(None, None),
+            "second_instance_court_name": scalar_leaf(None, None),
+            "second_instance_judgment_date": scalar_leaf(None, None),
+            "region": scalar_leaf(meta.get("省级地区") or None, "data-index"),
+            "doc_type": scalar_leaf(meta.get("文书类型") or None, "data-index"),
+        },
+        "case_profile": {
+            "procedure_stage": scalar_leaf(meta.get("审理程序") or None, "data-index"),
+            "is_appeal": scalar_leaf(True if meta.get("审理程序") == "二审" else False if meta.get("审理程序") else None, "data-index"),
+            "litigant_profile": {"plaintiff_types": {"value": [], "evidence": None}, "defendant_types": {"value": [], "evidence": None}},
+        },
+        "index_metadata": meta,
+    }
 
 def read_csv(path: Path) -> list[dict[str, str]]:
     with path.open("r", encoding="utf-8-sig", newline="") as f:
@@ -218,58 +172,16 @@ def load_jsonl_by_document_id(path: Path) -> dict[str, dict[str, Any]]:
     return rows
 
 
-def get_path_value(obj: dict[str, Any], path: str) -> Any:
-    cur: Any = obj
-    for part in path.split("."):
-        if not isinstance(cur, dict):
-            return None
-        cur = cur.get(part)
-    if isinstance(cur, dict) and "value" in cur:
-        return cur.get("value")
-    return cur
-
-
-def coerce_field_value(field: dict[str, Any], value: Any) -> Any:
-    key = field["key"]
-    if isinstance(value, dict) and "value" in value:
-        value = value.get("value")
-    if key in LIST_FIELD_KEYS:
-        return parse_list_cell(value)
-    if key in BOOLEAN_FIELD_KEYS:
-        text = str(value).strip().lower()
-        if text in {"1", "true", "yes", "y", "是"}:
-            return "true"
-        if text in {"0", "false", "no", "n", "否"}:
-            return "false"
-        return "" if value in {None, ""} else str(value)
-    if value is None:
-        return ""
-    if isinstance(value, bool):
-        return "true" if value else "false"
-    return value
-
-
 def baseline_fields_from_record(record: dict[str, Any]) -> dict[str, Any]:
     fields: dict[str, Any] = {}
     for field in ALL_FIELDS:
-        value = None
-        found = False
-        for path in FIELD_BASELINE_PATHS[field["key"]]:
-            value = get_path_value(record, path) if "." in path else record.get(path)
-            if value is not None:
-                found = True
-                break
-        if found:
-            fields[field["key"]] = coerce_field_value(field, value)
-        elif field["key"] in LIST_FIELD_KEYS:
-            fields[field["key"]] = []
-        else:
-            fields[field["key"]] = ""
+        value = get_field_value(record, field)
+        fields[field["key"]] = empty_for_field(field["key"]) if value is None or value == "" else value
     return fields
 
 
 def empty_field_values() -> dict[str, Any]:
-    return {field["key"]: [] if field["key"] in LIST_FIELD_KEYS else "" for field in ALL_FIELDS}
+    return {field["key"]: empty_for_field(field["key"]) for field in ALL_FIELDS}
 
 
 def load_baselines(path: Path) -> dict[str, dict[str, Any]]:
@@ -310,6 +222,51 @@ def current_gold_fields(doc_id: str, baseline: dict[str, Any], annotations: dict
     if isinstance(manual_fields, dict):
         fields.update(manual_fields)
     return fields
+
+
+def fields_to_structured_gold(doc_id: str, fields: dict[str, Any], row: dict[str, str] | None = None) -> dict[str, Any]:
+    instance_fields: dict[str, Any] = {}
+    for spec in BASE_INSTANCE_FIELDS:
+        base = spec["base"]
+        for suffix in ["first_instance", "second_instance"]:
+            key = f"{base}_{suffix}"
+            value = fields.get(key)
+            if base.startswith("case_amount"):
+                instance_fields[key] = None if value is None or value == "" else value
+            elif key in LIST_FIELD_KEYS:
+                instance_fields[key] = scalar_leaf(parse_list_cell(value), None)
+            elif key in BOOLEAN_FIELD_KEYS:
+                norm = normalized_scalar(key, value)
+                instance_fields[key] = scalar_leaf(None if norm is None else norm == "true", None)
+            else:
+                instance_fields[key] = scalar_leaf(None if value == "" else value, None)
+    final_output_pointer: dict[str, Any] = {}
+    for key in [
+        "appeal_outcome",
+        "final_effective_instance",
+        "use_fields_suffix",
+        "reasoning_changed",
+        "result_changed",
+        "procedural_only",
+        "changed_fields_between_instances",
+    ]:
+        value = fields.get(key)
+        if key == "changed_fields_between_instances":
+            final_output_pointer[key] = scalar_leaf(parse_list_cell(value), None)
+        elif key in BOOLEAN_FIELD_KEYS:
+            norm = normalized_scalar(key, value)
+            final_output_pointer[key] = scalar_leaf(None if norm is None else norm == "true", None)
+        else:
+            final_output_pointer[key] = scalar_leaf(None if value == "" else value, None)
+    record = {
+        "document_id": doc_id,
+        "instance_fields": instance_fields,
+        "final_output_pointer": final_output_pointer,
+        "flat_fields": fields,
+    }
+    if row is not None:
+        record.update(metadata_structured_from_row(row))
+    return record
 
 
 def normalized_scalar(field_key: str, value: Any) -> str | None:
@@ -360,7 +317,7 @@ def compute_metrics(rows: list[dict[str, str]], baselines: dict[str, dict[str, A
     field_rows: list[dict[str, Any]] = []
     total = {"tp": 0, "fp": 0, "fn": 0, "docs": 0, "exact_docs": 0}
     scored_rows = [row for row in rows if str(row.get("doc_id") or "") in baselines]
-    for group_name, group_fields in [("primary", PRIMARY_FIELDS), ("secondary", SECONDARY_FIELDS)]:
+    for group_name, group_fields in FIELD_GROUPS.items():
         for field in group_fields:
             counts = {"tp": 0, "fp": 0, "fn": 0, "docs": 0, "exact_docs": 0}
             key = field["key"]
@@ -387,11 +344,9 @@ def compute_metrics(rows: list[dict[str, str]], baselines: dict[str, dict[str, A
                 total[k] += counts[k]
 
     groups: dict[str, Any] = {}
-    for name, fields in {
-        "primary": [f["key"] for f in PRIMARY_FIELDS],
-        "secondary": [f["key"] for f in SECONDARY_FIELDS],
-        "all": [f["key"] for f in ALL_FIELDS],
-    }.items():
+    group_key_map = {name: [f["key"] for f in fields] for name, fields in FIELD_GROUPS.items()}
+    group_key_map["all"] = [f["key"] for f in ALL_FIELDS]
+    for name, fields in group_key_map.items():
         selected = [r for r in field_rows if r["field"] in fields]
         tp = sum(int(r["tp"]) for r in selected)
         fp = sum(int(r["fp"]) for r in selected)
@@ -416,6 +371,7 @@ def compute_metrics(rows: list[dict[str, str]], baselines: dict[str, dict[str, A
         "baseline_complete": len(baselines) >= len(rows) and len(rows) > 0,
         "micro": {**total, **prf(total["tp"], total["fp"], total["fn"])},
         "groups": groups,
+        "group_labels": {**FIELD_GROUP_LABELS, "all": "全部"},
         "fields": field_rows,
     }
 
@@ -518,7 +474,7 @@ def write_final_gold(
                             "doc_id": doc_id,
                             "gold_source": out["gold_source"],
                             "annotation_saved_at": out["annotation_saved_at"],
-                            "fields": gold,
+                            **fields_to_structured_gold(doc_id, gold, row),
                         },
                         ensure_ascii=False,
                         separators=(",", ":"),
@@ -553,16 +509,18 @@ def make_app_state(test_set: Path, texts_path: Path, annotations_path: Path, bas
     for i, row in enumerate(rows):
         doc_id = row["doc_id"]
         prediction = baselines.get(doc_id) or empty_field_values()
+        system_meta = system_metadata_from_row(row)
         cases.append(
             {
                 "index": i,
                 "doc_id": doc_id,
-                "title": row.get("metadata__case_number") or doc_id,
-                "court": row.get("metadata__court_name") or "",
-                "year": row.get("test_sample_year") or "",
-                "region": row.get("test_sample_region") or row.get("metadata__region") or "",
-                "stage": row.get("test_sample_stage") or row.get("case_profile__procedure_stage") or "",
-                "case_type": row.get("case_profile__case_type_secondary") or row.get("case_profile__case_type_primary") or "",
+                "title": system_meta.get("文书标题") or system_meta.get("案号") or doc_id,
+                "court": system_meta.get("审理法院") or "",
+                "year": (system_meta.get("审结时间") or "")[:4],
+                "region": system_meta.get("省级地区") or "",
+                "stage": system_meta.get("审理程序") or "",
+                "case_type": system_meta.get("案由/罪名") or "",
+                "system_metadata": system_meta,
                 "prediction": prediction,
                 "baseline_ready": doc_id in baselines,
                 "source": {},
@@ -579,7 +537,8 @@ def make_app_state(test_set: Path, texts_path: Path, annotations_path: Path, bas
         "baseline_complete": len(baselines) >= len(cases) and len(cases) > 0,
         "baseline_path": str(baseline_path),
         "metrics": metrics,
-        "fields": {"primary": PRIMARY_FIELDS, "secondary": SECONDARY_FIELDS},
+        "fields": FIELD_GROUPS,
+        "field_group_labels": FIELD_GROUP_LABELS,
         "cases": cases,
     }
 
@@ -624,6 +583,7 @@ INDEX_HTML = r"""<!doctype html>
         <button id="exportBtn" type="button">导出</button>
       </section>
       <section id="metricsPanel" class="metrics-panel"></section>
+      <section id="systemMetadataPanel" class="system-metadata"></section>
 
       <section class="workspace">
         <article class="document-pane">
@@ -636,8 +596,9 @@ INDEX_HTML = r"""<!doctype html>
 
         <section class="form-pane">
           <div class="tabs">
-            <button class="tab active" data-tab="primary" type="button">重点字段</button>
-            <button class="tab" data-tab="secondary" type="button">次重点字段</button>
+            <button class="tab active" data-tab="first_instance" type="button">一审口径</button>
+            <button class="tab" data-tab="second_instance" type="button">二审口径</button>
+            <button class="tab" data-tab="final_pointer" type="button">最终指针</button>
             <button class="tab" data-tab="notes" type="button">备注</button>
           </div>
           <form id="annotationForm"></form>
@@ -671,6 +632,7 @@ body {
   background: var(--bg);
   color: var(--text);
   font: 14px/1.5 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft YaHei", sans-serif;
+  overflow: hidden;
 }
 button, input, select, textarea { font: inherit; }
 button {
@@ -700,6 +662,8 @@ input, select, textarea {
   display: grid;
   grid-template-columns: 330px minmax(0, 1fr);
   height: 100vh;
+  height: 100dvh;
+  overflow: hidden;
 }
 .sidebar {
   border-right: 1px solid var(--line);
@@ -707,6 +671,8 @@ input, select, textarea {
   display: flex;
   flex-direction: column;
   min-width: 0;
+  min-height: 0;
+  overflow: hidden;
 }
 .brand { padding: 16px; border-bottom: 1px solid var(--line); }
 .brand h1 {
@@ -745,7 +711,12 @@ input, select, textarea {
   border-bottom: 1px solid var(--line);
 }
 .case-list {
-  overflow: auto;
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  overscroll-behavior: contain;
+  scrollbar-gutter: stable;
   padding: 8px;
 }
 .case-item {
@@ -783,8 +754,10 @@ input, select, textarea {
 }
 .main {
   min-width: 0;
+  min-height: 0;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
 }
 .topbar {
   height: 62px;
@@ -818,6 +791,45 @@ input, select, textarea {
   gap: 10px;
   align-items: start;
   padding: 10px 14px;
+  flex: 0 0 auto;
+  max-height: 190px;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-gutter: stable;
+}
+.system-metadata {
+  background: #fff;
+  border-bottom: 1px solid var(--line);
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 8px;
+  padding: 10px 14px;
+  flex: 0 0 auto;
+  max-height: 128px;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-gutter: stable;
+}
+.meta-cell {
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: #fbfcfe;
+  padding: 7px 9px;
+  min-width: 0;
+}
+.meta-cell b {
+  display: block;
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 650;
+  margin-bottom: 3px;
+}
+.meta-cell span {
+  display: block;
+  color: var(--text);
+  font-size: 13px;
+  line-height: 1.35;
+  overflow-wrap: anywhere;
 }
 .metric-card {
   border: 1px solid var(--line);
@@ -855,11 +867,13 @@ input, select, textarea {
   grid-template-columns: minmax(420px, 1fr) minmax(430px, 520px);
   gap: 0;
   flex: 1;
+  overflow: hidden;
 }
 .document-pane,
 .form-pane {
   min-width: 0;
   min-height: 0;
+  overflow: hidden;
   background: var(--panel);
 }
 .document-pane {
@@ -879,12 +893,16 @@ input, select, textarea {
 #documentText {
   margin: 0;
   padding: 16px 18px 40px;
-  overflow: auto;
+  min-height: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  overscroll-behavior: contain;
+  scrollbar-gutter: stable;
   white-space: pre-wrap;
   word-break: break-word;
   font-family: "Microsoft YaHei", system-ui, sans-serif;
   line-height: 1.75;
-  flex: 1;
+  flex: 1 1 auto;
 }
 mark {
   background: #ffe48a;
@@ -907,7 +925,12 @@ mark {
   color: var(--accent-dark);
 }
 #annotationForm {
-  overflow: auto;
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  overscroll-behavior: contain;
+  scrollbar-gutter: stable;
   padding: 12px;
 }
 .field-card {
@@ -978,6 +1001,7 @@ mark {
 @media (max-width: 1100px) {
   #app { grid-template-columns: 280px minmax(0, 1fr); }
   .metrics-panel { grid-template-columns: 1fr; }
+  .system-metadata { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .field-score-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .workspace { grid-template-columns: 1fr; }
   .form-pane { border-top: 1px solid var(--line); }
@@ -990,7 +1014,7 @@ let state = null;
 let cases = [];
 let filtered = [];
 let currentIndex = 0;
-let activeTab = "primary";
+let activeTab = "first_instance";
 
 const $ = (id) => document.getElementById(id);
 
@@ -1019,7 +1043,15 @@ function pct(v) {
 }
 
 function allFields() {
-  return [...state.fields.primary, ...state.fields.secondary];
+  return Object.values(state.fields || {}).flat();
+}
+
+function fieldGroupNames() {
+  return Object.keys(state.fields || {});
+}
+
+function groupLabel(name) {
+  return state.field_group_labels?.[name] || state.metrics?.group_labels?.[name] || name;
 }
 
 function listFieldKeys() {
@@ -1088,7 +1120,7 @@ function prf(tp, fp, fn) {
 
 function computeClientMetrics() {
   const fieldRows = [];
-  ["primary", "secondary"].forEach(group => {
+  fieldGroupNames().forEach(group => {
     state.fields[group].forEach(field => {
       const counts = {tp: 0, fp: 0, fn: 0, docs: 0, exact_docs: 0};
       cases.forEach(c => {
@@ -1112,7 +1144,9 @@ function computeClientMetrics() {
     });
   });
   const groupMetrics = {};
-  [["primary", state.fields.primary.map(f => f.key)], ["secondary", state.fields.secondary.map(f => f.key)], ["all", allFields().map(f => f.key)]].forEach(([name, keys]) => {
+  const groupEntries = fieldGroupNames().map(name => [name, state.fields[name].map(f => f.key)]);
+  groupEntries.push(["all", allFields().map(f => f.key)]);
+  groupEntries.forEach(([name, keys]) => {
     const selected = fieldRows.filter(r => keys.includes(r.field));
     const tp = selected.reduce((s, r) => s + r.tp, 0);
     const fp = selected.reduce((s, r) => s + r.fp, 0);
@@ -1168,12 +1202,14 @@ function renderMetrics() {
   if (!state || !cases.length) return;
   const metrics = computeClientMetrics();
   const all = metrics.groups.all || {};
-  const primary = metrics.groups.primary || {};
-  const secondary = metrics.groups.secondary || {};
+  const first = metrics.groups.first_instance || {};
+  const second = metrics.groups.second_instance || {};
+  const pointer = metrics.groups.final_pointer || {};
   $("scoreSummary").innerHTML = `
     <div class="score-chip"><span class="score-label">总体 F1</span><span class="score-value">${pct(all.f1)}</span></div>
-    <div class="score-chip"><span class="score-label">重点 F1</span><span class="score-value">${pct(primary.f1)}</span></div>
-    <div class="score-chip"><span class="score-label">次重点 F1</span><span class="score-value">${pct(secondary.f1)}</span></div>
+    <div class="score-chip"><span class="score-label">一审 F1</span><span class="score-value">${pct(first.f1)}</span></div>
+    <div class="score-chip"><span class="score-label">二审 F1</span><span class="score-value">${pct(second.f1)}</span></div>
+    <div class="score-chip"><span class="score-label">指针 F1</span><span class="score-value">${pct(pointer.f1)}</span></div>
     <div class="score-chip"><span class="score-label">基线</span><span class="score-value">${metrics.baseline_count}/${metrics.case_count}</span></div>
   `;
   const weak = metrics.fields
@@ -1188,18 +1224,31 @@ function renderMetrics() {
     </div>
     <div class="metric-card">
       <strong>分组</strong>
-      <div>重点 ${pct(primary.f1)}，精确 ${pct(primary.exact_match_rate)}</div>
-      <div>次重点 ${pct(secondary.f1)}，精确 ${pct(secondary.exact_match_rate)}</div>
+      ${fieldGroupNames().map(name => {
+        const g = metrics.groups[name] || {};
+        return `<div>${escapeHtml(groupLabel(name))} ${pct(g.f1)}，精确 ${pct(g.exact_match_rate)}</div>`;
+      }).join("")}
     </div>
     <div class="field-score-grid">
       ${weak.map(r => `
         <div class="field-score" title="${escapeHtml(r.field)}">
           <b>${escapeHtml(r.label || r.field)}</b>
-          <span>${escapeHtml(r.group)} F1 ${pct(r.f1)} · ${r.tp}/${r.fp}/${r.fn}</span>
+          <span>${escapeHtml(groupLabel(r.group))} F1 ${pct(r.f1)} · ${r.tp}/${r.fp}/${r.fn}</span>
         </div>
       `).join("")}
     </div>
   `;
+}
+
+function renderSystemMetadata(c) {
+  const meta = c.system_metadata || {};
+  const labels = ["文书标题", "案由/罪名", "案号", "审结时间", "审理法院", "法院级别", "审理程序", "可唯一识别id"];
+  $("systemMetadataPanel").innerHTML = labels.map(label => `
+    <div class="meta-cell">
+      <b>${escapeHtml(label)}</b>
+      <span>${escapeHtml(meta[label] || "")}</span>
+    </div>
+  `).join("");
 }
 
 function applyFilter() {
@@ -1311,23 +1360,21 @@ function renderForm(c) {
 
 function collectFields() {
   const c = currentCase();
-  const fields = {};
-  [...state.fields.primary, ...state.fields.secondary].forEach(field => {
+  const fields = {...annotationFor(c)};
+  if (activeTab === "notes") return fields;
+  state.fields[activeTab].forEach(field => {
     if (field.type === "multi") {
-      fields[field.key] = Array.from(document.querySelectorAll(`[data-key="${CSS.escape(field.key)}"]:checked`)).map(x => x.value);
-      if (fields[field.key].length === 0 && c.annotation?.fields && Object.prototype.hasOwnProperty.call(c.annotation.fields, field.key)) {
-        fields[field.key] = [];
-      }
+      const inputs = Array.from(document.querySelectorAll(`[data-key="${CSS.escape(field.key)}"]`));
+      if (inputs.length) fields[field.key] = inputs.filter(x => x.checked).map(x => x.value);
     } else if (field.type === "list_text") {
       const el = document.querySelector(`[data-key="${CSS.escape(field.key)}"]`);
-      fields[field.key] = el ? el.value.split(/\n+/).map(x => x.trim()).filter(Boolean) : (annotationFor(c)[field.key] || []);
+      if (el) fields[field.key] = el.value.split(/\n+/).map(x => x.trim()).filter(Boolean);
     } else {
       const el = document.querySelector(`[data-key="${CSS.escape(field.key)}"]`);
       if (el) fields[field.key] = el.value === "" ? null : el.value;
-      else if (Object.prototype.hasOwnProperty.call(annotationFor(c), field.key)) fields[field.key] = annotationFor(c)[field.key];
     }
   });
-  return {...annotationFor(c), ...fields};
+  return fields;
 }
 
 async function saveCurrent() {
@@ -1389,6 +1436,7 @@ function renderCurrent() {
   if (!c) return;
   $("caseTitle").textContent = c.title || c.doc_id;
   $("caseMeta").textContent = [c.doc_id, c.court, c.year, c.region, c.stage, c.case_type].filter(Boolean).join(" · ");
+  renderSystemMetadata(c);
   renderDocument(c);
   renderForm(c);
   renderProgress();
@@ -1521,14 +1569,19 @@ class AnnotationServer(BaseHTTPRequestHandler):
         if not doc_id:
             self.send_json({"error": "doc_id is required"}, 400)
             return
+        cfg = self.app_config
+        existing = load_annotations(cfg["annotations"]).get(doc_id) or {}
+        existing_fields = existing.get("fields") if isinstance(existing.get("fields"), dict) else {}
+        incoming_fields = payload.get("fields") if isinstance(payload.get("fields"), dict) else {}
+        merged_fields = dict(existing_fields)
+        merged_fields.update(incoming_fields)
         annotation = {
             "doc_id": doc_id,
             "index": payload.get("index"),
-            "fields": payload.get("fields") or {},
+            "fields": merged_fields,
             "notes": payload.get("notes") or "",
             "saved_at": time.strftime("%Y-%m-%d %H:%M:%S"),
         }
-        cfg = self.app_config
         write_annotation(cfg["annotations"], annotation, self.write_lock)
         write_annotation_table(cfg["test_set"], cfg["annotations"], cfg["annotation_table"], self.write_lock, cfg["baseline"])
         metrics = compute_metrics(read_csv(cfg["test_set"]), load_baselines(cfg["baseline"]), load_annotations(cfg["annotations"]))

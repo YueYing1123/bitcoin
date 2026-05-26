@@ -47,7 +47,9 @@ GPT_MODEL = "deepseek-v4-pro"
 
 PRIMARY_FIELDS = [
     "case_amount",
-    "judicial_analysis.contract_validity",
+    "virtual_currency_info.typical_virtual_currency",
+    "judicial_analysis.direct_related_contract_validity",
+    "judicial_analysis.indirect_related_contract_validity",
     "virtual_currency_info.activity_types",
 ]
 
@@ -63,7 +65,8 @@ SECONDARY_FIELDS = [
     "virtual_currency_info.currency_types",
     "judicial_analysis.legal_characterization",
     "judicial_analysis.virtual_currency_property_status",
-    "judicial_analysis.transaction_legality_assessment",
+    "judicial_analysis.direct_transaction_legality_assessment",
+    "judicial_analysis.indirect_transaction_legality_assessment",
     "judicial_analysis.reasons_for_invalidity_or_no_protection",
     "judicial_analysis.cited_policies",
     "judicial_analysis.policy_labels",
@@ -75,6 +78,7 @@ EVAL_FIELDS = PRIMARY_FIELDS + SECONDARY_FIELDS
 LIST_FIELDS = {
     "virtual_currency_info.activity_types",
     "virtual_currency_info.currency_types",
+    "judicial_analysis.virtual_currency_property_status",
     "judicial_analysis.reasons_for_invalidity_or_no_protection",
     "judicial_analysis.cited_policies",
     "judicial_analysis.policy_labels",
